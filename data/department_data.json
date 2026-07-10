@@ -1142,7 +1142,7 @@
             "entries": {
               "S1": [
                 {
-                  "day": "",
+                  "day": "Sunday",
                   "slotIdx": 0,
                   "module": "Written Comprehension and Expression 1",
                   "instructor": "Chaalani A.",
@@ -1150,7 +1150,7 @@
                   "group": "GROUP 2"
                 },
                 {
-                  "day": "",
+                  "day": "Sunday",
                   "slotIdx": 1,
                   "module": "Civilisations of the Language of Study 1",
                   "instructor": "Amraoui Z",
@@ -1158,7 +1158,7 @@
                   "group": "GROUP 2"
                 },
                 {
-                  "day": "",
+                  "day": "Sunday",
                   "slotIdx": 3,
                   "module": "Linguistics and Phonetics 1",
                   "instructor": "Barboura O.",
@@ -1166,7 +1166,7 @@
                   "group": "GROUP 2"
                 },
                 {
-                  "day": "",
+                  "day": "Sunday",
                   "slotIdx": 4,
                   "module": "Grammar of Language of Study 1",
                   "instructor": "Barboura S",
@@ -3977,9 +3977,7 @@
           "Sunday",
           "Monday",
           "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Saturday"
+          "Wednesday"
         ]
       }
     }
