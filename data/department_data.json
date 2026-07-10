@@ -3669,7 +3669,22 @@
           }
         ],
         "supervision": {
-          "students": []
+          "students": [
+            {
+              "id": "sup_1783713773175_xs23",
+              "studentNumber": "2025-001",
+              "name": "wewrwr",
+              "level": "M2 Didactics",
+              "projectType": "dissertation",
+              "title": "ffff",
+              "supervisor": "Bouchemal A.",
+              "president": "",
+              "examiner": "",
+              "vivaDate": "",
+              "vivaTime": "",
+              "vivaRoom": ""
+            }
+          ]
         },
         "students": {
           "L1": {
