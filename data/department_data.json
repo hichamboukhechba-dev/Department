@@ -5419,6 +5419,20 @@
               "vivaDate": "",
               "vivaTime": "",
               "vivaRoom": ""
+            },
+            {
+              "id": "sup_1783718770869_ryk7",
+              "studentNumber": "ddd",
+              "name": "Boukhechba Hicham",
+              "level": "M2 Lit/Civ",
+              "projectType": "dissertation",
+              "title": "",
+              "supervisor": "",
+              "president": "",
+              "examiner": "",
+              "vivaDate": "",
+              "vivaTime": "",
+              "vivaRoom": ""
             }
           ]
         },
