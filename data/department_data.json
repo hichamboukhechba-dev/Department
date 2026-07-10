@@ -4902,25 +4902,67 @@
       "username": "admin",
       "password": "admin",
       "role": "admin",
-      "name": "Administrator"
+      "name": "Administrator",
+      "views": [
+        "dashboard",
+        "timetables",
+        "exams",
+        "curriculum",
+        "students",
+        "teachers",
+        "delegates",
+        "rooms",
+        "supervision",
+        "settings"
+      ]
     },
     {
       "username": "hod",
       "password": "hod",
       "role": "hod",
-      "name": "Head of Department"
+      "name": "Head of Department",
+      "views": [
+        "dashboard",
+        "timetables",
+        "exams",
+        "curriculum",
+        "students",
+        "teachers",
+        "delegates",
+        "rooms",
+        "supervision",
+        "settings"
+      ]
     },
     {
       "username": "teacher",
       "password": "teacher",
       "role": "teacher",
-      "name": "Teacher"
+      "name": "Teacher",
+      "views": [
+        "dashboard",
+        "timetables",
+        "exams",
+        "curriculum",
+        "students",
+        "teachers",
+        "delegates",
+        "rooms",
+        "supervision"
+      ]
     },
     {
       "username": "delegate",
       "password": "delegate",
       "role": "delegate",
-      "name": "Class Delegate"
+      "name": "Class Delegate",
+      "views": [
+        "dashboard",
+        "timetables",
+        "exams",
+        "students",
+        "delegates"
+      ]
     }
   ],
   "logos": {
