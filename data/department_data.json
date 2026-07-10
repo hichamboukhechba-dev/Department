@@ -3628,7 +3628,7 @@
           },
           {
             "level": "M2 Lit/Civ",
-            "count": 125
+            "count": 126
           }
         ],
         "roomUsage": [
@@ -8102,6 +8102,13 @@
                 "familyName": "TAHRI",
                 "firstName": "Ali",
                 "mark": "",
+                "note": ""
+              },
+              {
+                "regNumber": "ddd",
+                "familyName": "Boukhechba",
+                "firstName": "Hicham",
+                "mark": "null",
                 "note": ""
               }
             ]
