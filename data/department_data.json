@@ -2076,7 +2076,22 @@
           }
         },
         "supervision": {
-          "students": []
+          "students": [
+            {
+              "id": "sup_1783716057198_hers",
+              "studentNumber": "2025-001",
+              "name": "Hicham",
+              "level": "M1 Didactics",
+              "projectType": "dissertation",
+              "title": "dfsdfsd",
+              "supervisor": "Boukhalkhal Y.",
+              "president": "",
+              "examiner": "",
+              "vivaDate": "",
+              "vivaTime": "",
+              "vivaRoom": ""
+            }
+          ]
         },
         "students": {
           "L1": {
