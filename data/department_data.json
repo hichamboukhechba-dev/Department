@@ -4947,14 +4947,10 @@
     },
     {
       "username": "delegate",
-      "password": "delegate",
+      "password": "00000000",
       "role": "delegate",
       "name": "Class Delegate",
       "views": [
-        "dashboard",
-        "timetables",
-        "exams",
-        "students",
         "delegates"
       ]
     }
