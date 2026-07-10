@@ -3628,7 +3628,7 @@
           },
           {
             "level": "M2 Lit/Civ",
-            "count": 0
+            "count": 125
           }
         ],
         "roomUsage": [
@@ -7218,8 +7218,893 @@
             ]
           },
           "M2 Lit/Civ": {
-            "groups": {},
-            "unassigned": []
+            "groups": {
+              "04": [
+                {
+                  "regNumber": "232339139619",
+                  "familyName": "SOUISSI",
+                  "firstName": "Rania",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242439303405",
+                  "familyName": "KHENNICHE",
+                  "firstName": "Mohamed Nadhir",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539268920",
+                  "familyName": "DJAROUN",
+                  "firstName": "Ikram Maroua",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539180709",
+                  "familyName": "GHEZAL",
+                  "firstName": "Messaouda",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153513",
+                  "familyName": "LAHRECHE",
+                  "firstName": "Hind Rawane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539144816",
+                  "familyName": "ABDERRAHIM",
+                  "firstName": "Aya Nihal",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232539267513",
+                  "familyName": "ZERGUAOUINA",
+                  "firstName": "Ibtissam Yamina",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539198814",
+                  "familyName": "DABAB",
+                  "firstName": "Wissal",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232539299004",
+                  "familyName": "TOUER",
+                  "firstName": "Mohamed Lamine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153202",
+                  "familyName": "KAKI",
+                  "firstName": "Mohamed",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539270014",
+                  "familyName": "BACHIRI",
+                  "firstName": "Mohamed Talal Zineddine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539267805",
+                  "familyName": "SADKI",
+                  "firstName": "Douae Faiza",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212539279908",
+                  "familyName": "GOUGUE",
+                  "firstName": "Alaa Eddine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539198811",
+                  "familyName": "ELOUAIL",
+                  "firstName": "Hadjer Imane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539198417",
+                  "familyName": "MSILI",
+                  "firstName": "Abdennour Anas",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539151816",
+                  "familyName": "DJABALLAH",
+                  "firstName": "Asmaa Khadidja Hafsa",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "222539284003",
+                  "familyName": "BOUDJEMAA",
+                  "firstName": "Wiam",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539268220",
+                  "familyName": "MADI",
+                  "firstName": "Karima",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539168902",
+                  "familyName": "OMARA",
+                  "firstName": "Nouha",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153517",
+                  "familyName": "BENAISSA",
+                  "firstName": "Wissam",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539154203",
+                  "familyName": "HEMAM",
+                  "firstName": "Rachel Aya",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539158605",
+                  "familyName": "DJIDEL",
+                  "firstName": "Aya Messaouda",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539162502",
+                  "familyName": "YOUNSI",
+                  "firstName": "Ritaje Nour",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539160603",
+                  "familyName": "LEBBAZ",
+                  "firstName": "Imane Nada",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "192539269011",
+                  "familyName": "BELKHEIRI",
+                  "firstName": "Achraf Aziz Elrahmane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252537486913",
+                  "familyName": "سعداوي",
+                  "firstName": "وجيد",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "222239270905",
+                  "familyName": "DAHMANE",
+                  "firstName": "Khaled",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232339187011",
+                  "familyName": "RABOUH",
+                  "firstName": "Rafik",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232439263317",
+                  "familyName": "BENTCHICHE",
+                  "firstName": "Haizia",
+                  "mark": "",
+                  "note": ""
+                }
+              ],
+              "02": [
+                {
+                  "regNumber": "242439298014",
+                  "familyName": "BOUNIF",
+                  "firstName": "Saad Eddine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539289319",
+                  "familyName": "ALILI",
+                  "firstName": "Mostepha",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152310",
+                  "familyName": "ABDALLAOUI",
+                  "firstName": "Dania",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539154418",
+                  "familyName": "HALBAOUI",
+                  "firstName": "Mohamed",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539270315",
+                  "familyName": "CHOUIHA",
+                  "firstName": "Hadjerroumissa",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539151907",
+                  "familyName": "GUENCHOUBA",
+                  "firstName": "Anes",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539200505",
+                  "familyName": "BELAIDI",
+                  "firstName": "Rima Nourhane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153501",
+                  "familyName": "OUCHEFOUN",
+                  "firstName": "Hadjer Roumisaa",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539290802",
+                  "familyName": "BENAZO",
+                  "firstName": "Mohamed Ali",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539270320",
+                  "familyName": "DJOUDI",
+                  "firstName": "Haithem Abdennour",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539289208",
+                  "familyName": "NOUARI",
+                  "firstName": "Rachid",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539229203",
+                  "familyName": "KOUADRI",
+                  "firstName": "Layla Naima Widad",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153317",
+                  "familyName": "MOHAMMEDI",
+                  "firstName": "Naila Iness",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232539269112",
+                  "familyName": "SAIHI",
+                  "firstName": "Bouchra",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212539283919",
+                  "familyName": "KASMI",
+                  "firstName": "Haithem Abdelkader",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539207819",
+                  "familyName": "GAOUA",
+                  "firstName": "Hadil",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539154506",
+                  "familyName": "MEDDOUH",
+                  "firstName": "Mohamed Abed Rahmane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152807",
+                  "familyName": "BOUABDELLI",
+                  "firstName": "Abderrahmane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539154201",
+                  "familyName": "DAIFALLAH",
+                  "firstName": "Rihab Douaa",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539198805",
+                  "familyName": "ZIANI",
+                  "firstName": "Meriem",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539180515",
+                  "familyName": "BENNADJI",
+                  "firstName": "Souad",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539161918",
+                  "familyName": "ZABAT",
+                  "firstName": "Khaoula",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "192539252617",
+                  "familyName": "ARAREM",
+                  "firstName": "Abderrazek",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539161603",
+                  "familyName": "JAKBOUB",
+                  "firstName": "Hanine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539189116",
+                  "familyName": "RAHMANI",
+                  "firstName": "Amina Hibat Allah",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153412",
+                  "familyName": "LEMBARKI",
+                  "firstName": "Nadhira",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153502",
+                  "familyName": "TAHRI",
+                  "firstName": "Hadjer Maria",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539200115",
+                  "familyName": "BENGHARBI",
+                  "firstName": "Bouchra Amani",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "222539374219",
+                  "familyName": "BATTA",
+                  "firstName": "Basmala",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539278802",
+                  "familyName": "MAHDJOUB",
+                  "firstName": "Souhaib Salah Eddine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "23089031476",
+                  "familyName": "RABEHI",
+                  "firstName": "Abdelaziz",
+                  "mark": "",
+                  "note": ""
+                }
+              ],
+              "03": [
+                {
+                  "regNumber": "242439248908",
+                  "familyName": "GUESMI",
+                  "firstName": "Mohamed Lakhder",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242439183416",
+                  "familyName": "DAALOUS",
+                  "firstName": "Bassma",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539154817",
+                  "familyName": "MAKHLOUFI",
+                  "firstName": "Soumia",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539270412",
+                  "familyName": "BENCHERIF",
+                  "firstName": "Yanis Abdelkader",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539269214",
+                  "familyName": "TELIJI",
+                  "firstName": "Hanane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232539270703",
+                  "familyName": "KHELIFI",
+                  "firstName": "Asma Imane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539267804",
+                  "familyName": "BEN OUARITH",
+                  "firstName": "Doua",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539189408",
+                  "familyName": "MAAMERI",
+                  "firstName": "Chaima",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153602",
+                  "familyName": "LEBANI",
+                  "firstName": "Yasmine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539180601",
+                  "familyName": "NOURI",
+                  "firstName": "Chihab Eddine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232539270206",
+                  "familyName": "BEDERINA",
+                  "firstName": "Mira",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539184617",
+                  "familyName": "REGUIEG",
+                  "firstName": "Yousra",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539180808",
+                  "familyName": "SDARA",
+                  "firstName": "Hiba",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539270006",
+                  "familyName": "ABDELMALEK",
+                  "firstName": "Mohammed Achraf",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539269618",
+                  "familyName": "BOUZIDI",
+                  "firstName": "Abdel Moumen",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539267919",
+                  "familyName": "DAOUDI",
+                  "firstName": "Soundes",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539268702",
+                  "familyName": "ZENATI",
+                  "firstName": "Yasmine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153518",
+                  "familyName": "KOUIBI",
+                  "firstName": "Ouassila",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153507",
+                  "familyName": "DJERADA",
+                  "firstName": "Hadil",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539289209",
+                  "familyName": "KAHOUL",
+                  "firstName": "Said",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153411",
+                  "familyName": "BELKHEIRI",
+                  "firstName": "Nidhal Mohamed Nour Elislam",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212539279101",
+                  "familyName": "HEFFAF",
+                  "firstName": "Abbas",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539207507",
+                  "familyName": "KHITER",
+                  "firstName": "Imad Edine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539198803",
+                  "familyName": "DOUARA",
+                  "firstName": "Ghofrane Hanifa",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152701",
+                  "familyName": "ZITOUNI",
+                  "firstName": "Chahrazad Mahdjouba",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539312503",
+                  "familyName": "ARIBI",
+                  "firstName": "Nadah",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153009",
+                  "familyName": "MESSAOUDI",
+                  "firstName": "Farida Ayat Allah",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242539059703",
+                  "familyName": "BENOMRANE",
+                  "firstName": "Ikram",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539268908",
+                  "familyName": "KIDAR",
+                  "firstName": "Asma",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242439186220",
+                  "familyName": "BRAHILI",
+                  "firstName": "Manal",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232339157906",
+                  "familyName": "GHERBI",
+                  "firstName": "Meriem",
+                  "mark": "",
+                  "note": ""
+                }
+              ],
+              "01": [
+                {
+                  "regNumber": "242539270312",
+                  "familyName": "BESSINE",
+                  "firstName": "Hadjer",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539191806",
+                  "familyName": "BADRI",
+                  "firstName": "Sara",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539170009",
+                  "familyName": "LAKHNECHE",
+                  "firstName": "Youcef",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539154210",
+                  "familyName": "LEMRINI",
+                  "firstName": "Sadjda Nidhal",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539207408",
+                  "familyName": "DAHENDI",
+                  "firstName": "Ilyes Yassine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153218",
+                  "familyName": "DJAFER",
+                  "firstName": "Meriem",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232539277412",
+                  "familyName": "TOUMI",
+                  "firstName": "Zineb",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "192539278210",
+                  "familyName": "ZEROUG",
+                  "firstName": "Soulef",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539300920",
+                  "familyName": "HOUARI",
+                  "firstName": "Atiya",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539313720",
+                  "familyName": "BOUHALI",
+                  "firstName": "Nacer Eddine Elaoufi",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152313",
+                  "familyName": "KARBOUA",
+                  "firstName": "Doua Lamise",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539298805",
+                  "familyName": "KORYEB",
+                  "firstName": "Aicha",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539199005",
+                  "familyName": "FDOUL",
+                  "firstName": "Turkia",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539181016",
+                  "familyName": "BENORIF",
+                  "firstName": "Abderrahmane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539189104",
+                  "familyName": "MADOUR",
+                  "firstName": "Aya",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539181006",
+                  "familyName": "OUADANE",
+                  "firstName": "Djouhina Soulef",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539207815",
+                  "familyName": "DJOUADI",
+                  "firstName": "Leila",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539226802",
+                  "familyName": "GUECHAOUI",
+                  "firstName": "Ikram Insaf",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "182539269012",
+                  "familyName": "TAHCHI",
+                  "firstName": "Achouak Rania Menar",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539153416",
+                  "familyName": "BELAID",
+                  "firstName": "Nihad",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152816",
+                  "familyName": "DAOUDI",
+                  "firstName": "Abdel Malek",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152113",
+                  "familyName": "RAHMANI",
+                  "firstName": "Bochra Rihab",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539189707",
+                  "familyName": "BENMAICHA",
+                  "firstName": "Hadil",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539189709",
+                  "familyName": "NADDOUR",
+                  "firstName": "Hichame",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152205",
+                  "familyName": "SAFI",
+                  "firstName": "Halima",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539152418",
+                  "familyName": "BENGHARBI",
+                  "firstName": "Zakia Selsabil Arij",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "252539168211",
+                  "familyName": "GUIRA",
+                  "firstName": "Malek",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232339240020",
+                  "familyName": "AMARA",
+                  "firstName": "Ishak Wahid",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "232439297913",
+                  "familyName": "BOUDALI",
+                  "firstName": "Ikram",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "242439139419",
+                  "familyName": "LEHZIEL",
+                  "firstName": "Rihab",
+                  "mark": "",
+                  "note": ""
+                }
+              ]
+            },
+            "unassigned": [
+              {
+                "regNumber": "161639031727",
+                "familyName": "BENFATACHA",
+                "firstName": "Ibrahim",
+                "mark": "",
+                "note": ""
+              },
+              {
+                "regNumber": "171739042131",
+                "familyName": "MAMMERI",
+                "firstName": "Asmaa",
+                "mark": "",
+                "note": ""
+              },
+              {
+                "regNumber": "2302910762",
+                "familyName": "LAOUD",
+                "firstName": "Brahim",
+                "mark": "",
+                "note": ""
+              },
+              {
+                "regNumber": "161639022092",
+                "familyName": "TAHRI",
+                "firstName": "Ali",
+                "mark": "",
+                "note": ""
+              }
+            ]
           }
         },
         "examTimings": {},
