@@ -3669,7 +3669,36 @@
           }
         ],
         "supervision": {
-          "students": []
+          "students": [
+            {
+              "id": "sup_1783716726599_nel2",
+              "studentNumber": "2025-001",
+              "name": "wewrwr",
+              "level": "M2 Didactics",
+              "projectType": "dissertation",
+              "title": "ffff",
+              "supervisor": "Bouchemal A.",
+              "president": "",
+              "examiner": "",
+              "vivaDate": "",
+              "vivaTime": "",
+              "vivaRoom": ""
+            },
+            {
+              "id": "sup_1783716726599_ik6k",
+              "studentNumber": "2025-002",
+              "name": "hfghfghfgh",
+              "level": "M2 Lit/Civ",
+              "projectType": "dissertation",
+              "title": "fghfgh",
+              "supervisor": "Amraoui Z",
+              "president": "",
+              "examiner": "",
+              "vivaDate": "",
+              "vivaTime": "",
+              "vivaRoom": ""
+            }
+          ]
         },
         "students": {
           "L1": {
