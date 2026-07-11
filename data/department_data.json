@@ -601,6 +601,14 @@
                   "instructor": "Bouchemal A.",
                   "room": "Room 21",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 21",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
