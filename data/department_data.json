@@ -2231,6 +2231,15 @@
                 "level": "L2"
               },
               {
+                "room": "Room 14",
+                "date": "2026-07-11",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Civilization, Culture, and Interculturality 1",
+                "teacher": "",
+                "level": "L3"
+              },
+              {
                 "room": "Room 11",
                 "date": "2026-07-11",
                 "startTime": "10:00",
@@ -2256,6 +2265,15 @@
                 "module": "Grammar of Language of Study 3",
                 "teacher": "",
                 "level": "L2"
+              },
+              {
+                "room": "Room 14",
+                "date": "2026-07-11",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "ESP",
+                "teacher": "",
+                "level": "L3"
               },
               {
                 "room": "Room 11",
@@ -2285,6 +2303,15 @@
                 "level": "L2"
               },
               {
+                "room": "Room 14",
+                "date": "2026-07-11",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Introduction to Didactics 1",
+                "teacher": "",
+                "level": "L3"
+              },
+              {
                 "room": "Room 11",
                 "date": "2026-07-11",
                 "startTime": "12:00",
@@ -2303,6 +2330,15 @@
                 "level": "L2"
               },
               {
+                "room": "Room 14",
+                "date": "2026-07-11",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "Linguistics 1",
+                "teacher": "",
+                "level": "L3"
+              },
+              {
                 "room": "Room 11",
                 "date": "2026-07-11",
                 "startTime": "13:00",
@@ -2310,6 +2346,15 @@
                 "module": "Study of Literary Texts  1",
                 "teacher": "Bouaissa T",
                 "level": "L1"
+              },
+              {
+                "room": "Room 14",
+                "date": "2026-07-11",
+                "startTime": "13:00",
+                "endTime": "14:00",
+                "module": "Literature: Theories and Practices 1",
+                "teacher": "",
+                "level": "L3"
               },
               {
                 "room": "Room 11",
@@ -2321,6 +2366,15 @@
                 "level": "L1"
               },
               {
+                "room": "Room 14",
+                "date": "2026-07-12",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Methodology of Academic Research 1",
+                "teacher": "",
+                "level": "L3"
+              },
+              {
                 "room": "Room 11",
                 "date": "2026-07-12",
                 "startTime": "10:00",
@@ -2328,6 +2382,15 @@
                 "module": "Written Comprehension and Expression 1",
                 "teacher": "Gueriniai I.",
                 "level": "L1"
+              },
+              {
+                "room": "Room 14",
+                "date": "2026-07-12",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Translation: National Language(s) / Language of Study 1",
+                "teacher": "",
+                "level": "L3"
               }
             ]
           },
