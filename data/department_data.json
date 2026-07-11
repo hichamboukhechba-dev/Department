@@ -2023,59 +2023,11 @@
             "entries": {
               "S1": [
                 {
-                  "day": "Monday",
-                  "slotIdx": 1,
-                  "module": "African Literature",
-                  "instructor": "Bouchemal A.",
-                  "room": "Room 14",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Monday",
-                  "slotIdx": 3,
-                  "module": "Academic Writing",
-                  "instructor": "Malla N.",
-                  "room": "Room 14",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Tuesday",
-                  "slotIdx": 0,
-                  "module": "Cultural Studies",
-                  "instructor": "Boukhalkhal Y.",
-                  "room": "Room 14",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Tuesday",
-                  "slotIdx": 1,
-                  "module": "Research Skills",
-                  "instructor": "Gatcha Y",
-                  "room": "Room 24",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Tuesday",
-                  "slotIdx": 3,
-                  "module": "World Arabic Literature",
-                  "instructor": "Boukhalkhal Y.",
-                  "room": "Room 14",
-                  "group": "ALL GROUPS"
-                },
-                {
                   "day": "Tuesday",
                   "slotIdx": 4,
                   "module": "Ethics and Deontology",
                   "instructor": "Belli A.",
                   "room": "Online",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Wednesday",
-                  "slotIdx": 0,
-                  "module": "American Civilisation",
-                  "instructor": "Amraoui Z",
-                  "room": "Room 14",
                   "group": "ALL GROUPS"
                 },
                 {
