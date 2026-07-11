@@ -6,16 +6,16 @@
         "teachers": [
           {
             "kind": "Permanant Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Amraoui O",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0791576715",
             "emails": [
               "a.amraoui@univ-djelfa.dz",
               "oussamaliterature7@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
@@ -24,37 +24,37 @@
             "nameAr": "عمراوي فاطمة الزهراء",
             "phone": "0771 71 17 86",
             "emails": [
-              "fz.amraoui@univ-djelfa.dz",
+              " fz.amraoui@univ-djelfa.dz",
               "zahraamraoui@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
             "grade": "MAA",
             "name": "Barboura O.",
             "nameAr": "بربورة اسامة",
-            "phone": "",
+            "phone": null,
             "emails": [
               "oussama.barboura@univ-djelfa.dz",
               "alg.samo@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Barboura S",
-            "nameAr": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
               "s.barboura@univ-djelfa.dz",
               "barboura.sebkhaoui@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
@@ -73,7 +73,7 @@
             "kind": "Permanant Teachers",
             "grade": "MCA",
             "name": "Bouchemal A.",
-            "nameAr": "بوشمال أحمد",
+            "nameAr": " بوشمال أحمد",
             "phone": "0655646803",
             "emails": [
               "h.bouchemal@univ-djelfa.dz",
@@ -83,22 +83,22 @@
             "roleAr": "رئيس تخصص"
           },
           {
+            "kind": "Permanant Teachers",
+            "grade": null,
             "name": "Boukhechba H",
-            "nameAr": "",
-            "kind": "Permanent Teachers",
-            "grade": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
               "h.boukhechba@univ-djelfa.dz"
             ],
-            "role": "Head of Department",
+            "role": "chef de department ",
             "roleAr": "رئيس قسم"
           },
           {
             "kind": "Permanant Teachers",
             "grade": "MCB",
             "name": "Boukhalkhal Y.",
-            "nameAr": "بوخلخال يسمين",
+            "nameAr": " بوخلخال يسمين ",
             "phone": "0799592798",
             "emails": [
               "yassmine.boukhalkhal@univ-djelfa.dz",
@@ -109,16 +109,16 @@
           },
           {
             "kind": "Permanant Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Chaalani A.",
-            "nameAr": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
               "a.chaalani@univ-djelfa.dz",
               "ch.abdelkader62@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
@@ -130,15 +130,15 @@
               "khadidja.guen@univ-djelfa.dz",
               "libro_kity@yahoo.fr"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
             "grade": "MCA",
             "name": "Khadroun S.",
             "nameAr": "خضرون سالم",
-            "phone": "",
+            "phone": null,
             "emails": [
               "s.khadroune@univ-djelfa.dz",
               "salemkhad8@gmail.com"
@@ -153,43 +153,43 @@
             "nameAr": "محمدي ايمان بلقيس",
             "phone": "0558725804",
             "emails": [
-              "B.mahammedi@univ-djelfa.dz",
+              "B.mahammedi@univ-djelfa.dz ",
               "belkisthequeen@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Nourani A",
-            "nameAr": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
               "a.nourani@univ-djelfa.dz",
               "hamidnour83@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Othmani A",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0674252379",
             "emails": [
               "a.othmani@univ-djelfa.dz",
               "halimfat32@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Permanant Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Ouarniki W",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0699165414",
             "emails": [
               "ouafa.ouarniki@univ-djelfa.dz",
@@ -200,529 +200,1266 @@
           },
           {
             "kind": "Permanant Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Rahmouni A",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0541 95 79 87",
             "emails": [
-              "amelrahmouni89@gmail.com"
+              "amelrahmouni89@gmail.com "
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Charrak O.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0660777460",
             "emails": [
               "charak.k95@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Bouaissa T",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0696054545",
             "emails": [
               "toufik.bouaissa@port.ac.uk"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Bouzidi A",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0666646617",
             "emails": [
               "Kadidraws@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Gatcha Y",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0660888817",
             "emails": [
               "yacinega09@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Kherfan",
-            "nameAr": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
               "kherfanenourelhouda@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Otman W",
-            "nameAr": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
               "Wardamimi197@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Benabderahmane M",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0556617880",
             "emails": [
-              "hamoucha92@gmail.com"
+              "hamoucha92@gmail.com "
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Arour H.",
-            "nameAr": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
-              "unaflora73@gmail.com"
+              "unaflora73@gmail.com "
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Hayour",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0655867818",
             "emails": [
               "imanem280@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Dahia H.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "213 656 14 18 40",
             "emails": [
               "hadil.dahia.contact@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Saadeddine B",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0795797882",
             "emails": [
               "syousserabelkisse@yahoo.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Gueriniai I.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0659999258",
             "emails": [
               "Ikhlasse.gueriniai@univ-djelfa.dz"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Retimi C.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0783791842",
             "emails": [
               "Chiraz.retimi@univ-djelfa.dz"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Saidi H.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0796381723",
             "emails": [
               "Hadjer.saidi@univ-djelfa.dz"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Chelali M.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "797267570",
             "emails": [
               "Chelalimalak124@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Djoudi C.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0776069919",
             "emails": [
               "Chakibdjoudi12@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Zaitri M.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0655683780",
             "emails": [
               "messaoudzaitri87@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Ziouche K.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0698202002",
             "emails": [
               "Dijakhadidja3@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Guadabi N.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0557787340",
             "emails": [
               "Nardjes1288@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Belli A.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0699216166",
             "emails": [
               "Ayabelli558@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Laroussi M.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0659527774",
             "emails": [
               "Malaklaroussi67@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Saddedine Y.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0795797882",
             "emails": [
               "syousserabelkisse@yahoo.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Djalab A.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0782851819",
             "emails": [
               "Assmadjalabb@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "M'sabel A.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0698609830",
             "emails": [
               "rahimadel17@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Mokhtari A.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0657800697",
             "emails": [
               "amiralamia.mokhtari@univ-tiaret.dz"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Malla N.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "774624206",
             "emails": [
-              "mallanana44@gmail.com"
+              "mallanana44@gmail.com "
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Abbas C.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0658923317",
             "emails": [
-              "czed96@gmail.com"
+              "czed96@gmail.com "
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Younsi S.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0541821679",
             "emails": [
               "younsisarah2001@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Bendecho H.",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0778440564",
             "emails": [
               "bendechou@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Temporaray Teachers",
-            "grade": "",
+            "grade": null,
             "name": "Hassani M",
-            "nameAr": "",
-            "phone": "",
+            "nameAr": null,
+            "phone": null,
             "emails": [
-              "mariaa.hassanii@gmail.com"
+              "mariaa.hassanii@gmail.com "
             ],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           },
           {
             "kind": "Teacher",
-            "grade": "",
+            "grade": null,
             "name": "Hamidat Ali",
-            "nameAr": "",
+            "nameAr": null,
             "phone": "0659267846",
             "emails": [],
-            "role": "",
-            "roleAr": ""
+            "role": null,
+            "roleAr": null
           }
         ],
-        "delegates": [],
+        "delegates": [
+          {
+            "level": "L1",
+            "name": "rania souissi",
+            "email": "raniasouissi814@gmail.com",
+            "phone": "0665 55 80 69"
+          },
+          {
+            "level": "L2",
+            "name": "Mokhtari Soundous",
+            "email": "mokhtarisoundous@gmail.com",
+            "phone": "0784181870"
+          },
+          {
+            "level": "L3",
+            "name": "Lara Ghouissem",
+            "email": " laraghouissem@gmail.com",
+            "phone": "0791942011"
+          },
+          {
+            "level": "M1 Lit",
+            "name": "Nadji Lina Oumelkheir",
+            "email": "rihammazouz86@gmail.com",
+            "phone": "0554135768"
+          },
+          {
+            "level": "M1 Didactics",
+            "name": "Zebeir Ahmed",
+            "email": "zebeirahmed80@gmail.com",
+            "phone": "0776124526"
+          },
+          {
+            "level": "M2 Lit",
+            "name": "Ismail Boukerdenna",
+            "email": "boukersmail030303@gmail.com",
+            "phone": "0775508577"
+          },
+          {
+            "level": "M2 Didactics",
+            "name": "Abbas Soundous",
+            "email": "soundousabbas11@gmail.com",
+            "phone": null
+          }
+        ],
         "examsS1": [
           {
             "group": "L1 S1",
-            "level": "L1",
             "exams": [
               {
-                "date": "2026-07-11",
-                "module": "Civilisations of the Language of Study 1",
-                "teacher": "Abbas C.",
-                "level": "L1"
-              },
-              {
-                "date": "2026-07-13",
+                "date": "2026-01-07",
                 "module": "Grammar of Language of Study 1",
-                "teacher": "Chelali M.",
-                "level": "L1"
+                "teacher": "Barboura S"
               },
               {
-                "date": "2026-07-14",
+                "date": "2026-01-08",
                 "module": "Linguistics and Phonetics 1",
-                "teacher": "Gatcha Y",
-                "level": "L1"
+                "teacher": "Barboura O."
               },
               {
-                "date": "2026-07-15",
-                "module": "Study of Literary Texts  1",
-                "teacher": "Bouaissa T",
-                "level": "L1"
-              },
-              {
-                "date": "2026-07-15",
+                "date": "2026-01-10",
                 "module": "Written Comprehension and Expression 1",
-                "teacher": "Gueriniai I.",
-                "level": "L1"
+                "teacher": "Chaalani A."
               },
               {
-                "date": "2026-07-16",
+                "date": "2026-01-11",
                 "module": "University Study Skills 1",
-                "teacher": "Bouaissa T",
-                "level": "L1"
+                "teacher": "Guen K."
               },
               {
-                "date": "",
-                "time": "08:30 – 10:00",
-                "module": "Oral Comprehension and Expression 1",
-                "teacher": "Boukhechba H",
-                "level": "L1"
+                "date": "2026-01-13",
+                "module": "Civilisations of the Language of Study 1",
+                "teacher": "Amraoui Z"
+              },
+              {
+                "date": "2026-01-14",
+                "module": "Study of Literary Texts  1",
+                "teacher": "Amraoui O"
               }
-            ]
+            ],
+            "level": "L1"
+          },
+          {
+            "group": "L2 S1",
+            "exams": [
+              {
+                "date": "2026-01-07",
+                "module": "Linguistics and Phonetics 3",
+                "teacher": "Younsi S."
+              },
+              {
+                "date": "2026-01-08",
+                "module": "Written Comprehension and Expression 3",
+                "teacher": "Othmani A"
+              },
+              {
+                "date": "2026-01-10",
+                "module": "Civilisations of the Language of Study 3",
+                "teacher": "Bouchemal A."
+              },
+              {
+                "date": "2026-01-11",
+                "module": "University Study Skills 3",
+                "teacher": "Laroussi M."
+              },
+              {
+                "date": "2026-01-13",
+                "module": "Literatures of the Language of Study 3",
+                "teacher": "Saadeddine B"
+              },
+              {
+                "date": "2026-01-14",
+                "module": "Grammar of Language of Study 3",
+                "teacher": "Djalab A."
+              }
+            ],
+            "level": "L2"
+          },
+          {
+            "group": "L3 S1",
+            "exams": [
+              {
+                "date": "2026-01-07",
+                "module": "ESP",
+                "teacher": "Ouarniki W"
+              },
+              {
+                "date": "2026-01-08",
+                "module": "Methodology of Academic Research 1",
+                "teacher": "Boukhechba H"
+              },
+              {
+                "date": "2026-01-10",
+                "module": "Literature: Theories and Practices 1",
+                "teacher": "Mahammedi I."
+              },
+              {
+                "date": "2026-01-11",
+                "module": "Introduction to Didactics 1",
+                "teacher": "Khadroun S."
+              },
+              {
+                "date": "2026-01-13",
+                "module": "Translation: National Language(s) / Language of Study 1",
+                "teacher": "Guen K."
+              },
+              {
+                "date": "2026-01-14",
+                "module": "Civilization, Culture, and Interculturality 1",
+                "teacher": "Otman W"
+              },
+              {
+                "date": "2026-01-15",
+                "module": "Linguistics 1",
+                "teacher": "Zaitri M."
+              }
+            ],
+            "level": "L3"
+          },
+          {
+            "group": "M1 Lit/Civ S1",
+            "exams": [
+              {
+                "date": "2026-01-07",
+                "module": "Literary Theories",
+                "teacher": "Amraoui O"
+              },
+              {
+                "date": "2026-01-08",
+                "module": "Teaching Literary Texts",
+                "teacher": "Rahmouni A"
+              },
+              {
+                "date": "2026-01-10",
+                "module": "American Literature",
+                "teacher": "Benderrah A."
+              },
+              {
+                "date": "2026-01-11",
+                "module": "British Literature",
+                "teacher": "Boukhalkhal Y."
+              },
+              {
+                "date": "2026-01-13",
+                "module": "British Civilisation",
+                "teacher": "Bouchemal A."
+              },
+              {
+                "date": "2026-01-14",
+                "module": "African Studies",
+                "teacher": "Malla N."
+              },
+              {
+                "date": "2026-01-15",
+                "module": "Research Skills",
+                "teacher": "Benderrah A."
+              }
+            ],
+            "level": "M1 Lit/Civ"
+          },
+          {
+            "group": "M2 Lit/Civ S1",
+            "exams": [
+              {
+                "date": "2026-01-07",
+                "module": "Cultural Studies",
+                "teacher": "Boukhalkhal Y."
+              },
+              {
+                "date": "2026-01-08",
+                "module": "Research Skills",
+                "teacher": "Gatcha Y"
+              },
+              {
+                "date": "2026-01-10",
+                "module": "Contemporary American Literature",
+                "teacher": "Benderrah A."
+              },
+              {
+                "date": "2026-01-11",
+                "module": "African Literature",
+                "teacher": "Bouchemal A."
+              },
+              {
+                "date": "2026-01-13",
+                "module": "World Arabic Literature",
+                "teacher": "Boukhalkhal Y."
+              },
+              {
+                "date": "2026-01-14",
+                "module": "American Civilisation",
+                "teacher": "Amraoui Z"
+              },
+              {
+                "date": "2026-01-15",
+                "module": "Critical Reading",
+                "teacher": "Mahammedi I."
+              },
+              {
+                "date": "2026-01-17",
+                "module": "Contemporary British Literature",
+                "teacher": "Mahammedi I."
+              }
+            ],
+            "level": "M2 Lit/Civ"
+          },
+          {
+            "group": "M1 Didactics S1",
+            "exams": [
+              {
+                "date": "2026-01-07",
+                "module": "Sociolinguistics",
+                "teacher": "Boukhechba H"
+              },
+              {
+                "date": "2026-01-08",
+                "module": "Ethics and deontology",
+                "teacher": "Ouarniki W"
+              },
+              {
+                "date": "2026-01-10",
+                "module": "Didactics",
+                "teacher": "Khadroun S."
+              },
+              {
+                "date": "2026-01-11",
+                "module": "English for Specific Purposes",
+                "teacher": "Ouarniki W"
+              },
+              {
+                "date": "2026-01-13",
+                "module": "Second language acquisition",
+                "teacher": "Benabderahmane M"
+              },
+              {
+                "date": "2026-01-14",
+                "module": "Applied Linguistics",
+                "teacher": "Kherfan"
+              },
+              {
+                "date": "2026-01-15",
+                "module": "Interculturality",
+                "teacher": "Rahmouni A"
+              },
+              {
+                "date": "2026-01-17",
+                "module": "Research Methodology",
+                "teacher": "Gatcha Y"
+              }
+            ],
+            "level": "M1 Didactics"
+          },
+          {
+            "group": "M2 Didactics S1",
+            "exams": [
+              {
+                "date": "2026-01-07",
+                "module": "French",
+                "teacher": "Nourani A"
+              },
+              {
+                "date": "2026-01-08",
+                "module": "Research Methodology",
+                "teacher": "Gatcha Y"
+              },
+              {
+                "date": "2026-01-10",
+                "module": "Comminucation Practices",
+                "teacher": "Retimi C."
+              },
+              {
+                "date": "2026-01-11",
+                "module": "Laguage Teaching and approaches",
+                "teacher": "Ouarniki W"
+              },
+              {
+                "date": "2026-01-13",
+                "module": "Interculturality and Didactics",
+                "teacher": "Kherfan"
+              },
+              {
+                "date": "2026-01-14",
+                "module": "ESP",
+                "teacher": "Mokhtari A."
+              },
+              {
+                "date": "2026-01-15",
+                "module": "Sociodidactics",
+                "teacher": "Othmani A"
+              },
+              {
+                "date": "2026-01-17",
+                "module": "Writing  a dissertation",
+                "teacher": "Abbas C."
+              },
+              {
+                "date": "2026-01-18",
+                "module": "Educational psychology",
+                "teacher": "Mokhtari A."
+              }
+            ],
+            "level": "M2 Didactics"
           }
         ],
-        "examsS2": [],
+        "examsS2": [
+          {
+            "group": "L1 S2",
+            "exams": [
+              {
+                "date": "2026-05-09",
+                "module": "Grammar of Language of Study 1",
+                "teacher": "Barboura S"
+              },
+              {
+                "date": "2026-05-10",
+                "module": "Linguistics and Phonetics 1",
+                "teacher": "Barboura O."
+              },
+              {
+                "date": "2026-05-11",
+                "module": "Written Comprehension and Expression 1",
+                "teacher": "Chaalani A."
+              },
+              {
+                "date": "2026-05-12",
+                "module": "University Study Skills 1",
+                "teacher": "Guen K."
+              },
+              {
+                "date": "2026-05-13",
+                "module": "Civilisations of the Language of Study 1",
+                "teacher": "Amraoui Z"
+              },
+              {
+                "date": "2026-05-14",
+                "module": "Study of Literary Texts  1",
+                "teacher": "Amraoui O"
+              }
+            ],
+            "level": "L1"
+          },
+          {
+            "group": "L2 S2",
+            "exams": [
+              {
+                "date": "2026-05-09",
+                "module": "Literatures of the Language of Study 3",
+                "teacher": "Saadeddine B"
+              },
+              {
+                "date": "2026-05-10",
+                "module": "Written Comprehension and Expression 3",
+                "teacher": "Othmani A"
+              },
+              {
+                "date": "2026-05-11",
+                "module": "Grammar of Language of Study 3",
+                "teacher": "Chaalani A."
+              },
+              {
+                "date": "2026-05-12",
+                "module": "Civilisations of the Language of Study 3",
+                "teacher": "Bouchemal A."
+              },
+              {
+                "date": "2026-05-13",
+                "module": "University Study Skills 3",
+                "teacher": "Boukhechba H"
+              },
+              {
+                "date": "2026-05-14",
+                "module": "Linguistics and Phonetics 3",
+                "teacher": "Charrak O."
+              }
+            ],
+            "level": "L2"
+          },
+          {
+            "group": "L3 S2",
+            "exams": [
+              {
+                "date": "2026-05-09",
+                "module": "Methodology of Academic Research 1",
+                "teacher": "Boukhechba H"
+              },
+              {
+                "date": "2026-05-10",
+                "module": "ESP",
+                "teacher": "Ouarniki W"
+              },
+              {
+                "date": "2026-05-11",
+                "module": "Literature: Theories and Practices 1",
+                "teacher": "Mahammedi I."
+              },
+              {
+                "date": "2026-05-12",
+                "module": "Translation: National Language(s) / Language of Study 1",
+                "teacher": "Guen K."
+              },
+              {
+                "date": "2026-05-13",
+                "module": "Linguistics 1",
+                "teacher": "Charrak O."
+              },
+              {
+                "date": "2026-05-14",
+                "module": "Civilization, Culture, and Interculturality 1",
+                "teacher": "Otman W"
+              },
+              {
+                "date": "2026-05-16",
+                "module": "Introduction to Didactics 1",
+                "teacher": "Khadroun S."
+              }
+            ],
+            "level": "L3"
+          },
+          {
+            "group": "M1 Lit/Civ S2",
+            "exams": [
+              {
+                "date": "2026-05-09",
+                "module": "Academic Writing",
+                "teacher": "Mahammedi I."
+              },
+              {
+                "date": "2026-05-10",
+                "module": "Literary Theories",
+                "teacher": "Amraoui O"
+              },
+              {
+                "date": "2026-05-11",
+                "module": "Research Skills",
+                "teacher": "Benderrah A."
+              },
+              {
+                "date": "2026-05-12",
+                "module": "British Literature",
+                "teacher": "Boukhalkhal Y."
+              },
+              {
+                "date": "2026-05-13",
+                "module": "African Studies",
+                "teacher": "Rahmouni A"
+              },
+              {
+                "date": "2026-05-14",
+                "module": "Philosophical trends",
+                "teacher": "Boukhalkhal Y."
+              },
+              {
+                "date": "2026-05-16",
+                "module": "British Civilisation",
+                "teacher": "Bouchemal A."
+              },
+              {
+                "date": "2026-05-17",
+                "module": "American Literature",
+                "teacher": "Benderrah A."
+              }
+            ],
+            "level": "M1 Lit/Civ"
+          },
+          {
+            "group": "M2 Lit/Civ S2",
+            "exams": [
+              {
+                "date": "2026-05-09",
+                "module": "Sociolinguistics",
+                "teacher": "Charrak O."
+              },
+              {
+                "date": "2026-05-10",
+                "module": "Didactics",
+                "teacher": "Khadroun S."
+              },
+              {
+                "date": "2026-05-11",
+                "module": "Didactics of academic writing",
+                "teacher": "Benderrah A."
+              },
+              {
+                "date": "2026-05-12",
+                "module": "Applied Linguistics",
+                "teacher": "Kherfan"
+              },
+              {
+                "date": "2026-05-13",
+                "module": "English for Specific Purposes",
+                "teacher": "Ouarniki W"
+              },
+              {
+                "date": "2026-05-14",
+                "module": "Interculturality",
+                "teacher": "Rahmouni A"
+              },
+              {
+                "date": "2026-05-15",
+                "module": "Research Methodology",
+                "teacher": "Gatcha Y"
+              },
+              {
+                "date": "2026-05-16",
+                "module": "Translation",
+                "teacher": "Norani"
+              }
+            ],
+            "level": "M2 Lit/Civ"
+          }
+        ],
         "timetables": {
           "L1": {
             "slots": [
               "08:30-10:00",
               "10:00-11:30",
               "12:30-14:00",
-              "14:00-15:30"
+              "14-15:30"
             ],
             "entries": {
               "S1": [
                 {
-                  "day": "Sunday",
+                  "day": "",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "",
                   "slotIdx": 1,
                   "module": "Civilisations of the Language of Study 1",
-                  "instructor": "Abbas C.",
-                  "room": "Room 11",
-                  "group": "GROUP 1"
+                  "instructor": "Amraoui Z",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 },
                 {
-                  "day": "Sunday",
-                  "slotIdx": 0,
-                  "module": "Foreign Language(s) 1",
-                  "instructor": "Zaitri M.",
-                  "room": "Amphi B",
-                  "group": "GROUP 1"
+                  "day": "",
+                  "slotIdx": 3,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 },
                 {
-                  "day": "Sunday",
-                  "slotIdx": 2,
-                  "module": "Oral Comprehension and Expression 1",
-                  "instructor": "Boukhechba H",
-                  "room": "Amphi B",
-                  "group": ""
-                },
-                {
-                  "day": "Monday",
-                  "slotIdx": 0,
+                  "day": "",
+                  "slotIdx": 4,
                   "module": "Grammar of Language of Study 1",
-                  "instructor": "Chelali M.",
-                  "room": "Amphi B",
-                  "group": ""
-                },
-                {
-                  "day": "Monday",
-                  "slotIdx": 2,
-                  "module": "ICT and E-Learning 1",
-                  "instructor": "Gatcha Y",
-                  "room": "Amphi B",
-                  "group": ""
-                },
-                {
-                  "day": "Monday",
-                  "slotIdx": 1,
-                  "module": "Reading and Text Analysis 1",
-                  "instructor": "Djoudi C.",
-                  "room": "Amphi B",
-                  "group": ""
+                  "instructor": "Barboura S",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 },
                 {
                   "day": "Sunday",
                   "slotIdx": 0,
                   "module": "Linguistics and Phonetics 1",
-                  "instructor": "Gatcha Y",
+                  "instructor": "Barboura O.",
                   "room": "Room 23",
-                  "group": ""
+                  "group": "GROUP 3"
                 },
                 {
-                  "day": "Tuesday",
-                  "slotIdx": 0,
-                  "module": "Study of Literary Texts  1",
-                  "instructor": "Bouaissa T",
-                  "room": "",
-                  "group": ""
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
                 },
                 {
-                  "day": "Tuesday",
-                  "slotIdx": 0,
+                  "day": "Sunday",
+                  "slotIdx": 3,
                   "module": "Written Comprehension and Expression 1",
-                  "instructor": "Gueriniai I.",
-                  "room": "",
-                  "group": ""
+                  "instructor": "Chaalani A.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 4,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
                 },
                 {
                   "day": "Sunday",
                   "slotIdx": 0,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 3,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 4,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 3,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 4,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 4,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 4,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 4,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
                   "module": "University Study Skills 1",
-                  "instructor": "Bouaissa T",
-                  "room": "",
-                  "group": ""
+                  "instructor": "Guen K.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 21",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "University Study Skills 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 21",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "University Study Skills 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "University Study Skills 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 22",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 22",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 4,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
                 }
               ],
               "S2": []
@@ -733,10 +1470,219 @@
               "08:30-10:00",
               "10:00-11:30",
               "12:30-14:00",
-              "14:00-15:30"
+              "14-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Reading and Text Analysis 3",
+                  "instructor": "Guadabi N.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Foreign Language(s) 3",
+                  "instructor": "Nourani A",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 3",
+                  "instructor": "Othmani A",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Literatures of the Language of Study 3",
+                  "instructor": "Saadeddine B",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Written Comprehension and Expression 3",
+                  "instructor": "Othmani A",
+                  "room": "Room 26",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 4,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "Djalab A.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Literatures of the Language of Study 3",
+                  "instructor": "Saadeddine B",
+                  "room": "Room 25",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Written Comprehension and Expression 3",
+                  "instructor": "Othmani A",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "Djalab A.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 4,
+                  "module": "Written Comprehension and Expression 3",
+                  "instructor": "Othmani A",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "University Study Skills 3",
+                  "instructor": "Laroussi M.",
+                  "room": "Room 26",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Civilisations of the Language of Study 3",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Oral Comprehension and Expression 3",
+                  "instructor": "Chelali M.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "Charrak O.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Civilisations of the Language of Study 3",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 25",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "University Study Skills 3",
+                  "instructor": "Laroussi M.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "Charrak O.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "Oral Comprehension and Expression 3",
+                  "instructor": "Chelali M.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "Charrak O.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "Djalab A.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Reading and Text Analysis 3",
+                  "instructor": "Guadabi N.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 4,
+                  "module": "Digital Literatures 1",
+                  "instructor": "M'sabel A.",
+                  "room": "Room 26",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "Djalab A.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "Charrak O.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Digital Literatures 1",
+                  "instructor": "M'sabel A.",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 4,
+                  "module": "Reading and Text Analysis 3",
+                  "instructor": "Guadabi N.",
+                  "room": "Room 25",
+                  "group": "GROUP 3 + 4"
+                }
+              ],
               "S2": []
             }
           },
@@ -745,10 +1691,155 @@
               "08:30-10:00",
               "10:00-11:30",
               "12:30-14:00",
-              "14:00-15:30"
+              "14-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Introduction to Didactics 1",
+                  "instructor": "Khadroun S.",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Literature: Theories and Practices 1",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Methodology of Academic Research 1",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Translation: National Language(s) / Language of Study 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Reading and Writing Workshop 1",
+                  "instructor": "Ziouche K.",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 4,
+                  "module": "Civilization, Culture, and Interculturality 1",
+                  "instructor": "Otman W",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Translation: National Language(s) / Language of Study 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Methodology of Academic Research 1",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Civilization, Culture, and Interculturality 1",
+                  "instructor": "Otman W",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 4,
+                  "module": "Reading and Writing Workshop 1",
+                  "instructor": "Ziouche K.",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Oral Communication Practices 1",
+                  "instructor": "Retimi C.",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "ESP",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Linguistics 1",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "Entrepreneurship 1",
+                  "instructor": "Laroussi M.",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "ESP",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Oral Communication Practices 1",
+                  "instructor": "Retimi C.",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Entrepreneurship 1",
+                  "instructor": "Laroussi M.",
+                  "room": "Room 11",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "Linguistics 1",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 11",
+                  "group": "GROUP 2"
+                }
+              ],
               "S2": []
             }
           },
@@ -756,11 +1847,83 @@
             "slots": [
               "08:30-10:00",
               "10:00-11:30",
-              "12:30-14:00",
-              "14:00-15:30"
+              "12:30-14:00"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Programation Informatique",
+                  "instructor": "Bendecho H.",
+                  "room": "Online",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Philosophical Trends",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "British Literature",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "African Studies",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Academic Writing",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "British Civilisation",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "American Literature",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Literary Theories",
+                  "instructor": "Amraoui O",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Research Skills",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 13",
+                  "group": "ALL GROUPS"
+                }
+              ],
               "S2": []
             }
           },
@@ -772,7 +1935,80 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Programation Informatique",
+                  "instructor": "Bendecho H.",
+                  "room": "Online",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Research Methodology",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Interculturality",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Applied Linguistics",
+                  "instructor": "Kherfan",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "English for Specific Purposes",
+                  "instructor": "Ouarniki W",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Didactics",
+                  "instructor": "Khadroun S.",
+                  "room": "Room 14",
+                  "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Didactics of Academic Writing and Reading",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Sociolinguistics",
+                  "instructor": "Charrak O.",
+                  "room": "Room 24",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 4,
+                  "module": "Translation",
+                  "instructor": "Abbas C.",
+                  "room": "Room 24",
+                  "group": "ALL GROUPS"
+                }
+              ],
               "S2": []
             }
           },
@@ -784,7 +2020,88 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Contemporary American Literature",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "African Literature",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Academic Writing",
+                  "instructor": "Malla N.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Cultural Studies",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Research Skills",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 24",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "World Arabic Literature",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "Ethics and Deontology",
+                  "instructor": "Belli A.",
+                  "room": "Online",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "American Civilisation",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Contemporary British Literature",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Critical Reading",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 14",
+                  "group": "ALL GROUPS"
+                }
+              ],
               "S2": []
             }
           },
@@ -796,7 +2113,88 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "ESP",
+                  "instructor": "Mokhtari A.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Educational psychology",
+                  "instructor": "Mokhtari A.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "French",
+                  "instructor": "Nourani A",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Interculturality and Didactics",
+                  "instructor": "Kherfan",
+                  "room": "Room 23",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Research Methodology",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 24",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Laguage Teaching and approaches",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 23",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 4,
+                  "module": "Comminucation Practices",
+                  "instructor": "Retimi C.",
+                  "room": "Room 23",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Writing  a dissertation",
+                  "instructor": "Abbas C",
+                  "room": "Room 23",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Sociodidactics",
+                  "instructor": "Othmani A",
+                  "room": "Room 23",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "T.I.C.E",
+                  "instructor": "Hayour",
+                  "room": "Room 23",
+                  "group": "ALL GROUPS"
+                }
+              ],
               "S2": []
             }
           }
@@ -879,7 +2277,7 @@
                 "lecture": "-",
                 "td": "1h00",
                 "total": "15h00",
-                "exam": 0,
+                "exam": null,
                 "ca": 100
               },
               {
@@ -890,7 +2288,7 @@
                 "lecture": "-",
                 "td": "1h00",
                 "total": "15h00",
-                "exam": 0,
+                "exam": null,
                 "ca": 100
               },
               {
@@ -912,7 +2310,7 @@
                 "lecture": "-",
                 "td": "1h30",
                 "total": "22h30",
-                "exam": 0,
+                "exam": null,
                 "ca": 100
               }
             ]
@@ -2165,10 +3563,48 @@
           "Amphi B",
           "Online"
         ],
+        "replacementExams": {
+          "S1": {
+            "roomLevels": {},
+            "exams": []
+          },
+          "S2": {
+            "roomLevels": {},
+            "exams": []
+          }
+        },
         "studentCounts": [
           {
+            "level": "FIRST YEAR",
+            "count": 132
+          },
+          {
+            "level": "SECOND YEAR",
+            "count": 132
+          },
+          {
+            "level": "THIRD YEAR",
+            "count": 108
+          },
+          {
+            "level": "MASTER 1 LIT CIV",
+            "count": 48
+          },
+          {
+            "level": "MASTER 2 LIT CIV",
+            "count": 11
+          },
+          {
+            "level": "MASTER 1 DIDACTICS",
+            "count": 107
+          },
+          {
+            "level": "MASTER 2 DIDACTICS",
+            "count": 67
+          },
+          {
             "level": "L1",
-            "count": 121
+            "count": 0
           },
           {
             "level": "L2",
@@ -2179,2339 +3615,65 @@
             "count": 0
           },
           {
-            "level": "M1 Lit/Civ",
-            "count": 0
-          },
-          {
-            "level": "M2 Lit/Civ",
-            "count": 11
-          },
-          {
             "level": "M1 Didactics",
             "count": 0
           },
           {
+            "level": "M1 Lit/Civ",
+            "count": 0
+          },
+          {
             "level": "M2 Didactics",
-            "count": 67
+            "count": 0
+          },
+          {
+            "level": "M2 Lit/Civ",
+            "count": 0
           }
         ],
-        "roomUsage": [],
-        "replacementExams": {
-          "S1": {
-            "roomLevels": {
-              "Room 11": "L1 GROUP 01"
-            },
-            "exams": [
-              {
-                "room": "Room 11",
-                "date": "2026-07-11",
-                "startTime": "09:00",
-                "endTime": "10:00",
-                "module": "Civilisations of the Language of Study 1",
-                "teacher": "Abbas C.",
-                "level": "L1"
-              },
-              {
-                "room": "Room 11",
-                "date": "2026-07-11",
-                "startTime": "10:00",
-                "endTime": "11:00",
-                "module": "Grammar of Language of Study 1",
-                "teacher": "Chelali M.",
-                "level": "L1"
-              }
-            ]
+        "roomUsage": [
+          {
+            "room": "Room 21",
+            "slot1": "FIRST YEAR  G1",
+            "slot2": "SECOND YEAR  G1"
           },
-          "S2": {
-            "roomLevels": {},
-            "exams": []
+          {
+            "room": "Room 22",
+            "slot1": "FIRST YEAR  G2",
+            "slot2": "SECOND YEAR  G2"
+          },
+          {
+            "room": "Room 23",
+            "slot1": "FIRST YEAR G3",
+            "slot2": "SECOND YEAR  G3"
+          },
+          {
+            "room": "Room 24",
+            "slot1": "FIRST YEAR  G4",
+            "slot2": "SECOND YEAR  G4"
+          },
+          {
+            "room": "Room 25",
+            "slot1": "MASTER TWO DIDACTICS  G1",
+            "slot2": "MASTER ONE / LIT CIV G1"
+          },
+          {
+            "room": "Room 26",
+            "slot1": "MASTER TWO DIDACTICS   G2",
+            "slot2": "MASTER ONE / LIT CIV G2"
+          },
+          {
+            "room": "Amphi B",
+            "slot1": "MASTER ONE DIDACTICS  ALL G/ MASTER TWO LIT CIV ",
+            "slot2": "THIRD YEAR "
           }
-        },
+        ],
         "supervision": {
-          "students": [
-            {
-              "id": "sup_1783769510962_8y32",
-              "studentNumber": "2026-001",
-              "name": "BOUKHECHBA HICHAM",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "jjjjjjjjjjjjjj",
-              "supervisor": "Boukhechba H",
-              "president": "Amraoui Z",
-              "examiner": "Amraoui O",
-              "examiner2": "",
-              "vivaDate": "2026-07-10",
-              "vivaTime": "01:00",
-              "vivaRoom": "Room 11",
-              "vivaMark": "",
-              "vivaDecision": "Accepted",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_n1ow",
-              "studentNumber": "191939020225",
-              "name": "BEN LAHRECH Soundos Takoua Asmaa",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_wekp",
-              "studentNumber": "202039026640",
-              "name": "SBAA Zouhra",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_jx91",
-              "studentNumber": "212139028013",
-              "name": "NOUIOUA Chahinez",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_upcc",
-              "studentNumber": "212139026532",
-              "name": "AYAD Hadjer",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_97sm",
-              "studentNumber": "212139037926",
-              "name": "MEBKHOUTA Siham",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_or15",
-              "studentNumber": "212139021087",
-              "name": "ABBAS Soundous Fatima",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_dsdx",
-              "studentNumber": "212139021083",
-              "name": "SMAIL Zahra",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_1weh",
-              "studentNumber": "212139031753",
-              "name": "DJEFFAL Ikram",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_dwqk",
-              "studentNumber": "202039017733",
-              "name": "BELKHEIRI Ikram",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_a7zn",
-              "studentNumber": "191939025633",
-              "name": "BEN MOHAMED Hanane",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_aq55",
-              "studentNumber": "2002914971",
-              "name": "BENYAHIA Younes",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_yqew",
-              "studentNumber": "202039020452",
-              "name": "MESSELMI Hadjer",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ai9p",
-              "studentNumber": "212139054106",
-              "name": "ZOUMRI Amina",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_fcz6",
-              "studentNumber": "212139021071",
-              "name": "DEKHENISSA Khaoula",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_mvjv",
-              "studentNumber": "162139044669",
-              "name": "RAHMOUNE Amina",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_r1d6",
-              "studentNumber": "212139031155",
-              "name": "ORABI Amira Fatiha",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_xwu8",
-              "studentNumber": "202039020381",
-              "name": "KHELID Nossiba Manar",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_txuu",
-              "studentNumber": "212139028204",
-              "name": "AMARI Ibrahim Khalil",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_eldc",
-              "studentNumber": "202032041298",
-              "name": "ABOUDI Fairouz",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_41t0",
-              "studentNumber": "161639043967",
-              "name": "LAKHNECHE Mohamed Amine",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_u9yc",
-              "studentNumber": "171739007606",
-              "name": "BEKKI Hosena",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_oib0",
-              "studentNumber": "181839040337",
-              "name": "LAHOUAL Fares",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_rie9",
-              "studentNumber": "161639018079",
-              "name": "HAMDI Sabah Hanaa",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_knft",
-              "studentNumber": "191939018483",
-              "name": "AIDI Dalal",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ki4j",
-              "studentNumber": "202039031346",
-              "name": "BEN RIM Oum El Khir",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_2rcx",
-              "studentNumber": "161739043845",
-              "name": "TAMRI Messaouda",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ce96",
-              "studentNumber": "162039041411",
-              "name": "ELOTTRI Khalida",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_6v65",
-              "studentNumber": "202039025987",
-              "name": "FDOUL Elzohra",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_sgcp",
-              "studentNumber": "212139025190",
-              "name": "GACEM Achouak",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_58mv",
-              "studentNumber": "202039024101",
-              "name": "MERZOUGUI Achwak",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_bhtl",
-              "studentNumber": "161639017749",
-              "name": "BOUAFIA Oumlkhir Amani",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_wcuh",
-              "studentNumber": "161639017902",
-              "name": "BOURAGBA Othman",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_v3x2",
-              "studentNumber": "181939037769",
-              "name": "BAID ELKOUL Ghania",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_6es8",
-              "studentNumber": "202035072659",
-              "name": "ACHOUR Zahra",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_sm3o",
-              "studentNumber": "171739044013",
-              "name": "BACHRAOUI Noureddine",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_70we",
-              "studentNumber": "212139028073",
-              "name": "KHADIR Hiba manal",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_q36x",
-              "studentNumber": "24129014435",
-              "name": "شين موسى",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_8u1r",
-              "studentNumber": "212139021056",
-              "name": "BEN DJEDOU Bouchra Messaouda",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_w7vj",
-              "studentNumber": "191939033341",
-              "name": "BOUREKDA Houcine Saddam",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_y4rl",
-              "studentNumber": "212139026456",
-              "name": "MEKKI Halima",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_mufp",
-              "studentNumber": "212139027601",
-              "name": "AROUR Khadidja",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_wano",
-              "studentNumber": "212139022487",
-              "name": "ZEBEIR Douaa Malika",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_h8uz",
-              "studentNumber": "182139013296",
-              "name": "BAKRIA Mahmoud",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ns3g",
-              "studentNumber": "181539041362",
-              "name": "SAILA Youcef",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_mx49",
-              "studentNumber": "24079037913",
-              "name": "LAHRECHE Yacine",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_5dkg",
-              "studentNumber": "212139021006",
-              "name": "ELOUD Naima Wissam",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_dxod",
-              "studentNumber": "212139020799",
-              "name": "LEMRINI Djamila",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_u0eh",
-              "studentNumber": "212139021073",
-              "name": "BOUAMARA Kheira",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_xb5p",
-              "studentNumber": "192039043595",
-              "name": "DELMADJI Meriem",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_cm81",
-              "studentNumber": "182039034025",
-              "name": "OMRANE Zineb",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ff2d",
-              "studentNumber": "161639034985",
-              "name": "FEDDA Zakaria",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_8f0d",
-              "studentNumber": "181839036491",
-              "name": "BOUABDELLI Fatma Imen",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_flpy",
-              "studentNumber": "22089011339",
-              "name": "CHELALI Mohamed Lamine",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_r868",
-              "studentNumber": "191939018440",
-              "name": "KRIOUA Aya Imene",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_3xkd",
-              "studentNumber": "212139026440",
-              "name": "BEN AICHA Imane",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_kdok",
-              "studentNumber": "202039027665",
-              "name": "MESSIKINE Bouchra Oumelkheir",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_vu1n",
-              "studentNumber": "212139030953",
-              "name": "MESSELEM Aymen",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_5iqr",
-              "studentNumber": "202039021959",
-              "name": "BEN MAIDI Samah Nour Elhouda",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_h4wv",
-              "studentNumber": "161639028415",
-              "name": "SENGRA Tarek Yassine",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_urjn",
-              "studentNumber": "202039033962",
-              "name": "DAIOUAL Ziane",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ddq9",
-              "studentNumber": "258940906",
-              "name": "MOHAMED FADHEL Ahmadou Sidi",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ucz2",
-              "studentNumber": "151538076214",
-              "name": "DJIDEL Rabah",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_e2tc",
-              "studentNumber": "181539019728",
-              "name": "HALBAOUI Taha",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ce0q",
-              "studentNumber": "191939018454",
-              "name": "LAGOUN Belkacem",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_hppc",
-              "studentNumber": "171839040404",
-              "name": "TAHRI Nabila",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_v7si",
-              "studentNumber": "23109017685",
-              "name": "ZIANI Mebkhouta",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_bond",
-              "studentNumber": "21109034906",
-              "name": "خرشي ياسين",
-              "level": "M2 Didactics",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ok8q",
-              "studentNumber": "182139044044",
-              "name": "SADEDDINE Hala Amani",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_nujt",
-              "studentNumber": "212139020759",
-              "name": "BOUKERDENNA Ismail",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_8lz9",
-              "studentNumber": "212139028019",
-              "name": "KHADIR Abdelrahmane",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_yy2l",
-              "studentNumber": "202039017903",
-              "name": "FECIH Mohamed Issmail",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_y58y",
-              "studentNumber": "162139044806",
-              "name": "MAMMERI Mohamed Abdelfatah",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ece6",
-              "studentNumber": "212139044950",
-              "name": "KAMEL Salah Eddine",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460248_ndl9",
-              "studentNumber": "212139020935",
-              "name": "MAKAR Maria",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460249_il44",
-              "studentNumber": "2498815495",
-              "name": "M ZARA Messaoud",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460249_bl3w",
-              "studentNumber": "212139048208",
-              "name": "BENTCHICH Yamna",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460249_toj2",
-              "studentNumber": "181839043766",
-              "name": "BOURZGUE Djilani",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            },
-            {
-              "id": "sup_1783772460249_ohkg",
-              "studentNumber": "212139022645",
-              "name": "BACHAR Sara",
-              "level": "M2 Lit/Civ",
-              "projectType": "dissertation",
-              "title": "",
-              "supervisor": "",
-              "president": "",
-              "examiner": "",
-              "examiner2": "",
-              "vivaDate": "",
-              "vivaTime": "",
-              "vivaRoom": "",
-              "vivaMark": "",
-              "vivaDecision": "",
-              "vivaComments": ""
-            }
-          ]
+          "students": []
         },
         "students": {
           "L1": {
-            "groups": {
-              "04": [
-                {
-                  "regNumber": "232339139619",
-                  "familyName": "SOUISSI",
-                  "firstName": "Rania",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242439303405",
-                  "familyName": "KHENNICHE",
-                  "firstName": "Mohamed Nadhir",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539268920",
-                  "familyName": "DJAROUN",
-                  "firstName": "Ikram Maroua",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539180709",
-                  "familyName": "GHEZAL",
-                  "firstName": "Messaouda",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153513",
-                  "familyName": "LAHRECHE",
-                  "firstName": "Hind Rawane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539144816",
-                  "familyName": "ABDERRAHIM",
-                  "firstName": "Aya Nihal",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232539267513",
-                  "familyName": "ZERGUAOUINA",
-                  "firstName": "Ibtissam Yamina",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539198814",
-                  "familyName": "DABAB",
-                  "firstName": "Wissal",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232539299004",
-                  "familyName": "TOUER",
-                  "firstName": "Mohamed Lamine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153202",
-                  "familyName": "KAKI",
-                  "firstName": "Mohamed",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539270014",
-                  "familyName": "BACHIRI",
-                  "firstName": "Mohamed Talal Zineddine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539267805",
-                  "familyName": "SADKI",
-                  "firstName": "Douae Faiza",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212539279908",
-                  "familyName": "GOUGUE",
-                  "firstName": "Alaa Eddine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539198811",
-                  "familyName": "ELOUAIL",
-                  "firstName": "Hadjer Imane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539198417",
-                  "familyName": "MSILI",
-                  "firstName": "Abdennour Anas",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539151816",
-                  "familyName": "DJABALLAH",
-                  "firstName": "Asmaa Khadidja Hafsa",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "222539284003",
-                  "familyName": "BOUDJEMAA",
-                  "firstName": "Wiam",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539268220",
-                  "familyName": "MADI",
-                  "firstName": "Karima",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539168902",
-                  "familyName": "OMARA",
-                  "firstName": "Nouha",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153517",
-                  "familyName": "BENAISSA",
-                  "firstName": "Wissam",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539154203",
-                  "familyName": "HEMAM",
-                  "firstName": "Rachel Aya",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539158605",
-                  "familyName": "DJIDEL",
-                  "firstName": "Aya Messaouda",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539162502",
-                  "familyName": "YOUNSI",
-                  "firstName": "Ritaje Nour",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539160603",
-                  "familyName": "LEBBAZ",
-                  "firstName": "Imane Nada",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "192539269011",
-                  "familyName": "BELKHEIRI",
-                  "firstName": "Achraf Aziz Elrahmane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252537486913",
-                  "familyName": "سعداوي",
-                  "firstName": "وجيد",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "222239270905",
-                  "familyName": "DAHMANE",
-                  "firstName": "Khaled",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232339187011",
-                  "familyName": "RABOUH",
-                  "firstName": "Rafik",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232439263317",
-                  "familyName": "BENTCHICHE",
-                  "firstName": "Haizia",
-                  "mark": "",
-                  "note": ""
-                }
-              ],
-              "02": [
-                {
-                  "regNumber": "242439298014",
-                  "familyName": "BOUNIF",
-                  "firstName": "Saad Eddine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539289319",
-                  "familyName": "ALILI",
-                  "firstName": "Mostepha",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152310",
-                  "familyName": "ABDALLAOUI",
-                  "firstName": "Dania",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539154418",
-                  "familyName": "HALBAOUI",
-                  "firstName": "Mohamed",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539270315",
-                  "familyName": "CHOUIHA",
-                  "firstName": "Hadjerroumissa",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539151907",
-                  "familyName": "GUENCHOUBA",
-                  "firstName": "Anes",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539200505",
-                  "familyName": "BELAIDI",
-                  "firstName": "Rima Nourhane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153501",
-                  "familyName": "OUCHEFOUN",
-                  "firstName": "Hadjer Roumisaa",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539290802",
-                  "familyName": "BENAZO",
-                  "firstName": "Mohamed Ali",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539270320",
-                  "familyName": "DJOUDI",
-                  "firstName": "Haithem Abdennour",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539289208",
-                  "familyName": "NOUARI",
-                  "firstName": "Rachid",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539229203",
-                  "familyName": "KOUADRI",
-                  "firstName": "Layla Naima Widad",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153317",
-                  "familyName": "MOHAMMEDI",
-                  "firstName": "Naila Iness",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232539269112",
-                  "familyName": "SAIHI",
-                  "firstName": "Bouchra",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212539283919",
-                  "familyName": "KASMI",
-                  "firstName": "Haithem Abdelkader",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539207819",
-                  "familyName": "GAOUA",
-                  "firstName": "Hadil",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539154506",
-                  "familyName": "MEDDOUH",
-                  "firstName": "Mohamed Abed Rahmane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152807",
-                  "familyName": "BOUABDELLI",
-                  "firstName": "Abderrahmane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539154201",
-                  "familyName": "DAIFALLAH",
-                  "firstName": "Rihab Douaa",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539198805",
-                  "familyName": "ZIANI",
-                  "firstName": "Meriem",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539180515",
-                  "familyName": "BENNADJI",
-                  "firstName": "Souad",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539161918",
-                  "familyName": "ZABAT",
-                  "firstName": "Khaoula",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "192539252617",
-                  "familyName": "ARAREM",
-                  "firstName": "Abderrazek",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539161603",
-                  "familyName": "JAKBOUB",
-                  "firstName": "Hanine",
-                  "mark": "",
-                  "note": ""
-                }
-              ],
-              "03": [
-                {
-                  "regNumber": "242439248908",
-                  "familyName": "GUESMI",
-                  "firstName": "Mohamed Lakhder",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242439183416",
-                  "familyName": "DAALOUS",
-                  "firstName": "Bassma",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539154817",
-                  "familyName": "MAKHLOUFI",
-                  "firstName": "Soumia",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539270412",
-                  "familyName": "BENCHERIF",
-                  "firstName": "Yanis Abdelkader",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539269214",
-                  "familyName": "TELIJI",
-                  "firstName": "Hanane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232539270703",
-                  "familyName": "KHELIFI",
-                  "firstName": "Asma Imane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539267804",
-                  "familyName": "BEN OUARITH",
-                  "firstName": "Doua",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539189408",
-                  "familyName": "MAAMERI",
-                  "firstName": "Chaima",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153602",
-                  "familyName": "LEBANI",
-                  "firstName": "Yasmine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539180601",
-                  "familyName": "NOURI",
-                  "firstName": "Chihab Eddine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232539270206",
-                  "familyName": "BEDERINA",
-                  "firstName": "Mira",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539184617",
-                  "familyName": "REGUIEG",
-                  "firstName": "Yousra",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539180808",
-                  "familyName": "SDARA",
-                  "firstName": "Hiba",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539270006",
-                  "familyName": "ABDELMALEK",
-                  "firstName": "Mohammed Achraf",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539269618",
-                  "familyName": "BOUZIDI",
-                  "firstName": "Abdel Moumen",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539267919",
-                  "familyName": "DAOUDI",
-                  "firstName": "Soundes",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539268702",
-                  "familyName": "ZENATI",
-                  "firstName": "Yasmine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153518",
-                  "familyName": "KOUIBI",
-                  "firstName": "Ouassila",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153507",
-                  "familyName": "DJERADA",
-                  "firstName": "Hadil",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539289209",
-                  "familyName": "KAHOUL",
-                  "firstName": "Said",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153411",
-                  "familyName": "BELKHEIRI",
-                  "firstName": "Nidhal Mohamed Nour Elislam",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212539279101",
-                  "familyName": "HEFFAF",
-                  "firstName": "Abbas",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539207507",
-                  "familyName": "KHITER",
-                  "firstName": "Imad Edine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539198803",
-                  "familyName": "DOUARA",
-                  "firstName": "Ghofrane Hanifa",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152701",
-                  "familyName": "ZITOUNI",
-                  "firstName": "Chahrazad Mahdjouba",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539312503",
-                  "familyName": "ARIBI",
-                  "firstName": "Nadah",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153009",
-                  "familyName": "MESSAOUDI",
-                  "firstName": "Farida Ayat Allah",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539059703",
-                  "familyName": "BENOMRANE",
-                  "firstName": "Ikram",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539268908",
-                  "familyName": "KIDAR",
-                  "firstName": "Asma",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242439186220",
-                  "familyName": "BRAHILI",
-                  "firstName": "Manal",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232339157906",
-                  "familyName": "GHERBI",
-                  "firstName": "Meriem",
-                  "mark": "",
-                  "note": ""
-                }
-              ],
-              "01": [
-                {
-                  "regNumber": "232339240020",
-                  "familyName": "AMARA",
-                  "firstName": "Ishak Wahid",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539191806",
-                  "familyName": "BADRI",
-                  "firstName": "Sara",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "19",
-                  "familyName": "BATTA",
-                  "firstName": "Basmala",
-                  "mark": "null",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153416",
-                  "familyName": "BELAID",
-                  "firstName": "Nihad",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "15",
-                  "familyName": "BENGHARBI",
-                  "firstName": "Bouchra Amani",
-                  "mark": "null",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152418",
-                  "familyName": "BENGHARBI",
-                  "firstName": "Zakia Selsabil Arij",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539189707",
-                  "familyName": "BENMAICHA",
-                  "firstName": "Hadil",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539181016",
-                  "familyName": "BENORIF",
-                  "firstName": "Abderrahmane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242539270312",
-                  "familyName": "BESSINE",
-                  "firstName": "Hadjer",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232439297913",
-                  "familyName": "BOUDALI",
-                  "firstName": "Ikram",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539313720",
-                  "familyName": "BOUHALI",
-                  "firstName": "Nacer Eddine Elaoufi",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539207408",
-                  "familyName": "DAHENDI",
-                  "firstName": "Ilyes Yassine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152816",
-                  "familyName": "DAOUDI",
-                  "firstName": "Abdel Malek",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539153218",
-                  "familyName": "DJAFER",
-                  "firstName": "Meriem",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539207815",
-                  "familyName": "DJOUADI",
-                  "firstName": "Leila",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539199005",
-                  "familyName": "FDOUL",
-                  "firstName": "Turkia",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539226802",
-                  "familyName": "GUECHAOUI",
-                  "firstName": "Ikram Insaf",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539168211",
-                  "familyName": "GUIRA",
-                  "firstName": "Malek",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539300920",
-                  "familyName": "HOUARI",
-                  "firstName": "Atiya",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152313",
-                  "familyName": "KARBOUA",
-                  "firstName": "Doua Lamise",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539298805",
-                  "familyName": "KORYEB",
-                  "firstName": "Aicha",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539170009",
-                  "familyName": "LAKHNECHE",
-                  "firstName": "Youcef",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "242439139419",
-                  "familyName": "LEHZIEL",
-                  "firstName": "Rihab",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "12",
-                  "familyName": "LEMBARKI",
-                  "firstName": "Nadhira",
-                  "mark": "null",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539154210",
-                  "familyName": "LEMRINI",
-                  "firstName": "Sadjda Nidhal",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539189104",
-                  "familyName": "MADOUR",
-                  "firstName": "Aya",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "02",
-                  "familyName": "MAHDJOUB",
-                  "firstName": "Souhaib Salah Eddine",
-                  "mark": "null",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539189709",
-                  "familyName": "NADDOUR",
-                  "firstName": "Hichame",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539181006",
-                  "familyName": "OUADANE",
-                  "firstName": "Djouhina Soulef",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "6",
-                  "familyName": "RABEHI",
-                  "firstName": "Abdelaziz",
-                  "mark": "null",
-                  "note": ""
-                },
-                {
-                  "regNumber": "16",
-                  "familyName": "RAHMANI",
-                  "firstName": "Amina Hibat Allah",
-                  "mark": "null",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152113",
-                  "familyName": "RAHMANI",
-                  "firstName": "Bochra Rihab",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "252539152205",
-                  "familyName": "SAFI",
-                  "firstName": "Halima",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "182539269012",
-                  "familyName": "TAHCHI",
-                  "firstName": "Achouak Rania Menar",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "02",
-                  "familyName": "TAHRI",
-                  "firstName": "Hadjer Maria",
-                  "mark": "null",
-                  "note": ""
-                },
-                {
-                  "regNumber": "232539277412",
-                  "familyName": "TOUMI",
-                  "firstName": "Zineb",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "192539278210",
-                  "familyName": "ZEROUG",
-                  "firstName": "Soulef",
-                  "mark": "",
-                  "note": ""
-                }
-              ]
-            },
+            "groups": {},
             "unassigned": []
           },
           "L2": {
@@ -4531,566 +3693,11 @@
             "unassigned": []
           },
           "M2 Didactics": {
-            "groups": {
-              "01": [
-                {
-                  "regNumber": "191939020225",
-                  "familyName": "BEN LAHRECH",
-                  "firstName": "Soundos Takoua Asmaa",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039026640",
-                  "familyName": "SBAA",
-                  "firstName": "Zouhra",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139028013",
-                  "familyName": "NOUIOUA",
-                  "firstName": "Chahinez",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139026532",
-                  "familyName": "AYAD",
-                  "firstName": "Hadjer",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139037926",
-                  "familyName": "MEBKHOUTA",
-                  "firstName": "Siham",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139021087",
-                  "familyName": "ABBAS",
-                  "firstName": "Soundous Fatima",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139021083",
-                  "familyName": "SMAIL",
-                  "firstName": "Zahra",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139031753",
-                  "familyName": "DJEFFAL",
-                  "firstName": "Ikram",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039017733",
-                  "familyName": "BELKHEIRI",
-                  "firstName": "Ikram",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "191939025633",
-                  "familyName": "BEN MOHAMED",
-                  "firstName": "Hanane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "2002914971",
-                  "familyName": "BENYAHIA",
-                  "firstName": "Younes",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039020452",
-                  "familyName": "MESSELMI",
-                  "firstName": "Hadjer",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139054106",
-                  "familyName": "ZOUMRI",
-                  "firstName": "Amina",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139021071",
-                  "familyName": "DEKHENISSA",
-                  "firstName": "Khaoula",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "162139044669",
-                  "familyName": "RAHMOUNE",
-                  "firstName": "Amina",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139031155",
-                  "familyName": "ORABI",
-                  "firstName": "Amira Fatiha",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039020381",
-                  "familyName": "KHELID",
-                  "firstName": "Nossiba Manar",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139028204",
-                  "familyName": "AMARI",
-                  "firstName": "Ibrahim Khalil",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202032041298",
-                  "familyName": "ABOUDI",
-                  "firstName": "Fairouz",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "161639043967",
-                  "familyName": "LAKHNECHE",
-                  "firstName": "Mohamed Amine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "171739007606",
-                  "familyName": "BEKKI",
-                  "firstName": "Hosena",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "181839040337",
-                  "familyName": "LAHOUAL",
-                  "firstName": "Fares",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "161639018079",
-                  "familyName": "HAMDI",
-                  "firstName": "Sabah Hanaa",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "191939018483",
-                  "familyName": "AIDI",
-                  "firstName": "Dalal",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039031346",
-                  "familyName": "BEN RIM",
-                  "firstName": "Oum El Khir",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "161739043845",
-                  "familyName": "TAMRI",
-                  "firstName": "Messaouda",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "162039041411",
-                  "familyName": "ELOTTRI",
-                  "firstName": "Khalida",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039025987",
-                  "familyName": "FDOUL",
-                  "firstName": "Elzohra",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139025190",
-                  "familyName": "GACEM",
-                  "firstName": "Achouak",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039024101",
-                  "familyName": "MERZOUGUI",
-                  "firstName": "Achwak",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "161639017749",
-                  "familyName": "BOUAFIA",
-                  "firstName": "Oumlkhir Amani",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "161639017902",
-                  "familyName": "BOURAGBA",
-                  "firstName": "Othman",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "181939037769",
-                  "familyName": "BAID ELKOUL",
-                  "firstName": "Ghania",
-                  "mark": "",
-                  "note": ""
-                }
-              ],
-              "02": [
-                {
-                  "regNumber": "202035072659",
-                  "familyName": "ACHOUR",
-                  "firstName": "Zahra",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "171739044013",
-                  "familyName": "BACHRAOUI",
-                  "firstName": "Noureddine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139028073",
-                  "familyName": "KHADIR",
-                  "firstName": "Hiba manal",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "24129014435",
-                  "familyName": "شين",
-                  "firstName": "موسى",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139021056",
-                  "familyName": "BEN DJEDOU",
-                  "firstName": "Bouchra Messaouda",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "191939033341",
-                  "familyName": "BOUREKDA",
-                  "firstName": "Houcine Saddam",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139026456",
-                  "familyName": "MEKKI",
-                  "firstName": "Halima",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139027601",
-                  "familyName": "AROUR",
-                  "firstName": "Khadidja",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139022487",
-                  "familyName": "ZEBEIR",
-                  "firstName": "Douaa Malika",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "182139013296",
-                  "familyName": "BAKRIA",
-                  "firstName": "Mahmoud",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "181539041362",
-                  "familyName": "SAILA",
-                  "firstName": "Youcef",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "24079037913",
-                  "familyName": "LAHRECHE",
-                  "firstName": "Yacine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139021006",
-                  "familyName": "ELOUD",
-                  "firstName": "Naima Wissam",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139020799",
-                  "familyName": "LEMRINI",
-                  "firstName": "Djamila",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139021073",
-                  "familyName": "BOUAMARA",
-                  "firstName": "Kheira",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "192039043595",
-                  "familyName": "DELMADJI",
-                  "firstName": "Meriem",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "182039034025",
-                  "familyName": "OMRANE",
-                  "firstName": "Zineb",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "161639034985",
-                  "familyName": "FEDDA",
-                  "firstName": "Zakaria",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "181839036491",
-                  "familyName": "BOUABDELLI",
-                  "firstName": "Fatma Imen",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "22089011339",
-                  "familyName": "CHELALI",
-                  "firstName": "Mohamed Lamine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "191939018440",
-                  "familyName": "KRIOUA",
-                  "firstName": "Aya Imene",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139026440",
-                  "familyName": "BEN AICHA",
-                  "firstName": "Imane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039027665",
-                  "familyName": "MESSIKINE",
-                  "firstName": "Bouchra Oumelkheir",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139030953",
-                  "familyName": "MESSELEM",
-                  "firstName": "Aymen",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039021959",
-                  "familyName": "BEN MAIDI",
-                  "firstName": "Samah Nour Elhouda",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "161639028415",
-                  "familyName": "SENGRA",
-                  "firstName": "Tarek Yassine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039033962",
-                  "familyName": "DAIOUAL",
-                  "firstName": "Ziane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "258940906",
-                  "familyName": "MOHAMED FADHEL",
-                  "firstName": "Ahmadou Sidi",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "151538076214",
-                  "familyName": "DJIDEL",
-                  "firstName": "Rabah",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "181539019728",
-                  "familyName": "HALBAOUI",
-                  "firstName": "Taha",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "191939018454",
-                  "familyName": "LAGOUN",
-                  "firstName": "Belkacem",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "171839040404",
-                  "familyName": "TAHRI",
-                  "firstName": "Nabila",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "23109017685",
-                  "familyName": "ZIANI",
-                  "firstName": "Mebkhouta",
-                  "mark": "",
-                  "note": ""
-                }
-              ]
-            },
-            "unassigned": [
-              {
-                "regNumber": "21109034906",
-                "familyName": "خرشي",
-                "firstName": "ياسين",
-                "mark": "",
-                "note": ""
-              }
-            ]
+            "groups": {},
+            "unassigned": []
           },
           "M2 Lit/Civ": {
-            "groups": {
-              "01": [
-                {
-                  "regNumber": "182139044044",
-                  "familyName": "SADEDDINE",
-                  "firstName": "Hala Amani",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139020759",
-                  "familyName": "BOUKERDENNA",
-                  "firstName": "Ismail",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139028019",
-                  "familyName": "KHADIR",
-                  "firstName": "Abdelrahmane",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "202039017903",
-                  "familyName": "FECIH",
-                  "firstName": "Mohamed Issmail",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "162139044806",
-                  "familyName": "MAMMERI",
-                  "firstName": "Mohamed Abdelfatah",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139044950",
-                  "familyName": "KAMEL",
-                  "firstName": "Salah Eddine",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139020935",
-                  "familyName": "MAKAR",
-                  "firstName": "Maria",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "2498815495",
-                  "familyName": "M ZARA",
-                  "firstName": "Messaoud",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139048208",
-                  "familyName": "BENTCHICH",
-                  "firstName": "Yamna",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "181839043766",
-                  "familyName": "BOURZGUE",
-                  "firstName": "Djilani",
-                  "mark": "",
-                  "note": ""
-                },
-                {
-                  "regNumber": "212139022645",
-                  "familyName": "BACHAR",
-                  "firstName": "Sara",
-                  "mark": "",
-                  "note": ""
-                }
-              ]
-            },
+            "groups": {},
             "unassigned": []
           }
         },
@@ -5098,195 +3705,18 @@
           "Sunday",
           "Monday",
           "Tuesday",
-          "Wednesday"
+          "Wednesday",
+          "Thursday",
+          "Saturday"
         ],
-        "examTimings": {
-          "L1||S1": "08:30 – 10:00"
-        },
+        "examTimings": {},
         "examTimingsV2": true,
         "roomAllocation": {
-          "S1": {
-            "slots": [
-              "08:30 – 10:00"
-            ],
-            "rooms": {
-              "Room 11": [
-                "L1 Group 1"
-              ],
-              "Room 12": [
-                "L1 Group 2"
-              ],
-              "Room 13": [
-                "L1 Group 3"
-              ],
-              "Room 14": [
-                "L1 Group 4"
-              ]
-            }
-          },
+          "S1": null,
           "S2": null
         },
         "invigilation": {
-          "S1": {
-            "days": [
-              {
-                "date": "2026-07-11",
-                "substitute": "",
-                "assignments": {
-                  "Room 11": [
-                    [
-                      "Abbas C."
-                    ]
-                  ],
-                  "Room 12": [
-                    [
-                      "Ziouche K."
-                    ]
-                  ],
-                  "Room 13": [
-                    [
-                      "Amraoui Z"
-                    ]
-                  ],
-                  "Room 14": [
-                    [
-                      "Barboura O."
-                    ]
-                  ]
-                }
-              },
-              {
-                "date": "2026-07-12",
-                "substitute": "",
-                "assignments": {
-                  "Room 11": [
-                    [
-                      "Bouzidi A"
-                    ]
-                  ],
-                  "Room 12": [
-                    [
-                      "Mahammedi I."
-                    ]
-                  ],
-                  "Room 13": [
-                    [
-                      "Amraoui Z"
-                    ]
-                  ],
-                  "Room 14": [
-                    [
-                      "Barboura O."
-                    ]
-                  ]
-                }
-              },
-              {
-                "date": "2026-07-13",
-                "substitute": "",
-                "assignments": {
-                  "Room 11": [
-                    [
-                      "Chelali M."
-                    ]
-                  ],
-                  "Room 12": [
-                    [
-                      "Othmani A"
-                    ]
-                  ],
-                  "Room 13": [
-                    [
-                      "Amraoui Z"
-                    ]
-                  ],
-                  "Room 14": [
-                    [
-                      "Barboura O."
-                    ]
-                  ]
-                }
-              },
-              {
-                "date": "2026-07-14",
-                "substitute": "",
-                "assignments": {
-                  "Room 11": [
-                    [
-                      "Gatcha Y"
-                    ]
-                  ],
-                  "Room 12": [
-                    [
-                      "Othmani A"
-                    ]
-                  ],
-                  "Room 13": [
-                    [
-                      "Amraoui Z"
-                    ]
-                  ],
-                  "Room 14": [
-                    [
-                      "Barboura O."
-                    ]
-                  ]
-                }
-              },
-              {
-                "date": "2026-07-15",
-                "substitute": "",
-                "assignments": {
-                  "Room 11": [
-                    [
-                      "Bouaissa T"
-                    ]
-                  ],
-                  "Room 12": [
-                    [
-                      "Gueriniai I."
-                    ]
-                  ],
-                  "Room 13": [
-                    [
-                      "Amraoui O"
-                    ]
-                  ],
-                  "Room 14": [
-                    [
-                      "Amraoui Z"
-                    ]
-                  ]
-                }
-              },
-              {
-                "date": "2026-07-16",
-                "substitute": "",
-                "assignments": {
-                  "Room 11": [
-                    [
-                      "Bouaissa T"
-                    ]
-                  ],
-                  "Room 12": [
-                    [
-                      "Saddedine Y."
-                    ]
-                  ],
-                  "Room 13": [
-                    [
-                      "Saidi H."
-                    ]
-                  ],
-                  "Room 14": [
-                    [
-                      "Barboura O."
-                    ]
-                  ]
-                }
-              }
-            ]
-          },
+          "S1": null,
           "S2": null
         }
       }
