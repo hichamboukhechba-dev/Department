@@ -633,6 +633,14 @@
                   "instructor": "Barboura O.",
                   "room": "Room 21",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Arour H.",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
@@ -2165,6 +2173,40 @@
         "invigilation": {
           "S1": null,
           "S2": null
+        },
+        "extraHours": {
+          "header": {
+            "ar": "الجمهورية الجزائرية الديمقراطية الشعبية\nوزارة التعليم العالي والبحث العلمي\nجامعة زيان عاشور - الجلفة\nكلية الآداب واللغات والفنون\nقسم اللغة الانجليزية",
+            "en": "People's Democratic Republic of Algeria\nMinistry of Higher Education and Scientific Research\nZiane Achour University - Djelfa\nFaculty of Letters, Languages and Arts\nDepartment of English",
+            "titles": {
+              "S1": {
+                "permAr": "الحجم الساعي الإضافي للأساتذة الدائمين من سبتمبر إلى ديسمبر",
+                "tempAr": "الحجم الساعي الإضافي للأساتذة المؤقتين من سبتمبر إلى ديسمبر",
+                "permEn": "Extra Teaching Hours for Permanent Teachers — September to December",
+                "tempEn": "Extra Teaching Hours for Temporary Teachers — September to December"
+              },
+              "S2": {
+                "permAr": "الحجم الساعي الإضافي للأساتذة الدائمين من جانفي إلى ماي",
+                "tempAr": "الحجم الساعي الإضافي للأساتذة المؤقتين من جانفي إلى ماي",
+                "permEn": "Extra Teaching Hours for Permanent Teachers — January to May",
+                "tempEn": "Extra Teaching Hours for Temporary Teachers — January to May"
+              }
+            }
+          },
+          "S1": {
+            "hours": {},
+            "order": {
+              "perm": [],
+              "temp": []
+            }
+          },
+          "S2": {
+            "hours": {},
+            "order": {
+              "perm": [],
+              "temp": []
+            }
+          }
         }
       }
     }
