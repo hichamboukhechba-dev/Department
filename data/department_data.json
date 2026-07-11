@@ -617,6 +617,14 @@
                   "instructor": "Bouzidi A",
                   "room": "Amphi B",
                   "group": ""
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Chelali M.",
+                  "room": "Amphi B",
+                  "group": ""
                 }
               ],
               "S2": []
