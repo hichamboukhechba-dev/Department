@@ -2255,8 +2255,19 @@
                 "items": [
                   {
                     "module": "Civilisations of the Language of Study 1",
-                    "teacher": "Abbas C.",
-                    "startOverride": "23:17"
+                    "teacher": "Bouchemal A."
+                  },
+                  {
+                    "module": "Written Comprehension and Expression 1",
+                    "teacher": "Chaalani A."
+                  },
+                  {
+                    "module": "Linguistics and Phonetics 1",
+                    "teacher": "Barboura O."
+                  },
+                  {
+                    "module": "Grammar of Language of Study 1",
+                    "teacher": "Barboura S"
                   }
                 ]
               }
