@@ -582,7 +582,13 @@
           }
         ],
         "delegates": [],
-        "examsS1": [],
+        "examsS1": [
+          {
+            "group": "L1 S1",
+            "level": "L1",
+            "exams": []
+          }
+        ],
         "examsS2": [],
         "timetables": {
           "L1": {
@@ -3051,7 +3057,9 @@
           "Tuesday",
           "Wednesday"
         ],
-        "examTimings": {},
+        "examTimings": {
+          "L1||S1": "08:30 – 10:00"
+        },
         "examTimingsV2": true,
         "roomAllocation": {
           "S1": {
