@@ -609,6 +609,14 @@
                   "instructor": "Chaalani A.",
                   "room": "Room 21",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "21",
+                  "group": "GROUP 3"
                 }
               ],
               "S2": []
