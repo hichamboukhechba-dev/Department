@@ -641,6 +641,14 @@
                   "instructor": "Djoudi C.",
                   "room": "Amphi B",
                   "group": ""
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 23",
+                  "group": ""
                 }
               ],
               "S2": []
