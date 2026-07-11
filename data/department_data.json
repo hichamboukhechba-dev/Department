@@ -673,41 +673,1018 @@
         "lmd": [
           {
             "label": "L1 S1",
-            "courses": []
+            "courses": [
+              {
+                "unit": "Core Unit UEF 1.1.1",
+                "course": "Written Comprehension and Expression 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.1.2",
+                "course": "Grammar of Language of Study 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.1.3",
+                "course": "Study of Literary Texts  1",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 1.1",
+                "course": "University Study Skills 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 1",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "ICT and E-Learning 1",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 1.1",
+                "course": "Civilisations of the Language of Study 1",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 1.1",
+                "course": "Foreign Language(s) 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "L1 S2",
-            "courses": []
+            "courses": [
+              {
+                "unit": "Core Unit UEF 1.2.1",
+                "course": "Written Comprehension and Expression 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.2.2",
+                "course": "Grammar of Language of Study 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.2.3",
+                "course": "Study of Literary Texts",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 1.2",
+                "course": "University Study Skills 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 2",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "ICT and E-Learning 2",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 1.2",
+                "course": "Civilisations of the Language of Study 2",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 1.2",
+                "course": "Foreign Language(s) 2",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "L2 S1",
-            "courses": []
+            "courses": [
+              {
+                "unit": "Core Unit UEF 2.1.1",
+                "course": "Written Comprehension and Expression 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.1.2",
+                "course": "Grammar of Language of Study 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.1.3",
+                "course": "Literatures of the Language of Study 3",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 2.1",
+                "course": "University Study Skills 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 3",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "Digital Literatures 1",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 2.1",
+                "course": "Civilisations of the Language of Study 3",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 2.1",
+                "course": "Foreign Language(s) 3",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "L2 S2",
-            "courses": []
+            "courses": [
+              {
+                "unit": "Core Unit UEF 2.2.1",
+                "course": "Written Comprehension and Expression 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.2.2",
+                "course": "Grammar of Language of Study 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.2.3",
+                "course": "Literatures of the Language of Study 4",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 2.2",
+                "course": "University Study Skills 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 4",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "Digital Literatures 2",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 2.2",
+                "course": "Civilisations of the Language of Study 4",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 2.2",
+                "course": "Foreign Language(s) 4",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "L3 S1",
-            "courses": []
+            "courses": [
+              {
+                "unit": "Fundamental Unit",
+                "course": "Linguistics 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEF 3.1.1",
+                "course": "Literature: Theories and Practices 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Credits: 12",
+                "course": "Civilization, Culture, and Interculturality 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Coefficients: 6",
+                "course": "Introduction to Didactics 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Fundamental Unit",
+                "course": "ESP",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit",
+                "course": "Methodology of Academic Research 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEM 3.1",
+                "course": "Reading and Writing Workshop 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Credits: 9",
+                "course": "Oral Communication Practices 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit",
+                "course": "Translation: National Language(s) / Language of Study 1",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit",
+                "course": "Entrepreneurship 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "L3 S2",
-            "courses": []
+            "courses": [
+              {
+                "unit": "Fundamental Unit",
+                "course": "Linguistics 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEF 3.1.1",
+                "course": "Literature: Theories and Practices 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Credits: 12",
+                "course": "Civilization, Culture, and Interculturality 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Coefficients: 6",
+                "course": "Introduction to Didactics 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Fundamental Unit",
+                "course": "ESP 2",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit",
+                "course": "Methodology of Academic Research 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEM 3.1",
+                "course": "Reading and Writing Workshop 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Credits: 9",
+                "course": "Oral Communication Practices 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit",
+                "course": "Translation: National Language(s) / Language of Study 2",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit",
+                "course": "Entrepreneurship 2",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           }
         ],
         "didactics": [
           {
             "label": "M1 Didactics S1",
-            "courses": []
+            "courses": [
+              {
+                "unit": "UE fondamentales",
+                "course": "Didactics",
+                "credits": 6,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "67h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Interculturality",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Applied Linguistics",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "English for Specific Purposes",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Research Methodology",
+                "credits": 5,
+                "coef": 3,
+                "lecture": "1h00",
+                "td": "3h00",
+                "total": "37h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Logiciels libres et Open sources",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Second language acquisition",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Sociolinguistics",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UE transversales",
+                "course": "Ethics et deontology",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "M1 Didactics S2",
-            "courses": []
+            "courses": [
+              {
+                "unit": "UE fondamentales",
+                "course": "Didactics",
+                "credits": 6,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "67h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Interculturality",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Applied Linguistics",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "English for Specific Purposes",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Research Methodology",
+                "credits": 5,
+                "coef": 3,
+                "lecture": "1h00",
+                "td": "3h00",
+                "total": "37h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Didactics of Academic Writing and Reading",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Translation",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Sociolinguistics",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UE transversales",
+                "course": "Programmation informatique",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "M2 Didactics S1",
-            "courses": []
+            "courses": [
+              {
+                "unit": "UE fondamentales",
+                "course": "Educational psychology",
+                "credits": 6,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "67h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Sociodidactics",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Language Teaching Approaches & Methods",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Curriculum and Syllabus Design",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Research Methodology",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "2h",
+                "td": "2h",
+                "total": "37h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Writing a dissertation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Communicational Practices",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Reflective Practice and Teacher Development",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UE découverte",
+                "course": "French",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UE transversales",
+                "course": "Intelligence artificielle",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "M2 Didactics S2",
@@ -717,15 +1694,326 @@
         "litciv": [
           {
             "label": "M1 Lit/Civ S1",
-            "courses": []
+            "courses": [
+              {
+                "unit": "UEF1",
+                "course": "British Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "American Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Literary Theories",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "British Civilisation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "African Studies",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UEM",
+                "course": "Research Skills",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h00",
+                "td": "3h00",
+                "total": "60h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Logiciels libres et Open sources",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UED",
+                "course": "Teaching Literary Texts",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UET",
+                "course": "Ethics et deontology",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "M1 Lit/Civ S2",
-            "courses": []
+            "courses": [
+              {
+                "unit": "UEF1",
+                "course": "British Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "American Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Literary Theories",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "British Civilisation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "African Studies",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UEM",
+                "course": "Research Skills",
+                "credits": 5,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "60h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Academic Writing",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UED",
+                "course": "Philosophical Trends",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "3h",
+                "td": "-",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UET",
+                "course": "Programmation informatique",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "M2 Lit/Civ S1",
-            "courses": []
+            "courses": [
+              {
+                "unit": "UEF1",
+                "course": "Contemporary British Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Contemporary American Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Cultural Studies",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "American Civilisation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "African Literature",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UEM",
+                "course": "Critical Reading",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Research Skills",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Academic Writing",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UED",
+                "course": "World Arabic Literature",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "3h",
+                "td": "-",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UET",
+                "course": "Intelligence artificielle",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
           },
           {
             "label": "M2 Lit/Civ S2",
