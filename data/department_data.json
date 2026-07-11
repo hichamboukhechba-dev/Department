@@ -2227,7 +2227,26 @@
           }
         },
         "supervision": {
-          "students": []
+          "students": [
+            {
+              "id": "sup_1783769510962_8y32",
+              "studentNumber": "2026-001",
+              "name": "BOUKHECHBA HICHAM",
+              "level": "M2 Didactics",
+              "projectType": "dissertation",
+              "title": "jjjjjjjjjjjjjj",
+              "supervisor": "Boukhechba H",
+              "president": "Amraoui Z",
+              "examiner": "Amraoui O",
+              "examiner2": "",
+              "vivaDate": "2026-07-10",
+              "vivaTime": "01:00",
+              "vivaRoom": "Room 11",
+              "vivaMark": 20,
+              "vivaDecision": "Accepted",
+              "vivaComments": ""
+            }
+          ]
         },
         "students": {
           "L1": {
