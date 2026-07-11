@@ -2605,13 +2605,6 @@
                   "firstName": "Hanine",
                   "mark": "",
                   "note": ""
-                },
-                {
-                  "regNumber": "252539189116",
-                  "familyName": "RAHMANI",
-                  "firstName": "Amina Hibat Allah",
-                  "mark": "",
-                  "note": ""
                 }
               ],
               "03": [
@@ -3083,6 +3076,13 @@
                   "regNumber": "12",
                   "familyName": "LEMBARKI",
                   "firstName": "Nadhira",
+                  "mark": "null",
+                  "note": ""
+                },
+                {
+                  "regNumber": "16",
+                  "familyName": "RAHMANI",
+                  "firstName": "Amina Hibat Allah",
                   "mark": "null",
                   "note": ""
                 }
