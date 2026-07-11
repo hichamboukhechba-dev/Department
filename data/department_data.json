@@ -2283,11 +2283,23 @@
                     {
                       "module": "Civilisations of the Language of Study 1",
                       "tag": "S1",
-                      "teacher": "Abbas C."
+                      "teacher": "Bouchemal A."
                     },
-                    null,
-                    null,
-                    null
+                    {
+                      "module": "Written Comprehension and Expression 1",
+                      "tag": "S1",
+                      "teacher": "Chaalani A."
+                    },
+                    {
+                      "module": "Linguistics and Phonetics 1",
+                      "tag": "S1",
+                      "teacher": "Barboura O."
+                    },
+                    {
+                      "module": "Grammar of Language of Study 1",
+                      "tag": "S1",
+                      "teacher": "Barboura S"
+                    }
                   ]
                 }
               ]
