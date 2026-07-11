@@ -3385,7 +3385,7 @@
       "username": "O",
       "password": "000000",
       "name": "0",
-      "role": "admin",
+      "role": "hod",
       "views": [
         "dashboard",
         "timetables",
