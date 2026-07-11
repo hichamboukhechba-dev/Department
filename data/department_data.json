@@ -2245,7 +2245,11 @@
                 {
                   "date": "2026-07-11",
                   "cells": [
-                    null,
+                    {
+                      "module": "Civilisations of the Language of Study 1",
+                      "tag": "S1",
+                      "teacher": "Abbas C."
+                    },
                     null,
                     null,
                     null
