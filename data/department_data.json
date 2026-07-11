@@ -593,7 +593,16 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Abbas C.",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                }
+              ],
               "S2": []
             }
           },
