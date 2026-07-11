@@ -8138,12 +8138,17 @@
             const entries = [];
             groups.forEach(g => {
                 (g.exams || []).forEach(e => {
-                    if (!e.date || !e.teacher) return;
-                    if (!isPermanentAndAvailable(e.teacher)) return;
-                    entries.push({ date: e.date, teacher: e.teacher.trim(), level: e.level || g.level ||
-                            '', module: e.module || '' });
+                    if (!e.date) return;
+                    // still push the date even if teacher is missing or temporary
+                    entries.push({
+                        date: e.date,
+                        teacher: (e.teacher || '').trim(),
+                        level: e.level || g.level || '',
+                        module: e.module || ''
+                    });
                 });
             });
+            
             const byDate = {};
             entries.forEach(e => { byDate[e.date] = byDate[e.date] || [];
                 byDate[e.date].push(e); });
@@ -9790,7 +9795,7 @@
                     <div style="text-align:center;flex:1;">
                         <div style="font-size:11pt;color:#555;font-weight:400;">${escape(subtitle)}</div>
                         <div style="font-size:16pt;font-weight:700;font-family:'Times New Roman',Times,serif;color:#1a1a1a;">${escape(header)}</div>
-                        <div style="font-size:11pt;color:#333;margin-top:1px;">Master Dissertation Defense · ${escape(year)}</div>
+                        <div style="font-size:11pt;color:#333;margin-top:1px;">PhD Dissertation Defense · ${escape(year)}</div>
                     </div>
                     <div style="flex:0 0 auto;width:70px;text-align:right;">${R ? `<img src="${R}" style="max-height:60px;max-width:70px;object-fit:contain;">` : ''}</div>
                 </div>
