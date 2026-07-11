@@ -14322,22 +14322,9 @@
         //  DEFAULT GITHUB CONFIG — INTEGRATED DIRECTLY
         //  (auto-applied on first load; saved to localStorage)
         // ================================================================
-        const DEFAULT_GH_CONFIG = {
-            owner: 'hichamboukhechba-dev',
-            repo: 'Department',
-            branch: 'main',
-            path: 'data/department_data.json',
-            token: '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'
-        };
+         
 
-        function ensureDefaultGhConfig() {
-            loadGhConfig();
-            if (!ghConfig) {
-                console.log('🔐 No GitHub config found — applying default integration.');
-                saveGhConfig(DEFAULT_GH_CONFIG);
-                loadGhConfig();
-            }
-        }
+        
 
         // ==================================================================
         //  INIT
@@ -14346,7 +14333,7 @@
             updateSaveIndicator();
 
             // Ensure the default GitHub config is applied before loading data
-            ensureDefaultGhConfig();
+           
 
             await loadStore();
 
