@@ -2647,13 +2647,6 @@
                   "firstName": "Souhaib Salah Eddine",
                   "mark": "",
                   "note": ""
-                },
-                {
-                  "regNumber": "23089031476",
-                  "familyName": "RABEHI",
-                  "firstName": "Abdelaziz",
-                  "mark": "",
-                  "note": ""
                 }
               ],
               "03": [
@@ -3084,6 +3077,13 @@
                   "familyName": "ZEROUG",
                   "firstName": "Soulef",
                   "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "6",
+                  "familyName": "RABEHI",
+                  "firstName": "Abdelaziz",
+                  "mark": "null",
                   "note": ""
                 }
               ]
