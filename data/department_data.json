@@ -2626,13 +2626,6 @@
                   "firstName": "Hadjer Maria",
                   "mark": "",
                   "note": ""
-                },
-                {
-                  "regNumber": "252539200115",
-                  "familyName": "BENGHARBI",
-                  "firstName": "Bouchra Amani",
-                  "mark": "",
-                  "note": ""
                 }
               ],
               "03": [
@@ -3083,6 +3076,13 @@
                   "regNumber": "19",
                   "familyName": "BATTA",
                   "firstName": "Basmala",
+                  "mark": "null",
+                  "note": ""
+                },
+                {
+                  "regNumber": "15",
+                  "familyName": "BENGHARBI",
+                  "firstName": "Bouchra Amani",
                   "mark": "null",
                   "note": ""
                 }
