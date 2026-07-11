@@ -2633,13 +2633,6 @@
                   "firstName": "Bouchra Amani",
                   "mark": "",
                   "note": ""
-                },
-                {
-                  "regNumber": "222539374219",
-                  "familyName": "BATTA",
-                  "firstName": "Basmala",
-                  "mark": "",
-                  "note": ""
                 }
               ],
               "03": [
@@ -3083,6 +3076,13 @@
                   "regNumber": "02",
                   "familyName": "MAHDJOUB",
                   "firstName": "Souhaib Salah Eddine",
+                  "mark": "null",
+                  "note": ""
+                },
+                {
+                  "regNumber": "19",
+                  "familyName": "BATTA",
+                  "firstName": "Basmala",
                   "mark": "null",
                   "note": ""
                 }
