@@ -3054,7 +3054,18 @@
         "examTimings": {},
         "examTimingsV2": true,
         "roomAllocation": {
-          "S1": null,
+          "S1": {
+            "slots": [
+              "09:00 – 10:30",
+              "11:00 – 12:30"
+            ],
+            "rooms": {
+              "Room 11": [
+                "",
+                ""
+              ]
+            }
+          },
           "S2": null
         },
         "invigilation": {
