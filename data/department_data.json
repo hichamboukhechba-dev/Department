@@ -3127,14 +3127,16 @@
                 "L1 Group 3"
               ],
               "Room 14": [
-                ""
+                "L1 Group 4"
               ]
             }
           },
           "S2": null
         },
         "invigilation": {
-          "S1": null,
+          "S1": {
+            "days": []
+          },
           "S2": null
         }
       }
