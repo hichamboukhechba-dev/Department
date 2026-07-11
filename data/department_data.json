@@ -617,6 +617,14 @@
                   "instructor": "Barboura O.",
                   "room": "21",
                   "group": "GROUP 3"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Room 21",
+                  "group": "GROUP 4"
                 }
               ],
               "S2": []
