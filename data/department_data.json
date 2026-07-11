@@ -586,7 +586,57 @@
           {
             "group": "L1 S1",
             "level": "L1",
-            "exams": []
+            "exams": [
+              {
+                "date": "",
+                "time": "08:30 – 10:00",
+                "module": "Civilisations of the Language of Study 1",
+                "teacher": "Abbas C.",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "08:30 – 10:00",
+                "module": "Oral Comprehension and Expression 1",
+                "teacher": "Bouzidi A",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "08:30 – 10:00",
+                "module": "Grammar of Language of Study 1",
+                "teacher": "Chelali M.",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "08:30 – 10:00",
+                "module": "Linguistics and Phonetics 1",
+                "teacher": "Gatcha Y",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "08:30 – 10:00",
+                "module": "Study of Literary Texts  1",
+                "teacher": "Bouaissa T",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "08:30 – 10:00",
+                "module": "Written Comprehension and Expression 1",
+                "teacher": "Gueriniai I.",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "08:30 – 10:00",
+                "module": "University Study Skills 1",
+                "teacher": "Bouaissa T",
+                "level": "L1"
+              }
+            ]
           }
         ],
         "examsS2": [],
