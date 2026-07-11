@@ -911,7 +911,7 @@
                 "lecture": "-",
                 "td": "1h30",
                 "total": "22h30",
-                "exam": null,
+                "exam": 0,
                 "ca": 100
               }
             ]
