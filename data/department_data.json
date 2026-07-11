@@ -3353,19 +3353,11 @@
     },
     {
       "username": "teacher",
-      "password": "teacher",
+      "password": "000000",
       "role": "teacher",
       "name": "Teacher",
       "views": [
-        "dashboard",
-        "timetables",
-        "exams",
-        "curriculum",
-        "students",
-        "teachers",
-        "delegates",
-        "rooms",
-        "supervision"
+        "timetables"
       ]
     },
     {
