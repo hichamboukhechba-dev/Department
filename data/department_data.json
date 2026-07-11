@@ -2207,6 +2207,23 @@
               "temp": []
             }
           }
+        },
+        "paperReview": {
+          "S1": {
+            "levels": {
+              "L1": {
+                "room": "Room 11",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": []
+              }
+            }
+          },
+          "S2": {
+            "levels": {}
+          }
         }
       }
     }
