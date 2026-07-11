@@ -2029,22 +2029,6 @@
                   "instructor": "Belli A.",
                   "room": "Online",
                   "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Wednesday",
-                  "slotIdx": 1,
-                  "module": "Contemporary British Literature",
-                  "instructor": "Mahammedi I.",
-                  "room": "Room 14",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Wednesday",
-                  "slotIdx": 3,
-                  "module": "Critical Reading",
-                  "instructor": "Mahammedi I.",
-                  "room": "Room 14",
-                  "group": "ALL GROUPS"
                 }
               ],
               "S2": []
