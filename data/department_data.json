@@ -83,15 +83,15 @@
             "roleAr": "رئيس تخصص"
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Boukhechba H",
             "nameAr": "",
+            "kind": "Permanent Teachers",
+            "grade": "",
             "phone": "",
             "emails": [
               "h.boukhechba@univ-djelfa.dz"
             ],
-            "role": "chef de department",
+            "role": "Head of Department",
             "roleAr": "رئيس قسم"
           },
           {
