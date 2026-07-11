@@ -633,6 +633,14 @@
                   "instructor": "Barboura O.",
                   "room": "Room 21",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Guadabi N.",
+                  "room": "Room 12",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
