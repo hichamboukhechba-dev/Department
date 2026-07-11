@@ -3128,7 +3128,164 @@
         },
         "invigilation": {
           "S1": {
-            "days": []
+            "days": [
+              {
+                "date": "2026-07-11",
+                "substitute": "",
+                "assignments": {
+                  "Room 11": [
+                    [
+                      "Abbas C."
+                    ]
+                  ],
+                  "Room 12": [
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 13": [
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 14": [
+                    [
+                      "Barboura O."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-12",
+                "substitute": "",
+                "assignments": {
+                  "Room 11": [
+                    [
+                      "Bouzidi A"
+                    ]
+                  ],
+                  "Room 12": [
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 13": [
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 14": [
+                    [
+                      "Barboura O."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-13",
+                "substitute": "",
+                "assignments": {
+                  "Room 11": [
+                    [
+                      "Chelali M."
+                    ]
+                  ],
+                  "Room 12": [
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 13": [
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 14": [
+                    [
+                      "Barboura O."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-14",
+                "substitute": "",
+                "assignments": {
+                  "Room 11": [
+                    [
+                      "Gatcha Y"
+                    ]
+                  ],
+                  "Room 12": [
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 13": [
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 14": [
+                    [
+                      "Barboura O."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-15",
+                "substitute": "",
+                "assignments": {
+                  "Room 11": [
+                    [
+                      "Bouaissa T"
+                    ]
+                  ],
+                  "Room 12": [
+                    [
+                      "Gueriniai I."
+                    ]
+                  ],
+                  "Room 13": [
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 14": [
+                    [
+                      "Amraoui Z"
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-16",
+                "substitute": "",
+                "assignments": {
+                  "Room 11": [
+                    [
+                      "Bouaissa T"
+                    ]
+                  ],
+                  "Room 12": [
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 13": [
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 14": [
+                    [
+                      "Barboura O."
+                    ]
+                  ]
+                }
+              }
+            ]
           },
           "S2": null
         }
