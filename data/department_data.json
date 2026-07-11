@@ -596,7 +596,7 @@
               "S1": [
                 {
                   "day": "Sunday",
-                  "slotIdx": 0,
+                  "slotIdx": 1,
                   "module": "Civilisations of the Language of Study 1",
                   "instructor": "Abbas C.",
                   "room": "Room 11",
@@ -612,7 +612,7 @@
                 },
                 {
                   "day": "Sunday",
-                  "slotIdx": 0,
+                  "slotIdx": 2,
                   "module": "Oral Comprehension and Expression 1",
                   "instructor": "Bouzidi A",
                   "room": "Amphi B",
