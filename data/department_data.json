@@ -2118,7 +2118,7 @@
         "studentCounts": [
           {
             "level": "L1",
-            "count": 125
+            "count": 121
           },
           {
             "level": "L2",
@@ -3018,36 +3018,7 @@
                 }
               ]
             },
-            "unassigned": [
-              {
-                "regNumber": "161639031727",
-                "familyName": "BENFATACHA",
-                "firstName": "Ibrahim",
-                "mark": "",
-                "note": ""
-              },
-              {
-                "regNumber": "171739042131",
-                "familyName": "MAMMERI",
-                "firstName": "Asmaa",
-                "mark": "",
-                "note": ""
-              },
-              {
-                "regNumber": "2302910762",
-                "familyName": "LAOUD",
-                "firstName": "Brahim",
-                "mark": "",
-                "note": ""
-              },
-              {
-                "regNumber": "161639022092",
-                "familyName": "TAHRI",
-                "firstName": "Ali",
-                "mark": "",
-                "note": ""
-              }
-            ]
+            "unassigned": []
           },
           "L2": {
             "groups": {},
