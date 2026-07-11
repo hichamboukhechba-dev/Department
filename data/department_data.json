@@ -665,6 +665,14 @@
                   "instructor": "Gueriniai I.",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "University Study Skills 1",
+                  "instructor": "Bouaissa T",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
