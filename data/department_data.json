@@ -2209,6 +2209,15 @@
                 "module": "Civilisations of the Language of Study 1",
                 "teacher": "Abbas C.",
                 "level": "L1"
+              },
+              {
+                "room": "Room 11",
+                "date": "2026-07-11",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Grammar of Language of Study 1",
+                "teacher": "Chelali M.",
+                "level": "L1"
               }
             ]
           },
