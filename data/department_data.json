@@ -2200,7 +2200,17 @@
             "roomLevels": {
               "Room 11": "L1 GROUP 01"
             },
-            "exams": []
+            "exams": [
+              {
+                "room": "Room 11",
+                "date": "2026-07-11",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Civilisations of the Language of Study 1",
+                "teacher": "Abbas C.",
+                "level": "L1"
+              }
+            ]
           },
           "S2": {
             "roomLevels": {},
