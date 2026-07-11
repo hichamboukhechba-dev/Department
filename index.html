@@ -3249,6 +3249,10 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     Teachers
                 </a>
+                <a data-view="extrahours">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Extra Hours
+                </a>
                 <a data-view="delegates">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     Class Delegates
@@ -3278,7 +3282,7 @@
                 <button onclick="logout()">🚪 Sign out</button>
                 <button onclick="setView('settings')">↳ Data &amp; Backup</button>
                 <div style="margin-top:8px;font-size:10px;color:var(--sidebar-text-3)">Auto-saved to your account and, if linked, to a file on your computer.</div>
-                <div class="version">Version 1.7</div>
+                <div class="version">Version 1.9.7</div>
             </div>
         </aside>
 
@@ -3311,13 +3315,13 @@
     <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="modal"></div></div>
 
 
- 
+
 
     <script>
         // ================================================================
         //  VERSION
         // ================================================================
-        const APP_VERSION = '1.7';
+        const APP_VERSION = '1.9.7';
 
         // ================================================================
         //  APPEARANCE (theme / font / size / density) — per-device settings
@@ -3408,7 +3412,7 @@
         else document.addEventListener('DOMContentLoaded', loadAppearance);
 
         // List of all available views (sections)
-        const VIEWS_LIST = ['dashboard', 'timetables', 'exams', 'curriculum', 'students', 'teachers', 'delegates', 'rooms',
+        const VIEWS_LIST = ['dashboard', 'timetables', 'exams', 'curriculum', 'students', 'teachers', 'extrahours', 'delegates', 'rooms',
             'supervision', 'settings'
         ];
 
@@ -4375,6 +4379,7 @@
             teacherFilter: 'all',
             query: '',
             invViewMode: 'day',
+            extraSem: 'S1',
             supFilter: 'all',
             supGroupCollapsed: {},
             studentLevel: '',
@@ -4431,6 +4436,130 @@
             return true;
         }
 
+        // ================================================================
+        //  ACTIVITY LOG — full-text record of changes made by users
+        //  (admins are NOT logged; every non-admin change is diffed and
+        //   stored with old value → new value, user, time and section)
+        // ================================================================
+
+        const ACTIVITY_LOG_MAX = 500; // keep the latest N actions
+        const ACTIVITY_MAX_LINES = 80; // cap change lines per single action
+        let activitySnapshot = null; // deep copy of years data before edits
+        let activityStoreRef = null; // detects external store replacement (GitHub sync, imports)
+
+        function activityLoggedFor(user) {
+            // OFF for admins, ON for everyone else
+            return !!(user && user.role !== 'admin');
+        }
+
+        function activityClone() {
+            try { return JSON.parse(JSON.stringify(store.years)); } catch (e) { return null; }
+        }
+
+        function resetActivitySnapshot() {
+            const u = state.currentUser;
+            if (u && activityLoggedFor(u) && store) {
+                activitySnapshot = activityClone();
+                activityStoreRef = store;
+            } else {
+                activitySnapshot = null;
+                activityStoreRef = null;
+            }
+        }
+
+        function activityShortVal(v) {
+            if (v === undefined) return '(empty)';
+            let s;
+            try { s = typeof v === 'string' ? '"' + v + '"' : JSON.stringify(v); } catch (e) { s = String(v); }
+            if (s == null) s = '(empty)';
+            return s.length > 180 ? s.slice(0, 177) + '…' : s;
+        }
+
+        function activityDiff(oldV, newV, path, out) {
+            if (out.length >= ACTIVITY_MAX_LINES) return;
+            if (oldV === newV) return;
+            const oObj = oldV && typeof oldV === 'object';
+            const nObj = newV && typeof newV === 'object';
+            if (!oObj || !nObj || Array.isArray(oldV) !== Array.isArray(newV)) {
+                if (/password|token/i.test(path)) {
+                    out.push(path + ': (hidden value changed)');
+                } else if (oldV === undefined) {
+                    out.push(path + ': added ' + activityShortVal(newV));
+                } else if (newV === undefined) {
+                    out.push(path + ': removed (was ' + activityShortVal(oldV) + ')');
+                } else {
+                    out.push(path + ': ' + activityShortVal(oldV) + ' → ' + activityShortVal(newV));
+                }
+                return;
+            }
+            const keys = new Set([...Object.keys(oldV), ...Object.keys(newV)]);
+            for (const k of keys) {
+                if (out.length >= ACTIVITY_MAX_LINES) { out.push('… (more changes truncated)'); return; }
+                const p = Array.isArray(oldV) ? path + '[' + k + ']' : (path ? path + '.' + k : k);
+                activityDiff(oldV[k], newV[k], p, out);
+            }
+        }
+
+        function activityPrettyPath(line) {
+            // years[0].data.examsS1[2].room → (Year name ·) examsS1[2].room
+            return line.replace(/^\[(\d+)\]\.(?:data\.?)?/, (m, i) => {
+                const y = store.years[+i];
+                const label = y && y.name ? y.name : 'Year ' + (Number(i) + 1);
+                return (store.years.length > 1 ? label + ' · ' : '');
+            }).replace(/^\[(\d+)\]\.name/, (m, i) => 'Year name');
+        }
+
+        function recordActivity() {
+            const user = getCurrentUser();
+            if (!activityLoggedFor(user)) { activitySnapshot = null; activityStoreRef = null; return; }
+            // Store was replaced from outside (GitHub reload, file import…) → rebase, don't log
+            if (activityStoreRef !== store || !activitySnapshot) { resetActivitySnapshot(); return; }
+            const current = activityClone();
+            if (!current) return;
+            const raw = [];
+            activityDiff(activitySnapshot, current, '', raw);
+            activitySnapshot = current;
+            activityStoreRef = store;
+            if (!raw.length) return;
+            const changes = raw.map(activityPrettyPath);
+            if (!Array.isArray(store.activityLog)) store.activityLog = [];
+            store.activityLog.unshift({
+                ts: new Date().toISOString(),
+                user: user.username,
+                name: user.name || user.username,
+                role: user.role,
+                view: state.view || '',
+                changes
+            });
+            if (store.activityLog.length > ACTIVITY_LOG_MAX) store.activityLog.length = ACTIVITY_LOG_MAX;
+        }
+
+        function clearActivityLogAction() {
+            if (!canManageUsers()) { toast('Permission denied', 'err'); return; }
+            if (!confirm2('Clear the entire activity log?')) return;
+            store.activityLog = [];
+            persist();
+            toast('Activity log cleared');
+        }
+
+        function exportActivityLog() {
+            const log = store.activityLog || [];
+            if (!log.length) { toast('Activity log is empty', 'err'); return; }
+            const lines = [];
+            log.forEach(e => {
+                lines.push('[' + new Date(e.ts).toLocaleString() + '] ' + e.name + ' (' + e.user + ', ' + e.role +
+                    ')' + (e.view ? ' — section: ' + e.view : ''));
+                (e.changes || []).forEach(c => lines.push('    • ' + c));
+                lines.push('');
+            });
+            const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'activity_log.txt';
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+        }
+
         // ---- Role-based permissions ----
         function getCurrentUser() {
             return state.currentUser;
@@ -4460,9 +4589,11 @@
             const user = getCurrentUser();
             if (!user) return false;
             if (user.role === 'admin') return true;
+            // Per-user full-edit view assignment (works for any role)
+            if (user.editView && user.editView === module) return true;
             if (user.role === 'hod') {
                 const editModules = ['exams', 'teachers', 'delegates', 'supervision', 'students', 'rooms',
-                    'curriculum', 'timetables'
+                    'curriculum', 'timetables', 'extrahours'
                 ];
                 return editModules.includes(module);
             }
@@ -4492,9 +4623,11 @@
                 const views = user.views || [];
                 const viewCount = views.length;
                 msg = `Read-only · ${viewCount} section${viewCount===1?'':'s'} allowed`;
+                if (user.editView) msg += ` · ✏️ full edit: <b>${user.editView}</b>`;
             } else if (role === 'delegate') {
                 icon = '📖';
                 msg = 'Read-only · limited access';
+                if (user.editView) msg += ` · ✏️ full edit: <b>${user.editView}</b>`;
             }
             const editHint = canEdit(module) ? ' · <b>Edit enabled</b>' : ' · <i>Read only</i>';
             return `<div class="perm-banner">
@@ -4554,6 +4687,7 @@
             }
 
             state.currentUser = user;
+            resetActivitySnapshot();
             try {
                 localStorage.setItem('dept_session', JSON.stringify({ username: user.username, role: user.role }));
             } catch (_) {}
@@ -4566,6 +4700,7 @@
 
         function logout() {
             state.currentUser = null;
+            resetActivitySnapshot();
             try { localStorage.removeItem('dept_session'); } catch (_) {}
             updateSidebarUser();
             updateNavVisibility();
@@ -4610,6 +4745,7 @@
                         const user = getUserByUsername(data.username);
                         if (user) {
                             state.currentUser = user;
+                            resetActivitySnapshot();
                             hideLogin();
                             updateSidebarUser();
                             updateNavVisibility();
@@ -4635,7 +4771,7 @@
                   <button class="btn sm" onclick="openAddUserModal()">${ICON.plus} Add user</button>
                 </div>
                 <table class="datatable" style="border:none">
-                  <thead><tr><th>Username</th><th>Name</th><th>Role</th><th>Allowed views</th><th></th></tr></thead>
+                  <thead><tr><th>Username</th><th>Name</th><th>Role</th><th>Allowed views</th><th>Full edit</th><th></th></tr></thead>
                   <tbody>
                     ${users.map(u => `
                       <tr>
@@ -4644,6 +4780,9 @@
                         <td><span class="badge ${u.role}">${u.role}</span></td>
                         <td style="font-size:11px;color:var(--text-2)">
                           ${(u.views||[]).length ? (u.views.includes('all') ? 'All' : u.views.join(', ')) : '—'}
+                        </td>
+                        <td style="font-size:11px">
+                          ${u.role === 'admin' ? '<span style="color:var(--text-2)">all</span>' : (u.editView ? `<span class="badge perm">✏️ ${escape(u.editView)}</span>` : '<span style="color:var(--text-2)">—</span>')}
                         </td>
                         <td>
                           <div class="row-actions" style="opacity:1;position:static">
@@ -4655,9 +4794,59 @@
                     `).join('')}
                   </tbody>
                 </table>
-                <div style="margin-top:10px;font-size:11px;color:var(--text-2)">💡 <b>admin</b> cannot be deleted. Roles: <span class="badge admin">admin</span> (full), <span class="badge hod">hod</span> (manage exams/invigilation), <span class="badge teacher">teacher</span> (custom view assignment), <span class="badge delegate">delegate</span> (limited read-only).</div>
+                <div style="margin-top:10px;font-size:11px;color:var(--text-2)">💡 <b>admin</b> cannot be deleted. Roles: <span class="badge admin">admin</span> (full), <span class="badge hod">hod</span> (manage exams/invigilation), <span class="badge teacher">teacher</span> (custom view assignment), <span class="badge delegate">delegate</span> (limited read-only). <b>Full edit</b>: one section a user can fully edit regardless of role. Changes by non-admin users are recorded in the <b>Activity Log</b> below.</div>
               </div>
             `;
+        }
+
+        function renderActivityLog() {
+            if (!canManageUsers()) return '';
+            const log = store.activityLog || [];
+            const fmtTime = ts => {
+                try { return new Date(ts).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }); }
+                catch (e) { return ts; }
+            };
+            const rows = log.slice(0, 100).map(e => `
+                <div style="padding:10px 12px;border-bottom:1px solid var(--border-soft)">
+                  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+                    <span class="badge ${escape(e.role)}">${escape(e.role)}</span>
+                    <b style="font-size:12.5px">${escape(e.name)} <span style="font-weight:400;color:var(--text-2)">(${escape(e.user)})</span></b>
+                    ${e.view ? `<span style="font-size:11px;color:var(--text-2)">· section: <code>${escape(e.view)}</code></span>` : ''}
+                    <span style="margin-left:auto;font-size:11px;color:var(--text-2)">${escape(fmtTime(e.ts))}</span>
+                  </div>
+                  <div style="font-size:11.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--text);line-height:1.7;word-break:break-word">
+                    ${(e.changes||[]).map(c => `<div>• ${escape(c)}</div>`).join('')}
+                  </div>
+                </div>`).join('');
+            return `
+              <div class="card">
+                <div class="card-head">
+                  <h3>📝 Activity Log</h3>
+                  <div style="display:flex;gap:6px">
+                    <button class="btn ghost sm" onclick="exportActivityLog()">⬇ Export (.txt)</button>
+                    <button class="btn ghost sm" style="color:var(--danger)" onclick="clearActivityLogAction()">Clear</button>
+                  </div>
+                </div>
+                <p style="color:var(--text-2);font-size:12.5px;margin-bottom:10px">
+                  Full-text record of every change made by <b>non-admin</b> users — old value → new value, with user, time and section. Admin actions are <b>not</b> logged. Keeps the latest ${ACTIVITY_LOG_MAX} actions${log.length > 100 ? ' (showing the most recent 100 — export for the full list)' : ''}.
+                </p>
+                ${log.length ? `
+                  <div style="max-height:420px;overflow:auto;border:1px solid var(--border-soft);border-radius:8px;background:var(--surface-2)">
+                    ${rows}
+                  </div>` : `
+                  <div style="padding:18px;text-align:center;color:var(--text-2);font-size:12.5px;border:1px dashed var(--border);border-radius:8px">
+                    No activity recorded yet. Changes will appear here as soon as a non-admin user edits something.
+                  </div>`}
+              </div>
+            `;
+        }
+
+        function editViewOptions() {
+            return [{ value: '', label: '— None (read-only) —' }].concat(
+                VIEWS_LIST.filter(v => v !== 'settings').map(v => ({
+                    value: v, label: v.charAt(0).toUpperCase() + v.slice(1)
+                }))
+            );
         }
 
         function openAddUserModal() {
@@ -4678,7 +4867,10 @@
                             { value: 'delegate', label: 'Delegate — limited read-only' }
                         ], value: role },
                     { key: 'views', label: 'Allowed views (for Teacher role)', type: 'views',
-                        value: defaultViews, hint: 'Select which sections this user can access' }
+                        value: defaultViews, hint: 'Select which sections this user can access' },
+                    { key: 'editView', label: 'Full-edit view (optional)', type: 'select',
+                        options: editViewOptions(), value: '',
+                        hint: 'Grants this user full edit rights in ONE section, even if their role is read-only. Their changes are recorded in the Activity Log.' }
                 ],
                 onSave: v => {
                     if (!v.username.trim() || !v.password.trim() || !v.name.trim()) return false;
@@ -4692,8 +4884,10 @@
                     if (v.role === 'admin' || v.role === 'hod') views = VIEWS_LIST;
                     if (v.role === 'delegate' && !views.length) views = DEFAULT_VIEWS.delegate;
                     if (v.role === 'teacher' && !views.length) views = DEFAULT_VIEWS.teacher;
+                    const editView = v.editView || null;
+                    if (editView && !views.includes(editView) && !views.includes('all')) views.push(editView);
                     users.push({ username: v.username.trim(), password: v.password.trim(), name: v.name
-                            .trim(), role: v.role, views });
+                            .trim(), role: v.role, views, editView });
                     persist();
                     toast('User added');
                     render();
@@ -4718,7 +4912,10 @@
                 { key: 'views', label: 'Allowed views (for Teacher role)', type: 'views',
                     value: user.views || (user.role === 'admin' || user.role === 'hod' ? VIEWS_LIST : DEFAULT_VIEWS[
                         user.role] || []),
-                    hint: 'Select which sections this user can access' }
+                    hint: 'Select which sections this user can access' },
+                { key: 'editView', label: 'Full-edit view (optional)', type: 'select',
+                    options: editViewOptions(), value: user.editView || '',
+                    hint: 'Grants this user full edit rights in ONE section, even if their role is read-only. Their changes are recorded in the Activity Log.' }
             ];
             if (isSelf) {
                 fields.push({ key: 'password', label: 'New password (leave blank to keep)', type: 'password',
@@ -4744,7 +4941,10 @@
                     if (v.role === 'admin' || v.role === 'hod') views = VIEWS_LIST;
                     if (v.role === 'delegate' && !views.length) views = DEFAULT_VIEWS.delegate;
                     if (v.role === 'teacher' && !views.length) views = DEFAULT_VIEWS.teacher;
+                    const editView = v.editView || null;
+                    if (editView && !views.includes(editView) && !views.includes('all')) views.push(editView);
                     users[idx].views = views;
+                    users[idx].editView = editView;
                     if (isSelf && state.currentUser) {
                         state.currentUser = users[idx];
                         updateSidebarUser();
@@ -4911,8 +5111,7 @@
                         if (!endTime && startTime) {
                             const parts = startTime.split(':');
                             if (parts.length === 2) {
-                                let h = parseInt(parts[0]),
-                                    m = parseInt(parts[1]);
+                                let h = parseInt(parts[0]), m = parseInt(parts[1]);
                                 h = h + 1;
                                 if (h >= 24) h = h - 24;
                                 endTime = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
@@ -5622,6 +5821,7 @@
         function D() { return store.years[store.activeIdx].data; }
 
         function persist() {
+            try { recordActivity(); } catch (e) { console.error('activity log failed', e); }
             saveStore();
             render();
         }
@@ -6551,8 +6751,8 @@
                             }
                             if (sIdx < 0) sIdx = 0;
 
-                            entries.push({ day, slotIdx: sIdx, module: moduleName, instructor,
-                                room, group });
+                            entries.push({ day, slotIdx: sIdx, module: moduleName, instructor, room,
+                                group });
                         }
 
                         tt.entries[matchedSem] = entries;
@@ -7043,14 +7243,16 @@
             const which = EXAM_TABS.find(t => t.key === tab) || EXAM_TABS[0];
             crumb('Academic', 'Exams', which.label, state.examSemester);
             ({ schedule: viewExamSchedule, allocation: viewRoomAllocation, invigilation: viewInvigilation,
-                replacement: viewReplacementExams })[which.key]();
+                replacement: viewReplacementExams, review: viewPaperReview, retake: viewRetakeExams })[which.key]();
         }
 
         const EXAM_TABS = [
             { key: 'schedule', label: 'Schedule' },
             { key: 'allocation', label: 'Room allocation' },
             { key: 'invigilation', label: 'Invigilation' },
-            { key: 'replacement', label: 'Replacement' }
+            { key: 'replacement', label: 'Replacement' },
+            { key: 'review', label: 'Paper Review' },
+            { key: 'retake', label: 'Retake / Debts' }
         ];
 
         function examSubtabBar() {
@@ -8026,6 +8228,18 @@
             'chef de département adjoint chargé de la scolarité\n et des enseignements de graduation'
         ];
 
+        // Administrative roles that are NOT exempt from invigilation
+        // (Head of Specialization / Head of Academic Program still invigilate)
+        const NON_EXEMPT_ROLES = ['Head of Specialization', 'Head of Academic Program'];
+
+        // Arabic translation auto-fill for known administrative roles
+        const ROLE_AR_MAP = {
+            'Head of Department': 'رئيس قسم',
+            'Deputy Head of Department': 'نائب رئيس قسم',
+            'Head of Specialization': 'رئيس تخصص',
+            'Head of Academic Program': 'رئيس شعبة'
+        };
+
         function isExemptFromInvigilation(teacher) {
             if (!teacher) return false;
             const role = (teacher.role || '').trim();
@@ -8307,8 +8521,7 @@
             const conflicts = [];
             Object.entries(seen).forEach(([t, entries]) => {
                 const bySlot = {};
-                entries.forEach(e => { bySlot[e.slotIdx] = bySlot[e.slotIdx] || [];
-                    bySlot[e.slotIdx].push(e.room); });
+                entries.forEach(e => { bySlot[e.slotIdx] = bySlot[e.slotIdx] || []; bySlot[e.slotIdx].push(e.room); });
                 Object.entries(bySlot).forEach(([sIdx, rooms]) => {
                     if (rooms.length > 1) {
                         conflicts.push({ type: 'hard', teacher: t, slotIdx: +sIdx, rooms });
@@ -8390,10 +8603,9 @@
                     });
                 });
             });
-            
+
             const byDate = {};
-            entries.forEach(e => { byDate[e.date] = byDate[e.date] || [];
-                byDate[e.date].push(e); });
+            entries.forEach(e => { byDate[e.date] = byDate[e.date] || []; byDate[e.date].push(e); });
 
             const allPermanentAvailable = [...permanentByNorm.values()];
 
@@ -9368,7 +9580,7 @@
             if (!checkEdit('teachers')) { toast('Read-only mode', 'err'); return; }
             const t = idx == null ? { kind: 'Permanent Teachers', grade: '', name: '', nameAr: '', phone: '',
                     emails: [], role: '', roleAr: '' } : { ...D().teachers[idx] };
-            const roleOptions = ['', ...EXEMPT_ROLES];
+            const roleOptions = ['', ...EXEMPT_ROLES, ...NON_EXEMPT_ROLES];
             openModal({
                 title: idx == null ? 'Add teacher' : 'Edit teacher',
                 fields: [
@@ -9381,11 +9593,14 @@
                     { key: 'emails', label: 'Emails', type: 'list', value: t.emails || [] },
                     { key: 'role', label: 'Administrative role', type: 'combo', options: roleOptions,
                         value: t.role || '',
-                        hint: 'Select "Head of Department" or "Deputy Head of Department" to exempt from invigilation, or type a custom role.' },
+                        hint: '"Head of Department" / "Deputy Head of Department" are exempt from invigilation. "Head of Specialization" and "Head of Academic Program" are NOT exempt. You can also type a custom role.' },
                     { key: 'roleAr', label: 'Administrative role (Arabic)', value: t.roleAr || '',
-                        dir: 'rtl' }
+                        dir: 'rtl', hint: 'Left empty, it is auto-filled for known roles (رئيس تخصص، رئيس شعبة…)' }
                 ],
                 onSave: v => {
+                    if (!(v.roleAr || '').trim() && ROLE_AR_MAP[(v.role || '').trim()]) {
+                        v.roleAr = ROLE_AR_MAP[(v.role || '').trim()];
+                    }
                     if (idx == null) D().teachers.push(v);
                     else D().teachers[idx] = v;
                     persist();
@@ -9660,6 +9875,1308 @@
                 📊 <b>Excel:</b> Export → all teachers with their details. Import → upload a .xlsx/.xls file with columns: Name, Name (Arabic), Status, Grade, Phone, Emails, Role (FR), Role (AR). Matching is done by name (case-insensitive) to update existing teachers.
               </div>
             `;
+        }
+
+        // ==================================================================
+        //  EXAM PAPER REVIEW TIMETABLE (استشارة أوراق الامتحان)
+        //  One room per level · teachers meet students to review papers
+        // ==================================================================
+        const escJs = s => String(s == null ? '' : s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+
+        function prAddMin(t, mins) {
+            const m = /^(\d{1,2}):(\d{2})$/.exec((t || '').trim());
+            if (!m) return '';
+            let tot = (+m[1]) * 60 + (+m[2]) + (Number(mins) || 0);
+            tot = ((tot % 1440) + 1440) % 1440;
+            return String(Math.floor(tot / 60)).padStart(2, '0') + ':' + String(tot % 60).padStart(2, '0');
+        }
+
+        function prOrdinal(day) {
+            if (day % 10 === 1 && day !== 11) return 'st';
+            if (day % 10 === 2 && day !== 12) return 'nd';
+            if (day % 10 === 3 && day !== 13) return 'rd';
+            return 'th';
+        }
+
+        function prLongDate(iso, withYear = true) {
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || '')) return iso || '';
+            const dt = new Date(iso + 'T00:00:00');
+            const day = dt.getDate();
+            const wd = dt.toLocaleDateString('en-GB', { weekday: 'long' });
+            const mo = dt.toLocaleDateString('en-GB', { month: 'long' });
+            return `${wd}, ${mo} ${String(day).padStart(2,'0')}${prOrdinal(day)}${withYear ? ', ' + dt.getFullYear() : ''}`;
+        }
+
+        function levelDisplayEn(level) {
+            const l = (level || '').trim();
+            if (/^L1$/i.test(l)) return 'FIRST YEAR';
+            if (/^L2$/i.test(l)) return 'SECOND YEAR';
+            if (/^L3$/i.test(l)) return 'THIRD YEAR';
+            return l.toUpperCase();
+        }
+
+        function ensurePaperReview(d) {
+            if (!d.paperReview) d.paperReview = {};
+            ['S1', 'S2'].forEach(s => {
+                if (!d.paperReview[s]) d.paperReview[s] = { levels: {} };
+                if (!d.paperReview[s].levels) d.paperReview[s].levels = {};
+            });
+            return d.paperReview;
+        }
+
+        function prSession(d, sem, level, create) {
+            const pr = ensurePaperReview(d);
+            if (!pr[sem].levels[level] && create) {
+                pr[sem].levels[level] = { room: '', date: '', startTime: '09:00', duration: 30, gap: 5,
+                    items: [] };
+            }
+            const s = pr[sem].levels[level];
+            if (s) {
+                if (!Array.isArray(s.items)) s.items = [];
+                if (!s.startTime) s.startTime = '09:00';
+                if (s.duration == null) s.duration = 30;
+                if (s.gap == null) s.gap = 5;
+            }
+            return s;
+        }
+
+        // Compute start/end per item (manual overrides respected; the chain continues after them)
+        function prComputeTimes(sess) {
+            let cur = sess.startTime || '09:00';
+            return (sess.items || []).map(it => {
+                const start = it.startOverride || cur;
+                const end = it.endOverride || prAddMin(start, sess.duration || 30);
+                cur = prAddMin(end, sess.gap || 0);
+                return { start, end };
+            });
+        }
+
+        // All exams of a level in a semester (across groups), sorted by date
+        function prLevelExams(d, sem, level) {
+            const semKey = sem === 'S1' ? 'examsS1' : 'examsS2';
+            const out = [];
+            (d[semKey] || []).forEach(g => {
+                (g.exams || []).forEach(e => {
+                    const lvl = (e.level || g.level || '').trim();
+                    if (lvl === level && (e.module || '').trim()) {
+                        out.push({ module: e.module.trim(), teacher: (e.teacher || '').trim(),
+                            date: e.date || '' });
+                    }
+                });
+            });
+            out.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+            const seen = new Set();
+            return out.filter(e => {
+                const k = e.module.toLowerCase();
+                if (seen.has(k)) return false;
+                seen.add(k);
+                return true;
+            });
+        }
+
+        function prExamLevels(d, sem) {
+            const semKey = sem === 'S1' ? 'examsS1' : 'examsS2';
+            const set = new Set();
+            (d[semKey] || []).forEach(g => {
+                (g.exams || []).forEach(e => {
+                    const lvl = (e.level || g.level || '').trim();
+                    if (lvl) set.add(lvl);
+                });
+            });
+            return [...set].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+        }
+
+        function prPrefillAll(sem) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const levels = prExamLevels(d, sem);
+            if (!levels.length) { toast('No exams found for ' + sem + ' — add exams in the Schedule tab first.', 'err'); return; }
+            if (!confirm2(`Prefill paper review sessions for ${sem} from the exam schedule?\n\n· One session per level (${levels.join(', ')})\n· Modules & instructors are copied in exam-date order\n· Existing rooms, dates and manual edits on kept modules are preserved`)) return;
+            let added = 0;
+            levels.forEach(level => {
+                const sess = prSession(d, sem, level, true);
+                const exams = prLevelExams(d, sem, level);
+                const have = new Set(sess.items.map(it => (it.module || '').trim().toLowerCase()));
+                exams.forEach(e => {
+                    if (!have.has(e.module.toLowerCase())) {
+                        sess.items.push({ module: e.module, teacher: e.teacher });
+                        added++;
+                    }
+                });
+            });
+            persist();
+            toast(`Paper review prefilled · ${added} module${added===1?'':'s'} added across ${levels.length} level${levels.length===1?'':'s'}`, 'ok');
+        }
+
+        function prRefillLevel(sem, level) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const exams = prLevelExams(d, sem, level);
+            if (!exams.length) { toast('No exams for this level in ' + sem + '.', 'err'); return; }
+            if (!confirm2(`Refill "${level}" from the ${sem} exam schedule?\nThis replaces the module list (room, date and time settings are kept).`)) return;
+            const sess = prSession(d, sem, level, true);
+            sess.items = exams.map(e => ({ module: e.module, teacher: e.teacher }));
+            persist();
+        }
+
+        function prEditSettings(sem, level) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const sess = prSession(d, sem, level, true);
+            openModal({
+                title: `Review session settings · ${level}`,
+                fields: [
+                    { key: 'room', label: 'Room (one room per level)', type: 'combo',
+                        options: d.rooms || [], value: sess.room || '' },
+                    { key: 'date', label: 'Date', type: 'date', value: sess.date || '' },
+                    { key: 'startTime', label: 'Start time', type: 'time', value: sess.startTime || '09:00' },
+                    { key: 'duration', label: 'Minutes per session', type: 'number', value: sess.duration,
+                        hint: 'Default 30 minutes per module' },
+                    { key: 'gap', label: 'Break between sessions (min)', type: 'number', value: sess.gap,
+                        hint: 'Default 5 minutes' }
+                ],
+                onSave: v => {
+                    sess.room = v.room || '';
+                    sess.date = v.date || '';
+                    sess.startTime = v.startTime || '09:00';
+                    sess.duration = Math.max(5, Number(v.duration) || 30);
+                    sess.gap = Math.max(0, Number(v.gap) || 0);
+                    persist();
+                }
+            });
+        }
+
+        function prEditItem(sem, level, ii) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const sess = prSession(d, sem, level, true);
+            const it = ii == null ? { module: '', teacher: '' } : { ...sess.items[ii] };
+            const modules = [...new Set([...getModulesForLevelSem(d, level, sem),
+                ...prLevelExams(d, sem, level).map(e => e.module)])].sort();
+            const teacherNames = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort();
+            openModal({
+                title: (ii == null ? 'Add' : 'Edit') + ` review session · ${level}`,
+                fields: [
+                    { key: 'module', label: 'Module', type: 'combo', options: modules, required: true,
+                        value: it.module || '' },
+                    { key: 'teacher', label: 'Instructor', type: 'combo', options: teacherNames,
+                        value: it.teacher || '', hint: 'Left empty, it is auto-filled from the exam schedule / timetable' },
+                    { key: 'startOverride', label: 'Custom start (optional)', type: 'time', row: true,
+                        value: it.startOverride || '' },
+                    { key: 'endOverride', label: 'Custom end (optional)', type: 'time', row: true,
+                        value: it.endOverride || '' }
+                ],
+                onSave: v => {
+                    const rec = { module: (v.module || '').trim(), teacher: (v.teacher || '').trim() };
+                    if (!rec.teacher) rec.teacher = findTeacherForModule(d, level, rec.module) || '';
+                    if (v.startOverride) rec.startOverride = v.startOverride;
+                    if (v.endOverride) rec.endOverride = v.endOverride;
+                    if (ii == null) sess.items.push(rec);
+                    else sess.items[ii] = rec;
+                    persist();
+                }
+            });
+        }
+
+        function prDeleteItem(sem, level, ii) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const sess = prSession(D(), sem, level);
+            if (!sess) return;
+            sess.items.splice(ii, 1);
+            persist();
+        }
+
+        function prMoveItem(sem, level, ii, dir) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const sess = prSession(D(), sem, level);
+            if (!sess) return;
+            const j = ii + dir;
+            if (j < 0 || j >= sess.items.length) return;
+            [sess.items[ii], sess.items[j]] = [sess.items[j], sess.items[ii]];
+            persist();
+        }
+
+        function prDeleteSession(sem, level) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            if (!confirm2(`Delete the whole paper review session for "${level}"?`)) return;
+            const pr = ensurePaperReview(D());
+            delete pr[sem].levels[level];
+            persist();
+        }
+
+        function prAddSession(sem) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const pr = ensurePaperReview(d);
+            const levels = getCurriculumLevels(d).filter(l => !pr[sem].levels[l]);
+            openModal({
+                title: 'Add review session',
+                fields: [
+                    { key: 'level', label: 'Level', type: 'combo', options: levels, required: true, value: '' },
+                    { key: 'room', label: 'Room', type: 'combo', options: d.rooms || [], value: '' }
+                ],
+                onSave: v => {
+                    const lvl = (v.level || '').trim();
+                    if (!lvl) return;
+                    const sess = prSession(d, sem, lvl, true);
+                    if (v.room) sess.room = v.room;
+                    persist();
+                }
+            });
+        }
+
+        function findTeacherForModule(d, level, module) {
+            const modLC = (module || '').trim().toLowerCase();
+            if (!modLC) return '';
+            for (const semKey of ['examsS1', 'examsS2']) {
+                for (const g of (d[semKey] || [])) {
+                    for (const e of (g.exams || [])) {
+                        const lvl = (e.level || g.level || '').trim();
+                        if (lvl === level && (e.module || '').trim().toLowerCase() === modLC && e.teacher)
+                            return e.teacher.trim();
+                    }
+                }
+            }
+            const tt = (d.timetables || {})[level];
+            if (tt) {
+                for (const sem of ['S1', 'S2']) {
+                    for (const e of ((tt.entries || {})[sem] || [])) {
+                        if ((e.module || '').trim().toLowerCase() === modLC && e.instructor)
+                            return e.instructor.trim();
+                    }
+                }
+            }
+            return '';
+        }
+
+        function viewPaperReview() {
+            const d = D();
+            const sem = state.examSemester;
+            const pr = ensurePaperReview(d);
+            const levels = Object.keys(pr[sem].levels).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+            const canEdit = checkEdit('exams');
+            document.getElementById('page').innerHTML = `
+              ${showPermissionBanner('exams')}
+              <div class="page-head">
+                <div>
+                  <h1>Exam paper review · Semester ${sem.slice(1)}</h1>
+                  <p>One room per level. Teachers come in sequence so students can review their exam papers. Times are computed automatically (default <b>30 min</b> per module + break) and every row stays editable.</p>
+                </div>
+                <div class="page-actions">
+                  <button class="btn ghost sm" onclick="printPaperReview('${sem}',null)">📄 Print all</button>
+                  <button class="btn ghost sm" onclick="prExportExcel('${sem}')">${ICON.download} Export Excel</button>
+                  ${canEdit ? `<button class="btn ghost sm" onclick="prImportExcel('${sem}')">${ICON.upload} Import Excel</button>` : ''}
+                  ${canEdit ? `<button class="btn ghost sm" onclick="prPrefillAll('${sem}')">⚡ Prefill from exams</button>` : ''}
+                  ${canEdit ? `<button class="btn" onclick="prAddSession('${sem}')">${ICON.plus} Add level</button>` : ''}
+                </div>
+              </div>
+              ${examSubtabBar()}
+              ${examSemChips()}
+              ${levels.length===0 ? `<div class="alert warn"><div class="alert-body"><strong>No review sessions yet</strong><div style="margin-top:4px">Click <b>⚡ Prefill from exams</b> to create one session per level from the ${sem} exam schedule, or <b>Add level</b> to start manually.</div></div></div>` : ''}
+              ${levels.map(level=>{
+                const sess = prSession(d, sem, level);
+                const times = prComputeTimes(sess);
+                const lastEnd = times.length ? times[times.length-1].end : '';
+                return `
+                <div class="card">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <div>
+                      <h3 style="margin:0">${escape(levelDisplayEn(level))} <span style="font-weight:400;color:var(--text-2)">· ${escape(level)}</span>
+                        ${sess.room?`<span class="level-tag">🏫 ${escape(sess.room)}</span>`:'<span class="level-tag none">⚠ No room</span>'}
+                      </h3>
+                      <div style="font-size:12.5px;color:var(--text-2);margin-top:4px">
+                        ${sess.date?`📅 <b>${escape(prLongDate(sess.date))}</b>`:'📅 <i>No date set</i>'} ·
+                        from <b>${escape(sess.startTime)}</b>${lastEnd?` to <b>${escape(lastEnd)}</b>`:''} ·
+                        ${sess.duration} min/module · ${sess.gap} min break
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap">
+                      <button class="btn ghost sm" onclick="printPaperReview('${sem}','${escJs(level)}')">📄 Print</button>
+                      ${canEdit?`<button class="btn ghost sm" onclick="prEditSettings('${sem}','${escJs(level)}')">⚙️ Settings</button>`:''}
+                      ${canEdit?`<button class="btn ghost sm" onclick="prRefillLevel('${sem}','${escJs(level)}')">⟳ Refill from exams</button>`:''}
+                      ${canEdit?`<button class="btn ghost sm" onclick="prEditItem('${sem}','${escJs(level)}',null)">${ICON.plus} Add module</button>`:''}
+                      ${canEdit?`<button class="icon-btn danger" title="Delete session" onclick="prDeleteSession('${sem}','${escJs(level)}')">${ICON.del}</button>`:''}
+                    </div>
+                  </div>
+                  ${sess.items.length===0?'<div style="color:var(--text-2);padding:14px 4px;font-size:13px">No modules yet — use "Refill from exams" or "Add module".</div>':`
+                  <div style="overflow-x:auto"><table class="datatable">
+                    <thead><tr><th style="width:130px">Time</th><th>Module</th><th style="width:180px">Instructor</th>${canEdit?'<th style="width:130px"></th>':''}</tr></thead>
+                    <tbody>
+                      ${sess.items.map((it,ii)=>`<tr>
+                        <td class="mono">${escape(times[ii].start)} – ${escape(times[ii].end)}${(it.startOverride||it.endOverride)?' <span title="Custom time" style="font-size:10px">✎</span>':''}</td>
+                        <td style="font-weight:500">${escape(it.module)}</td>
+                        <td>${escape(it.teacher||'—')}</td>
+                        ${canEdit?`<td><div class="row-actions">
+                          <button class="icon-btn" title="Move up" ${ii===0?'disabled style="opacity:.3"':''} onclick="prMoveItem('${sem}','${escJs(level)}',${ii},-1)">↑</button>
+                          <button class="icon-btn" title="Move down" ${ii===sess.items.length-1?'disabled style="opacity:.3"':''} onclick="prMoveItem('${sem}','${escJs(level)}',${ii},1)">↓</button>
+                          <button class="icon-btn" title="Edit" onclick="prEditItem('${sem}','${escJs(level)}',${ii})">${ICON.edit}</button>
+                          <button class="icon-btn danger" title="Delete" onclick="prDeleteItem('${sem}','${escJs(level)}',${ii})">${ICON.del}</button>
+                        </div></td>`:''}
+                      </tr>`).join('')}
+                    </tbody>
+                  </table></div>`}
+                </div>`;
+              }).join('')}
+              ${levels.length?`<div style="margin-top:10px;font-size:11.5px;color:var(--text-2)">💡 Times flow automatically from the start time. To pin a specific slot, edit the row and set a custom start/end — the following rows continue from it.</div>`:''}
+            `;
+        }
+
+        function printPaperReview(sem, onlyLevel) {
+            const d = D();
+            const pr = ensurePaperReview(d);
+            const levels = (onlyLevel ? [onlyLevel] : Object.keys(pr[sem].levels))
+                .filter(l => pr[sem].levels[l] && (pr[sem].levels[l].items || []).length)
+                .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+            if (!levels.length) { toast('Nothing to print — add modules first.', 'err'); return; }
+            let body = '';
+            levels.forEach(level => {
+                const sess = pr[sem].levels[level];
+                const times = prComputeTimes(sess);
+                body += `<div class="print-page">${reportHeaderHTML()}
+                  <div style="text-align:center;margin:6px 0 2px;font-size:15px;font-weight:700;font-family:'Fraunces',Georgia,serif">Exam Paper Review Timetable · Semester ${sem.slice(1)}</div>
+                  <div style="text-align:center;font-size:14px;font-weight:700;margin-bottom:2px">${escape(levelDisplayEn(level))} – ${escape(sess.room||'Room —')}</div>
+                  ${sess.date?`<div style="text-align:center;font-size:12.5px;margin-bottom:10px">${escape(prLongDate(sess.date))}</div>`:'<div style="margin-bottom:10px"></div>'}
+                  <table style="width:100%;border-collapse:collapse;font-size:11.5px">
+                    <thead><tr>
+                      <th style="border:1px solid #333;padding:6px;background:#eaf0ec;width:120px;text-align:center">Time</th>
+                      <th style="border:1px solid #333;padding:6px;background:#eaf0ec;text-align:center">Module</th>
+                      <th style="border:1px solid #333;padding:6px;background:#eaf0ec;width:160px;text-align:center">Instructor</th>
+                    </tr></thead>
+                    <tbody>
+                      ${sess.items.map((it,ii)=>`<tr>
+                        <td style="border:1px solid #333;padding:5px 6px;text-align:center">${escape(times[ii].start)} – ${escape(times[ii].end)}</td>
+                        <td style="border:1px solid #333;padding:5px 6px">${escape(it.module)}</td>
+                        <td style="border:1px solid #333;padding:5px 6px">${escape(it.teacher||'')}</td>
+                      </tr>`).join('')}
+                    </tbody>
+                  </table>
+                  <div class="print-footer"></div>
+                </div>`;
+            });
+            openPrintWindow('Exam paper review · ' + sem, body);
+        }
+
+        async function prExportExcel(sem) {
+            const d = D();
+            const pr = ensurePaperReview(d);
+            const levels = Object.keys(pr[sem].levels);
+            if (!levels.length) { toast('Nothing to export.', 'err'); return; }
+            toast('Preparing spreadsheet…');
+            try {
+                const XLSX = await loadSheetJS();
+                const wb = XLSX.utils.book_new();
+                levels.forEach(level => {
+                    const sess = pr[sem].levels[level];
+                    const times = prComputeTimes(sess);
+                    const rows = [
+                        ['Level', level],
+                        ['Room', sess.room || ''],
+                        ['Date', sess.date || ''],
+                        ['Start', sess.startTime || ''],
+                        ['Duration (min)', sess.duration],
+                        ['Gap (min)', sess.gap],
+                        [],
+                        ['Time', 'Module', 'Instructor'],
+                        ...sess.items.map((it, ii) => [`${times[ii].start} – ${times[ii].end}`,
+                            it.module || '', it.teacher || ''])
+                    ];
+                    const name = level.replace(/[\\\/\?\*\[\]:]/g, '-').slice(0, 31) || 'Level';
+                    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), name);
+                });
+                const yr = store.years[store.activeIdx].name.replace(/\//g, '-');
+                XLSX.writeFile(wb, `paper_review_${sem}_${yr}.xlsx`);
+                toast('Exported paper review ' + sem, 'ok');
+            } catch (e) { toast('Export failed: ' + e.message, 'err'); }
+        }
+
+        function prImportExcel(sem) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.xlsx,.xls';
+            input.onchange = async () => {
+                const file = input.files[0];
+                if (!file) return;
+                try {
+                    const XLSX = await loadSheetJS();
+                    const data = await file.arrayBuffer();
+                    const wb = XLSX.read(data, { type: 'array' });
+                    const d = D();
+                    let sessions = 0, items = 0;
+                    wb.SheetNames.forEach(sheetName => {
+                        const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1 });
+                        let level = sheetName, room = '', date = '', start = '', dur = null, gap = null;
+                        let headerIdx = -1;
+                        rows.forEach((r, i) => {
+                            const k = String(r[0] || '').trim().toLowerCase();
+                            if (k === 'level' && r[1]) level = String(r[1]).trim();
+                            else if (k === 'room') room = String(r[1] || '').trim();
+                            else if (k === 'date') date = toISODate(String(r[1] || '').trim()) || String(r[1] || '').trim();
+                            else if (k === 'start') start = String(r[1] || '').trim();
+                            else if (k.startsWith('duration')) dur = Number(r[1]);
+                            else if (k.startsWith('gap')) gap = Number(r[1]);
+                            else if (k === 'time' && headerIdx === -1) headerIdx = i;
+                        });
+                        if (headerIdx === -1) return;
+                        const sess = prSession(d, sem, level, true);
+                        if (room) sess.room = room;
+                        if (date) sess.date = date;
+                        if (start) sess.startTime = start;
+                        if (dur != null && !isNaN(dur)) sess.duration = dur;
+                        if (gap != null && !isNaN(gap)) sess.gap = gap;
+                        sess.items = [];
+                        for (let i = headerIdx + 1; i < rows.length; i++) {
+                            const r = rows[i];
+                            const module = String(r[1] || '').trim();
+                            if (!module) continue;
+                            const rec = { module, teacher: String(r[2] || '').trim() };
+                            const tr = parseTimeRange(String(r[0] || ''));
+                            if (tr.startTime) rec.startOverride = tr.startTime;
+                            if (tr.endTime) rec.endOverride = tr.endTime;
+                            sess.items.push(rec);
+                            items++;
+                        }
+                        sessions++;
+                    });
+                    persist();
+                    toast(`Imported ${sessions} session${sessions===1?'':'s'} · ${items} module${items===1?'':'s'}`, 'ok');
+                } catch (e) { toast('Import failed: ' + e.message, 'err'); }
+            };
+            input.click();
+        }
+
+        // ==================================================================
+        //  RETAKE EXAMS / DEBTS (امتحانات الاستدراك والديون)
+        //  Usually organized at the end of the year · one room per level
+        //  Grid: rows = days (module row + instructor row), columns = slots
+        // ==================================================================
+        const RK_DEFAULT_SLOTS = ['08:30–09:30', '09:30–10:30', '10:30–11:30', '11:30–12:30'];
+
+        function ensureRetake(d) {
+            if (!d.retakeExams || !d.retakeExams.levels) d.retakeExams = { levels: {} };
+            return d.retakeExams;
+        }
+
+        function rkLevel(d, level, create) {
+            const rk = ensureRetake(d);
+            if (!rk.levels[level] && create) {
+                rk.levels[level] = { room: '', slots: [...RK_DEFAULT_SLOTS], days: [] };
+            }
+            const L = rk.levels[level];
+            if (L) {
+                if (!Array.isArray(L.slots) || !L.slots.length) L.slots = [...RK_DEFAULT_SLOTS];
+                if (!Array.isArray(L.days)) L.days = [];
+                L.days.forEach(day => {
+                    if (!Array.isArray(day.cells)) day.cells = [];
+                    while (day.cells.length < L.slots.length) day.cells.push(null);
+                    if (day.cells.length > L.slots.length) day.cells = day.cells.slice(0, L.slots.length);
+                });
+            }
+            return L;
+        }
+
+        // Previous level → source of "debt" modules (L2 owes L1 modules, etc.)
+        function rkPrevLevel(level) {
+            const l = (level || '').trim();
+            if (/^L2$/i.test(l)) return 'L1';
+            if (/^L3$/i.test(l)) return 'L2';
+            const m = /^M2(.*)$/i.exec(l);
+            if (m) return ('M1' + m[1]).trim();
+            return null;
+        }
+
+        function rkModulePool(d, level) {
+            const cur = [...new Set([...getModulesForLevelSem(d, level, 'S1'),
+                ...getModulesForLevelSem(d, level, 'S2')])].sort();
+            const prev = rkPrevLevel(level);
+            const debt = prev ? [...new Set([...getModulesForLevelSem(d, prev, 'S1'),
+                ...getModulesForLevelSem(d, prev, 'S2')])].sort() : [];
+            return { cur, debt, prev };
+        }
+
+        function rkModuleSem(d, level, module) {
+            const modLC = (module || '').trim().toLowerCase();
+            for (const sem of ['S1', 'S2']) {
+                if (getModulesForLevelSem(d, level, sem).some(m => m.trim().toLowerCase() === modLC))
+                    return sem;
+            }
+            return '';
+        }
+
+        function rkAddLevel() {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const rk = ensureRetake(d);
+            const levels = getCurriculumLevels(d).filter(l => !rk.levels[l]);
+            openModal({
+                title: 'Add retake / debts table',
+                fields: [
+                    { key: 'level', label: 'Level', type: 'combo', options: levels, required: true, value: '' },
+                    { key: 'room', label: 'Room (one room per level)', type: 'combo',
+                        options: d.rooms || [], value: '' }
+                ],
+                onSave: v => {
+                    const lvl = (v.level || '').trim();
+                    if (!lvl) return;
+                    const L = rkLevel(d, lvl, true);
+                    if (v.room) L.room = v.room;
+                    persist();
+                }
+            });
+        }
+
+        function rkEditSettings(level) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const L = rkLevel(d, level, true);
+            openModal({
+                title: `Retake settings · ${level}`,
+                fields: [
+                    { key: 'room', label: 'Room', type: 'combo', options: d.rooms || [], value: L.room || '' },
+                    { key: 'slots', label: 'Time slots', type: 'list', value: L.slots,
+                        hint: 'Comma-separated, e.g. 08:30–09:30, 09:30–10:30, 10:30–11:30, 11:30–12:30' }
+                ],
+                onSave: v => {
+                    L.room = v.room || '';
+                    const slots = (v.slots || []).filter(Boolean);
+                    if (slots.length) {
+                        L.slots = slots;
+                        L.days.forEach(day => {
+                            while (day.cells.length < slots.length) day.cells.push(null);
+                            if (day.cells.length > slots.length) day.cells = day.cells.slice(0, slots.length);
+                        });
+                    }
+                    persist();
+                }
+            });
+        }
+
+        function rkLocalISO(dt) {
+            return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+        }
+
+        function rkNextDate(L) {
+            const dates = (L.days || []).map(x => x.date).filter(x => /^\d{4}-\d{2}-\d{2}$/.test(x)).sort();
+            if (!dates.length) return '';
+            let dt = new Date(dates[dates.length - 1] + 'T00:00:00');
+            do { dt.setDate(dt.getDate() + 1); } while (dt.getDay() === 5); // skip Friday
+            return rkLocalISO(dt);
+        }
+
+        function rkAddDay(level) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const L = rkLevel(d, level, true);
+            openModal({
+                title: `Add day · ${level}`,
+                fields: [{ key: 'date', label: 'Date', type: 'date', value: rkNextDate(L) }],
+                onSave: v => {
+                    L.days.push({ date: v.date || '', cells: L.slots.map(() => null) });
+                    L.days.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+                    persist();
+                }
+            });
+        }
+
+        function rkEditDay(level, di) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const L = rkLevel(D(), level);
+            if (!L || !L.days[di]) return;
+            openModal({
+                title: 'Edit day date',
+                fields: [{ key: 'date', label: 'Date', type: 'date', value: L.days[di].date || '' }],
+                onSave: v => {
+                    L.days[di].date = v.date || '';
+                    L.days.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+                    persist();
+                }
+            });
+        }
+
+        function rkDeleteDay(level, di) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            if (!confirm2('Delete this day and its exams?')) return;
+            const L = rkLevel(D(), level);
+            if (!L) return;
+            L.days.splice(di, 1);
+            persist();
+        }
+
+        function rkDeleteLevel(level) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            if (!confirm2(`Delete the whole retake table for "${level}"?`)) return;
+            delete ensureRetake(D()).levels[level];
+            persist();
+        }
+
+        function rkEditCell(level, di, si) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const L = rkLevel(d, level, true);
+            const day = L.days[di];
+            if (!day) return;
+            const cell = day.cells[si] || { module: '', tag: '', teacher: '' };
+            const pool = rkModulePool(d, level);
+            const options = [...pool.cur, ...pool.debt.filter(m => !pool.cur.includes(m))
+                .map(m => m + ' (debt)')];
+            const teacherNames = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort();
+            openModal({
+                title: `Retake exam · ${level} · ${L.slots[si] || ''}`,
+                subtitle: day.date ? prLongDate(day.date) : 'No date set',
+                fields: [
+                    { key: 'module', label: 'Module', type: 'combo', options: options,
+                        value: cell.module || '',
+                        hint: pool.prev ? `Modules of ${level} plus "(debt)" modules from ${pool.prev}` : `Modules of ${level}` },
+                    { key: 'tag', label: 'Session / semester tag', value: cell.tag || '',
+                        hint: 'Free text shown under the module, e.g. "S1", "S1 + s2", "S2 + Debts"' },
+                    { key: 'teacher', label: 'Instructor', type: 'combo', options: teacherNames,
+                        value: cell.teacher || '',
+                        hint: 'Left empty, it is auto-filled from the exam schedule / timetable' }
+                ],
+                onSave: v => {
+                    let module = (v.module || '').trim();
+                    const isDebt = / \(debt\)$/i.test(module);
+                    module = module.replace(/ \(debt\)$/i, '');
+                    if (!module) { day.cells[si] = null; persist(); return; }
+                    let tag = (v.tag || '').trim();
+                    if (!tag) {
+                        const sem = rkModuleSem(d, level, module);
+                        const prevSem = pool.prev ? rkModuleSem(d, pool.prev, module) : '';
+                        tag = isDebt ? ('Debt' + (prevSem ? ' ' + prevSem : '')) : sem;
+                    }
+                    let teacher = (v.teacher || '').trim();
+                    if (!teacher) teacher = findTeacherForModule(d, level, module) ||
+                        (pool.prev ? findTeacherForModule(d, pool.prev, module) : '') || '';
+                    day.cells[si] = { module, tag, teacher };
+                    persist();
+                }
+            });
+        }
+
+        function rkClearCell(level, di, si) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const L = rkLevel(D(), level);
+            if (!L || !L.days[di]) return;
+            L.days[di].cells[si] = null;
+            persist();
+        }
+
+        function rkPrefill(level) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const exams = [
+                ...prLevelExams(d, 'S1', level).map(e => ({ ...e, sem: 'S1' })),
+                ...prLevelExams(d, 'S2', level).map(e => ({ ...e, sem: 'S2' }))
+            ];
+            if (!exams.length) { toast('No exams found for this level (S1 or S2) — add them in the Schedule tab first.', 'err'); return; }
+            openModal({
+                title: `Prefill retake · ${level}`,
+                subtitle: `${exams.length} modules (S1 + S2) will be placed in order, ${rkLevel(d, level, true).slots.length} per day, skipping Fridays. Existing cells are replaced.`,
+                fields: [{ key: 'startDate', label: 'First day of retake exams', type: 'date',
+                    required: true, value: '' }],
+                onSave: v => {
+                    if (!v.startDate) return;
+                    const L = rkLevel(d, level, true);
+                    const perDay = L.slots.length;
+                    L.days = [];
+                    let dt = new Date(v.startDate + 'T00:00:00');
+                    let i = 0;
+                    while (i < exams.length) {
+                        while (dt.getDay() === 5) dt.setDate(dt.getDate() + 1); // skip Friday
+                        const iso = rkLocalISO(dt);
+                        const cells = [];
+                        for (let s = 0; s < perDay; s++) {
+                            const e = exams[i++];
+                            cells.push(e ? { module: e.module, tag: e.sem, teacher: e.teacher || '' } : null);
+                        }
+                        L.days.push({ date: iso, cells });
+                        dt.setDate(dt.getDate() + 1);
+                    }
+                    persist();
+                    toast(`Prefilled ${exams.length} retake exams over ${L.days.length} day${L.days.length===1?'':'s'}`, 'ok');
+                }
+            });
+        }
+
+        function viewRetakeExams() {
+            const d = D();
+            const rk = ensureRetake(d);
+            const levels = Object.keys(rk.levels).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+            const canEdit = checkEdit('exams');
+            document.getElementById('page').innerHTML = `
+              ${showPermissionBanner('exams')}
+              <div class="page-head">
+                <div>
+                  <h1>Retake exams / Debts</h1>
+                  <p>Usually organized at the <b>end of the year</b> — one room per level, S1 and S2 modules together. For L2 / L3 / M2, cells can also hold <b>debt</b> modules carried from the previous level.</p>
+                </div>
+                <div class="page-actions">
+                  <button class="btn ghost sm" onclick="printRetake(null)">📄 Print all</button>
+                  <button class="btn ghost sm" onclick="rkExportExcel()">${ICON.download} Export Excel</button>
+                  ${canEdit ? `<button class="btn ghost sm" onclick="rkImportExcel()">${ICON.upload} Import Excel</button>` : ''}
+                  ${canEdit ? `<button class="btn" onclick="rkAddLevel()">${ICON.plus} Add level</button>` : ''}
+                </div>
+              </div>
+              ${examSubtabBar()}
+              ${levels.length===0 ? `<div class="alert warn"><div class="alert-body"><strong>No retake tables yet</strong><div style="margin-top:4px">Click <b>Add level</b>, then use <b>⚡ Prefill</b> inside the level to place all S1 + S2 exam modules automatically.</div></div></div>` : ''}
+              ${levels.map(level=>{
+                const L = rkLevel(d, level);
+                return `
+                <div class="card">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <div>
+                      <h3 style="margin:0">${escape(level)} Retake Exams
+                        ${L.room?`<span class="level-tag">🏫 ${escape(L.room)}</span>`:'<span class="level-tag none">⚠ No room</span>'}
+                        <span class="badge perm" style="font-size:10px">${L.days.length} day${L.days.length===1?'':'s'}</span>
+                      </h3>
+                      ${rkPrevLevel(level)?`<div style="font-size:12px;color:var(--text-2);margin-top:3px">Debt modules from <b>${escape(rkPrevLevel(level))}</b> available in the module list.</div>`:''}
+                    </div>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap">
+                      <button class="btn ghost sm" onclick="printRetake('${escJs(level)}')">📄 Print</button>
+                      ${canEdit?`<button class="btn ghost sm" onclick="rkEditSettings('${escJs(level)}')">⚙️ Room & slots</button>`:''}
+                      ${canEdit?`<button class="btn ghost sm" onclick="rkPrefill('${escJs(level)}')">⚡ Prefill</button>`:''}
+                      ${canEdit?`<button class="btn ghost sm" onclick="rkAddDay('${escJs(level)}')">${ICON.plus} Add day</button>`:''}
+                      ${canEdit?`<button class="icon-btn danger" title="Delete table" onclick="rkDeleteLevel('${escJs(level)}')">${ICON.del}</button>`:''}
+                    </div>
+                  </div>
+                  ${L.days.length===0?'<div style="color:var(--text-2);padding:14px 4px;font-size:13px">No days yet — use ⚡ Prefill or Add day.</div>':`
+                  <div style="overflow-x:auto"><table class="datatable" style="table-layout:fixed;min-width:${180+L.slots.length*170}px">
+                    <thead><tr><th style="width:170px">Date / Time</th>${L.slots.map(s=>`<th style="text-align:center">${escape(s)}</th>`).join('')}</tr></thead>
+                    <tbody>
+                      ${L.days.map((day,di)=>`<tr>
+                        <td style="vertical-align:top">
+                          <div style="font-weight:600">${day.date?escape(prLongDate(day.date,false)):'<i>No date</i>'}</div>
+                          ${canEdit?`<div class="row-actions" style="margin-top:6px">
+                            <button class="icon-btn" title="Edit date" onclick="rkEditDay('${escJs(level)}',${di})">${ICON.edit}</button>
+                            <button class="icon-btn danger" title="Delete day" onclick="rkDeleteDay('${escJs(level)}',${di})">${ICON.del}</button>
+                          </div>`:''}
+                        </td>
+                        ${L.slots.map((_,si)=>{
+                          const c = day.cells[si];
+                          const click = canEdit?`onclick="rkEditCell('${escJs(level)}',${di},${si})" style="cursor:pointer"`:'';
+                          if(!c) return `<td ${click} title="${canEdit?'Click to add an exam':''}"><div style="text-align:center;color:var(--text-3);padding:10px 0">—</div></td>`;
+                          return `<td ${click} title="${canEdit?'Click to edit':''}">
+                            <div style="font-weight:600;font-size:12.5px">${escape(c.module)}</div>
+                            ${c.tag?`<div style="font-size:11px;color:var(--accent);margin-top:1px">${escape(c.tag)}</div>`:''}
+                            <div style="font-size:11.5px;color:var(--text-2);margin-top:3px">👤 ${escape(c.teacher||'—')}</div>
+                            ${canEdit?`<div style="margin-top:4px"><button class="icon-btn danger" title="Clear cell" onclick="event.stopPropagation();rkClearCell('${escJs(level)}',${di},${si})" style="width:20px;height:20px;font-size:10px">✕</button></div>`:''}
+                          </td>`;
+                        }).join('')}
+                      </tr>`).join('')}
+                    </tbody>
+                  </table></div>`}
+                </div>`;
+              }).join('')}
+              ${levels.length?`<div style="margin-top:10px;font-size:11.5px;color:var(--text-2)">💡 Click any cell to set its module, tag (e.g. <b>S1 + s2</b>, <b>S2 + Debts</b>) and instructor. The instructor auto-fills from the exam schedule / timetable when left empty.</div>`:''}
+            `;
+        }
+
+        function printRetake(onlyLevel) {
+            const d = D();
+            const rk = ensureRetake(d);
+            const levels = (onlyLevel ? [onlyLevel] : Object.keys(rk.levels))
+                .filter(l => rk.levels[l] && (rk.levels[l].days || []).length)
+                .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+            if (!levels.length) { toast('Nothing to print — add days first.', 'err'); return; }
+            const cellS = 'border:1px solid #333;padding:5px 6px;';
+            let body = '';
+            levels.forEach(level => {
+                const L = rkLevel(d, level);
+                const hasDebt = L.days.some(day => (day.cells || []).some(c => c && /debt/i.test(c.tag || '')));
+                body += `<div class="print-page">${reportHeaderHTML()}
+                  <div style="text-align:center;margin:6px 0 10px;font-size:15px;font-weight:700;font-family:'Fraunces',Georgia,serif">${escape(level)} Retake Exams${hasDebt?' / Debts':''} - ${escape(L.room||'Room —')} -</div>
+                  <table style="width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed">
+                    <thead><tr>
+                      <th style="${cellS}background:#eaf0ec;width:120px;text-align:center">Date / Time</th>
+                      ${L.slots.map(s=>`<th style="${cellS}background:#eaf0ec;text-align:center">${escape(s)}</th>`).join('')}
+                    </tr></thead>
+                    <tbody>
+                      ${L.days.map(day=>`
+                        <tr>
+                          <td style="${cellS}font-weight:700">${day.date?escape(prLongDate(day.date,false)):''}</td>
+                          ${L.slots.map((_,si)=>{
+                            const c = day.cells[si];
+                            if(!c) return `<td style="${cellS}"></td>`;
+                            return `<td style="${cellS}text-align:center"><div style="font-weight:600">${escape(c.module)}</div>${c.tag?`<div style="font-size:10px;margin-top:1px">${escape(c.tag)}</div>`:''}</td>`;
+                          }).join('')}
+                        </tr>
+                        <tr>
+                          <td style="${cellS}font-style:italic">Instructor</td>
+                          ${L.slots.map((_,si)=>{
+                            const c = day.cells[si];
+                            return `<td style="${cellS}text-align:center">${c&&c.teacher?escape(c.teacher):''}</td>`;
+                          }).join('')}
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                  <div class="print-footer"></div>
+                </div>`;
+            });
+            openPrintWindow('Retake exams / Debts', body);
+        }
+
+        async function rkExportExcel() {
+            const d = D();
+            const rk = ensureRetake(d);
+            const levels = Object.keys(rk.levels);
+            if (!levels.length) { toast('Nothing to export.', 'err'); return; }
+            toast('Preparing spreadsheet…');
+            try {
+                const XLSX = await loadSheetJS();
+                const wb = XLSX.utils.book_new();
+                levels.forEach(level => {
+                    const L = rkLevel(d, level);
+                    const rows = [
+                        ['Level', level],
+                        ['Room', L.room || ''],
+                        [],
+                        ['Date / Time', ...L.slots]
+                    ];
+                    L.days.forEach(day => {
+                        rows.push([day.date || '', ...L.slots.map((_, si) => {
+                            const c = day.cells[si];
+                            return c ? (c.module + (c.tag ? ' | ' + c.tag : '')) : '';
+                        })]);
+                        rows.push(['Instructor', ...L.slots.map((_, si) => {
+                            const c = day.cells[si];
+                            return c ? (c.teacher || '') : '';
+                        })]);
+                    });
+                    const name = level.replace(/[\\\/\?\*\[\]:]/g, '-').slice(0, 31) || 'Level';
+                    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), name);
+                });
+                const yr = store.years[store.activeIdx].name.replace(/\//g, '-');
+                XLSX.writeFile(wb, `retake_exams_${yr}.xlsx`);
+                toast('Exported retake exams', 'ok');
+            } catch (e) { toast('Export failed: ' + e.message, 'err'); }
+        }
+
+        function rkImportExcel() {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.xlsx,.xls';
+            input.onchange = async () => {
+                const file = input.files[0];
+                if (!file) return;
+                try {
+                    const XLSX = await loadSheetJS();
+                    const data = await file.arrayBuffer();
+                    const wb = XLSX.read(data, { type: 'array' });
+                    const d = D();
+                    let nLevels = 0, nDays = 0;
+                    wb.SheetNames.forEach(sheetName => {
+                        const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1 });
+                        let level = sheetName, room = '', slots = null, headerIdx = -1;
+                        rows.forEach((r, i) => {
+                            const k = String(r[0] || '').trim().toLowerCase();
+                            if (k === 'level' && r[1]) level = String(r[1]).trim();
+                            else if (k === 'room') room = String(r[1] || '').trim();
+                            else if (k === 'date / time' && headerIdx === -1) {
+                                headerIdx = i;
+                                slots = r.slice(1).map(x => String(x || '').trim()).filter(Boolean);
+                            }
+                        });
+                        if (headerIdx === -1) return;
+                        const L = rkLevel(d, level, true);
+                        if (room) L.room = room;
+                        if (slots && slots.length) L.slots = slots;
+                        L.days = [];
+                        let curDay = null;
+                        for (let i = headerIdx + 1; i < rows.length; i++) {
+                            const r = rows[i];
+                            const first = String(r[0] || '').trim();
+                            if (first.toLowerCase() === 'instructor') {
+                                if (!curDay) continue;
+                                L.slots.forEach((_, si) => {
+                                    const t = String(r[si + 1] || '').trim();
+                                    if (t && curDay.cells[si]) curDay.cells[si].teacher = t;
+                                });
+                            } else {
+                                const anyCell = r.slice(1).some(x => String(x || '').trim());
+                                if (!first && !anyCell) continue;
+                                curDay = { date: toISODate(first) || first,
+                                    cells: L.slots.map((_, si) => {
+                                        const raw = String(r[si + 1] || '').trim();
+                                        if (!raw) return null;
+                                        const parts = raw.split('|').map(x => x.trim());
+                                        return { module: parts[0], tag: parts[1] || '', teacher: '' };
+                                    }) };
+                                L.days.push(curDay);
+                                nDays++;
+                            }
+                        }
+                        nLevels++;
+                    });
+                    persist();
+                    toast(`Imported ${nLevels} level table${nLevels===1?'':'s'} · ${nDays} day${nDays===1?'':'s'}`, 'ok');
+                } catch (e) { toast('Import failed: ' + e.message, 'err'); }
+            };
+            input.click();
+        }
+
+        // ==================================================================
+        //  EXTRA HOURS (الحجم الساعي الإضافي)
+        //  Teachers WITHOUT an administrative role, present in the timetable
+        // ==================================================================
+        const EH_MONTHS = {
+            S1: { ar: ['سبتمبر', 'اكتوبر', 'نوفمبر', 'ديسمبر'],
+                  en: ['September', 'October', 'November', 'December'] },
+            S2: { ar: ['جانفي', 'فيفري', 'مارس', 'افريل', 'ماي'],
+                  en: ['January', 'February', 'March', 'April', 'May'] }
+        };
+        // Default monthly hours for TEMPORARY teachers
+        const EH_TEMP_DEFAULTS = { S1: [3, 12, 12, 6], S2: [3, 18, 15, 15, 18] };
+
+        function defaultExtraHoursHeader() {
+            return {
+                ar: 'الجمهورية الجزائرية الديمقراطية الشعبية\nوزارة التعليم العالي والبحث العلمي\nجامعة زيان عاشور - الجلفة\nكلية الآداب واللغات والفنون\nقسم اللغة الانجليزية',
+                en: "People's Democratic Republic of Algeria\nMinistry of Higher Education and Scientific Research\nZiane Achour University - Djelfa\nFaculty of Letters, Languages and Arts\nDepartment of English",
+                titles: {
+                    S1: { permAr: 'الحجم الساعي الإضافي للأساتذة الدائمين من سبتمبر إلى ديسمبر',
+                          tempAr: 'الحجم الساعي الإضافي للأساتذة المؤقتين من سبتمبر إلى ديسمبر',
+                          permEn: 'Extra Teaching Hours for Permanent Teachers — September to December',
+                          tempEn: 'Extra Teaching Hours for Temporary Teachers — September to December' },
+                    S2: { permAr: 'الحجم الساعي الإضافي للأساتذة الدائمين من جانفي إلى ماي',
+                          tempAr: 'الحجم الساعي الإضافي للأساتذة المؤقتين من جانفي إلى ماي',
+                          permEn: 'Extra Teaching Hours for Permanent Teachers — January to May',
+                          tempEn: 'Extra Teaching Hours for Temporary Teachers — January to May' }
+                }
+            };
+        }
+
+        function ensureExtraHours(d) {
+            if (!d.extraHours) d.extraHours = {};
+            const eh = d.extraHours;
+            if (!eh.header) eh.header = defaultExtraHoursHeader();
+            if (!eh.header.titles) eh.header.titles = defaultExtraHoursHeader().titles;
+            ['S1', 'S2'].forEach(sem => {
+                if (!eh.header.titles[sem]) eh.header.titles[sem] = defaultExtraHoursHeader().titles[sem];
+                if (!eh[sem]) eh[sem] = {};
+                if (!eh[sem].hours) eh[sem].hours = {};
+                if (!eh[sem].order) eh[sem].order = { perm: [], temp: [] };
+                if (!eh[sem].order.perm) eh[sem].order.perm = [];
+                if (!eh[sem].order.temp) eh[sem].order.temp = [];
+            });
+            return eh;
+        }
+
+        function ehIsPerm(t) { return (t.kind || '').toLowerCase().includes('perman'); }
+
+        function ehTimetableInstructors(d, sem) {
+            const set = new Set();
+            Object.values(d.timetables || {}).forEach(tt => {
+                ((tt.entries && tt.entries[sem]) || []).forEach(e => {
+                    const n = (e.instructor || '').trim().toLowerCase();
+                    if (n) set.add(n);
+                });
+            });
+            return set;
+        }
+
+        // Eligible = no administrative role AND scheduled in this semester's timetable
+        function ehEligible(d, sem) {
+            const inst = ehTimetableInstructors(d, sem);
+            const inTt = t => t.name && inst.has(t.name.trim().toLowerCase());
+            const noRole = t => !(t.role || '').trim();
+            const eligible = (d.teachers || []).filter(t => inTt(t) && noRole(t));
+            const excludedRole = (d.teachers || []).filter(t => inTt(t) && !noRole(t));
+            const dirNames = new Set((d.teachers || []).map(t => (t.name || '').trim().toLowerCase())
+                .filter(Boolean));
+            const unmatched = [...inst].filter(n => !dirNames.has(n)).sort();
+            return {
+                perm: eligible.filter(ehIsPerm),
+                temp: eligible.filter(t => !ehIsPerm(t)),
+                excludedRole, unmatched
+            };
+        }
+
+        function ehApplyOrder(list, order) {
+            const pos = {};
+            (order || []).forEach((n, i) => { pos[(n || '').trim().toLowerCase()] = i; });
+            return [...list].sort((a, b) => {
+                const pa = pos[a.name.trim().toLowerCase()],
+                    pb = pos[b.name.trim().toLowerCase()];
+                if (pa !== undefined && pb !== undefined) return pa - pb;
+                if (pa !== undefined) return -1;
+                if (pb !== undefined) return 1;
+                return a.name.localeCompare(b.name);
+            });
+        }
+
+        function ehGetHours(eh, sem, t) {
+            const n = EH_MONTHS[sem].ar.length;
+            let arr = eh[sem].hours[t.name];
+            if (!Array.isArray(arr)) arr = ehIsPerm(t) ? Array(n).fill(0) : [...EH_TEMP_DEFAULTS[sem]];
+            const out = arr.slice(0, n).map(v => Number(v) || 0);
+            while (out.length < n) out.push(0);
+            return out;
+        }
+
+        // Save without full re-render (keeps focus while typing hours)
+        function ehPersistSoft() {
+            try { recordActivity(); } catch (e) {}
+            saveStore();
+            updateSaveIndicator();
+        }
+
+        let __ehCtx = { perm: [], temp: [], teachers: { perm: [], temp: [] } };
+
+        function ehSetHour(sem, section, ri, mi, val) {
+            if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
+            const d = D(), eh = ensureExtraHours(d);
+            const t = __ehCtx.teachers[section][ri];
+            if (!t) return;
+            const arr = ehGetHours(eh, sem, t);
+            arr[mi] = Math.max(0, Number(val) || 0);
+            eh[sem].hours[t.name] = arr;
+            ehPersistSoft();
+            const tot = document.getElementById(`eh-tot-${section}-${ri}`);
+            if (tot) tot.textContent = arr.reduce((a, b) => a + b, 0);
+        }
+
+        function ehMove(sem, section, ri, dir) {
+            if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
+            const names = [...__ehCtx[section]];
+            const j = ri + dir;
+            if (j < 0 || j >= names.length) return;
+            [names[ri], names[j]] = [names[j], names[ri]];
+            const d = D(), eh = ensureExtraHours(d);
+            eh[sem].order[section] = names;
+            persist();
+        }
+
+        function ehSort(sem, section, mode) {
+            if (!mode) return;
+            if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
+            const d = D(), eh = ensureExtraHours(d);
+            const ts = [...__ehCtx.teachers[section]];
+            if (mode === 'az') ts.sort((a, b) => a.name.localeCompare(b.name));
+            if (mode === 'za') ts.sort((a, b) => b.name.localeCompare(a.name));
+            if (mode === 'ar') ts.sort((a, b) => (a.nameAr || a.name).localeCompare(b.nameAr || b.name, 'ar'));
+            if (mode === 'total') ts.sort((a, b) =>
+                ehGetHours(eh, sem, b).reduce((x, y) => x + y, 0) -
+                ehGetHours(eh, sem, a).reduce((x, y) => x + y, 0));
+            eh[sem].order[section] = ts.map(t => t.name);
+            persist();
+        }
+
+        function ehResetRow(sem, section, ri) {
+            if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
+            const t = __ehCtx.teachers[section][ri];
+            if (!t) return;
+            const d = D(), eh = ensureExtraHours(d);
+            delete eh[sem].hours[t.name];
+            persist();
+            toast(`Reset "${t.name}" to default values`, 'ok');
+        }
+
+        function ehEditHeader() {
+            if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
+            const d = D(), eh = ensureExtraHours(d);
+            const sem = state.extraSem;
+            const T = eh.header.titles[sem];
+            openModal({
+                title: 'Edit print header',
+                subtitle: 'Header lines are shared. Titles below apply to Semester ' + sem.slice(1) + '.',
+                large: true,
+                fields: [
+                    { key: 'ar', label: 'Header lines (Arabic — one per line)', type: 'textarea',
+                        dir: 'rtl', value: eh.header.ar },
+                    { key: 'en', label: 'Header lines (English — one per line)', type: 'textarea',
+                        value: eh.header.en },
+                    { key: 'permAr', label: `Title · Permanent (Arabic) · ${sem}`, dir: 'rtl',
+                        value: T.permAr },
+                    { key: 'tempAr', label: `Title · Temporary (Arabic) · ${sem}`, dir: 'rtl',
+                        value: T.tempAr },
+                    { key: 'permEn', label: `Title · Permanent (English) · ${sem}`, value: T.permEn },
+                    { key: 'tempEn', label: `Title · Temporary (English) · ${sem}`, value: T.tempEn }
+                ],
+                onSave: v => {
+                    eh.header.ar = v.ar;
+                    eh.header.en = v.en;
+                    eh.header.titles[sem] = { permAr: v.permAr, tempAr: v.tempAr, permEn: v.permEn,
+                        tempEn: v.tempEn };
+                    persist();
+                }
+            });
+        }
+
+        function ehSectionTable(sem, section, list, eh, canEdit) {
+            const months = EH_MONTHS[sem];
+            if (!list.length) return '<div style="color:var(--text-2);padding:14px 4px;font-size:13px">No eligible teachers in this category for this semester.</div>';
+            return `
+              <div style="overflow-x:auto">
+              <table class="datatable">
+                <thead><tr>
+                  <th style="width:36px">#</th><th>Name</th><th style="direction:rtl">الإسم واللقب</th>
+                  ${months.en.map((m,i)=>`<th style="text-align:center">${m}<div style="font-size:9px;color:var(--text-2);direction:rtl">${months.ar[i]}</div></th>`).join('')}
+                  <th style="text-align:center">Total<div style="font-size:9px;color:var(--text-2);direction:rtl">المجموع</div></th>
+                  ${canEdit?'<th style="width:110px"></th>':''}
+                </tr></thead>
+                <tbody>
+                  ${list.map((t,ri)=>{
+                    const hrs = ehGetHours(eh, sem, t);
+                    const total = hrs.reduce((a,b)=>a+b,0);
+                    return `<tr>
+                      <td class="mono">${ri+1}</td>
+                      <td style="font-weight:600">${escape(t.name)} ${t.grade?`<span class="badge grade">${escape(t.grade)}</span>`:''}</td>
+                      <td style="direction:rtl;color:var(--text-2)">${escape(t.nameAr||'—')}</td>
+                      ${hrs.map((h,mi)=>`<td style="text-align:center">${canEdit
+                        ? `<input type="number" min="0" step="0.5" value="${h}" style="width:58px;text-align:center;padding:4px;border:1px solid var(--border);border-radius:6px;background:var(--surface)" onchange="ehSetHour('${sem}','${section}',${ri},${mi},this.value)">`
+                        : `<span>${h}</span>`}</td>`).join('')}
+                      <td style="text-align:center;font-weight:700" id="eh-tot-${section}-${ri}">${total}</td>
+                      ${canEdit?`<td><div class="row-actions">
+                        <button class="icon-btn" title="Move up" ${ri===0?'disabled style="opacity:.3"':''} onclick="ehMove('${sem}','${section}',${ri},-1)">↑</button>
+                        <button class="icon-btn" title="Move down" ${ri===list.length-1?'disabled style="opacity:.3"':''} onclick="ehMove('${sem}','${section}',${ri},1)">↓</button>
+                        <button class="icon-btn" title="Reset to defaults" onclick="ehResetRow('${sem}','${section}',${ri})">⟳</button>
+                      </div></td>`:''}
+                    </tr>`;
+                  }).join('')}
+                </tbody>
+              </table>
+              </div>`;
+        }
+
+        function ehSortSelect(sem, section, canEdit) {
+            if (!canEdit) return '';
+            return `<select onchange="ehSort('${sem}','${section}',this.value);this.value=''" style="font-size:12px;padding:4px 8px;border:1px solid var(--border);border-radius:6px;background:var(--surface)">
+                <option value="">↕ Sort…</option>
+                <option value="az">Name A → Z</option>
+                <option value="za">Name Z → A</option>
+                <option value="ar">Arabic name (أ → ي)</option>
+                <option value="total">Total (high → low)</option>
+              </select>`;
+        }
+
+        function viewExtraHours() {
+            if (!checkAuth('extrahours')) return;
+            const d = D(), eh = ensureExtraHours(d);
+            const sem = state.extraSem;
+            crumb('People', 'Extra hours', 'Semester ' + sem.slice(1));
+            const { perm, temp, excludedRole, unmatched } = ehEligible(d, sem);
+            const permSorted = ehApplyOrder(perm, eh[sem].order.perm);
+            const tempSorted = ehApplyOrder(temp, eh[sem].order.temp);
+            __ehCtx = {
+                perm: permSorted.map(t => t.name),
+                temp: tempSorted.map(t => t.name),
+                teachers: { perm: permSorted, temp: tempSorted }
+            };
+            const canEdit = checkEdit('extrahours');
+            const yr = store.years[store.activeIdx].name;
+            document.getElementById('page').innerHTML = `
+              ${showPermissionBanner('extrahours')}
+              <div class="page-head">
+                <div>
+                  <h1>Extra teaching hours <span style="font-size:14px;color:var(--text-2);font-weight:400">الحجم الساعي الإضافي</span></h1>
+                  <p>${yr} · Teachers <b>without an administrative role</b> who appear in the Semester ${sem.slice(1)} timetable. Monthly hours are editable; totals update automatically.</p>
+                </div>
+                <div class="page-actions">
+                  ${canEdit?`<button class="btn ghost sm" onclick="ehEditHeader()">✏️ Edit header</button>`:''}
+                  ${canEdit?`<button class="btn ghost sm" onclick="document.getElementById('ehLogoInput').click()">🖼 Logo</button>
+                  <input type="file" id="ehLogoInput" style="display:none" accept="image/*" onchange="if(this.files[0])uploadLogo('left',this.files[0]);this.value=''">`:''}
+                  <button class="btn ghost sm" onclick="printExtraHours('ar')" style="direction:rtl">📄 طباعة بالعربية</button>
+                  <button class="btn" onclick="printExtraHours('en')">📄 Print in English</button>
+                </div>
+              </div>
+              <div class="tab-bar">
+                ${['S1','S2'].map(s=>`<button class="tab ${sem===s?'active':''}" onclick="state.extraSem='${s}';render()">Semester ${s.slice(1)}</button>`).join('')}
+              </div>
+              <div class="card">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+                  <h3 style="margin:0">Permanent teachers <span style="font-weight:400;color:var(--text-2);font-size:12px;direction:rtl">الأساتذة الدائمون</span> · ${permSorted.length}</h3>
+                  ${ehSortSelect(sem,'perm',canEdit)}
+                </div>
+                ${ehSectionTable(sem,'perm',permSorted,eh,canEdit)}
+              </div>
+              <div class="card">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+                  <h3 style="margin:0">Temporary teachers <span style="font-weight:400;color:var(--text-2);font-size:12px;direction:rtl">الأساتذة المؤقتون</span> · ${tempSorted.length}</h3>
+                  ${ehSortSelect(sem,'temp',canEdit)}
+                </div>
+                <div style="font-size:11.5px;color:var(--text-2);margin:6px 0 2px">Default values: ${sem==='S1'?'Sep 3 · Oct 12 · Nov 12 · Dec 6 = <b>33</b>':'Jan 3 · Feb 18 · Mar 15 · Apr 15 · May 18 = <b>69</b>'} (applied automatically, editable per teacher; ⟳ restores defaults).</div>
+                ${ehSectionTable(sem,'temp',tempSorted,eh,canEdit)}
+              </div>
+              ${excludedRole.length?`<div style="margin-top:10px;font-size:11.5px;color:var(--text-2)">ℹ️ Excluded (administrative role): ${excludedRole.map(t=>escape(t.name)).join(', ')}.</div>`:''}
+              ${unmatched.length?`<div class="alert warn" style="margin-top:10px"><div class="alert-body"><strong>Timetable names not found in the teacher directory</strong><div style="margin-top:4px">${unmatched.map(escape).join(', ')} — add them in <a onclick="setView('teachers')" style="cursor:pointer;text-decoration:underline">Teachers</a> (with matching spelling) so they appear here.</div></div></div>`:''}
+              <div style="margin-top:10px;font-size:11.5px;color:var(--text-2)">💡 Use ↑ ↓ to reorder rows, or the Sort menu. The printed lists follow the order shown here. Use "Edit header" to change the official header and titles, and "Logo" to set the printed logo.</div>
+            `;
+        }
+
+        function ehPrintHeader(eh, lang) {
+            const lines = (lang === 'ar' ? eh.header.ar : eh.header.en).split('\n')
+                .map(s => s.trim()).filter(Boolean);
+            const L = store.logos.left, R = store.logos.right;
+            return `
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <div style="flex:0 0 80px;text-align:center">${L?`<img src="${L}" style="max-width:80px;max-height:75px;object-fit:contain">`:''}</div>
+                <div style="flex:1;text-align:center;line-height:1.55">
+                  ${lines.map((l,i)=>`<div style="font-weight:${i<2?'700':'600'};font-size:${i===0?'13.5px':'12.5px'}">${escape(l)}</div>`).join('')}
+                </div>
+                <div style="flex:0 0 80px;text-align:center">${R?`<img src="${R}" style="max-width:80px;max-height:75px;object-fit:contain">`:''}</div>
+              </div>`;
+        }
+
+        function printExtraHours(lang) {
+            const d = D(), eh = ensureExtraHours(d);
+            const sem = state.extraSem;
+            const months = EH_MONTHS[sem];
+            const yr = store.years[store.activeIdx].name;
+            const T = eh.header.titles[sem];
+            const rtl = lang === 'ar';
+            const { perm, temp } = ehEligible(d, sem);
+            const permSorted = ehApplyOrder(perm, eh[sem].order.perm);
+            const tempSorted = ehApplyOrder(temp, eh[sem].order.temp);
+            if (!permSorted.length && !tempSorted.length) {
+                toast('No eligible teachers to print for this semester.', 'err');
+                return;
+            }
+            const noCol = rtl ? 'الرقم' : 'No.';
+            const nameCol = rtl ? 'الإسم واللقب' : 'Full name';
+            const totCol = rtl ? 'المجموع' : 'Total';
+            const mNames = rtl ? months.ar : months.en;
+            const dispName = t => rtl ? (t.nameAr || t.name) : t.name;
+            const sigLabel = rtl ? 'رئيس القسم' : 'Head of Department';
+            const section = (list, title) => {
+                if (!list.length) return '';
+                const rows = list.map((t, i) => {
+                    const hrs = ehGetHours(eh, sem, t);
+                    const total = hrs.reduce((a, b) => a + b, 0);
+                    return `<tr>
+                        <td style="text-align:center">${i+1}</td>
+                        <td style="font-weight:600;text-align:${rtl?'right':'left'}">${escape(dispName(t))}</td>
+                        ${hrs.map(h=>`<td style="text-align:center">${h||''}</td>`).join('')}
+                        <td style="text-align:center;font-weight:700">${total}</td>
+                      </tr>`;
+                }).join('');
+                return `<div class="print-page" dir="${rtl?'rtl':'ltr'}" style="font-family:${rtl?"'Times New Roman','Traditional Arabic',serif":"'Times New Roman',serif"}">
+                    ${ehPrintHeader(eh, lang)}
+                    <div style="text-align:center;margin:14px 0 4px;font-size:14px;font-weight:700;text-decoration:underline">${escape(title)}</div>
+                    <div style="text-align:center;margin-bottom:12px;font-size:13px;font-weight:700">${escape(yr)}</div>
+                    <table style="width:100%;border-collapse:collapse;font-size:12px">
+                      <thead><tr>
+                        <th style="border:1px solid #333;padding:6px;background:#f0f0f0;width:44px">${noCol}</th>
+                        <th style="border:1px solid #333;padding:6px;background:#f0f0f0">${nameCol}</th>
+                        ${mNames.map(m=>`<th style="border:1px solid #333;padding:6px;background:#f0f0f0;width:70px">${m}</th>`).join('')}
+                        <th style="border:1px solid #333;padding:6px;background:#f0f0f0;width:70px">${totCol}</th>
+                      </tr></thead>
+                      <tbody>${rows}</tbody>
+                    </table>
+                    <div style="margin-top:34px;display:flex;justify-content:flex-end">
+                      <div style="text-align:center;min-width:180px;font-weight:700">${sigLabel}</div>
+                    </div>
+                  </div>`;
+            };
+            let body = section(permSorted, rtl ? T.permAr : T.permEn) +
+                section(tempSorted, rtl ? T.tempAr : T.tempEn);
+            // Cell borders must survive print
+            body = `<style>
+                .print-page table td { border:1px solid #333; padding:5px 6px; }
+                .print-page table th { text-align:center; font-size:11.5px; text-transform:none; }
+                .print-page table, .print-page th, .print-page td { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+              </style>` + body;
+            openPrintWindow(rtl ? 'الحجم الساعي الإضافي' : 'Extra teaching hours', body);
         }
 
         // ---- DELEGATES ----
@@ -12029,6 +13546,8 @@
 
               ${renderUserManagement()}
 
+              ${renderActivityLog()}
+
               <div class="card">
                 <h3>Exports</h3>
                 <p style="color:var(--text-2);font-size:13px;margin-bottom:12px">Everything in the current year, with your logos at the top of every document.</p>
@@ -12161,7 +13680,7 @@
                 </p>
               </div>
 
-<div class="card">
+              <div class="card">
                 <h3>Academic years</h3>
                 <table class="datatable" style="border:none">
                   <thead><tr><th>Year</th><th>Teachers</th><th>Students</th><th>Exams</th><th>Supervision</th><th></th></tr></thead>
@@ -12792,10 +14311,32 @@
                 settings: viewSettings,
                 'teacher-schedule': viewTeacherSchedule,
                 supervision: viewSupervision,
-                students: viewStudents
+                students: viewStudents,
+                extrahours: viewExtraHours
             };
             if (viewMap[state.view]) viewMap[state.view]();
             else viewDashboard();
+        }
+
+        // ================================================================
+        //  DEFAULT GITHUB CONFIG — INTEGRATED DIRECTLY
+        //  (auto-applied on first load; saved to localStorage)
+        // ================================================================
+        const DEFAULT_GH_CONFIG = {
+            owner: 'hichamboukhechba-dev',
+            repo: 'Department',
+            branch: 'main',
+            path: 'data/department_data.json',
+            token: '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'
+        };
+
+        function ensureDefaultGhConfig() {
+            loadGhConfig();
+            if (!ghConfig) {
+                console.log('🔐 No GitHub config found — applying default integration.');
+                saveGhConfig(DEFAULT_GH_CONFIG);
+                loadGhConfig();
+            }
         }
 
         // ==================================================================
@@ -12803,7 +14344,18 @@
         // ==================================================================
         (async () => {
             updateSaveIndicator();
+
+            // Ensure the default GitHub config is applied before loading data
+            ensureDefaultGhConfig();
+
             await loadStore();
+
+            // Auto-connect to GitHub if config is ready and not already connected
+            if (ghReady() && ghState === 'off') {
+                console.log('🔗 Auto-connecting to GitHub…');
+                await connectGh();
+            }
+
             startAutoReload();
             const hasSession = restoreSession();
             if (!hasSession) {
@@ -12955,6 +14507,8 @@
         window.openAddUserModal = openAddUserModal;
         window.openEditUserModal = openEditUserModal;
         window.deleteUserAction = deleteUserAction;
+        window.clearActivityLogAction = clearActivityLogAction;
+        window.exportActivityLog = exportActivityLog;
         window.updateStudentMark = function(lvl, grp, idx, value) {
             if (!checkEdit('students')) { toast('Read-only mode', 'err'); return; }
             const d = D();
