@@ -44,17 +44,17 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Barboura S",
             "nameAr": "بربورة السبخاوي",
+            "kind": "Permanent Teachers",
+            "grade": "",
             "phone": "",
             "emails": [
               "s.barboura@univ-djelfa.dz",
               "barboura.sebkhaoui@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": "Head of Specialization",
+            "roleAr": "رئيس تخصص"
           },
           {
             "kind": "Permanant Teachers",
