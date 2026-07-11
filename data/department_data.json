@@ -1152,7 +1152,7 @@
                 },
                 {
                   "day": "Sunday",
-                  "slotIdx": 1,
+                  "slotIdx": 4,
                   "module": "Civilisations of the Language of Study 1",
                   "instructor": "Amraoui Z",
                   "room": "Room 22",
@@ -1168,7 +1168,7 @@
                 },
                 {
                   "day": "Sunday",
-                  "slotIdx": 3,
+                  "slotIdx": 4,
                   "module": "Grammar of Language of Study 1",
                   "instructor": "Barboura S",
                   "room": "Room 22",
