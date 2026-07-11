@@ -1591,6 +1591,17 @@
             cursor: not-allowed;
             opacity: 0.6;
         }
+        .inv-chip.pool-partial {
+            border-left-color: var(--text-3);
+            background: var(--surface-3);
+            color: var(--text-2);
+            opacity: 0.75;
+            cursor: grab;
+        }
+        .inv-chip.pool-partial:hover {
+            opacity: 1;
+            border-left-color: var(--brand-3);
+        }
         .inv-chip.pool-used .chip-x {
             display: none;
         }
@@ -2589,7 +2600,7 @@
         /* Print styles for students (Times New Roman, 14pt) — darker borders */
         .student-print-page {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 14pt;
+            font-size: 11pt;
             padding: 40px 50px;
             max-width: 1000px;
             margin: 0 auto;
@@ -2629,8 +2640,8 @@
         }
         .student-print-page table td {
             border: 1.5px solid #1a1a1a;
-            padding: 6px 10px;
-            font-size: 14pt;
+            padding: 2px 10px;
+            font-size: 10pt;
         }
         .student-print-page .signature-line {
             margin-top: 40px;
@@ -2993,6 +3004,165 @@
                 background: #1a1a1a !important;
             }
         }
+        /* ================================================================
+           APPEARANCE — user-selectable theme / font / size / density
+           (stored per device in localStorage, applied via <html> attributes)
+           ================================================================ */
+
+        /* ---- Themes: color variable overrides ---- */
+        html[data-theme="ocean"] {
+            --brand: #1c4a6e;
+            --brand-2: #235d8a;
+            --brand-3: #2f74a8;
+            --brand-soft: #e3edf5;
+            --brand-glow: rgba(28, 74, 110, 0.12);
+            --brand-gradient: linear-gradient(135deg, #1c4a6e 0%, #2f74a8 100%);
+            --accent: #8a5a2c;
+            --sidebar: #0d1620;
+            --sidebar-2: #16222e;
+            --sidebar-3: #1e2e3d;
+            --sidebar-border: #1c2a37;
+            --sidebar-text: #d3dde6;
+            --sidebar-text-2: #7d8b99;
+            --sidebar-text-3: #495866;
+        }
+        html[data-theme="plum"] {
+            --brand: #5b2a55;
+            --brand-2: #71386a;
+            --brand-3: #8a4a82;
+            --brand-soft: #f0e5ef;
+            --brand-glow: rgba(91, 42, 85, 0.12);
+            --brand-gradient: linear-gradient(135deg, #5b2a55 0%, #8a4a82 100%);
+            --accent: #2c5a8a;
+            --sidebar: #1a0f18;
+            --sidebar-2: #281a26;
+            --sidebar-3: #342331;
+            --sidebar-border: #2d1f2b;
+            --sidebar-text: #e0d6de;
+            --sidebar-text-2: #93838f;
+            --sidebar-text-3: #5c4d58;
+        }
+        html[data-theme="terracotta"] {
+            --brand: #8a3b2c;
+            --brand-2: #a04a38;
+            --brand-3: #b55c47;
+            --brand-soft: #f6e8e4;
+            --brand-glow: rgba(138, 59, 44, 0.12);
+            --brand-gradient: linear-gradient(135deg, #8a3b2c 0%, #b55c47 100%);
+            --accent: #1b4d3b;
+            --sidebar: #1c110d;
+            --sidebar-2: #2b1a15;
+            --sidebar-3: #38231c;
+            --sidebar-border: #301e17;
+            --sidebar-text: #e4d8d3;
+            --sidebar-text-2: #9a8781;
+            --sidebar-text-3: #61504a;
+        }
+        html[data-theme="dark"] {
+            --bg: #14161a;
+            --bg-soft: #1a1d22;
+            --surface: #1e2127;
+            --surface-2: #23262d;
+            --surface-3: #282c34;
+            --border: #33373f;
+            --border-soft: #2b2f36;
+            --text: #e8e6e1;
+            --text-2: #a8a49c;
+            --text-3: #75726b;
+            --brand: #4fa680;
+            --brand-2: #3f8a69;
+            --brand-3: #5fbf95;
+            --brand-soft: #1f3229;
+            --brand-glow: rgba(79, 166, 128, 0.16);
+            --brand-gradient: linear-gradient(135deg, #2f7a61 0%, #4fa680 100%);
+            --accent: #d08a75;
+            --amber: #d4a145;
+            --amber-soft: #33290f;
+            --danger: #d46a6a;
+            --danger-soft: #351b1b;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+            --shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 20px 48px -12px rgba(0, 0, 0, 0.6);
+            --shadow-xl: 0 30px 64px -16px rgba(0, 0, 0, 0.7);
+        }
+        /* Dark theme: neutralize the most common hard-coded light inline backgrounds/colors */
+        html[data-theme="dark"] [style*="background:#f"],
+        html[data-theme="dark"] [style*="background: #f"],
+        html[data-theme="dark"] [style*="background:#e"] {
+            background: var(--surface-2) !important;
+        }
+        html[data-theme="dark"] [style*="background:#fff"] {
+            background: var(--surface) !important;
+        }
+        html[data-theme="dark"] [style*="color:#1a"],
+        html[data-theme="dark"] [style*="color:#5b5f58"],
+        html[data-theme="dark"] [style*="color:#7a5a15"],
+        html[data-theme="dark"] [style*="color:#5a3a05"] {
+            color: var(--text) !important;
+        }
+        html[data-theme="dark"] .card:hover { border-color: var(--border); }
+        html[data-theme="dark"] .inv-chip.pool-used { background: var(--surface-3); }
+
+        /* ---- Density: compact / comfortable (default) / spacious ---- */
+        html[data-density="compact"] .card { padding: 12px 16px; margin-bottom: 12px; }
+        html[data-density="compact"] .timetable th,
+        html[data-density="compact"] .datatable th { padding: 6px 10px; }
+        html[data-density="compact"] .timetable td,
+        html[data-density="compact"] .datatable td { padding: 5px 8px; }
+        html[data-density="compact"] .btn { padding: 6px 12px; }
+        html[data-density="compact"] .nav a { padding: 5px 12px; }
+        html[data-density="compact"] body { line-height: 1.4; }
+
+        html[data-density="spacious"] .card { padding: 30px 34px; margin-bottom: 26px; }
+        html[data-density="spacious"] .timetable th,
+        html[data-density="spacious"] .datatable th { padding: 15px 18px; }
+        html[data-density="spacious"] .timetable td,
+        html[data-density="spacious"] .datatable td { padding: 15px 16px; }
+        html[data-density="spacious"] .btn { padding: 12px 20px; }
+        html[data-density="spacious"] .nav a { padding: 11px 12px; }
+        html[data-density="spacious"] body { line-height: 1.7; }
+
+        /* ---- Appearance settings card UI ---- */
+        .appearance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px 22px;
+        }
+        .appearance-group label.app-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-2);
+            margin-bottom: 7px;
+        }
+        .appearance-options { display: flex; flex-wrap: wrap; gap: 6px; }
+        .appearance-opt {
+            border: 1px solid var(--border);
+            background: var(--surface-2);
+            color: var(--text-2);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 12.5px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .appearance-opt:hover { border-color: var(--brand-3); color: var(--text); }
+        .appearance-opt.active {
+            border-color: var(--brand);
+            background: var(--brand-soft);
+            color: var(--brand);
+            font-weight: 600;
+        }
+        .theme-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+            display: inline-block; border: 1px solid rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
@@ -3140,11 +3310,102 @@
 
     <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="modal"></div></div>
 
+
+ 
+
     <script>
         // ================================================================
         //  VERSION
         // ================================================================
         const APP_VERSION = '1.7';
+
+        // ================================================================
+        //  APPEARANCE (theme / font / size / density) — per-device settings
+        // ================================================================
+
+
+        // Teacher statuses (kinds)
+        const KINDS = ['Permanent Teachers', 'Temporary Teachers'];
+
+        // Academic grades – add any missing ones from your data
+        const GRADES = ['', 'MAA', 'MCB', 'MCA', 'Professor', 'Assistant Professor', 'Senior Lecturer', 'Lecturer'];
+        const APPEARANCE_KEY = 'dept_appearance';
+        const APPEARANCE_DEFAULTS = { theme: 'classic', font: 'default', size: 100, density: 'comfortable' };
+        const APPEARANCE_FONTS = {
+            default: {
+                label: 'Default (Inter + Fraunces)',
+                font: null, display: null, mono: null
+            },
+            serif: {
+                label: 'Classic serif',
+                font: "Georgia, 'Times New Roman', serif",
+                display: "Georgia, 'Times New Roman', serif",
+                mono: "'Courier New', ui-monospace, monospace"
+            },
+            system: {
+                label: 'System',
+                font: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif",
+                display: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif",
+                mono: "ui-monospace, 'SF Mono', Consolas, monospace"
+            },
+            readable: {
+                label: 'Readable (Verdana)',
+                font: "Verdana, Geneva, Tahoma, sans-serif",
+                display: "Verdana, Geneva, Tahoma, sans-serif",
+                mono: "'Courier New', ui-monospace, monospace"
+            }
+        };
+        let appearance = { ...APPEARANCE_DEFAULTS };
+
+        function loadAppearance() {
+            try {
+                const raw = localStorage.getItem(APPEARANCE_KEY);
+                if (raw) appearance = { ...APPEARANCE_DEFAULTS, ...JSON.parse(raw) };
+            } catch (e) { appearance = { ...APPEARANCE_DEFAULTS }; }
+            applyAppearance();
+        }
+
+        function applyAppearance() {
+            const root = document.documentElement;
+            // Theme
+            if (appearance.theme && appearance.theme !== 'classic') root.setAttribute('data-theme', appearance.theme);
+            else root.removeAttribute('data-theme');
+            // Density
+            if (appearance.density && appearance.density !== 'comfortable') root.setAttribute('data-density', appearance.density);
+            else root.removeAttribute('data-density');
+            // Font family
+            const f = APPEARANCE_FONTS[appearance.font] || APPEARANCE_FONTS.default;
+            if (f.font) {
+                root.style.setProperty('--font', f.font);
+                root.style.setProperty('--font-display', f.display);
+                root.style.setProperty('--font-mono', f.mono);
+            } else {
+                root.style.removeProperty('--font');
+                root.style.removeProperty('--font-display');
+                root.style.removeProperty('--font-mono');
+            }
+            // Font size — page zoom on the app body (print windows are unaffected)
+            const z = Math.max(80, Math.min(140, +appearance.size || 100));
+            document.body && (document.body.style.zoom = z === 100 ? '' : (z / 100));
+        }
+
+        function setAppearance(key, value) {
+            appearance[key] = value;
+            try { localStorage.setItem(APPEARANCE_KEY, JSON.stringify(appearance)); } catch (e) {}
+            applyAppearance();
+            if (typeof render === 'function' && window.__appReady) render();
+        }
+
+        function resetAppearance() {
+            appearance = { ...APPEARANCE_DEFAULTS };
+            try { localStorage.removeItem(APPEARANCE_KEY); } catch (e) {}
+            applyAppearance();
+            if (typeof render === 'function' && window.__appReady) render();
+        }
+
+        // Apply saved appearance as early as possible (works on the login screen too)
+        if (document.body) loadAppearance();
+        else document.addEventListener('DOMContentLoaded', loadAppearance);
 
         // List of all available views (sections)
         const VIEWS_LIST = ['dashboard', 'timetables', 'exams', 'curriculum', 'students', 'teachers', 'delegates', 'rooms',
@@ -6463,6 +6724,8 @@
                 ['litciv', 'LitCiv']
             ];
             let totalRows = 0;
+            try {
+            const XLSX = await loadSheetJS();
             const wb = XLSX.utils.book_new();
 
             canvases.forEach(([key, label]) => {
@@ -6500,6 +6763,10 @@
                 `curriculum_${store.years[store.activeIdx].name.replace(/\//g,'-')}.xlsx`;
             XLSX.writeFile(wb, filename);
             toast(`Exported ${totalRows} course${totalRows>1?'s':''} across ${wb.SheetNames.length} sheet${wb.SheetNames.length>1?'s':''}`, 'ok');
+            } catch (e) {
+                toast('Export failed: ' + e.message, 'err');
+                console.error(e);
+            }
         }
 
         async function importCurriculumExcel() {
@@ -6846,20 +7113,11 @@
                 return;
             }
 
-            // Logo HTML (shared for all pages)
-            const L = store.logos.left,
-                R = store.logos.right;
-            const logoHTML = `
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;border-bottom:2px solid #1a1a1a;padding-bottom:10px;">
-            <div style="flex:0 0 auto;width:80px;text-align:left;">${L ? `<img src="${L}" style="max-height:70px;max-width:80px;object-fit:contain;">` : ''}</div>
-            <div style="text-align:center;flex:1;">
-                <div style="font-size:12pt;color:#555;font-weight:400;">${escape(subtitle)}</div>
-                <div style="font-size:18pt;font-weight:700;font-family:'Times New Roman',Times,serif;color:#1a1a1a;">${escape(header)}</div>
-                <div style="font-size:13pt;color:#333;margin-top:2px;">${escape(level)} · Academic Year ${escape(year)}</div>
-            </div>
-            <div style="flex:0 0 auto;width:80px;text-align:right;">${R ? `<img src="${R}" style="max-height:70px;max-width:80px;object-fit:contain;">` : ''}</div>
-        </div>
-    `;
+            // Print style settings (adjust via the ⚙️ Print settings button)
+            const { s: SPS, ink, td: tdStyle, th: thStyle } = studentPrintStyleParts();
+            const logoHTML = studentPrintHeaderHTML(
+                `${escape(level)} · Academic Year ${escape(year)}`
+            );
 
             let pages = [];
             let firstPage = true;
@@ -6953,15 +7211,15 @@
                     );
 
                     let tableRows = '';
-                    sortedStudents.forEach((s, i) => {
+                    sortedStudents.forEach((st, i) => {
                         tableRows += `
                     <tr>
-                        <td style="text-align:center;border:1.5px solid #1a1a1a;padding:4px 8px;">${i + 1}</td>
-                        <td style="border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.regNumber || '')}</td>
-                        <td style="border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.familyName || '')}</td>
-                        <td style="border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.firstName || '')}</td>
-                        <td style="text-align:center;border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.mark || '')}</td>
-                        <td style="text-align:center;border:1.5px solid #1a1a1a;padding:4px 8px;height:32px;">___________</td>
+                        <td style="text-align:center;${tdStyle}">${i + 1}</td>
+                        <td style="${tdStyle}">${escape(st.regNumber || '')}</td>
+                        <td style="${tdStyle}">${escape(st.familyName || '')}</td>
+                        <td style="${tdStyle}">${escape(st.firstName || '')}</td>
+                        <td style="text-align:center;${tdStyle}">${escape(st.mark || '')}</td>
+                        <td style="text-align:center;${tdStyle}"></td>
                     </tr>
                 `;
                     });
@@ -6972,47 +7230,31 @@
                     firstPage = false;
 
                     const pageHTML = `
-                <div class="student-print-page" style="font-family:'Times New Roman',Times,serif;font-size:14pt;padding:40px 50px;max-width:1000px;margin:0 auto;${pageStyle}">
+                <div class="student-print-page" style="font-family:'Times New Roman',Times,serif;font-size:${SPS.fontSize}pt;padding:0;max-width:1000px;margin:0 auto;color:${ink};${pageStyle}">
                     ${logoHTML}
-                    <div style="margin-bottom:14px;font-size:13pt;border-bottom:1px solid #1a1a1a;padding-bottom:8px;">
-                        <div><b>${escape(exam.module)}</b> · ${escape(level)} · ${escape(groupLabel)}</div>
-                        <div style="font-size:12pt;margin-top:4px;">
-                            <div style="font-weight:600;color:#1a1a1a;">Module : ${escape(exam.module)}</div>
-                            <div style="font-weight:600;color:#1a1a1a;">Teacher : ${escape(exam.teacher || '—')}</div>
-                            <div style="margin-top:4px;">📅 ${escape(dateStr)}
-                            ${timeDisplay ? ` · 🕐 ${escape(timeDisplay)}` : ''}
-                            ${roomLabel !== '—' ? ` · 🏫 ${escape(roomLabel)}` : ''}</div>
-                        </div>
+                    <div style="margin-bottom:${SPS.compactHeader ? '6px' : '14px'};font-size:${SPS.compactHeader ? '10.5pt' : '13pt'};border-bottom:1px solid ${ink};padding-bottom:5px;color:${ink};">
+                        <div><b>Module : ${escape(exam.module)}</b> · ${escape(level)} · ${escape(groupLabel)}</div>
+                        <div style="margin-top:2px;">Teacher : ${escape(exam.teacher || '—')} · 📅 ${escape(dateStr)}${timeDisplay ? ` · 🕐 ${escape(timeDisplay)}` : ''}${roomLabel !== '—' ? ` · 🏫 ${escape(roomLabel)}` : ''}</div>
                     </div>
-                    <table style="width:100%;border-collapse:collapse;font-size:14pt;font-family:'Times New Roman',Times,serif;">
+                    <table style="width:100%;border-collapse:collapse;font-size:${SPS.fontSize}pt;font-family:'Times New Roman',Times,serif;">
                         <thead>
                             <tr>
-                                <th style="width:40px;text-align:center;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">#</th>
-                                <th style="width:160px;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Registration Number</th>
-                                <th style="border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Family Name</th>
-                                <th style="border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">First Name</th>
-                                <th style="width:70px;text-align:center;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Mark</th>
-                                <th style="width:120px;text-align:center;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Signature</th>
+                                <th style="width:34px;text-align:center;${thStyle}">#</th>
+                                <th style="width:150px;${thStyle}">Registration Number</th>
+                                <th style="${thStyle}">Family Name</th>
+                                <th style="${thStyle}">First Name</th>
+                                <th style="width:60px;text-align:center;${thStyle}">Mark</th>
+                                <th style="width:110px;text-align:center;${thStyle}">Signature</th>
                             </tr>
                         </thead>
                         <tbody>
                             ${tableRows}
                         </tbody>
                     </table>
-                    <div class="signature-line" style="margin-top:40px;display:flex;justify-content:flex-end;gap:60px;">
-                        <div class="sig" style="text-align:center;font-size:13pt;">
-                            <div>Signature of the Invigilator</div>
-                            <div style="width:160px;border-bottom:1px solid #1a1a1a;margin-top:30px;"></div>
-                            <div style="font-size:11pt;margin-top:6px;color:#555;">(Name &amp; Signature)</div>
-                        </div>
-                        <div class="sig" style="text-align:center;font-size:13pt;">
-                            <div>Signature of the Head of Department</div>
-                            <div style="width:160px;border-bottom:1px solid #1a1a1a;margin-top:30px;"></div>
-                        </div>
-                    </div>
-                    <div style="margin-top:20px;font-size:10pt;color:#777;text-align:center;border-top:1px solid #ccc;padding-top:8px;">
+                    ${studentPrintSignaturesHTML('Signature of the Invigilator', 'Signature of the Head of Department', true)}
+                    <div style="margin-top:8px;font-size:8pt;color:#777;text-align:center;border-top:1px solid #ccc;padding-top:4px;">
                         ${escape(exam.module)} · ${escape(level)} · ${escape(groupLabel)} · ${escape(dateStr)} ${timeDisplay ? '· ' + escape(timeDisplay) : ''} ${roomLabel !== '—' ? '· ' + escape(roomLabel) : ''}
-                        · Generated on ${new Date().toLocaleString()}
+                        · ${sortedStudents.length} students · Generated on ${new Date().toLocaleString()}
                     </div>
                 </div>
             `;
@@ -7065,7 +7307,7 @@
                         : `<div style="font-size:12px;color:var(--amber);margin-top:3px">⚠ No time set · click <b>Edit</b> to set the level's exam time</div>`}
                     </div>
                     <div style="display:flex;gap:6px;flex-wrap:wrap">
-                      ${hasStudents ? `<button class="btn ghost sm" onclick="printExamStudentList('${semKey}',${gi})" title="Print student list for each exam in this level">📋 Students (per exam)</button>` : ''}
+                      ${hasStudents ? `<button class="btn ghost sm" onclick="printExamStudentList('${semKey}',${gi})" title="Print student list for each exam in this level">📋 Students (per exam)</button><button class="btn ghost sm" onclick="openStudentPrintSettings()" title="Adjust print text size, row height and line thickness">⚙️</button>` : ''}
                       ${canEdit ? `<button class="btn ghost sm" onclick="editExamGroup('${semKey}',${gi})">Edit</button>` : ''}
                       ${canEdit ? `<button class="btn ghost sm" onclick="editExam('${semKey}',${gi},null)">${ICON.plus} Add exam</button>` : ''}
                       ${canEdit ? `<button class="icon-btn danger" onclick="deleteExamGroup('${semKey}',${gi})" title="Delete group">${ICON.del}</button>` : ''}
@@ -8250,13 +8492,39 @@
 
             const canEdit = checkEdit('exams');
 
+            // Track which days each teacher is already assigned on (any room/slot, or as substitute)
+            const dayUse = {};
+            days.forEach((day, di) => {
+                Object.values(day.assignments || {}).forEach(slots => {
+                    (slots || []).forEach(cell => (cell || []).forEach(t => {
+                        const k = (t || '').trim().toLowerCase();
+                        if (!k) return;
+                        (dayUse[k] = dayUse[k] || new Set()).add(di);
+                    }));
+                });
+                if (day.substitute) {
+                    const k = day.substitute.trim().toLowerCase();
+                    (dayUse[k] = dayUse[k] || new Set()).add(di);
+                }
+            });
+
             const poolChips = allAvailable.map(name => {
-                return `<div class="inv-chip pool-avail"
-                draggable="${canEdit}"
-                ondragstart="${canEdit ? `onPoolChipDragStart(event,'${sem}',-1,'${escape(name).replace(/'/g,"\\'")}')` : ''}"
+                const key = name.trim().toLowerCase();
+                const usedDays = dayUse[key] ? dayUse[key].size : 0;
+                const fullyUsed = days.length > 0 && usedDays >= days.length;
+                const cls = fullyUsed ? 'pool-used' : usedDays ? 'pool-partial' : 'pool-avail';
+                const draggable = canEdit && !fullyUsed;
+                const title = fullyUsed ? 'Already assigned on every day' :
+                    usedDays ? `Assigned on ${usedDays} of ${days.length} day${days.length>1?'s':''} — drag to add more` :
+                    'Drag to any slot on any day';
+                return `<div class="inv-chip ${cls}"
+                draggable="${draggable}"
+                ondragstart="${draggable ? `onPoolChipDragStart(event,'${sem}',-1,'${escape(name).replace(/'/g,"\\'")}')` : ''}"
                 ondragend="${canEdit ? 'onPoolChipDragEnd(event)' : ''}"
-                title="Drag to any slot on any day">
+                title="${escape(title)}"
+                style="${fullyUsed ? 'cursor:not-allowed;' : ''}">
                 <span>${escape(name)}</span>
+                ${usedDays ? `<span style="font-size:9.5px;font-weight:600;opacity:0.85">✓${usedDays}</span>` : ''}
               </div>`;
             }).join('');
 
@@ -11084,6 +11352,144 @@
             }
         }
 
+        // ==================================================================
+        //  STUDENT LIST PRINT SETTINGS (adjustable, persisted per browser)
+        //  Defaults are tuned so ~40 students fit on ONE A4 page.
+        // ==================================================================
+        const STUDENT_PRINT_DEFAULTS = {
+            fontSize: 10,        // table text size in pt
+            rowPadV: 1,          // vertical padding inside each row (px)
+            rowPadH: 6,          // horizontal padding inside each cell (px)
+            borderW: 1.5,        // table line thickness (px)
+            inkColor: '#000000', // line + text colour (pure black = clearest)
+            compactHeader: true, // smaller logos/titles to save vertical space
+            compactSignatures: true
+        };
+
+        function getStudentPrintSettings() {
+            try {
+                const saved = JSON.parse(localStorage.getItem('studentPrintSettings') || '{}');
+                return { ...STUDENT_PRINT_DEFAULTS, ...saved };
+            } catch (e) {
+                return { ...STUDENT_PRINT_DEFAULTS };
+            }
+        }
+
+        function saveStudentPrintSettings(s) {
+            try { localStorage.setItem('studentPrintSettings', JSON.stringify(s)); } catch (e) {}
+        }
+
+        function clampNum(v, min, max, dflt) {
+            const n = Number(v);
+            if (v === '' || v === null || isNaN(n)) return dflt;
+            return Math.min(max, Math.max(min, n));
+        }
+
+        function openStudentPrintSettings() {
+            const s = getStudentPrintSettings();
+            openModal({
+                title: '🖨️ Student list print settings',
+                subtitle: 'Applies to group lists and per-exam student lists. Defaults fit ~40 students on one A4 page.',
+                fields: [
+                    { key: 'fontSize', label: 'Table text size (pt)', type: 'number', value: s.fontSize, row: true,
+                      hint: '9–10 fits 40 rows per page · 12–14 is bigger but fewer rows' },
+                    { key: 'rowPadV', label: 'Row padding (px)', type: 'number', value: s.rowPadV, row: true,
+                      hint: 'Vertical space in each row · 0–3 for 40 per page' },
+                    { key: 'borderW', label: 'Line thickness', type: 'select', value: String(s.borderW), row: true, options: [
+                        { value: '1', label: '1 px — thin' },
+                        { value: '1.5', label: '1.5 px — clear (default)' },
+                        { value: '2', label: '2 px — bold' },
+                        { value: '2.5', label: '2.5 px — extra bold' }
+                    ] },
+                    { key: 'inkColor', label: 'Line & text colour', type: 'select', value: s.inkColor, row: true, options: [
+                        { value: '#000000', label: 'Pure black (clearest)' },
+                        { value: '#1a1a1a', label: 'Soft black' }
+                    ] },
+                    { key: 'compactHeader', label: 'Compact page header (smaller logos & titles — recommended for 40/page)', type: 'checkbox', value: s.compactHeader },
+                    { key: 'compactSignatures', label: 'Compact signature area at the bottom', type: 'checkbox', value: s.compactSignatures },
+                    { key: 'reset', label: 'Reset everything to the recommended 40-per-page defaults', type: 'checkbox', value: false }
+                ],
+                submitLabel: 'Save settings',
+                onSave: vals => {
+                    if (vals.reset) {
+                        saveStudentPrintSettings({ ...STUDENT_PRINT_DEFAULTS });
+                        toast('Print settings reset to defaults (40 students / page)');
+                        return;
+                    }
+                    saveStudentPrintSettings({
+                        fontSize: clampNum(vals.fontSize, 7, 16, STUDENT_PRINT_DEFAULTS.fontSize),
+                        rowPadV: clampNum(vals.rowPadV, 0, 12, STUDENT_PRINT_DEFAULTS.rowPadV),
+                        rowPadH: s.rowPadH || 6,
+                        borderW: parseFloat(vals.borderW) || STUDENT_PRINT_DEFAULTS.borderW,
+                        inkColor: vals.inkColor || STUDENT_PRINT_DEFAULTS.inkColor,
+                        compactHeader: !!vals.compactHeader,
+                        compactSignatures: !!vals.compactSignatures
+                    });
+                    toast('Print settings saved');
+                }
+            });
+        }
+
+        // Shared style fragments for all student print pages
+        function studentPrintStyleParts() {
+            const s = getStudentPrintSettings();
+            const ink = s.inkColor || '#000000';
+            const bw = s.borderW || 1.5;
+            const border = `${bw}px solid ${ink}`;
+            const padH = s.rowPadH || 6;
+            const td = `border:${border};padding:${s.rowPadV}px ${padH}px;font-size:${s.fontSize}pt;color:${ink};line-height:1.15;`;
+            const th = `border:${border};padding:${Math.max(3, s.rowPadV + 2)}px ${padH}px;background:#efece6;font-weight:700;font-size:${s.fontSize}pt;color:${ink};line-height:1.15;text-align:left;`;
+            return { s, ink, border, td, th };
+        }
+
+        // Compact/normal header block shared by student print pages
+        function studentPrintHeaderHTML(subLine) {
+            const { s, ink } = studentPrintStyleParts();
+            const header = store.logos.title || 'Department of English';
+            const subtitle = store.logos.subtitle || '';
+            const L = store.logos.left,
+                R = store.logos.right;
+            const logoH = s.compactHeader ? 48 : 70;
+            const logoW = s.compactHeader ? 60 : 80;
+            const titleSize = s.compactHeader ? '14pt' : '18pt';
+            const subSize = s.compactHeader ? '9pt' : '12pt';
+            const lineSize = s.compactHeader ? '10.5pt' : '13pt';
+            const headMargin = s.compactHeader ? '8px' : '12px';
+            return `
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:${headMargin};border-bottom:2px solid ${ink};padding-bottom:6px;">
+            <div style="flex:0 0 auto;width:${logoW}px;text-align:left;">${L ? `<img src="${L}" style="max-height:${logoH}px;max-width:${logoW}px;object-fit:contain;">` : ''}</div>
+            <div style="text-align:center;flex:1;">
+                ${subtitle ? `<div style="font-size:${subSize};color:#444;font-weight:400;">${escape(subtitle)}</div>` : ''}
+                <div style="font-size:${titleSize};font-weight:700;font-family:'Times New Roman',Times,serif;color:${ink};">${escape(header)}</div>
+                <div style="font-size:${lineSize};color:${ink};margin-top:2px;">${subLine}</div>
+            </div>
+            <div style="flex:0 0 auto;width:${logoW}px;text-align:right;">${R ? `<img src="${R}" style="max-height:${logoH}px;max-width:${logoW}px;object-fit:contain;">` : ''}</div>
+        </div>
+    `;
+        }
+
+        // Compact/normal signature block shared by student print pages
+        function studentPrintSignaturesHTML(leftLabel, rightLabel, withNameNote) {
+            const { s, ink } = studentPrintStyleParts();
+            const top = s.compactSignatures ? '14px' : '30px';
+            const font = s.compactSignatures ? '10pt' : '13pt';
+            const lineW = s.compactSignatures ? 130 : 150;
+            const lineTop = s.compactSignatures ? '16px' : '28px';
+            return `
+        <div style="margin-top:${top};display:flex;justify-content:flex-end;gap:50px;font-size:${font};color:${ink};">
+            <div style="text-align:center;">
+                <div>${escape(leftLabel)}</div>
+                <div style="width:${lineW}px;border-bottom:1px solid ${ink};margin-top:${lineTop};"></div>
+                ${withNameNote ? `<div style="font-size:8.5pt;margin-top:3px;color:#555;">(Name &amp; Signature)</div>` : ''}
+            </div>
+            <div style="text-align:center;">
+                <div>${escape(rightLabel)}</div>
+                <div style="width:${lineW}px;border-bottom:1px solid ${ink};margin-top:${lineTop};"></div>
+            </div>
+        </div>
+    `;
+        }
+
         function printStudentGroupPDF(level, group) {
             const d = D();
             const data = d.students[level];
@@ -11137,69 +11543,48 @@
         }
 
         function buildStudentPrintPage(level, groupLabel, students, includePageBreak) {
-            const header = store.logos.title || 'Department of English';
-            const subtitle = store.logos.subtitle || '';
             const year = store.years[store.activeIdx].name;
-            const L = store.logos.left,
-                R = store.logos.right;
+            const { s, ink, td, th } = studentPrintStyleParts();
 
-            const logoHTML = `
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;border-bottom:2px solid #1a1a1a;padding-bottom:10px;">
-                    <div style="flex:0 0 auto;width:80px;text-align:left;">${L ? `<img src="${L}" style="max-height:70px;max-width:80px;object-fit:contain;">` : ''}</div>
-                    <div style="text-align:center;flex:1;">
-                        <div style="font-size:12pt;color:#555;font-weight:400;">${escape(subtitle)}</div>
-                        <div style="font-size:18pt;font-weight:700;font-family:'Times New Roman',Times,serif;color:#1a1a1a;">${escape(header)}</div>
-                        <div style="font-size:13pt;color:#333;margin-top:2px;">${escape(level)} · ${escape(groupLabel)} · Academic Year ${escape(year)}</div>
-                    </div>
-                    <div style="flex:0 0 auto;width:80px;text-align:right;">${R ? `<img src="${R}" style="max-height:70px;max-width:80px;object-fit:contain;">` : ''}</div>
-                </div>
-            `;
+            const logoHTML = studentPrintHeaderHTML(
+                `${escape(level)} · ${escape(groupLabel)} · Academic Year ${escape(year)}`
+            );
 
-            const rows = students.map((s, i) => `
+            const rows = students.map((st, i) => `
                 <tr>
-                    <td style="text-align:center;border:1.5px solid #1a1a1a;padding:4px 8px;">${i + 1}</td>
-                    <td style="border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.regNumber || '')}</td>
-                    <td style="border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.familyName || '')}</td>
-                    <td style="border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.firstName || '')}</td>
-                    <td style="text-align:center;border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.mark || '')}</td>
-                    <td style="text-align:center;border:1.5px solid #1a1a1a;padding:4px 8px;">${escape(s.note || '')}</td>
-                    <td style="text-align:center;border:1.5px solid #1a1a1a;padding:4px 8px;height:32px;">___________</td>
+                    <td style="text-align:center;${td}">${i + 1}</td>
+                    <td style="${td}">${escape(st.regNumber || '')}</td>
+                    <td style="${td}">${escape(st.familyName || '')}</td>
+                    <td style="${td}">${escape(st.firstName || '')}</td>
+                    <td style="text-align:center;${td}">${escape(st.mark || '')}</td>
+                    <td style="text-align:center;${td}">${escape(st.note || '')}</td>
+                    <td style="text-align:center;${td}"></td>
                 </tr>
             `).join('');
 
             return `
-                <div class="student-print-page${includePageBreak ? ' page-break' : ''}" style="font-family:'Times New Roman',Times,serif;font-size:14pt;padding:40px 50px;max-width:1000px;margin:0 auto;">
+                <div class="student-print-page${includePageBreak ? ' page-break' : ''}" style="font-family:'Times New Roman',Times,serif;font-size:${s.fontSize}pt;padding:0;max-width:1000px;margin:0 auto;color:${ink};">
                     ${logoHTML}
-                    <table style="width:100%;border-collapse:collapse;font-size:14pt;font-family:'Times New Roman',Times,serif;">
+                    <table style="width:100%;border-collapse:collapse;font-size:${s.fontSize}pt;font-family:'Times New Roman',Times,serif;">
                         <thead>
                             <tr>
-                                <th style="width:40px;text-align:center;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">#</th>
-                                <th style="width:140px;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Registration Number</th>
-                                <th style="border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Family Name</th>
-                                <th style="border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">First Name</th>
-                                <th style="width:70px;text-align:center;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Mark</th>
-                                <th style="width:90px;text-align:center;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Note</th>
-                                <th style="width:120px;text-align:center;border:1.5px solid #1a1a1a;padding:6px 10px;background:#f5f3ef;">Signature</th>
+                                <th style="width:34px;text-align:center;${th}">#</th>
+                                <th style="width:140px;${th}">Registration Number</th>
+                                <th style="${th}">Family Name</th>
+                                <th style="${th}">First Name</th>
+                                <th style="width:60px;text-align:center;${th}">Mark</th>
+                                <th style="width:80px;text-align:center;${th}">Note</th>
+                                <th style="width:110px;text-align:center;${th}">Signature</th>
                             </tr>
                         </thead>
                         <tbody>
                             ${rows}
                         </tbody>
                     </table>
-                    <div class="signature-after-mark" style="margin-top:30px;border-top:1px solid #1a1a1a;padding-top:16px;display:flex;justify-content:flex-end;gap:40px;font-size:13pt;">
-                        <div class="sig-block" style="text-align:center;">
-                            <div>Signature of the Teacher</div>
-                            <div class="sig-line" style="width:140px;border-bottom:1px solid #1a1a1a;margin-top:20px;"></div>
-                        </div>
-                        <div class="sig-block" style="text-align:center;">
-                            <div>Signature of the Head of Department</div>
-                            <div class="sig-line" style="width:140px;border-bottom:1px solid #1a1a1a;margin-top:20px;"></div>
-                        </div>
+                    ${studentPrintSignaturesHTML('Signature of the Teacher', 'Signature of the Head of Department', false)}
+                    <div style="margin-top:8px;font-size:8pt;color:#777;text-align:center;border-top:1px solid #ccc;padding-top:4px;">
+                        ${escape(level)} · ${escape(groupLabel)} · ${students.length} students · Generated on ${new Date().toLocaleString()}
                     </div>
-                    <div style="margin-top:16px;font-size:10pt;color:#777;text-align:center;border-top:1px solid #ccc;padding-top:6px;">
-                        Generated on ${new Date().toLocaleString()}
-                    </div>
-                    <div class="print-footer" style="margin-top:12px;padding-top:6px;border-top:1px solid #999;font-size:10pt;color:#555;text-align:center;"></div>
                 </div>
             `;
         }
@@ -11328,6 +11713,7 @@
                         </p>
                     </div>
                     <div class="page-actions">
+                        <button class="btn ghost sm" onclick="openStudentPrintSettings()" title="Adjust print text size, row height and line thickness">⚙️ Print settings</button>
                         <button class="btn ghost sm" onclick="printAllStudentGroupsPDF('${escape(level)}')">📄 Print all groups</button>
                         <button class="btn ghost sm" onclick="printStudentGroupPDF('${escape(level)}','${escape(group)}')">📄 Print this group</button>
                         <button class="btn ghost sm" onclick="exportStudentsExcel('${escape(level)}')">${ICON.download} Export Excel</button>
@@ -11561,6 +11947,68 @@
         // ==================================================================
         //  SETTINGS
         // ==================================================================
+        function renderAppearanceCard() {
+            const themes = [
+                ['classic', 'Classic green', '#1b4d3b'],
+                ['ocean', 'Ocean blue', '#1c4a6e'],
+                ['plum', 'Plum', '#5b2a55'],
+                ['terracotta', 'Terracotta', '#8a3b2c'],
+                ['dark', 'Dark', '#1e2127']
+            ];
+            const sizes = [
+                [85, 'Small'],
+                [92, 'Compact'],
+                [100, 'Normal'],
+                [110, 'Large'],
+                [125, 'Extra large']
+            ];
+            const densities = [
+                ['compact', 'Compact'],
+                ['comfortable', 'Comfortable'],
+                ['spacious', 'Spacious']
+            ];
+            const opt = (active, onclick, label, extra = '') =>
+                `<button class="appearance-opt ${active ? 'active' : ''}" onclick="${onclick}">${extra}${label}</button>`;
+
+            return `
+              <div class="card">
+                <h3>🎨 Appearance</h3>
+                <p style="color:var(--text-2);font-size:13px;margin-bottom:14px">Saved on this device only — it never changes your data or the printed/exported documents.</p>
+                <div class="appearance-grid">
+                  <div class="appearance-group">
+                    <label class="app-label">Theme</label>
+                    <div class="appearance-options">
+                      ${themes.map(([k, label, dot]) => opt(appearance.theme === k, `setAppearance('theme','${k}')`, label,
+                        `<span class="theme-dot" style="background:${dot}"></span>`)).join('')}
+                    </div>
+                  </div>
+                  <div class="appearance-group">
+                    <label class="app-label">Font</label>
+                    <div class="appearance-options">
+                      ${Object.entries(APPEARANCE_FONTS).map(([k, f]) => opt(appearance.font === k, `setAppearance('font','${k}')`, f.label)).join('')}
+                    </div>
+                  </div>
+                  <div class="appearance-group">
+                    <label class="app-label">Font size</label>
+                    <div class="appearance-options">
+                      ${sizes.map(([v, label]) => opt(+appearance.size === v, `setAppearance('size',${v})`, `${label} · ${v}%`)).join('')}
+                    </div>
+                  </div>
+                  <div class="appearance-group">
+                    <label class="app-label">Spacing</label>
+                    <div class="appearance-options">
+                      ${densities.map(([k, label]) => opt(appearance.density === k, `setAppearance('density','${k}')`, label)).join('')}
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top:14px;border-top:1px solid var(--border-soft);padding-top:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+                  <span style="font-size:11.5px;color:var(--text-3)">💡 The Dark theme is experimental — a few panels may keep light accents.</span>
+                  <button class="btn ghost sm" onclick="resetAppearance()">↺ Reset to defaults</button>
+                </div>
+              </div>
+            `;
+        }
+
         function viewSettings() {
             if (!checkAuth('settings')) return;
             crumb('Data', 'Data & Backup');
@@ -11576,6 +12024,8 @@
             document.getElementById('page').innerHTML = `
               ${showPermissionBanner('settings')}
               <div class="page-head"><div><h1>Data &amp; Backup</h1><p>Export, save, and configure.</p></div></div>
+
+              ${renderAppearanceCard()}
 
               ${renderUserManagement()}
 
@@ -11771,6 +12221,11 @@
 
         const PRINT_CSS = `
             @page { size: A4; margin: 1.2cm 1cm; }
+            .page-break { page-break-before: always; }
+            .student-print-page table { border-collapse: collapse; }
+            .student-print-page table thead { display: table-header-group; }
+            .student-print-page table tr { page-break-inside: avoid; }
+            .student-print-page table th, .student-print-page table td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             * { box-sizing: border-box; }
             body { font-family: 'Inter', Georgia, serif; color: #1a1c1a; margin: 0; font-size: 11px; line-height: 1.4; }
             .print-page { page-break-before: always; page-break-inside: avoid; }
@@ -12362,6 +12817,9 @@
         // Expose key functions globally for inline onclick
         window.setView = setView;
         window.render = render;
+        window.setAppearance = setAppearance;
+        window.resetAppearance = resetAppearance;
+        window.__appReady = true;
         window.persist = persist;
         window.toast = toast;
         window.openModal = openModal;
@@ -12481,6 +12939,7 @@
         window.exportStudentsExcel = exportStudentsExcel;
         window.printStudentGroupPDF = printStudentGroupPDF;
         window.printAllStudentGroupsPDF = printAllStudentGroupsPDF;
+        window.openStudentPrintSettings = openStudentPrintSettings;
         window.addStudentToLevelGroup = addStudentToLevelGroup;
         window.editStudentInLevelGroup = editStudentInLevelGroup;
         window.deleteStudentFromLevelGroup = deleteStudentFromLevelGroup;
