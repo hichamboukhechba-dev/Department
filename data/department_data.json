@@ -2640,13 +2640,6 @@
                   "firstName": "Basmala",
                   "mark": "",
                   "note": ""
-                },
-                {
-                  "regNumber": "252539278802",
-                  "familyName": "MAHDJOUB",
-                  "firstName": "Souhaib Salah Eddine",
-                  "mark": "",
-                  "note": ""
                 }
               ],
               "03": [
@@ -3083,6 +3076,13 @@
                   "regNumber": "6",
                   "familyName": "RABEHI",
                   "firstName": "Abdelaziz",
+                  "mark": "null",
+                  "note": ""
+                },
+                {
+                  "regNumber": "02",
+                  "familyName": "MAHDJOUB",
+                  "firstName": "Souhaib Salah Eddine",
                   "mark": "null",
                   "note": ""
                 }
