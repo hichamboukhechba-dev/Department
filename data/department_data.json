@@ -2280,11 +2280,7 @@
                 {
                   "date": "2026-07-11",
                   "cells": [
-                    {
-                      "module": "Civilisations of the Language of Study 1",
-                      "tag": "S1",
-                      "teacher": "Bouchemal A."
-                    },
+                    null,
                     {
                       "module": "Written Comprehension and Expression 1",
                       "tag": "S1",
