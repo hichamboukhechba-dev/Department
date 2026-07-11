@@ -625,6 +625,14 @@
                   "instructor": "Barboura S",
                   "room": "Room 21",
                   "group": "GROUP 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Room 21",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
