@@ -582,7 +582,42 @@
           }
         ],
         "delegates": [],
-        "examsS1": [],
+        "examsS1": [
+          {
+            "group": "L1 S1",
+            "level": "L1",
+            "exams": [
+              {
+                "date": "",
+                "time": "",
+                "module": "Civilisations of the Language of Study 1",
+                "teacher": "Bouchemal A.",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "",
+                "module": "Written Comprehension and Expression 1",
+                "teacher": "Chaalani A.",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "",
+                "module": "Linguistics and Phonetics 1",
+                "teacher": "Barboura O.",
+                "level": "L1"
+              },
+              {
+                "date": "",
+                "time": "",
+                "module": "Grammar of Language of Study 1",
+                "teacher": "Barboura S",
+                "level": "L1"
+              }
+            ]
+          }
+        ],
         "examsS2": [],
         "timetables": {
           "L1": {
