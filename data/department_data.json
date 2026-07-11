@@ -3128,13 +3128,7 @@
         },
         "invigilation": {
           "S1": {
-            "days": [
-              {
-                "date": "2026-07-11",
-                "substitute": "Bendecho H.",
-                "assignments": {}
-              }
-            ]
+            "days": []
           },
           "S2": null
         }
