@@ -2184,7 +2184,7 @@
           },
           {
             "level": "M2 Lit/Civ",
-            "count": 0
+            "count": 11
           },
           {
             "level": "M1 Didactics",
@@ -3131,7 +3131,87 @@
             "unassigned": []
           },
           "M2 Lit/Civ": {
-            "groups": {},
+            "groups": {
+              "01": [
+                {
+                  "regNumber": "182139044044",
+                  "familyName": "SADEDDINE",
+                  "firstName": "Hala Amani",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212139020759",
+                  "familyName": "BOUKERDENNA",
+                  "firstName": "Ismail",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212139028019",
+                  "familyName": "KHADIR",
+                  "firstName": "Abdelrahmane",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "202039017903",
+                  "familyName": "FECIH",
+                  "firstName": "Mohamed Issmail",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "162139044806",
+                  "familyName": "MAMMERI",
+                  "firstName": "Mohamed Abdelfatah",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212139044950",
+                  "familyName": "KAMEL",
+                  "firstName": "Salah Eddine",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212139020935",
+                  "familyName": "MAKAR",
+                  "firstName": "Maria",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "2498815495",
+                  "familyName": "M ZARA",
+                  "firstName": "Messaoud",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212139048208",
+                  "familyName": "BENTCHICH",
+                  "firstName": "Yamna",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "181839043766",
+                  "familyName": "BOURZGUE",
+                  "firstName": "Djilani",
+                  "mark": "",
+                  "note": ""
+                },
+                {
+                  "regNumber": "212139022645",
+                  "familyName": "BACHAR",
+                  "firstName": "Sara",
+                  "mark": "",
+                  "note": ""
+                }
+              ]
+            },
             "unassigned": []
           }
         },
