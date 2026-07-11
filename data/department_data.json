@@ -878,7 +878,7 @@
                 "lecture": "-",
                 "td": "1h00",
                 "total": "15h00",
-                "exam": null,
+                "exam": 0,
                 "ca": 100
               },
               {
