@@ -649,6 +649,14 @@
                   "instructor": "Gatcha Y",
                   "room": "Room 23",
                   "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Bouaissa T",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
