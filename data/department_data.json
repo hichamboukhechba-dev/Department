@@ -609,6 +609,14 @@
                   "instructor": "Bouchemal A.",
                   "room": "Amphi B",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Bouzidi A",
+                  "room": "Amphi B",
+                  "group": ""
                 }
               ],
               "S2": []
