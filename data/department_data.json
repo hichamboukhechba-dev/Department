@@ -2024,14 +2024,6 @@
               "S1": [
                 {
                   "day": "Monday",
-                  "slotIdx": 0,
-                  "module": "Contemporary American Literature",
-                  "instructor": "Benderrah A.",
-                  "room": "Room 14",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Monday",
                   "slotIdx": 1,
                   "module": "African Literature",
                   "instructor": "Bouchemal A.",
