@@ -2226,6 +2226,16 @@
         "students",
         "delegates"
       ]
+    },
+    {
+      "username": "Ouarniki",
+      "password": "00000000",
+      "name": "Ouarniki",
+      "role": "teacher",
+      "views": [
+        "supervision"
+      ],
+      "editView": "supervision"
     }
   ],
   "logos": {
