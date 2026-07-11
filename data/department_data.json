@@ -3380,24 +3380,6 @@
         "students",
         "delegates"
       ]
-    },
-    {
-      "username": "O",
-      "password": "000000",
-      "name": "0",
-      "role": "hod",
-      "views": [
-        "dashboard",
-        "timetables",
-        "exams",
-        "curriculum",
-        "students",
-        "teachers",
-        "delegates",
-        "rooms",
-        "supervision",
-        "settings"
-      ]
     }
   ],
   "logos": {
