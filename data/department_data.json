@@ -2612,13 +2612,6 @@
                   "firstName": "Amina Hibat Allah",
                   "mark": "",
                   "note": ""
-                },
-                {
-                  "regNumber": "252539153412",
-                  "familyName": "LEMBARKI",
-                  "firstName": "Nadhira",
-                  "mark": "",
-                  "note": ""
                 }
               ],
               "03": [
@@ -3083,6 +3076,13 @@
                   "regNumber": "02",
                   "familyName": "TAHRI",
                   "firstName": "Hadjer Maria",
+                  "mark": "null",
+                  "note": ""
+                },
+                {
+                  "regNumber": "12",
+                  "familyName": "LEMBARKI",
+                  "firstName": "Nadhira",
                   "mark": "null",
                   "note": ""
                 }
