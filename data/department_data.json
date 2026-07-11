@@ -601,6 +601,14 @@
                   "instructor": "Abbas C.",
                   "room": "Room 11",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Bouchemal A.",
+                  "room": "Amphi B",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
