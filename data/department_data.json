@@ -173,17 +173,17 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Othmani A",
             "nameAr": "عثماني عبد الحليم",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
             "phone": "674252379",
             "emails": [
               "a.othmani@univ-djelfa.dz",
               "halimfat32@gmail.com"
             ],
-            "role": "",
-            "roleAr": ""
+            "role": "Head of Academic Program",
+            "roleAr": "رئيس شعبة"
           },
           {
             "kind": "Permanant Teachers",
