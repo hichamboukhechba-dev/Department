@@ -706,6 +706,14 @@
                   "instructor": "Rahmouni A",
                   "room": "Room 11",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Civilization, Culture, and Interculturality 1",
+                  "instructor": "",
+                  "room": "Room 12",
+                  "group": "GROUP 3+"
                 }
               ],
               "S2": []
