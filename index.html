@@ -12457,20 +12457,16 @@
         async function connectGh() {
             toast('Connecting to GitHub…');
             try {
+                // Always fetch the latest remote data — no confirm dialog
                 const remote = await ghLoad();
                 if (remote && remote.years && Array.isArray(remote.years)) {
-                    const useRemote = confirm(
-                        'A data file already exists in this repository.\n\n' +
-                        'OK → LOAD the GitHub data (replaces what is currently on screen)\n' +
-                        'Cancel → KEEP the current data and overwrite the GitHub file');
-                    if (useRemote) {
-                        store = remote;
-                        ensureStoreShape();
-                        writeLocalBackup();
-                    } else {
-                        await ghPushNow();
-                    }
+                    // Remote data exists → use it unconditionally
+                    store = remote;
+                    ensureStoreShape();
+                    writeLocalBackup();
+                    // ghSha is already set by ghLoad()
                 } else {
+                    // No remote data → push the current local store
                     await ghPushNow();
                 }
                 if (ghState !== 'error') {
