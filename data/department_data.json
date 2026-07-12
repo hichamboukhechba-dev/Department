@@ -582,7 +582,21 @@
           }
         ],
         "delegates": [],
-        "examsS1": [],
+        "examsS1": [
+          {
+            "group": "M2 Didactics S1",
+            "level": "M2 Didactics",
+            "exams": [
+              {
+                "date": "",
+                "time": "",
+                "module": "Curriculum and Syllabus Design",
+                "teacher": "Amraoui O",
+                "level": "M2 Didactics"
+              }
+            ]
+          }
+        ],
         "examsS2": [],
         "timetables": {
           "L1": {
