@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -472,6 +472,73 @@
         }
         .save-indicator .reload-btn.show {
             display: inline-flex;
+        }
+
+        /* ---- Connected users (presence) ---- */
+        .presence-wrap { position: relative; display: inline-flex; }
+        .presence-pill {
+            display: none;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+        }
+        .presence-pill:hover { border-color: var(--brand); }
+        .p-dot { width: 8px; height: 8px; border-radius: 50%; background: #b8b8b8; flex: 0 0 8px; }
+        .p-dot.on { background: #22a06b; box-shadow: 0 0 0 3px rgba(34,160,107,.15); }
+        .presence-panel {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            width: 270px;
+            max-height: 340px;
+            overflow-y: auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.14);
+            padding: 6px 0 4px;
+            display: none;
+            z-index: 600;
+        }
+        .presence-panel.open { display: block; }
+        .presence-head {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--text-2);
+            padding: 6px 12px 4px;
+            font-weight: 700;
+        }
+        .presence-row { display: flex; gap: 9px; align-items: center; padding: 6px 12px; }
+        .presence-row .p-name { font-size: 13px; font-weight: 600; }
+        .presence-row .p-you { color: var(--text-2); font-weight: 400; font-size: 11px; }
+        .presence-row .p-meta { font-size: 11px; color: var(--text-2); }
+        .presence-sub {
+            font-size: 10.5px;
+            color: var(--text-2);
+            padding: 8px 12px 2px;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            font-weight: 700;
+        }
+        .presence-note {
+            font-size: 10.5px;
+            color: var(--text-2);
+            padding: 8px 12px 6px;
+            border-top: 1px solid var(--border-soft);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+        @media (max-width: 720px) {
+            .presence-pill .p-label { display: none; }
         }
 
         .search {
@@ -3297,6 +3364,12 @@
                         Reload
                     </button>
                 </div>
+                <div class="presence-wrap" id="presenceWrap">
+                    <div class="presence-pill" id="presencePill" onclick="togglePresencePanel()" title="Connected users">
+                        <span class="p-dot on"></span><span id="presenceCount">1</span>&nbsp;<span class="p-label">online</span>
+                    </div>
+                    <div class="presence-panel" id="presencePanel"></div>
+                </div>
                 <div class="search">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                     <input id="search" placeholder="Search…" />
@@ -3305,7 +3378,7 @@
             <div class="page" id="page"></div>
             <div class="app-footer">
                 Designed by <strong>Dr. Boukhechba Hicham</strong>
-                <span class="version-tag">v1.7</span>
+                <span class="version-tag">v1.9.9</span>
                 <span style="margin:0 8px;color:var(--border-soft)">·</span>
                 English Department · University of Djelfa
             </div>
@@ -3321,7 +3394,7 @@
         // ================================================================
         //  VERSION
         // ================================================================
-        const APP_VERSION = '1.9.7';
+        const APP_VERSION = '1.9.9';
 
         // ================================================================
         //  APPEARANCE (theme / font / size / density) — per-device settings
@@ -3804,10 +3877,12 @@
             hideLogin();
             toast('Welcome, ' + user.name + '!');
             render();
+            try { startPresence(); } catch (_) {}
             return false;
         }
 
         function logout() {
+            try { stopPresence(); } catch (_) {}
             state.currentUser = null;
             resetActivitySnapshot();
             try { localStorage.removeItem('dept_session'); } catch (_) {}
@@ -3858,6 +3933,7 @@
                             hideLogin();
                             updateSidebarUser();
                             updateNavVisibility();
+                            try { startPresence(); } catch (_) {}
                             return true;
                         }
                     }
@@ -4532,6 +4608,170 @@
             if (ghPollTimer) { clearInterval(ghPollTimer);
                 ghPollTimer = null; }
         }
+
+        // ================================================================
+        //  PRESENCE — "connected users" indicator
+        //  Uses a separate presence.json file in the same GitHub repo so
+        //  heartbeats NEVER touch (or conflict with) the main data file.
+        //  Without GitHub sync, only the local signed-in user is shown.
+        // ================================================================
+        const PRESENCE_BEAT_MS = 3 * 60000;      // heartbeat every 3 min
+        const PRESENCE_ONLINE_MS = 7 * 60000;    // "online" if seen within 7 min
+        const PRESENCE_RECENT_MS = 60 * 60000;   // list "recently active" up to 1 h
+        const PRESENCE_KEEP_MS = 24 * 3600000;   // prune entries older than 24 h
+        let presenceTimer = null,
+            presenceUsers = {},
+            presenceBusy = false,
+            presenceOpen = false;
+
+        function presenceUrl() {
+            const c = ghConfig;
+            const dir = c.path.includes('/') ? c.path.slice(0, c.path.lastIndexOf('/') + 1) : '';
+            return 'https://api.github.com/repos/' + encodeURIComponent(c.owner) + '/' +
+                encodeURIComponent(c.repo) + '/contents/' +
+                (dir + 'presence.json').split('/').map(encodeURIComponent).join('/');
+        }
+
+        async function presenceFetch() {
+            const r = await fetch(presenceUrl() + '?ref=' + encodeURIComponent(ghConfig.branch || 'main') +
+                '&_=' + Date.now(), { headers: ghHeaders(), cache: 'no-store' });
+            if (r.status === 404) return { missing: true, data: {} };
+            if (!r.ok) throw new Error('presence ' + r.status);
+            const j = await r.json();
+            let data = {};
+            try { data = JSON.parse(b64DecodeUnicode(j.content || '')) || {}; } catch (e) {}
+            if (typeof data !== 'object' || Array.isArray(data)) data = {};
+            return { sha: j.sha, data };
+        }
+
+        async function presencePut(data, sha) {
+            const body = {
+                message: 'presence heartbeat',
+                content: b64EncodeUnicode(JSON.stringify(data)),
+                branch: ghConfig.branch || 'main'
+            };
+            if (sha) body.sha = sha;
+            const r = await fetch(presenceUrl(), {
+                method: 'PUT',
+                headers: Object.assign({}, ghHeaders(), { 'Content-Type': 'application/json' }),
+                body: JSON.stringify(body)
+            });
+            if (!r.ok) throw new Error('presence save ' + r.status);
+        }
+
+        async function presenceBeat() {
+            const u = getCurrentUser();
+            if (!u) return;
+            const now = Date.now();
+            if (!ghReady()) {
+                presenceUsers = {};
+                presenceUsers[u.username] = { name: u.name || u.username, role: u.role, ts: now };
+                renderPresence();
+                return;
+            }
+            if (presenceBusy) return;
+            presenceBusy = true;
+            try {
+                let f;
+                try { f = await presenceFetch(); } catch (e) { f = { missing: true, data: {} }; }
+                const data = f.data || {};
+                Object.keys(data).forEach(k => {
+                    const e = data[k];
+                    if (!e || !e.ts || now - e.ts > PRESENCE_KEEP_MS) delete data[k];
+                });
+                data[u.username] = { name: u.name || u.username, role: u.role, ts: now };
+                try {
+                    await presencePut(data, f.missing ? null : f.sha);
+                } catch (e) {
+                    // Conflict with another user's heartbeat → refetch once & retry
+                    try {
+                        const f2 = await presenceFetch();
+                        const d2 = f2.data || {};
+                        d2[u.username] = data[u.username];
+                        await presencePut(d2, f2.missing ? null : f2.sha);
+                        Object.assign(data, d2);
+                    } catch (e2) { console.warn('presence push failed', e2); }
+                }
+                presenceUsers = data;
+                renderPresence();
+            } finally { presenceBusy = false; }
+        }
+
+        function startPresence() {
+            stopPresence(true);
+            const pill = document.getElementById('presencePill');
+            if (pill) pill.style.display = 'inline-flex';
+            presenceBeat();
+            presenceTimer = setInterval(presenceBeat, PRESENCE_BEAT_MS);
+        }
+
+        function stopPresence(keepQuiet) {
+            if (presenceTimer) { clearInterval(presenceTimer); presenceTimer = null; }
+            presenceUsers = {};
+            presenceOpen = false;
+            if (!keepQuiet) {
+                const pill = document.getElementById('presencePill');
+                if (pill) pill.style.display = 'none';
+            }
+            const panel = document.getElementById('presencePanel');
+            if (panel) panel.classList.remove('open');
+        }
+
+        function presenceAgo(ms) {
+            const m = Math.round(ms / 60000);
+            if (m < 1) return 'just now';
+            if (m === 1) return '1 min ago';
+            if (m < 60) return m + ' min ago';
+            const h = Math.round(m / 60);
+            return h + ' h ago';
+        }
+
+        function renderPresence() {
+            const now = Date.now();
+            const me = getCurrentUser();
+            const list = Object.entries(presenceUsers)
+                .map(([username, e]) => Object.assign({ username }, e))
+                .sort((a, b) => (b.ts || 0) - (a.ts || 0));
+            const online = list.filter(e => now - e.ts <= PRESENCE_ONLINE_MS);
+            const recent = list.filter(e => now - e.ts > PRESENCE_ONLINE_MS && now - e.ts <= PRESENCE_RECENT_MS);
+            const cnt = document.getElementById('presenceCount');
+            if (cnt) cnt.textContent = online.length || (me ? 1 : 0);
+            const panel = document.getElementById('presencePanel');
+            if (!panel) return;
+            const row = (e, isOnline) => `
+              <div class="presence-row">
+                <span class="p-dot ${isOnline ? 'on' : ''}"></span>
+                <div>
+                  <div class="p-name">${escape(e.name || e.username)}${me && e.username === me.username ? ' <span class="p-you">(you)</span>' : ''}</div>
+                  <div class="p-meta">${escape(e.role || '')} · ${isOnline ? 'online now' : presenceAgo(now - e.ts)}</div>
+                </div>
+              </div>`;
+            panel.innerHTML = `
+              <div class="presence-head">Connected users · ${online.length} online</div>
+              ${online.map(e => row(e, true)).join('')}
+              ${recent.length ? '<div class="presence-sub">Recently active</div>' + recent.map(e => row(e, false)).join('') : ''}
+              ${!online.length && !recent.length ? '<div class="p-meta" style="padding:8px 12px">No one connected.</div>' : ''}
+              <div class="presence-note">${ghReady()
+                ? 'Presence is shared through GitHub sync (a small presence.json in your repo) and refreshes about every 3 minutes.'
+                : 'GitHub sync is off — only this device is shown. Enable GitHub sync in Settings to see users on other devices.'}</div>`;
+        }
+
+        function togglePresencePanel() {
+            presenceOpen = !presenceOpen;
+            const panel = document.getElementById('presencePanel');
+            if (panel) { renderPresence(); panel.classList.toggle('open', presenceOpen); }
+            if (presenceOpen && ghReady() && !presenceBusy) presenceBeat();
+        }
+
+        document.addEventListener('click', ev => {
+            if (!presenceOpen) return;
+            const wrap = document.getElementById('presenceWrap');
+            if (wrap && !wrap.contains(ev.target)) {
+                presenceOpen = false;
+                const p = document.getElementById('presencePanel');
+                if (p) p.classList.remove('open');
+            }
+        });
 
         function writeLocalBackup() {
             try { localStorage.setItem(LOCAL_BACKUP_KEY, JSON.stringify(store)); } catch (e) {
@@ -5599,6 +5839,18 @@
             persist();
         }
 
+        // Duplicate a lesson as a blank copy (same module/room/group, NO teacher)
+        function duplicateTimetableEntry(idx) {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const tt = ensureLevelTt(D(), state.ttLevel);
+            const list = tt.entries[state.ttSem];
+            const src = list[idx];
+            if (!src) return;
+            list.push(Object.assign({}, src, { instructor: '' }));
+            persist();
+            toast('Lesson duplicated with no teacher — drag the copy to its slot or click it to edit.', 'ok');
+        }
+
         function editSlots() {
             if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
             const tt = ensureLevelTt(D(), state.ttLevel);
@@ -6274,6 +6526,8 @@
             const scheduledSet = new Set((tt.entries[sem] || []).map(e => (e.module || '').trim().toLowerCase()));
             const curriculumSet = new Set(courses.map(c => c.trim().toLowerCase()));
             const extras = [...scheduledSet].filter(m => m && !curriculumSet.has(m));
+            const noTeacher = (tt.entries[sem] || []).map((e, i) => Object.assign({ __idx: i }, e))
+                .filter(e => (e.module || '').trim() && !(e.instructor || '').trim());
             const canEdit = checkEdit('timetables');
 
             document.getElementById('page').innerHTML = `
@@ -6305,6 +6559,11 @@
                 <div style="margin-top:6px;font-size:12.5px">Click to add · module is pre-filled</div>
                 <div style="margin-top:4px">${missing.map(m=>`<button class="chip-mini" onclick="addLessonForModule(${JSON.stringify(m).replace(/"/g,'&quot;')})">+ ${escape(m)}</button>`).join('')}</div>
               </div></div>` : ''}
+              ${noTeacher.length ? `<div class="alert warn" style="background:#fdeeee;border-color:#f0c5c5"><div class="alert-body">
+                <strong style="color:#8f2727">⚠ ${noTeacher.length} scheduled module${noTeacher.length>1?'s':''} with NO teacher assigned</strong>
+                <div style="margin-top:6px;font-size:12.5px">Click a module to open it and assign an instructor</div>
+                <div style="margin-top:4px">${noTeacher.map(e=>`<button class="chip-mini" onclick="editTimetableEntry(${e.__idx})">${escape(e.module)} · ${escape(e.day||'')} ${escape(tt.slots[e.slotIdx]||'')}${e.group?' · '+escape(e.group):''}</button>`).join('')}</div>
+              </div></div>` : ''}
               ${extras.length ? `<div class="alert warn" style="background:#fdf4e8"><div class="alert-body">
                 <strong>ℹ ${extras.length} scheduled module${extras.length>1?'s':''} not in curriculum</strong>
                 <div style="margin-top:4px;font-size:12.5px">${extras.map(m=>`<span class="chip-mini" style="cursor:default">${escape(m)}</span>`).join('')}</div>
@@ -6321,10 +6580,11 @@
                         return `<td ondragover="onCellDragOver(event)" ondragleave="onCellDragLeave(event)" ondrop="onCellDrop(event, '${day}', ${i})">${cell.map((e,ci)=>`
                           <div class="lesson ${ci>0?'b'+((ci%3)+1):''}" draggable="${canEdit}" ondragstart="${canEdit ? `onLessonDragStart(event, ${e.__idx})` : ''}" ondragend="${canEdit ? 'onLessonDragEnd(event)' : ''}" onclick="${canEdit ? `editTimetableEntry(${e.__idx})` : ''}" title="${canEdit ? 'Click to edit · drag to move' : 'Read-only'}">
                             ${canEdit ? `<div class="actions">
+                              <button class="icon-btn" onclick="event.stopPropagation();duplicateTimetableEntry(${e.__idx})" title="Duplicate (blank copy, no teacher)">⧉</button>
                               <button class="icon-btn danger" onclick="event.stopPropagation();deleteTimetableEntry(${e.__idx})" title="Delete">${ICON.del}</button>
                             </div>` : ''}
                             <div class="m">${escape(e.module)}</div>
-                            <div class="i">${escape(e.instructor||'—')}</div>
+                            <div class="i">${(e.instructor||'').trim() ? escape(e.instructor) : '<span style="color:var(--danger);font-weight:600">⚠ no teacher</span>'}</div>
                             <div style="margin-top:3px">
                               <span class="r">📍 ${escape(e.room||'—')}</span>
                               ${e.group?`<span class="g">${escape(e.group)}</span>`:''}
@@ -6588,6 +6848,11 @@
             const groups = D()[semKey];
             const q = state.query;
             const canEdit = checkEdit('exams');
+            const noTeacherExams = [];
+            groups.forEach((g, gi) => (g.exams || []).forEach((e, ei) => {
+                if ((e.module || '').trim() && !(e.teacher || '').trim())
+                    noTeacherExams.push({ gi, ei, module: e.module, grp: g.group || g.level || '' });
+            }));
             document.getElementById('page').innerHTML = `
               ${showPermissionBanner('exams')}
               <div class="page-head">
@@ -6601,6 +6866,11 @@
               </div>
               ${examSubtabBar()}
               ${examSemChips()}
+              ${noTeacherExams.length ? `<div class="alert warn" style="background:#fdeeee;border-color:#f0c5c5"><div class="alert-body">
+                <strong style="color:#8f2727">⚠ ${noTeacherExams.length} exam${noTeacherExams.length>1?'s':''} with NO teacher assigned</strong>
+                <div style="margin-top:6px;font-size:12.5px">Click a module to open it and assign a teacher</div>
+                <div style="margin-top:4px">${noTeacherExams.map(x=>`<button class="chip-mini" onclick="editExam('${semKey}',${x.gi},${x.ei})">${escape(x.module)}${x.grp?' · '+escape(x.grp):''}</button>`).join('')}</div>
+              </div></div>` : ''}
               ${groups.length===0 ? '<p style="color:var(--text-2);text-align:center;padding:40px">No exam groups yet. Click "Add group" or "Prefill from timetable".</p>' : groups.map((g,gi)=>{
                 const filtered = g.exams.map((e,ei)=>({...e,__ei:ei})).filter(e=>!q || (e.module||'').toLowerCase().includes(q) || (e.teacher||'').toLowerCase().includes(q));
                 const defaultTime = D().examTimings[examTimeKey(g.level, state.examSemester)];
@@ -6634,8 +6904,8 @@
                         ondrop="${canEdit ? `onExamDrop(event,'${semKey}',${gi},${e.__ei})` : ''}">
                         <div class="d">${escape(formatDate(e.date))}${(D().examTimings[examTimeKey(e.level||g.level, state.examSemester)]||e.time)?`<div style="font-size:11.5px;color:var(--text-2);font-family:'Inter';font-weight:500;margin-top:2px">${escape(D().examTimings[examTimeKey(e.level||g.level, state.examSemester)]||e.time||'')}</div>`:''}</div>
                         <div><div style="font-weight:500">${escape(e.module)}</div></div>
-                        <div class="t">${escape(e.teacher||'')}</div>
-                        ${canEdit ? rowActions(()=>editExam(semKey,gi,e.__ei), ()=>deleteExam(semKey,gi,e.__ei)) : ''}
+                        <div class="t">${(e.teacher||'').trim() ? escape(e.teacher) : '<span style="color:var(--danger);font-weight:600">⚠ no teacher</span>'}</div>
+                        ${canEdit ? rowActions(()=>editExam(semKey,gi,e.__ei), ()=>deleteExam(semKey,gi,e.__ei), {icon:'⧉', title:'Duplicate (blank copy, no teacher)', fn:()=>duplicateExam(semKey,gi,e.__ei)}) : ''}
                       </div>
                     `).join('')}
                   </div>
@@ -6706,6 +6976,17 @@
             if (!confirm2('Delete this exam?')) return;
             D()[semKey][gi].exams.splice(ei, 1);
             persist();
+        }
+
+        // Duplicate an exam as a blank copy (same module/date/time, NO teacher)
+        function duplicateExam(semKey, gi, ei) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            const list = D()[semKey][gi].exams;
+            const src = list[ei];
+            if (!src) return;
+            list.splice(ei + 1, 0, Object.assign({}, src, { teacher: '' }));
+            persist();
+            toast('Exam duplicated with no teacher — click ✎ on the copy to edit.', 'ok');
         }
 
         function editExamGroup(semKey, gi) {
@@ -10159,6 +10440,45 @@
               </select>`;
         }
 
+        async function exportExtraHoursExcel() {
+            const d = D(), eh = ensureExtraHours(d);
+            try {
+                const XLSX = await loadSheetJS();
+                const wb = XLSX.utils.book_new();
+                let rowsTotal = 0;
+                ['S1', 'S2'].forEach(sem => {
+                    const { perm, temp } = ehEligible(d, sem);
+                    const months = EH_MONTHS[sem].en;
+                    [
+                        ['Permanent', ehApplyOrder(perm, eh[sem].order.perm)],
+                        ['Temporary', ehApplyOrder(temp, eh[sem].order.temp)]
+                    ].forEach(([label, list]) => {
+                        if (!list.length) return;
+                        const rows = [
+                            ['#', 'Name', 'Arabic Name', 'Grade', ...months, 'Total']
+                        ];
+                        list.forEach((t, i) => {
+                            const hrs = ehGetHours(eh, sem, t);
+                            rows.push([i + 1, t.name, t.nameAr || '', t.grade || '', ...hrs,
+                                hrs.reduce((a, b) => a + b, 0)
+                            ]);
+                            rowsTotal++;
+                        });
+                        const sheetName = (sem + ' ' + label).replace(/[\\\/\?\*\[\]:]/g, '-').slice(0, 31);
+                        XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), sheetName);
+                    });
+                });
+                if (!rowsTotal) { toast('No extra-hours data to export.', 'err'); return; }
+                const filename =
+                    `extra_hours_${store.years[store.activeIdx].name.replace(/\//g,'-')}.xlsx`;
+                XLSX.writeFile(wb, filename);
+                toast(`Exported ${rowsTotal} teacher row${rowsTotal>1?'s':''} across ${wb.SheetNames.length} sheet${wb.SheetNames.length>1?'s':''}`, 'ok');
+            } catch (e) {
+                toast('Export failed: ' + e.message, 'err');
+                console.error(e);
+            }
+        }
+
         function viewExtraHours() {
             if (!checkAuth('extrahours')) return;
             const d = D(), eh = ensureExtraHours(d);
@@ -10185,6 +10505,7 @@
                   ${canEdit?`<button class="btn ghost sm" onclick="ehEditHeader()">✏️ Edit header</button>`:''}
                   ${canEdit?`<button class="btn ghost sm" onclick="document.getElementById('ehLogoInput').click()">🖼 Logo</button>
                   <input type="file" id="ehLogoInput" style="display:none" accept="image/*" onchange="if(this.files[0])uploadLogo('left',this.files[0]);this.value=''">`:''}
+                  <button class="btn ghost sm" onclick="exportExtraHoursExcel()">${ICON.download} Export Excel</button>
                   <button class="btn ghost sm" onclick="printExtraHours('ar')" style="direction:rtl">📄 طباعة بالعربية</button>
                   <button class="btn" onclick="printExtraHours('en')">📄 Print in English</button>
                 </div>
