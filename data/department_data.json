@@ -650,6 +650,14 @@
                   "instructor": "Ouarniki W",
                   "room": "Room 12",
                   "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Methodology of Academic Research 1",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
                 }
               ],
               "S2": []
