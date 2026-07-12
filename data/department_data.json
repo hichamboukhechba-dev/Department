@@ -2308,7 +2308,7 @@
     {
       "username": "hod",
       "password": "hod",
-      "role": "hod",
+      "role": "admin",
       "name": "Head of Department",
       "views": [
         "dashboard",
@@ -2322,7 +2322,8 @@
         "rooms",
         "supervision",
         "settings"
-      ]
+      ],
+      "editView": null
     },
     {
       "username": "teacher",
