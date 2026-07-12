@@ -3,7 +3,584 @@
     {
       "name": "20",
       "data": {
-        "teachers": [],
+        "teachers": [
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Amraoui O",
+            "nameAr": "عمراوي أسامة",
+            "phone": "791576715",
+            "emails": [
+              "a.amraoui@univ-djelfa.dz",
+              "oussamaliterature7@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MAA",
+            "name": "Amraoui Z",
+            "nameAr": "عمراوي فاطمة الزهراء",
+            "phone": "0771 71 17 86",
+            "emails": [
+              "fz.amraoui@univ-djelfa.dz",
+              "zahraamraoui@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MAA",
+            "name": "Barboura O.",
+            "nameAr": "بربورة اسامة",
+            "phone": "",
+            "emails": [
+              "oussama.barboura@univ-djelfa.dz",
+              "alg.samo@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Barboura S",
+            "nameAr": "بربورة السبخاوي",
+            "phone": "",
+            "emails": [
+              "s.barboura@univ-djelfa.dz",
+              "barboura.sebkhaoui@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCB",
+            "name": "Benderrah A.",
+            "nameAr": "بن دراح أحلام",
+            "phone": "0783 99 51 81",
+            "emails": [
+              "Ahlam.benderrah@univ-djelfa.dz",
+              "Ahlamobenderrah@gmail.com"
+            ],
+            "role": "chef de département adjoint chargé de la scolarité et des enseignements de graduation",
+            "roleAr": "نائب رئيس القسم المكلف بالتدريس والتعليم في التدرج"
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCA",
+            "name": "Bouchemal A.",
+            "nameAr": "بوشمال أحمد",
+            "phone": "655646803",
+            "emails": [
+              "h.bouchemal@univ-djelfa.dz",
+              "bochmal.ahmed@gmail.com"
+            ],
+            "role": "chef de spécialité",
+            "roleAr": "رئيس تخصص"
+          },
+          {
+            "kind": "Permanent Teachers",
+            "grade": "",
+            "name": "Boukhechba H",
+            "nameAr": "بوخشبة هشام",
+            "phone": "",
+            "emails": [
+              "h.boukhechba@univ-djelfa.dz"
+            ],
+            "role": "Head of Department",
+            "roleAr": "رئيس قسم"
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCB",
+            "name": "Boukhalkhal Y.",
+            "nameAr": "بوخلخال يسمين",
+            "phone": "799592798",
+            "emails": [
+              "yassmine.boukhalkhal@univ-djelfa.dz",
+              "yassmine.boukhalkhal@univ-djelfa.dz"
+            ],
+            "role": "chef de department adjoint charge de la post-graduation et de la recherche scientifique",
+            "roleAr": "نائب رئيس قسم مكلف بما بعد التدرج والبحث العلمي"
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Chaalani A.",
+            "nameAr": "شعلاني عبد القادر",
+            "phone": "",
+            "emails": [
+              "a.chaalani@univ-djelfa.dz",
+              "ch.abdelkader62@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCB",
+            "name": "Guen K.",
+            "nameAr": "قن خديجة",
+            "phone": "0661 10 70 18",
+            "emails": [
+              "khadidja.guen@univ-djelfa.dz",
+              "libro_kity@yahoo.fr"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCA",
+            "name": "Khadroun S.",
+            "nameAr": "خضرون سالم",
+            "phone": "",
+            "emails": [
+              "s.khadroune@univ-djelfa.dz",
+              "salemkhad8@gmail.com"
+            ],
+            "role": "chef de filière",
+            "roleAr": "رئيس شعبة"
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCB",
+            "name": "Mahammedi I.",
+            "nameAr": "محمدي ايمان بلقيس",
+            "phone": "558725804",
+            "emails": [
+              "B.mahammedi@univ-djelfa.dz",
+              "belkisthequeen@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Nourani A",
+            "nameAr": "نوراني عبد الحميد",
+            "phone": "",
+            "emails": [
+              "a.nourani@univ-djelfa.dz",
+              "hamidnour83@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Othmani A",
+            "nameAr": "عثماني عبد الحليم",
+            "phone": "674252379",
+            "emails": [
+              "a.othmani@univ-djelfa.dz",
+              "halimfat32@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Ouarniki W",
+            "nameAr": "ورنيقي وفاء",
+            "phone": "699165414",
+            "emails": [
+              "ouafa.ouarniki@univ-djelfa.dz",
+              "ouafa.ouarniki@yahoo.com"
+            ],
+            "role": "chef de spécialité",
+            "roleAr": "رئيس تخصص"
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Rahmouni A",
+            "nameAr": "رحموني أمال",
+            "phone": "0541 95 79 87",
+            "emails": [
+              "amelrahmouni89@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "",
+            "name": "Charrak O.",
+            "nameAr": "",
+            "phone": "660777460",
+            "emails": [
+              "charak.k95@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Bouaissa T",
+            "nameAr": "",
+            "phone": "696054545",
+            "emails": [
+              "toufik.bouaissa@port.ac.uk"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Bouzidi A",
+            "nameAr": "",
+            "phone": "666646617",
+            "emails": [
+              "Kadidraws@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Gatcha Y",
+            "nameAr": "قطشة يسين",
+            "phone": "660888817",
+            "emails": [
+              "yacinega09@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Kherfan",
+            "nameAr": "خرفان نور الهدى",
+            "phone": "",
+            "emails": [
+              "kherfanenourelhouda@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Otman W",
+            "nameAr": "عثمان وهيبة",
+            "phone": "",
+            "emails": [
+              "Wardamimi197@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Benabderahmane M",
+            "nameAr": "بن عبد الرحمان محمد",
+            "phone": "556617880",
+            "emails": [
+              "hamoucha92@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Arour H.",
+            "nameAr": "",
+            "phone": "",
+            "emails": [
+              "unaflora73@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Hayour",
+            "nameAr": "حيور",
+            "phone": "655867818",
+            "emails": [
+              "imanem280@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Dahia H.",
+            "nameAr": "",
+            "phone": "213 656 14 18 40",
+            "emails": [
+              "hadil.dahia.contact@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Saadeddine B",
+            "nameAr": "سعد الدين يسرا بلقيس",
+            "phone": "795797882",
+            "emails": [
+              "syousserabelkisse@yahoo.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Gueriniai I.",
+            "nameAr": "قرينعي إخلاص",
+            "phone": "659999258",
+            "emails": [
+              "Ikhlasse.gueriniai@univ-djelfa.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Retimi C.",
+            "nameAr": "رتيمي شيراز",
+            "phone": "783791842",
+            "emails": [
+              "Chiraz.retimi@univ-djelfa.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Saidi H.",
+            "nameAr": "سعيدي هاجر",
+            "phone": "796381723",
+            "emails": [
+              "Hadjer.saidi@univ-djelfa.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Chelali M.",
+            "nameAr": "شيلالي ملاك",
+            "phone": "797267570",
+            "emails": [
+              "Chelalimalak124@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Djoudi C.",
+            "nameAr": "جودي شكيب",
+            "phone": "776069919",
+            "emails": [
+              "Chakibdjoudi12@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Zaitri M.",
+            "nameAr": "زعيتري مسعود",
+            "phone": "655683780",
+            "emails": [
+              "messaoudzaitri87@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Ziouche K.",
+            "nameAr": "زيوش خديجة",
+            "phone": "698202002",
+            "emails": [
+              "Dijakhadidja3@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Guadabi N.",
+            "nameAr": "غضابي نرجس",
+            "phone": "557787340",
+            "emails": [
+              "Nardjes1288@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Belli A.",
+            "nameAr": "بلي آية",
+            "phone": "699216166",
+            "emails": [
+              "Ayabelli558@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Laroussi M.",
+            "nameAr": "لعروسي ملك",
+            "phone": "659527774",
+            "emails": [
+              "Malaklaroussi67@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Saddedine Y.",
+            "nameAr": "سعد الدين يسرا بلقيس",
+            "phone": "795797882",
+            "emails": [
+              "syousserabelkisse@yahoo.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Djalab A.",
+            "nameAr": "جعلاب أسماء",
+            "phone": "782851819",
+            "emails": [
+              "Assmadjalabb@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "M'sabel A.",
+            "nameAr": "",
+            "phone": "698609830",
+            "emails": [
+              "rahimadel17@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Mokhtari A.",
+            "nameAr": "مخطاري أميرة",
+            "phone": "657800697",
+            "emails": [
+              "amiralamia.mokhtari@univ-tiaret.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Malla N.",
+            "nameAr": "ملة نسرين",
+            "phone": "774624206",
+            "emails": [
+              "mallanana44@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Abbas C.",
+            "nameAr": "عباس شهرزاد",
+            "phone": "658923317",
+            "emails": [
+              "czed96@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Younsi S.",
+            "nameAr": "يونسي سارة",
+            "phone": "541821679",
+            "emails": [
+              "younsisarah2001@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Bendecho H.",
+            "nameAr": "بن دشو حمزة",
+            "phone": "778440564",
+            "emails": [
+              "bendechou@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Hassani M",
+            "nameAr": "",
+            "phone": "",
+            "emails": [
+              "mariaa.hassanii@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Hamidat Ali",
+            "nameAr": "",
+            "phone": "659267846",
+            "emails": [],
+            "role": "",
+            "roleAr": ""
+          }
+        ],
         "delegates": [],
         "examsS1": [],
         "examsS2": [],
