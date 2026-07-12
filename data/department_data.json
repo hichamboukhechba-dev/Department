@@ -95,16 +95,16 @@
             "roleAr": "رئيس قسم"
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "MCB",
             "name": "Boukhalkhal Y.",
             "nameAr": "بوخلخال يسمين",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
             "phone": "799592798",
             "emails": [
               "yassmine.boukhalkhal@univ-djelfa.dz",
               "yassmine.boukhalkhal@univ-djelfa.dz"
             ],
-            "role": "chef de department adjoint charge de la post-graduation et de la recherche scientifique",
+            "role": "Deputy Head of Department",
             "roleAr": "نائب رئيس قسم مكلف بما بعد التدرج والبحث العلمي"
           },
           {
