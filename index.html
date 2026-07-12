@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12437,8 +12437,44 @@
         }
 
         // ==================================================================
-        //  GITHUB SETTINGS ACTIONS
+        //  GITHUB SETTINGS ACTIONS — with config import/export
         // ==================================================================
+
+        // ---- Export current GitHub config to a JSON file ----
+        function exportGhConfig() {
+            if (!ghConfig) { toast('No GitHub config to export', 'err'); return; }
+            const blob = new Blob([JSON.stringify(ghConfig, null, 2)], { type: 'application/json' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'github_config.json';
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+            toast('Config exported');
+        }
+
+        // ---- Import a JSON config file – fills the form but does NOT auto‑connect ----
+        function importGhConfig(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const cfg = JSON.parse(e.target.result);
+                    if (!cfg.owner || !cfg.repo || !cfg.token) {
+                        toast('Invalid config: missing owner, repo, or token', 'err');
+                        return;
+                    }
+                    document.getElementById('ghOwner').value = cfg.owner || '';
+                    document.getElementById('ghRepo').value = cfg.repo || '';
+                    document.getElementById('ghBranch').value = cfg.branch || 'main';
+                    document.getElementById('ghPath').value = cfg.path || 'data/department_data.json';
+                    document.getElementById('ghToken').value = cfg.token || '';
+                    toast('Config loaded. Click "Connect & sync" to apply.');
+                } catch (err) {
+                    toast('Failed to parse JSON: ' + err.message, 'err');
+                }
+            };
+            reader.readAsText(file);
+        }
+
         function ghConnectFromForm() {
             const owner = document.getElementById('ghOwner').value.trim();
             const repo = document.getElementById('ghRepo').value.trim();
@@ -12738,6 +12774,17 @@
                       <input class="input" id="ghToken" type="password" placeholder="${ghConfig&&ghConfig.token?'•••••••• (unchanged)':'github_pat_…'}" autocomplete="off"></div>
                   </div>
                   <button class="btn" style="margin-top:12px" onclick="ghConnectFromForm()">🔗 Connect &amp; sync</button>
+                  <!-- ===== NEW: Export / Import config buttons ===== -->
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+                    <button class="btn ghost sm" onclick="exportGhConfig()">⬇ Export config (JSON)</button>
+                    <button class="btn ghost sm" onclick="document.getElementById('ghImportInput').click()">⬆ Import config</button>
+                    <input type="file" id="ghImportInput" style="display:none" accept=".json"
+                           onchange="if(this.files[0]) importGhConfig(this.files[0]); this.value=''">
+                  </div>
+                  <div style="font-size:11px;color:var(--text-3);margin-top:4px">
+                    ⚠️ The exported file contains your GitHub token – store it securely.
+                  </div>
+                  <!-- ===== end new ===== -->
                   <div style="margin-top:12px;padding:10px 12px;background:var(--amber-soft);border:1px solid #eadfc2;border-radius:8px;font-size:12px;color:var(--text-2);max-width:640px;line-height:1.6">
                     <b>How to get a token:</b> GitHub → Settings → Developer settings → <b>Fine-grained tokens</b> → Generate new token → select <b>only this repository</b> → Permissions → <b>Contents: Read and write</b>. Keep the repository <b>private</b>.
                     The token is stored only in this browser on this device — it is never written into the data file or the repo.
@@ -13423,23 +13470,11 @@
             else viewDashboard();
         }
 
-        // ================================================================
-        //  DEFAULT GITHUB CONFIG — INTEGRATED DIRECTLY
-        //  (auto-applied on first load; saved to localStorage)
-        // ================================================================
-         
-
-        
-
         // ==================================================================
         //  INIT
         // ==================================================================
         (async () => {
             updateSaveIndicator();
-
-            // Ensure the default GitHub config is applied before loading data
-           
-
             await loadStore();
 
             // Auto-connect to GitHub if config is ready and not already connected
@@ -13484,6 +13519,8 @@
         window.unlinkFile = unlinkFile;
         window.grantAndReload = grantAndReload;
         window.downloadStore = downloadStore;
+        window.exportGhConfig = exportGhConfig;
+        window.importGhConfig = importGhConfig;
         window.ghConnectFromForm = ghConnectFromForm;
         window.connectGh = connectGh;
         window.disconnectGh = disconnectGh;
