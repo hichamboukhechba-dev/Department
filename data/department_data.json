@@ -634,7 +634,16 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "ESP",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                }
+              ],
               "S2": []
             }
           },
