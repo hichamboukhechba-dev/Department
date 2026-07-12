@@ -134,16 +134,16 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "MCA",
             "name": "Khadroun S.",
             "nameAr": "خضرون سالم",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
             "phone": "",
             "emails": [
               "s.khadroune@univ-djelfa.dz",
               "salemkhad8@gmail.com"
             ],
-            "role": "chef de filière",
+            "role": "",
             "roleAr": "رئيس شعبة"
           },
           {
