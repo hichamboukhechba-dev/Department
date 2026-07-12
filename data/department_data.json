@@ -582,28 +582,7 @@
           }
         ],
         "delegates": [],
-        "examsS1": [
-          {
-            "group": "L1 S1",
-            "level": "L1",
-            "exams": [
-              {
-                "date": "",
-                "time": "",
-                "module": "Linguistics and Phonetics 1",
-                "teacher": "Barboura O.",
-                "level": "L1"
-              },
-              {
-                "date": "",
-                "time": "",
-                "module": "Civilisations of the Language of Study 1",
-                "teacher": "Bouchemal A.",
-                "level": "L1"
-              }
-            ]
-          }
-        ],
+        "examsS1": [],
         "examsS2": [],
         "timetables": {
           "L1": {
