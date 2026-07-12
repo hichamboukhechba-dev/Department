@@ -3034,14 +3034,16 @@
             ],
             "rooms": {
               "Room 11": [
-                ""
+                "L1"
               ]
             }
           },
           "S2": null
         },
         "invigilation": {
-          "S1": null,
+          "S1": {
+            "days": []
+          },
           "S2": null
         },
         "extraHours": {
