@@ -674,6 +674,14 @@
                   "instructor": "Khadroun S.",
                   "room": "Room 11",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Introduction to Didactics 1",
+                  "instructor": "Khadroun S.",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
                 }
               ],
               "S2": []
