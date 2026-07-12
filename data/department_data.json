@@ -3023,7 +3023,9 @@
           "Thursday",
           "Saturday"
         ],
-        "examTimings": {},
+        "examTimings": {
+          "M2 Didactics||S1": "08:10 – 10:00"
+        },
         "examTimingsV2": true,
         "roomAllocation": {
           "S1": null,
