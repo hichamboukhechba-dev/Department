@@ -658,6 +658,14 @@
                   "instructor": "Boukhechba H",
                   "room": "Room 12",
                   "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Methodology of Academic Research 1",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
