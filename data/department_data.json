@@ -57,16 +57,16 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "MCB",
             "name": "Benderrah A.",
             "nameAr": "بن دراح أحلام",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
             "phone": "0783 99 51 81",
             "emails": [
               "Ahlam.benderrah@univ-djelfa.dz",
               "Ahlamobenderrah@gmail.com"
             ],
-            "role": "chef de département adjoint chargé de la scolarité et des enseignements de graduation",
+            "role": "Deputy Head of Department",
             "roleAr": "نائب رئيس القسم المكلف بالتدريس والتعليم في التدرج"
           },
           {
