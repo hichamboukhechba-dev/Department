@@ -625,6 +625,14 @@
                   "instructor": "",
                   "room": "Room 21",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
