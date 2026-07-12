@@ -698,6 +698,14 @@
                   "instructor": "Guen K.",
                   "room": "Room 12",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Linguistics 1",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
