@@ -83,10 +83,10 @@
             "roleAr": "رئيس تخصص"
           },
           {
-            "kind": "Permanent Teachers",
-            "grade": "",
             "name": "Boukhechba H",
             "nameAr": "بوخشبة هشام",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
             "phone": "",
             "emails": [
               "h.boukhechba@univ-djelfa.dz"
