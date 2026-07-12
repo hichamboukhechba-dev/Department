@@ -2353,6 +2353,26 @@
         "students",
         "delegates"
       ]
+    },
+    {
+      "username": "Benderrah",
+      "password": "Benderrah",
+      "name": "Benderrah",
+      "role": "admin",
+      "views": [
+        "dashboard",
+        "timetables",
+        "exams",
+        "curriculum",
+        "students",
+        "teachers",
+        "extrahours",
+        "delegates",
+        "rooms",
+        "supervision",
+        "settings"
+      ],
+      "editView": null
     }
   ],
   "logos": {
