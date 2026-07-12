@@ -3042,7 +3042,19 @@
         },
         "invigilation": {
           "S1": {
-            "days": []
+            "days": [
+              {
+                "date": "2026-07-12",
+                "substitute": "",
+                "assignments": {
+                  "Room 11": [
+                    [
+                      "Amraoui O"
+                    ]
+                  ]
+                }
+              }
+            ]
           },
           "S2": null
         },
