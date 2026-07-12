@@ -609,6 +609,14 @@
                   "instructor": "Bouchemal A.",
                   "room": "Room 22",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 22",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
