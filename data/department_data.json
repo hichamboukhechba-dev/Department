@@ -596,7 +596,7 @@
               "S1": [
                 {
                   "day": "Sunday",
-                  "slotIdx": 1,
+                  "slotIdx": 0,
                   "module": "Linguistics and Phonetics 1",
                   "instructor": "Barboura O.",
                   "room": "Room 21",
