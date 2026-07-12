@@ -690,6 +690,14 @@
                   "instructor": "Guen K.",
                   "room": "Room 12",
                   "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Translation: National Language(s) / Language of Study 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
                 }
               ],
               "S2": []
