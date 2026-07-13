@@ -794,6 +794,14 @@
                   "instructor": "Laroussi M.",
                   "room": "Room 12",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 0,
+                  "module": "Literature: Theories and Practices 1",
+                  "instructor": "Saadeddine B",
+                  "room": "Room 11",
+                  "group": "GROUP 3 + 4"
                 }
               ],
               "S2": []
