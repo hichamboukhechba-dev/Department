@@ -673,6 +673,14 @@
                   "instructor": "Gueriniai I.",
                   "room": "Room 12",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
