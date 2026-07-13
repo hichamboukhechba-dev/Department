@@ -762,6 +762,14 @@
                   "instructor": "Retimi C.",
                   "room": "Room 11",
                   "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Oral Communication Practices 1",
+                  "instructor": "",
+                  "room": "Room 11",
+                  "group": "GROUP 3+4"
                 }
               ],
               "S2": []
