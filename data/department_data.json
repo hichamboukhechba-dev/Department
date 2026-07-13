@@ -746,6 +746,14 @@
                   "instructor": "Ziouche K.",
                   "room": "Room 11",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "ESP",
+                  "instructor": "",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
                 }
               ],
               "S2": []
