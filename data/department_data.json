@@ -627,8 +627,8 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Monday",
-                  "slotIdx": 2,
+                  "day": "Sunday",
+                  "slotIdx": 1,
                   "module": "Grammar of Language of Study 1",
                   "instructor": "Barboura S",
                   "room": "Room 23",
