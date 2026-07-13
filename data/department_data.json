@@ -778,6 +778,14 @@
                   "instructor": "Otman W",
                   "room": "Room 11",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Entrepreneurship 1",
+                  "instructor": "Laroussi M.",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
