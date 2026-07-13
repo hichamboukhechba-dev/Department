@@ -635,8 +635,8 @@
                   "group": "GROUP 3"
                 },
                 {
-                  "day": "Sunday",
-                  "slotIdx": 0,
+                  "day": "Tuesday",
+                  "slotIdx": 2,
                   "module": "University Study Skills 1",
                   "instructor": "Othmani A",
                   "room": "Room 24",
