@@ -636,7 +636,7 @@
                 },
                 {
                   "day": "Sunday",
-                  "slotIdx": 2,
+                  "slotIdx": 0,
                   "module": "University Study Skills 1",
                   "instructor": "Othmani A",
                   "room": "Room 24",
@@ -652,7 +652,7 @@
                 },
                 {
                   "day": "Sunday",
-                  "slotIdx": 3,
+                  "slotIdx": 1,
                   "module": "University Study Skills 1",
                   "instructor": "Othmani A",
                   "room": "Room 24",
