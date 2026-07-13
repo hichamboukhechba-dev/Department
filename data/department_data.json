@@ -770,6 +770,14 @@
                   "instructor": "Otman W",
                   "room": "Room 12",
                   "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Civilization, Culture, and Interculturality 1",
+                  "instructor": "",
+                  "room": "Room 12",
+                  "group": ""
                 }
               ],
               "S2": []
