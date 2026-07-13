@@ -754,6 +754,14 @@
                   "instructor": "Abbas C.",
                   "room": "Room 12",
                   "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Oral Communication Practices 1",
+                  "instructor": "Retimi C.",
+                  "room": "Room 11",
+                  "group": "GROUP 1+2"
                 }
               ],
               "S2": []
