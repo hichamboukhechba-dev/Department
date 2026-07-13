@@ -657,6 +657,14 @@
                   "instructor": "Othmani A",
                   "room": "Room 24",
                   "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
