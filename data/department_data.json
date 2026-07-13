@@ -796,8 +796,8 @@
                   "group": "GROUP 1 + 2"
                 },
                 {
-                  "day": "Thursday",
-                  "slotIdx": 0,
+                  "day": "Tuesday",
+                  "slotIdx": 2,
                   "module": "Literature: Theories and Practices 1",
                   "instructor": "Saadeddine B",
                   "room": "Room 11",
