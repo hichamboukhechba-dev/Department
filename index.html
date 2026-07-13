@@ -6542,6 +6542,7 @@
                   ${canEdit ? `<button class="btn ghost sm" onclick="importTimetablesExcel()">${ICON.upload} Import Excel</button>` : ''}
                   <button class="btn ghost sm" onclick="printCurrentTimetable()">📄 Print this</button>
                   <button class="btn ghost sm" onclick="printAllTimetables()">📄 Print all</button>
+                  <button class="btn ghost sm" onclick="openTimetablePrintSettings()" title="Customize timetable printing: orientation, font, text size, line thickness">⚙️ Print settings</button>
                   ${canEdit ? `<button class="btn ghost sm" onclick="editSlots()">Edit slots</button>` : ''}
                   ${canEdit ? `<button class="btn ghost sm" onclick="editDays()">📅 Edit days</button>` : ''}
                   ${canEdit ? `<button class="btn" onclick="editTimetableEntry(null)">${ICON.plus} Add lesson</button>` : ''}
@@ -13251,13 +13252,15 @@
             return `<div class="print-page">${reportHeaderHTML()}<div class="page-heading">${escape(heading)}</div>${contentHTML}<div class="print-footer"></div></div>`;
         }
 
-        function openPrintWindow(title, bodyHTML) {
-            const w = window.open('', '_blank', 'width=1000,height=800');
+        function openPrintWindow(title, bodyHTML, opts) {
+            opts = opts || {};
+            const w = window.open('', '_blank', 'width=' + (opts.orientation === 'landscape' ? 1250 : 1000) + ',height=800');
             if (!w) { toast('Popup blocked — allow popups to print/export PDF', 'err'); return; }
             const now = new Date().toLocaleString();
+            const orientationCSS = opts.orientation ? `@page { size: A4 ${opts.orientation}; margin: 1cm; } @media screen { body { max-width: ${opts.orientation === 'landscape' ? '1200px' : '900px'}; } }` : '';
             w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${escape(title)}</title>
               <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
-              <style>${PRINT_CSS}</style></head>
+              <style>${PRINT_CSS}${orientationCSS}${opts.extraCSS || ''}</style></head>
               <body>${bodyHTML}
               <div class="footer">Generated ${escape(now)} · Department of English</div>
               </body></html>`);
@@ -13491,14 +13494,134 @@
               </table>`;
         }
 
+        // ---- TIMETABLE PRINT SETTINGS ----
+        const TT_PRINT_DEFAULTS = {
+            orientation: 'landscape', // landscape fits the weekly grid best
+            fontFamily: 'Inter',
+            fontSize: 10,             // pt, table text
+            borderW: 1.5,             // px, table line thickness
+            inkColor: '#000000',      // pure black = clearest lines
+            headerShade: true,        // light green shading on header row & lessons
+            cellPad: 4                // px, vertical cell padding
+        };
+
+        const TT_PRINT_FONTS = {
+            'Inter': `'Inter', Arial, sans-serif`,
+            'Times New Roman': `'Times New Roman', Times, serif`,
+            'Arial': `Arial, Helvetica, sans-serif`,
+            'Georgia': `Georgia, 'Times New Roman', serif`,
+            'Cambria': `Cambria, Georgia, serif`,
+            'Calibri': `Calibri, 'Segoe UI', Arial, sans-serif`
+        };
+
+        function getTTPrintSettings() {
+            try {
+                const saved = JSON.parse(localStorage.getItem('ttPrintSettings') || '{}');
+                return { ...TT_PRINT_DEFAULTS, ...saved };
+            } catch (e) {
+                return { ...TT_PRINT_DEFAULTS };
+            }
+        }
+
+        function saveTTPrintSettings(s) {
+            try { localStorage.setItem('ttPrintSettings', JSON.stringify(s)); } catch (e) {}
+        }
+
+        function openTimetablePrintSettings() {
+            const s = getTTPrintSettings();
+            openModal({
+                title: '🖨️ Timetable print settings',
+                subtitle: 'Applies to "Print this" and "Print all" timetables. Landscape is recommended for the weekly grid.',
+                fields: [
+                    { key: 'orientation', label: 'Page orientation', type: 'select', value: s.orientation, row: true, options: [
+                        { value: 'landscape', label: 'Landscape (recommended)' },
+                        { value: 'portrait', label: 'Portrait' }
+                    ] },
+                    { key: 'fontFamily', label: 'Font', type: 'select', value: s.fontFamily, row: true, options:
+                        Object.keys(TT_PRINT_FONTS).map(f => ({ value: f, label: f + (f === 'Inter' ? ' (default)' : '') })) },
+                    { key: 'fontSize', label: 'Table text size (pt)', type: 'number', value: s.fontSize, row: true,
+                      hint: '9–10 fits wide timetables · 11–12 is bigger' },
+                    { key: 'cellPad', label: 'Cell padding (px)', type: 'number', value: s.cellPad, row: true,
+                      hint: 'Vertical breathing room in each cell' },
+                    { key: 'borderW', label: 'Line thickness', type: 'select', value: String(s.borderW), row: true, options: [
+                        { value: '0.5', label: '0.5 px — hairline' },
+                        { value: '1', label: '1 px — thin' },
+                        { value: '1.5', label: '1.5 px — clear (default)' },
+                        { value: '2', label: '2 px — bold' },
+                        { value: '2.5', label: '2.5 px — extra bold' }
+                    ] },
+                    { key: 'inkColor', label: 'Line & text colour', type: 'select', value: s.inkColor, row: true, options: [
+                        { value: '#000000', label: 'Pure black (clearest)' },
+                        { value: '#1a1a1a', label: 'Soft black' },
+                        { value: '#1f4f3f', label: 'Department green' }
+                    ] },
+                    { key: 'headerShade', label: 'Shade header row & lesson blocks (light green background)', type: 'checkbox', value: s.headerShade },
+                    { key: 'reset', label: 'Reset everything to the recommended defaults', type: 'checkbox', value: false }
+                ],
+                submitLabel: 'Save settings',
+                onSave: vals => {
+                    if (vals.reset) {
+                        saveTTPrintSettings({ ...TT_PRINT_DEFAULTS });
+                        toast('Timetable print settings reset to defaults');
+                        return;
+                    }
+                    saveTTPrintSettings({
+                        orientation: vals.orientation === 'portrait' ? 'portrait' : 'landscape',
+                        fontFamily: TT_PRINT_FONTS[vals.fontFamily] ? vals.fontFamily : TT_PRINT_DEFAULTS.fontFamily,
+                        fontSize: clampNum(vals.fontSize, 7, 16, TT_PRINT_DEFAULTS.fontSize),
+                        cellPad: clampNum(vals.cellPad, 0, 12, TT_PRINT_DEFAULTS.cellPad),
+                        borderW: parseFloat(vals.borderW) || TT_PRINT_DEFAULTS.borderW,
+                        inkColor: vals.inkColor || TT_PRINT_DEFAULTS.inkColor,
+                        headerShade: !!vals.headerShade
+                    });
+                    toast('Timetable print settings saved');
+                }
+            });
+        }
+
+        // Builds CSS overrides for timetable print windows from saved settings
+        function ttPrintCSS() {
+            const s = getTTPrintSettings();
+            const ink = s.inkColor || '#000000';
+            const bw = s.borderW || 1.5;
+            const ff = TT_PRINT_FONTS[s.fontFamily] || TT_PRINT_FONTS['Inter'];
+            const fs = s.fontSize || 10;
+            const pad = (s.cellPad != null ? s.cellPad : 4);
+            const accent = ink === '#1f4f3f' ? '#1f4f3f' : '#000000';
+            const headBg = s.headerShade ? '#eaf0ec' : '#ffffff';
+            const lessonBg = s.headerShade ? '#eef2ee' : 'transparent';
+            return `
+              body { font-family: ${ff}; color: ${ink}; }
+              table { border: ${bw}px solid ${ink}; }
+              th, td { border: ${bw}px solid ${ink}; font-size: ${fs}pt; color: ${ink}; padding: ${pad}px 6px;
+                       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+              thead th { background: ${headBg}; color: ${ink}; font-size: ${Math.max(7, fs - 0.5)}pt; }
+              .tt-lesson { background: ${lessonBg}; border-left: ${Math.max(2, bw)}px solid ${accent};
+                           font-size: ${Math.max(7, fs - 0.5)}pt; }
+              .tt-lesson .m { font-size: ${fs}pt; color: ${ink}; }
+              .tt-lesson .meta { color: ${ink}; opacity: 0.75; font-size: ${Math.max(6.5, fs - 1.5)}pt; }
+              .day-col { color: ${ink}; background: ${s.headerShade ? '#fbf9f2' : '#ffffff'}; }
+              .page-heading { color: ${accent}; border-bottom-color: ${ink}; }
+              table tr { page-break-inside: avoid; }
+              table thead { display: table-header-group; }
+            `;
+        }
+
+        function ttPrintOpts() {
+            const s = getTTPrintSettings();
+            return { orientation: s.orientation || 'landscape', extraCSS: ttPrintCSS() };
+        }
+
         function printCurrentTimetable() {
             openPrintWindow('Timetable — ' + state.ttLevel + ' ' + state.ttSem,
-                buildReportBody(['timetables'], { timetableScope: { level: state.ttLevel, sem: state.ttSem } }));
+                buildReportBody(['timetables'], { timetableScope: { level: state.ttLevel, sem: state.ttSem } }),
+                ttPrintOpts());
         }
 
         function printAllTimetables() {
             openPrintWindow('All timetables — ' + store.years[store.activeIdx].name,
-                buildReportBody(['timetables']));
+                buildReportBody(['timetables']),
+                ttPrintOpts());
         }
 
         function printExams() {
@@ -13856,6 +13979,7 @@
         window.exportCombinedCSV = exportCombinedCSV;
         window.printCurrentTimetable = printCurrentTimetable;
         window.printAllTimetables = printAllTimetables;
+        window.openTimetablePrintSettings = openTimetablePrintSettings;
         window.printExams = printExams;
         window.printAllExams = printAllExams;
         window.printTeachers = printTeachers;
