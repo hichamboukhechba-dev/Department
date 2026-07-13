@@ -691,12 +691,20 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Sunday",
+                  "day": "Monday",
                   "slotIdx": 0,
                   "module": "Linguistics and Phonetics 1",
                   "instructor": "",
                   "room": "Room 21",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
