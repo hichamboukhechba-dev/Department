@@ -803,8 +803,8 @@
                   "group": "GROUP 4"
                 },
                 {
-                  "day": "Monday",
-                  "slotIdx": 0,
+                  "day": "Sunday",
+                  "slotIdx": 2,
                   "module": "Foreign Language(s) 1",
                   "instructor": "",
                   "room": "Room 23",
