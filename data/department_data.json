@@ -825,6 +825,14 @@
                   "instructor": "Amraoui O",
                   "room": "Room 22",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 3,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
