@@ -762,6 +762,14 @@
                   "instructor": "Retimi C.",
                   "room": "Room 11",
                   "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Civilization, Culture, and Interculturality 1",
+                  "instructor": "Otman W",
+                  "room": "Room 12",
+                  "group": ""
                 }
               ],
               "S2": []
