@@ -707,12 +707,20 @@
                   "group": "GROUP 4"
                 },
                 {
-                  "day": "Sunday",
+                  "day": "Monday",
                   "slotIdx": 0,
                   "module": "University Study Skills 1",
                   "instructor": "",
                   "room": "Room 24",
                   "group": "GROUP 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "University Study Skills 1",
+                  "instructor": "",
+                  "room": "Room 24",
+                  "group": "GROUP 3"
                 }
               ],
               "S2": []
