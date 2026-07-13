@@ -777,6 +777,14 @@
                   "instructor": "Djoudi C.",
                   "room": "Room 22",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
