@@ -875,8 +875,8 @@
                   "group": "GROUP 4"
                 },
                 {
-                  "day": "Sunday",
-                  "slotIdx": 1,
+                  "day": "Monday",
+                  "slotIdx": 3,
                   "module": "University Study Skills 1",
                   "instructor": "",
                   "room": "Room 24",
