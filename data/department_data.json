@@ -859,8 +859,8 @@
                   "group": "GROUP 3"
                 },
                 {
-                  "day": "Monday",
-                  "slotIdx": 2,
+                  "day": "Tuesday",
+                  "slotIdx": 1,
                   "module": "Grammar of Language of Study 1",
                   "instructor": "",
                   "room": "Room 23",
