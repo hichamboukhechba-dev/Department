@@ -852,7 +852,7 @@
                 },
                 {
                   "day": "Tuesday",
-                  "slotIdx": 0,
+                  "slotIdx": 2,
                   "module": "Grammar of Language of Study 1",
                   "instructor": "Barboura S",
                   "room": "Room 23",
@@ -860,7 +860,7 @@
                 },
                 {
                   "day": "Tuesday",
-                  "slotIdx": 1,
+                  "slotIdx": 3,
                   "module": "Grammar of Language of Study 1",
                   "instructor": "Barboura S",
                   "room": "Room 23",
