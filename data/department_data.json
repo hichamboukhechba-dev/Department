@@ -849,6 +849,14 @@
                   "instructor": "Amraoui O",
                   "room": "Room 23",
                   "group": "GROUP 3"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
                 }
               ],
               "S2": []
