@@ -835,8 +835,8 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Sunday",
-                  "slotIdx": 2,
+                  "day": "Monday",
+                  "slotIdx": 0,
                   "module": "Study of Literary Texts  1",
                   "instructor": "",
                   "room": "Room 22",
