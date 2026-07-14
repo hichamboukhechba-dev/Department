@@ -597,18 +597,18 @@
                 {
                   "day": "Sunday",
                   "slotIdx": 0,
-                  "module": "Civilisations of the Language of Study 1",
-                  "instructor": "Bouchemal A.",
-                  "room": "Room 22",
-                  "group": "GROUP 2"
-                },
-                {
-                  "day": "Sunday",
-                  "slotIdx": 0,
                   "module": "Linguistics and Phonetics 1",
                   "instructor": "Barboura O.",
                   "room": "Room 21",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 },
                 {
                   "day": "Sunday",
