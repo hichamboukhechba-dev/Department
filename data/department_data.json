@@ -889,6 +889,14 @@
                   "instructor": "",
                   "room": "Room 12",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
