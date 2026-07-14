@@ -937,6 +937,14 @@
                   "instructor": "Djoudi C.",
                   "room": "Amphi B",
                   "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Amphi B",
+                  "group": "al"
                 }
               ],
               "S2": []
