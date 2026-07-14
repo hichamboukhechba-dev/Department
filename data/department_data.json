@@ -921,6 +921,14 @@
                   "instructor": "Chaalani A.",
                   "room": "Amphi B",
                   "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
                 }
               ],
               "S2": []
