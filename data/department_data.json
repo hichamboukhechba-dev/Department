@@ -841,6 +841,14 @@
                   "instructor": "",
                   "room": "Room 22",
                   "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
                 }
               ],
               "S2": []
