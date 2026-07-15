@@ -1192,6 +1192,14 @@
                   "instructor": "Benderrah A.",
                   "room": "Room 13",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Literary Theories",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 13",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
