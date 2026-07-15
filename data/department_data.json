@@ -1209,7 +1209,16 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "American Civilisation",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 14",
+                  "group": "GROUP 1"
+                }
+              ],
               "S2": []
             }
           },
