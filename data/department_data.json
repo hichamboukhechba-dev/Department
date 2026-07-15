@@ -974,6 +974,14 @@
                   "instructor": "Rahmouni A",
                   "room": "Room 26",
                   "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Civilisations of the Language of Study 3",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
                 }
               ],
               "S2": []
