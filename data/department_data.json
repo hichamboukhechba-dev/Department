@@ -883,7 +883,7 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Tuesday",
+                  "day": "Sunday",
                   "slotIdx": 2,
                   "module": "ICT and E-Learning 1",
                   "instructor": "Saidi H.",
@@ -891,7 +891,7 @@
                   "group": "GROUP 3"
                 },
                 {
-                  "day": "Tuesday",
+                  "day": "Sunday",
                   "slotIdx": 2,
                   "module": "Oral Comprehension and Expression 1",
                   "instructor": "Djoudi C.",
@@ -899,7 +899,7 @@
                   "group": "GROUP 4"
                 },
                 {
-                  "day": "Tuesday",
+                  "day": "Sunday",
                   "slotIdx": 3,
                   "module": "ICT and E-Learning 1",
                   "instructor": "Saidi H.",
@@ -907,7 +907,7 @@
                   "group": "GROUP 4"
                 },
                 {
-                  "day": "Tuesday",
+                  "day": "Sunday",
                   "slotIdx": 3,
                   "module": "Oral Comprehension and Expression 1",
                   "instructor": "Djoudi C.",
