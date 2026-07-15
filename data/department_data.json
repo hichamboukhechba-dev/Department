@@ -1176,7 +1176,16 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "British Civilisation",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 13",
+                  "group": "GROUP 1"
+                }
+              ],
               "S2": []
             }
           },
