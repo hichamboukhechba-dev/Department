@@ -966,6 +966,14 @@
                   "instructor": "Rahmouni A",
                   "room": "Room 25",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Literatures of the Language of Study 3",
+                  "instructor": "",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
