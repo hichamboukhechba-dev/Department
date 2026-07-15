@@ -1225,6 +1225,14 @@
                   "instructor": "Amraoui Z",
                   "room": "Room 14",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Contemporary American Literature",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 13",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
