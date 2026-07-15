@@ -1184,6 +1184,14 @@
                   "instructor": "Amraoui Z",
                   "room": "Room 13",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "American Literature",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 13",
+                  "group": "GROUP 1"
                 }
               ],
               "S2": []
