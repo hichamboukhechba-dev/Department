@@ -3349,7 +3349,7 @@
                 <button onclick="logout()">🚪 Sign out</button>
                 <button onclick="setView('settings')">↳ Data &amp; Backup</button>
                 <div style="margin-top:8px;font-size:10px;color:var(--sidebar-text-3)">Auto-saved to your account and, if linked, to a file on your computer.</div>
-                <div class="version">Version 1.9.7</div>
+                <div class="version">Version 2.0.0</div>
             </div>
         </aside>
 
@@ -3378,7 +3378,7 @@
             <div class="page" id="page"></div>
             <div class="app-footer">
                 Designed by <strong>Dr. Boukhechba Hicham</strong>
-                <span class="version-tag">v1.9.9</span>
+                <span class="version-tag">v2.0.0</span>
                 <span style="margin:0 8px;color:var(--border-soft)">·</span>
                 English Department · University of Djelfa
             </div>
@@ -3394,7 +3394,7 @@
         // ================================================================
         //  VERSION
         // ================================================================
-        const APP_VERSION = '1.9.9';
+        const APP_VERSION = '2.0.0';
 
         // ================================================================
         //  APPEARANCE (theme / font / size / density) — per-device settings
@@ -5686,6 +5686,85 @@
             return curriculum.filter(m => !scheduled.has(m.trim().toLowerCase()));
         }
 
+        // ==================================================================
+        //  TIMETABLE UNDO (session-level history, in-memory)
+        // ==================================================================
+        const ttUndoStack = [];
+        const TT_UNDO_MAX = 40;
+
+        // Call BEFORE mutating any timetable data. Captures all levels + days.
+        function ttSnapshot(label) {
+            try {
+                const d = D();
+                ttUndoStack.push({
+                    label: label || 'change',
+                    level: state.ttLevel,
+                    sem: state.ttSem,
+                    timetables: JSON.stringify(d.timetables),
+                    days: JSON.stringify(d.days || null)
+                });
+                if (ttUndoStack.length > TT_UNDO_MAX) ttUndoStack.shift();
+            } catch (e) { console.error('undo snapshot failed', e); }
+        }
+
+        function ttUndo() {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const snap = ttUndoStack.pop();
+            if (!snap) { toast('Nothing to undo', 'err'); return; }
+            try {
+                const d = D();
+                d.timetables = JSON.parse(snap.timetables);
+                const days = JSON.parse(snap.days);
+                if (days) d.days = days;
+                if (snap.level) state.ttLevel = snap.level;
+                if (snap.sem) state.ttSem = snap.sem;
+                if (state.view !== 'timetables') state.view = 'timetables';
+                persist();
+                toast('↶ Undid: ' + snap.label, 'ok');
+            } catch (e) {
+                toast('Undo failed: ' + e.message, 'err');
+                console.error(e);
+            }
+        }
+
+        // Ctrl+Z / Cmd+Z undoes the last timetable change while on the Timetables view
+        document.addEventListener('keydown', e => {
+            if (!(e.ctrlKey || e.metaKey) || e.shiftKey || e.altKey) return;
+            if ((e.key || '').toLowerCase() !== 'z') return;
+            if (state.view !== 'timetables') return;
+            const tag = (e.target && e.target.tagName || '').toLowerCase();
+            if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+            if (e.target && e.target.isContentEditable) return;
+            const backdrop = document.getElementById('modalBackdrop');
+            if (backdrop && backdrop.classList.contains('open')) return;
+            e.preventDefault();
+            ttUndo();
+        });
+
+        // Reorder a lesson within its own cell (same day + same time slot)
+        function moveLessonInCell(idx, dir) {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const tt = ensureLevelTt(D(), state.ttLevel);
+            const list = tt.entries[state.ttSem];
+            const e = list[idx];
+            if (!e) return;
+            // Indices of all entries sharing this day + slot, in display order
+            const cellIdxs = [];
+            list.forEach((x, i) => {
+                if (x.day === e.day && x.slotIdx === e.slotIdx) cellIdxs.push(i);
+            });
+            const pos = cellIdxs.indexOf(idx);
+            const target = pos + dir;
+            if (pos < 0 || target < 0 || target >= cellIdxs.length) return;
+            ttSnapshot('reorder ' + (e.module || 'lesson'));
+            const j = cellIdxs[target];
+            const tmp = list[idx];
+            list[idx] = list[j];
+            list[j] = tmp;
+            persist();
+            toast((e.module || 'Lesson') + (dir < 0 ? ' moved up' : ' moved down'));
+        }
+
         let dragIdx = null;
 
         function onLessonDragStart(ev, idx) {
@@ -5734,6 +5813,7 @@
                         `⚠ Teacher conflict:\n${entry.instructor} is already scheduled at ${day} ${tt.slots[slotIdx]} in:\n\n${lines}\n\nMove anyway?`
                         )) return;
             }
+            ttSnapshot('move ' + (entry.module || 'lesson'));
             list[idx] = updated;
             persist();
             toast('Moved to ' + day + ' ' + tt.slots[slotIdx]);
@@ -5775,6 +5855,7 @@
                                 `⚠ Teacher conflict:\n${v.instructor} is already scheduled at ${v.day} ${tt.slots[v.slotIdx]} in:\n\n${lines}\n\nSave anyway?`
                                 )) return false;
                     }
+                    ttSnapshot('add ' + (v.module || 'lesson'));
                     tt.entries[sem].push(v);
                     persist();
                     toast('Lesson added');
@@ -5823,6 +5904,7 @@
                                 `⚠ Teacher conflict:\n${v.instructor} is already scheduled at ${v.day} ${tt.slots[v.slotIdx]} in:\n\n${lines}\n\nSave anyway?`
                                 )) return false;
                     }
+                    ttSnapshot((idx == null ? 'add ' : 'edit ') + (v.module || 'lesson'));
                     if (idx == null) list.push(v);
                     else list[idx] = v;
                     persist();
@@ -5835,8 +5917,10 @@
             if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
             if (!confirm2('Delete this lesson?')) return;
             const tt = ensureLevelTt(D(), state.ttLevel);
+            ttSnapshot('delete ' + ((tt.entries[state.ttSem][idx] || {}).module || 'lesson'));
             tt.entries[state.ttSem].splice(idx, 1);
             persist();
+            toast('Lesson deleted — press ↶ Undo or Ctrl+Z to restore');
         }
 
         // Duplicate a lesson as a blank copy (same module/room/group, NO teacher)
@@ -5846,6 +5930,7 @@
             const list = tt.entries[state.ttSem];
             const src = list[idx];
             if (!src) return;
+            ttSnapshot('duplicate ' + (src.module || 'lesson'));
             list.push(Object.assign({}, src, { instructor: '' }));
             persist();
             toast('Lesson duplicated with no teacher — drag the copy to its slot or click it to edit.', 'ok');
@@ -5861,6 +5946,7 @@
                 onSave: v => {
                     const newSlots = v.slots.split('\n').map(s => s.trim()).filter(Boolean);
                     if (!newSlots.length) return false;
+                    ttSnapshot('edit time slots');
                     tt.slots = newSlots;
                     ['S1', 'S2'].forEach(s => tt.entries[s].forEach(e => { if (e.slotIdx >= newSlots.length) e
                             .slotIdx = newSlots.length - 1; }));
@@ -5886,6 +5972,7 @@
                         toast('Duplicate days found. Please enter unique days.', 'err');
                         return false;
                     }
+                    ttSnapshot('edit days of the week');
                     // Migrate existing entries: if a day is removed, move its lessons to the first day
                     const oldDays = getDays(d);
                     const removedDays = oldDays.filter(day => !newDays.includes(day));
@@ -5988,6 +6075,7 @@
                     const wb = XLSX.read(data, { type: 'array' });
 
                     const levels = getCurriculumLevels(d);
+                    ttSnapshot('Excel import');
                     let imported = 0,
                         skipped = 0,
                         errors = [];
@@ -6543,6 +6631,7 @@
                   <button class="btn ghost sm" onclick="printCurrentTimetable()">📄 Print this</button>
                   <button class="btn ghost sm" onclick="printAllTimetables()">📄 Print all</button>
                   <button class="btn ghost sm" onclick="openTimetablePrintSettings()" title="Customize timetable printing: orientation, font, text size, line thickness">⚙️ Print settings</button>
+                  ${canEdit ? `<button class="btn ghost sm" onclick="ttUndo()" ${ttUndoStack.length ? '' : 'disabled style="opacity:.45;cursor:not-allowed"'} title="${ttUndoStack.length ? 'Undo: ' + escape(ttUndoStack[ttUndoStack.length-1].label) + ' (Ctrl+Z)' : 'Nothing to undo yet'}">↶ Undo${ttUndoStack.length ? ' (' + ttUndoStack.length + ')' : ''}</button>` : ''}
                   ${canEdit ? `<button class="btn ghost sm" onclick="editSlots()">Edit slots</button>` : ''}
                   ${canEdit ? `<button class="btn ghost sm" onclick="editDays()">📅 Edit days</button>` : ''}
                   ${canEdit ? `<button class="btn" onclick="editTimetableEntry(null)">${ICON.plus} Add lesson</button>` : ''}
@@ -6581,6 +6670,9 @@
                         return `<td ondragover="onCellDragOver(event)" ondragleave="onCellDragLeave(event)" ondrop="onCellDrop(event, '${day}', ${i})">${cell.map((e,ci)=>`
                           <div class="lesson ${ci>0?'b'+((ci%3)+1):''}" draggable="${canEdit}" ondragstart="${canEdit ? `onLessonDragStart(event, ${e.__idx})` : ''}" ondragend="${canEdit ? 'onLessonDragEnd(event)' : ''}" onclick="${canEdit ? `editTimetableEntry(${e.__idx})` : ''}" title="${canEdit ? 'Click to edit · drag to move' : 'Read-only'}">
                             ${canEdit ? `<div class="actions">
+                              ${cell.length > 1 ? `
+                              <button class="icon-btn" onclick="event.stopPropagation();moveLessonInCell(${e.__idx},-1)" title="Move up within this slot" ${ci===0?'disabled style="opacity:.25;cursor:default"':''}>▲</button>
+                              <button class="icon-btn" onclick="event.stopPropagation();moveLessonInCell(${e.__idx},1)" title="Move down within this slot" ${ci===cell.length-1?'disabled style="opacity:.25;cursor:default"':''}>▼</button>` : ''}
                               <button class="icon-btn" onclick="event.stopPropagation();duplicateTimetableEntry(${e.__idx})" title="Duplicate (blank copy, no teacher)">⧉</button>
                               <button class="icon-btn danger" onclick="event.stopPropagation();deleteTimetableEntry(${e.__idx})" title="Delete">${ICON.del}</button>
                             </div>` : ''}
@@ -6599,7 +6691,7 @@
                 </tbody>
               </table>
               </div>
-              <div style="margin-top:12px;font-size:11.5px;color:var(--text-2)">💡 <b>Drag</b> any lesson to another day / time slot. <b>Click</b> to edit its details. <b>📅 Edit days</b> to add or remove days of the week.</div>
+              <div style="margin-top:12px;font-size:11.5px;color:var(--text-2)">💡 <b>Drag</b> any lesson to another day / time slot. <b>Click</b> to edit its details. <b>▲▼</b> reorder lessons that share the same slot. <b>↶ Undo</b> (or Ctrl+Z) reverts the last timetable change. <b>📅 Edit days</b> to add or remove days of the week.</div>
               <div style="margin-top:8px;font-size:11.5px;color:var(--text-2);background:var(--surface);padding:8px 12px;border-radius:6px;border:1px solid var(--border-soft)">
                 📊 <b>Excel:</b> Export → all levels + semesters as separate sheets. Import → upload a .xlsx/.xls file with sheets named e.g. "L1 S1", "L2 S2". Each sheet must have columns: Day, Time Slot, Module, Instructor, Room, Group.
               </div>
@@ -9152,11 +9244,12 @@
             `;
         }
 
-        function printTeacherSchedule() {
-            const d = D();
-            const t = d.teachers[state.teacherIdx];
-            const sem = state.teacherSem;
+        // Builds one printable page (header + weekly grid) for a teacher's
+        // individual timetable in the given semester. Returns null when the
+        // teacher has no scheduled sessions that semester.
+        function teacherSchedulePrintPage(d, t, sem) {
             const lessons = teacherLessons(d, t.name, sem);
+            if (!lessons.length) return null;
             const slots = unifiedSlots(d);
             const daysList = getDays(d);
             const grid = {};
@@ -9188,9 +9281,61 @@
                 </tbody>
               </table>`;
             const heading = `Individual timetable · ${t.name}${t.grade?` (${t.grade})`:''} · Semester ${sem.slice(1)}`;
-            const page =
-                `<div class="print-page">${reportHeaderHTML()}<div class="page-heading">${escape(heading)}</div>${table}<div class="print-footer"></div></div>`;
-            openPrintWindow(`Timetable — ${t.name} · ${sem}`, page);
+            return `<div class="print-page">${reportHeaderHTML()}<div class="page-heading">${escape(heading)}</div>${table}<div class="print-footer"></div></div>`;
+        }
+
+        function printTeacherSchedule() {
+            const d = D();
+            const t = d.teachers[state.teacherIdx];
+            const sem = state.teacherSem;
+            const page = teacherSchedulePrintPage(d, t, sem);
+            if (!page) { toast(`${t.name} has no scheduled sessions in Semester ${sem.slice(1)}.`, 'err'); return; }
+            openPrintWindow(`Timetable — ${t.name} · ${sem}`, page, ttPrintOpts());
+        }
+
+        // Print every teacher who appears in the timetable — one individual
+        // weekly schedule per page. Teachers with no sessions are skipped.
+        function printAllTeacherSchedules() {
+            const d = D();
+            if (!d.teachers.length) { toast('No teachers in the directory.', 'err'); return; }
+            openModal({
+                title: '📄 Print all teacher timetables',
+                subtitle: 'One page per teacher with their scheduled sessions. Teachers with no sessions in the chosen semester are skipped automatically.',
+                fields: [
+                    { key: 'sem', label: 'Semester', type: 'select', value: state.ttSem || 'S1', options: [
+                        { value: 'S1', label: 'Semester 1' },
+                        { value: 'S2', label: 'Semester 2' },
+                        { value: 'both', label: 'Both semesters (two pages per teacher)' }
+                    ] }
+                ],
+                submitLabel: 'Open print preview',
+                onSave: v => {
+                    const sems = v.sem === 'both' ? ['S1', 'S2'] : [v.sem];
+                    let pages = '';
+                    const printed = new Set();
+                    const skipped = [];
+                    d.teachers.forEach(t => {
+                        if (!(t.name || '').trim()) return;
+                        let any = false;
+                        sems.forEach(sem => {
+                            const page = teacherSchedulePrintPage(d, t, sem);
+                            if (page) { pages += page; any = true; }
+                        });
+                        if (any) printed.add(t.name);
+                        else skipped.push(t.name);
+                    });
+                    if (!printed.size) {
+                        toast('No teachers have scheduled sessions in the selected semester(s).', 'err');
+                        return;
+                    }
+                    const semLabel = v.sem === 'both' ? 'S1 + S2' : v.sem;
+                    openPrintWindow(
+                        `Teacher timetables (${semLabel}) — ${store.years[store.activeIdx].name}`,
+                        pages, ttPrintOpts());
+                    toast(`Prepared ${printed.size} teacher timetable${printed.size>1?'s':''}` +
+                        (skipped.length ? ` · ${skipped.length} teacher${skipped.length>1?'s':''} skipped (not in timetable)` : ''), 'ok');
+                }
+            });
         }
 
         function viewTeachers() {
@@ -9218,6 +9363,7 @@
                   <button class="btn ghost sm" onclick="exportTeachersExcel()">${ICON.download} Export Excel</button>
                   ${canEdit ? `<button class="btn ghost sm" onclick="importTeachersExcel()">${ICON.upload} Import Excel</button>` : ''}
                   <button class="btn ghost sm" onclick="printTeachers()">📄 Print / PDF</button>
+                  <button class="btn ghost sm" onclick="printAllTeacherSchedules()" title="One page per teacher — individual weekly timetable with their scheduled sessions">📄 Print all schedules</button>
                   <button class="btn ghost sm" onclick="emailFilteredTeachers('${filter}')">✉ Email filtered (bcc)</button>
                   <button class="btn ghost sm" onclick="emailAllTeachers()">✉ Email all (bcc)</button>
                   ${canEdit ? `<button class="btn" onclick="editTeacher(null)">${ICON.plus} Add teacher</button>` : ''}
@@ -13990,6 +14136,9 @@
         window.printReplacementExams = printReplacementExams;
         window.printAllReplacementExams = printAllReplacementExams;
         window.printTeacherSchedule = printTeacherSchedule;
+        window.printAllTeacherSchedules = printAllTeacherSchedules;
+        window.ttUndo = ttUndo;
+        window.moveLessonInCell = moveLessonInCell;
         window.openTeacherSchedule = openTeacherSchedule;
         window.backToTeachers = backToTeachers;
         window.emailOneTeacher = emailOneTeacher;
