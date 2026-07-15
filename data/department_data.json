@@ -958,7 +958,16 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Literatures of the Language of Study 3",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                }
+              ],
               "S2": []
             }
           },
