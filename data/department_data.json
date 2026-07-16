@@ -1022,6 +1022,14 @@
                   "instructor": "Charrak O.",
                   "room": "Room 26",
                   "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "Djalab A.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
