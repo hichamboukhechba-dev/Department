@@ -1285,6 +1285,14 @@
                   "instructor": "Gatcha Y",
                   "room": "Amphi B",
                   "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Didactics",
+                  "instructor": "Khadroun S.",
+                  "room": "Amphi B",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
