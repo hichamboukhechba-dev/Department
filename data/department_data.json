@@ -1527,6 +1527,14 @@
                   "instructor": "",
                   "room": "Room 25",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Research Methodology",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 11",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
