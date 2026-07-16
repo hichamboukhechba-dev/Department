@@ -1224,6 +1224,14 @@
                   "instructor": "Gatcha Y",
                   "room": "Room 13",
                   "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Teaching Literary Texts",
+                  "instructor": "",
+                  "room": "Room 13",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
