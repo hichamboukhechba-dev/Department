@@ -1513,7 +1513,7 @@
                   "group": "All Groups"
                 },
                 {
-                  "day": "Tuesday",
+                  "day": "Thursday",
                   "slotIdx": 0,
                   "module": "Curriculum and Syllabus Design",
                   "instructor": "Boukhechba H",
@@ -3028,6 +3028,17 @@
               "temp": []
             }
           }
+        },
+        "paperReview": {
+          "S1": {
+            "levels": {}
+          },
+          "S2": {
+            "levels": {}
+          }
+        },
+        "retakeExams": {
+          "levels": {}
         }
       }
     }
