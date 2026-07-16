@@ -1200,6 +1200,14 @@
                   "instructor": "Mahammedi I.",
                   "room": "Room 13",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "African Studies",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 13",
+                  "group": "Group 1"
                 }
               ],
               "S2": []
