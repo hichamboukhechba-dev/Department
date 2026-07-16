@@ -1260,7 +1260,7 @@
             "entries": {
               "S1": [
                 {
-                  "day": "Tuesday",
+                  "day": "Wednesday",
                   "slotIdx": 1,
                   "module": "American Civilisation",
                   "instructor": "Amraoui Z",
@@ -1276,7 +1276,7 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Tuesday",
+                  "day": "Wednesday",
                   "slotIdx": 0,
                   "module": "Academic Writing",
                   "instructor": "Mahammedi I.",
