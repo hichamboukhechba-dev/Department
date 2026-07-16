@@ -990,6 +990,14 @@
                   "instructor": "Amraoui Z",
                   "room": "Room 26",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Civilisations of the Language of Study 3 (copy)",
+                  "instructor": "",
+                  "room": "Room 26",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
