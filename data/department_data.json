@@ -1437,6 +1437,14 @@
                   "instructor": "Bendecho H.",
                   "room": "Amphi B",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Ethics et deontology",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
