@@ -1208,6 +1208,14 @@
                   "instructor": "Rahmouni A",
                   "room": "Room 13",
                   "group": "Group 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "British Literature",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 13",
+                  "group": ""
                 }
               ],
               "S2": []
