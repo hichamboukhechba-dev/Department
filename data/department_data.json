@@ -1216,6 +1216,14 @@
                   "instructor": "Boukhalkhal Y.",
                   "room": "Room 13",
                   "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Research Skills",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 13",
+                  "group": ""
                 }
               ],
               "S2": []
