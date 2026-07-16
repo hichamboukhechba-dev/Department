@@ -2763,7 +2763,7 @@
                 "lecture": "-",
                 "td": "3h",
                 "total": "45h",
-                "exam": null,
+                "exam": 0,
                 "ca": 100
               },
               {
