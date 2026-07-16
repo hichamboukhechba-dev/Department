@@ -1069,8 +1069,8 @@
                   "group": "GROUP 1 + 2"
                 },
                 {
-                  "day": "Wednesday",
-                  "slotIdx": 0,
+                  "day": "Monday",
+                  "slotIdx": 2,
                   "module": "Linguistics 1",
                   "instructor": "",
                   "room": "Room 11",
