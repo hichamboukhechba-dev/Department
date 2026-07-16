@@ -475,7 +475,10 @@
         }
 
         /* ---- Connected users (presence) ---- */
-        .presence-wrap { position: relative; display: inline-flex; }
+        .presence-wrap {
+            position: relative;
+            display: inline-flex;
+        }
         .presence-pill {
             display: none;
             align-items: center;
@@ -490,9 +493,20 @@
             white-space: nowrap;
             user-select: none;
         }
-        .presence-pill:hover { border-color: var(--brand); }
-        .p-dot { width: 8px; height: 8px; border-radius: 50%; background: #b8b8b8; flex: 0 0 8px; }
-        .p-dot.on { background: #22a06b; box-shadow: 0 0 0 3px rgba(34,160,107,.15); }
+        .presence-pill:hover {
+            border-color: var(--brand);
+        }
+        .p-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #b8b8b8;
+            flex: 0 0 8px;
+        }
+        .p-dot.on {
+            background: #22a06b;
+            box-shadow: 0 0 0 3px rgba(34, 160, 107, .15);
+        }
         .presence-panel {
             position: absolute;
             top: calc(100% + 8px);
@@ -503,12 +517,14 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.14);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
             padding: 6px 0 4px;
             display: none;
             z-index: 600;
         }
-        .presence-panel.open { display: block; }
+        .presence-panel.open {
+            display: block;
+        }
         .presence-head {
             font-size: 11px;
             text-transform: uppercase;
@@ -517,10 +533,25 @@
             padding: 6px 12px 4px;
             font-weight: 700;
         }
-        .presence-row { display: flex; gap: 9px; align-items: center; padding: 6px 12px; }
-        .presence-row .p-name { font-size: 13px; font-weight: 600; }
-        .presence-row .p-you { color: var(--text-2); font-weight: 400; font-size: 11px; }
-        .presence-row .p-meta { font-size: 11px; color: var(--text-2); }
+        .presence-row {
+            display: flex;
+            gap: 9px;
+            align-items: center;
+            padding: 6px 12px;
+        }
+        .presence-row .p-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .presence-row .p-you {
+            color: var(--text-2);
+            font-weight: 400;
+            font-size: 11px;
+        }
+        .presence-row .p-meta {
+            font-size: 11px;
+            color: var(--text-2);
+        }
         .presence-sub {
             font-size: 10.5px;
             color: var(--text-2);
@@ -538,7 +569,9 @@
             line-height: 1.4;
         }
         @media (max-width: 720px) {
-            .presence-pill .p-label { display: none; }
+            .presence-pill .p-label {
+                display: none;
+            }
         }
 
         .search {
@@ -1036,6 +1069,14 @@
         .lesson .i {
             color: var(--text-2);
             font-size: 11.5px;
+            cursor: pointer;
+            display: inline-block;
+            border-bottom: 1px dashed transparent;
+            transition: border-color var(--transition), color var(--transition);
+        }
+        .lesson .i:hover {
+            color: var(--brand);
+            border-bottom-color: var(--brand-3);
         }
         .lesson .r {
             color: var(--text-2);
@@ -1063,6 +1104,120 @@
         }
         .lesson:hover .actions {
             display: flex;
+        }
+
+        /* ---- Teacher tooltip (hover schedule) ---- */
+        .teacher-tooltip {
+            position: fixed;
+            z-index: 9999;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-xl);
+            padding: 16px 18px;
+            max-width: 420px;
+            width: max-content;
+            min-width: 260px;
+            max-height: 400px;
+            overflow-y: auto;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(4px) scale(0.98);
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            font-size: 12px;
+            line-height: 1.5;
+            color: var(--text);
+        }
+        .teacher-tooltip.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        .teacher-tooltip .tt-header {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--brand);
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .teacher-tooltip .tt-header .tt-count {
+            font-weight: 400;
+            font-size: 11px;
+            color: var(--text-2);
+            margin-left: auto;
+            background: var(--surface-2);
+            padding: 0 10px;
+            border-radius: 999px;
+        }
+        .teacher-tooltip .tt-empty {
+            color: var(--text-2);
+            font-style: italic;
+            padding: 12px 0;
+            text-align: center;
+        }
+        .teacher-tooltip .tt-day {
+            margin-bottom: 8px;
+        }
+        .teacher-tooltip .tt-day-name {
+            font-weight: 600;
+            font-size: 11.5px;
+            color: var(--brand);
+            background: var(--brand-soft);
+            padding: 2px 10px;
+            border-radius: 999px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+        .teacher-tooltip .tt-slot {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 2px 0 2px 6px;
+            border-left: 2px solid var(--border-soft);
+            margin-left: 4px;
+            padding-left: 10px;
+            font-size: 11.5px;
+        }
+        .teacher-tooltip .tt-slot .tt-time {
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            color: var(--text-2);
+            white-space: nowrap;
+            min-width: 70px;
+        }
+        .teacher-tooltip .tt-slot .tt-module {
+            font-weight: 500;
+            color: var(--text);
+        }
+        .teacher-tooltip .tt-slot .tt-level {
+            font-size: 10px;
+            color: var(--text-3);
+            background: var(--surface-2);
+            padding: 0 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .teacher-tooltip .tt-scroll-hint {
+            font-size: 10px;
+            color: var(--text-3);
+            text-align: center;
+            padding-top: 6px;
+            border-top: 1px solid var(--border-soft);
+            margin-top: 6px;
+        }
+        .teacher-tooltip::-webkit-scrollbar {
+            width: 4px;
+        }
+        .teacher-tooltip::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .teacher-tooltip::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
         }
 
         .icon-btn {
@@ -3167,27 +3322,57 @@
         html[data-theme="dark"] [style*="color:#5a3a05"] {
             color: var(--text) !important;
         }
-        html[data-theme="dark"] .card:hover { border-color: var(--border); }
-        html[data-theme="dark"] .inv-chip.pool-used { background: var(--surface-3); }
+        html[data-theme="dark"] .card:hover {
+            border-color: var(--border);
+        }
+        html[data-theme="dark"] .inv-chip.pool-used {
+            background: var(--surface-3);
+        }
 
         /* ---- Density: compact / comfortable (default) / spacious ---- */
-        html[data-density="compact"] .card { padding: 12px 16px; margin-bottom: 12px; }
+        html[data-density="compact"] .card {
+            padding: 12px 16px;
+            margin-bottom: 12px;
+        }
         html[data-density="compact"] .timetable th,
-        html[data-density="compact"] .datatable th { padding: 6px 10px; }
+        html[data-density="compact"] .datatable th {
+            padding: 6px 10px;
+        }
         html[data-density="compact"] .timetable td,
-        html[data-density="compact"] .datatable td { padding: 5px 8px; }
-        html[data-density="compact"] .btn { padding: 6px 12px; }
-        html[data-density="compact"] .nav a { padding: 5px 12px; }
-        html[data-density="compact"] body { line-height: 1.4; }
+        html[data-density="compact"] .datatable td {
+            padding: 5px 8px;
+        }
+        html[data-density="compact"] .btn {
+            padding: 6px 12px;
+        }
+        html[data-density="compact"] .nav a {
+            padding: 5px 12px;
+        }
+        html[data-density="compact"] body {
+            line-height: 1.4;
+        }
 
-        html[data-density="spacious"] .card { padding: 30px 34px; margin-bottom: 26px; }
+        html[data-density="spacious"] .card {
+            padding: 30px 34px;
+            margin-bottom: 26px;
+        }
         html[data-density="spacious"] .timetable th,
-        html[data-density="spacious"] .datatable th { padding: 15px 18px; }
+        html[data-density="spacious"] .datatable th {
+            padding: 15px 18px;
+        }
         html[data-density="spacious"] .timetable td,
-        html[data-density="spacious"] .datatable td { padding: 15px 16px; }
-        html[data-density="spacious"] .btn { padding: 12px 20px; }
-        html[data-density="spacious"] .nav a { padding: 11px 12px; }
-        html[data-density="spacious"] body { line-height: 1.7; }
+        html[data-density="spacious"] .datatable td {
+            padding: 15px 16px;
+        }
+        html[data-density="spacious"] .btn {
+            padding: 12px 20px;
+        }
+        html[data-density="spacious"] .nav a {
+            padding: 11px 12px;
+        }
+        html[data-density="spacious"] body {
+            line-height: 1.7;
+        }
 
         /* ---- Appearance settings card UI ---- */
         .appearance-grid {
@@ -3204,7 +3389,11 @@
             color: var(--text-2);
             margin-bottom: 7px;
         }
-        .appearance-options { display: flex; flex-wrap: wrap; gap: 6px; }
+        .appearance-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
         .appearance-opt {
             border: 1px solid var(--border);
             background: var(--surface-2);
@@ -3219,7 +3408,10 @@
             align-items: center;
             gap: 6px;
         }
-        .appearance-opt:hover { border-color: var(--brand-3); color: var(--text); }
+        .appearance-opt:hover {
+            border-color: var(--brand-3);
+            color: var(--text);
+        }
         .appearance-opt.active {
             border-color: var(--brand);
             background: var(--brand-soft);
@@ -3227,8 +3419,11 @@
             font-weight: 600;
         }
         .theme-dot {
-            width: 12px; height: 12px; border-radius: 50%;
-            display: inline-block; border: 1px solid rgba(0,0,0,0.15);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -3387,6 +3582,8 @@
 
     <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="modal"></div></div>
 
+    <!-- Floating teacher tooltip -->
+    <div class="teacher-tooltip" id="teacherTooltip"></div>
 
 
 
@@ -4615,10 +4812,10 @@
         //  heartbeats NEVER touch (or conflict with) the main data file.
         //  Without GitHub sync, only the local signed-in user is shown.
         // ================================================================
-        const PRESENCE_BEAT_MS = 3 * 60000;      // heartbeat every 3 min
-        const PRESENCE_ONLINE_MS = 7 * 60000;    // "online" if seen within 7 min
-        const PRESENCE_RECENT_MS = 60 * 60000;   // list "recently active" up to 1 h
-        const PRESENCE_KEEP_MS = 24 * 3600000;   // prune entries older than 24 h
+        const PRESENCE_BEAT_MS = 3 * 60000; // heartbeat every 3 min
+        const PRESENCE_ONLINE_MS = 7 * 60000; // "online" if seen within 7 min
+        const PRESENCE_RECENT_MS = 60 * 60000; // list "recently active" up to 1 h
+        const PRESENCE_KEEP_MS = 24 * 3600000; // prune entries older than 24 h
         let presenceTimer = null,
             presenceUsers = {},
             presenceBusy = false,
@@ -4706,7 +4903,8 @@
         }
 
         function stopPresence(keepQuiet) {
-            if (presenceTimer) { clearInterval(presenceTimer); presenceTimer = null; }
+            if (presenceTimer) { clearInterval(presenceTimer);
+                presenceTimer = null; }
             presenceUsers = {};
             presenceOpen = false;
             if (!keepQuiet) {
@@ -5819,764 +6017,191 @@
             toast('Moved to ' + day + ' ' + tt.slots[slotIdx]);
         }
 
-        function addLessonForModule(mod) {
-            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
-            const d = D();
-            const tt = ensureLevelTt(d, state.ttLevel);
-            const sem = state.ttSem;
-            const teachers = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort((a, b) => a.localeCompare(
-                b));
-            const modules = getModulesForLevelSem(d, state.ttLevel, sem);
-            openModal({
-                title: `Add lesson · ${state.ttLevel} ${sem}`,
-                subtitle: `Module pre-filled from curriculum · adjust and save`,
-                fields: [
-                    { key: 'day', label: 'Day', type: 'select', options: getDays(d), value: getDays(d)[0] },
-                    { key: 'slotIdx', label: 'Time slot', type: 'select', options: tt.slots.map((s, i) => ({
-                            value: i, label: s
-                        })), value: 0 },
-                    { key: 'module', label: 'Module', type: 'combo', options: modules, required: true,
-                        value: mod },
-                    { key: 'instructor', label: 'Instructor', type: 'combo', options: teachers, value: '',
-                        hint: 'From teacher directory · pick or type new' },
-                    { key: 'room', label: 'Room', type: 'combo', options: d.rooms || [], value: '',
-                        hint: 'From rooms list · pick or type new' },
-                    { key: 'group', label: 'Group', type: 'combo', options: ['GROUP 1', 'GROUP 2', 'GROUP 3',
-                            'GROUP 4', 'ALL GROUPS', 'GROUP 1 + 2', 'GROUP 3 + 4'
-                        ], value: '', hint: 'e.g. GROUP 1, ALL GROUPS' }
-                ],
-                onSave: v => {
-                    v.slotIdx = +v.slotIdx;
-                    const conflicts = findTeacherConflicts(d, sem, v, state.ttLevel, null);
-                    if (conflicts.length) {
-                        const lines = conflicts.map(c =>
-                            `• ${c.level} ${c.day} ${c.slot} — ${c.module}`).join('\n');
-                        if (!confirm(
-                                `⚠ Teacher conflict:\n${v.instructor} is already scheduled at ${v.day} ${tt.slots[v.slotIdx]} in:\n\n${lines}\n\nSave anyway?`
-                                )) return false;
+        // ================================================================
+        //  TEACHER TOOLTIP — hover to see individual schedule
+        // ================================================================
+
+        let tooltipTimer = null;
+        let tooltipTarget = null;
+        let tooltipVisible = false;
+        let tooltipHideTimer = null;
+
+        function initTeacherTooltip() {
+            const el = document.getElementById('teacherTooltip');
+            if (!el) return;
+
+            // On mouseenter, show tooltip
+            document.addEventListener('mouseenter', function(e) {
+                const target = e.target.closest('.teacher-tooltip-trigger');
+                if (!target) {
+                    // If moving from tooltip to something else, hide after delay
+                    if (tooltipVisible && !e.target.closest('#teacherTooltip')) {
+                        scheduleHideTooltip();
                     }
-                    ttSnapshot('add ' + (v.module || 'lesson'));
-                    tt.entries[sem].push(v);
-                    persist();
-                    toast('Lesson added');
+                    return;
+                }
+                // Cancel any pending hide
+                if (tooltipHideTimer) { clearTimeout(tooltipHideTimer);
+                    tooltipHideTimer = null; }
+                showTeacherTooltip(target, e);
+            }, true);
+
+            // On mouseleave, schedule hide
+            document.addEventListener('mouseleave', function(e) {
+                const target = e.target.closest('.teacher-tooltip-trigger');
+                if (!target) return;
+                scheduleHideTooltip();
+            }, true);
+
+            // Hover over tooltip itself — keep it open
+            el.addEventListener('mouseenter', function() {
+                if (tooltipHideTimer) { clearTimeout(tooltipHideTimer);
+                    tooltipHideTimer = null; }
+            });
+
+            el.addEventListener('mouseleave', function() {
+                scheduleHideTooltip();
+            });
+
+            // Also hide if the user clicks anywhere
+            document.addEventListener('click', function(e) {
+                if (tooltipVisible && !e.target.closest('#teacherTooltip') && !e.target.closest(
+                        '.teacher-tooltip-trigger')) {
+                    hideTooltipImmediate();
                 }
             });
         }
 
-        function editTimetableEntry(idx) {
-            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
-            const d = D();
-            const tt = ensureLevelTt(d, state.ttLevel);
-            const sem = state.ttSem;
-            const list = tt.entries[sem];
-            const e = idx == null ? { day: getDays(d)[0], slotIdx: 0, module: '', instructor: '', room: '',
-                group: '' } : { ...list[idx] };
-            const teachers = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort((a, b) => a.localeCompare(
-                b));
-            const modules = getModulesForLevelSem(d, state.ttLevel, sem);
-            openModal({
-                title: (idx == null ? 'Add lesson · ' : 'Edit lesson · ') + state.ttLevel + ' ' + sem,
-                fields: [
-                    { key: 'day', label: 'Day', type: 'select', options: getDays(d), value: e.day },
-                    { key: 'slotIdx', label: 'Time slot', type: 'select', options: tt.slots.map((s, i) => ({
-                            value: i, label: s
-                        })), value: e.slotIdx },
-                    { key: 'module', label: 'Module', type: 'combo', options: modules, required: true,
-                        value: e.module,
-                        hint: modules.length ? `${modules.length} course${modules.length>1?'s':''} in ${state.ttLevel} ${sem} curriculum` :
-                            `No courses in ${state.ttLevel} ${sem} curriculum yet · type freely` },
-                    { key: 'instructor', label: 'Instructor', type: 'combo', options: teachers,
-                        value: e.instructor, hint: 'From teacher directory · pick or type new' },
-                    { key: 'room', label: 'Room', type: 'combo', options: d.rooms || [], value: e.room,
-                        hint: 'From rooms list · pick or type new' },
-                    { key: 'group', label: 'Group', type: 'combo', options: ['GROUP 1', 'GROUP 2', 'GROUP 3',
-                            'GROUP 4', 'ALL GROUPS', 'GROUP 1 + 2', 'GROUP 3 + 4'
-                        ], value: e.group, hint: 'e.g. GROUP 1, ALL GROUPS' }
-                ],
-                onSave: v => {
-                    v.slotIdx = +v.slotIdx;
-                    const conflicts = findTeacherConflicts(d, sem, v, state.ttLevel, idx);
-                    if (conflicts.length) {
-                        const lines = conflicts.map(c =>
-                            `• ${c.level} ${c.day} ${c.slot} — ${c.module}${c.group?' ('+c.group+')':''}`
-                            ).join('\n');
-                        if (!confirm(
-                                `⚠ Teacher conflict:\n${v.instructor} is already scheduled at ${v.day} ${tt.slots[v.slotIdx]} in:\n\n${lines}\n\nSave anyway?`
-                                )) return false;
-                    }
-                    ttSnapshot((idx == null ? 'add ' : 'edit ') + (v.module || 'lesson'));
-                    if (idx == null) list.push(v);
-                    else list[idx] = v;
-                    persist();
-                    toast(idx == null ? 'Lesson added' : 'Lesson updated');
-                }
-            });
+        function scheduleHideTooltip() {
+            if (tooltipHideTimer) clearTimeout(tooltipHideTimer);
+            tooltipHideTimer = setTimeout(() => {
+                hideTooltipImmediate();
+            }, 300);
         }
 
-        function deleteTimetableEntry(idx) {
-            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
-            if (!confirm2('Delete this lesson?')) return;
-            const tt = ensureLevelTt(D(), state.ttLevel);
-            ttSnapshot('delete ' + ((tt.entries[state.ttSem][idx] || {}).module || 'lesson'));
-            tt.entries[state.ttSem].splice(idx, 1);
-            persist();
-            toast('Lesson deleted — press ↶ Undo or Ctrl+Z to restore');
-        }
-
-        // Duplicate a lesson as a blank copy (same module/room/group, NO teacher)
-        function duplicateTimetableEntry(idx) {
-            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
-            const tt = ensureLevelTt(D(), state.ttLevel);
-            const list = tt.entries[state.ttSem];
-            const src = list[idx];
-            if (!src) return;
-            ttSnapshot('duplicate ' + (src.module || 'lesson'));
-            list.push(Object.assign({}, src, { instructor: '' }));
-            persist();
-            toast('Lesson duplicated with no teacher — drag the copy to its slot or click it to edit.', 'ok');
-        }
-
-        function editSlots() {
-            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
-            const tt = ensureLevelTt(D(), state.ttLevel);
-            openModal({
-                title: 'Edit time slots · ' + state.ttLevel,
-                subtitle: 'One slot per line, e.g. 08:30-10:00. Shared across S1 and S2.',
-                fields: [{ key: 'slots', label: 'Slots', type: 'textarea', value: tt.slots.join('\n') }],
-                onSave: v => {
-                    const newSlots = v.slots.split('\n').map(s => s.trim()).filter(Boolean);
-                    if (!newSlots.length) return false;
-                    ttSnapshot('edit time slots');
-                    tt.slots = newSlots;
-                    ['S1', 'S2'].forEach(s => tt.entries[s].forEach(e => { if (e.slotIdx >= newSlots.length) e
-                            .slotIdx = newSlots.length - 1; }));
-                    persist();
-                }
-            });
-        }
-
-        // ---- Edit days (new) ----
-        function editDays() {
-            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
-            const d = D();
-            const currentDays = getDays(d);
-            openModal({
-                title: 'Edit days of the week',
-                subtitle: 'One day per line. Changes affect the timetable grid for all levels. Existing lessons on removed days will be moved to the first day.',
-                fields: [{ key: 'days', label: 'Days', type: 'textarea', value: currentDays.join('\n'),
-                        hint: 'e.g. Sunday, Monday, Tuesday, Wednesday, Thursday, Saturday' }],
-                onSave: v => {
-                    const newDays = v.days.split('\n').map(s => s.trim()).filter(Boolean);
-                    if (!newDays.length) return false;
-                    if (newDays.length !== new Set(newDays).size) {
-                        toast('Duplicate days found. Please enter unique days.', 'err');
-                        return false;
-                    }
-                    ttSnapshot('edit days of the week');
-                    // Migrate existing entries: if a day is removed, move its lessons to the first day
-                    const oldDays = getDays(d);
-                    const removedDays = oldDays.filter(day => !newDays.includes(day));
-                    const firstNewDay = newDays[0];
-                    if (removedDays.length && firstNewDay) {
-                        Object.values(d.timetables).forEach(tt => {
-                            ['S1', 'S2'].forEach(sem => {
-                                tt.entries[sem].forEach(e => {
-                                    if (removedDays.includes(e.day)) {
-                                        e.day = firstNewDay;
-                                    }
-                                });
-                            });
-                        });
-                        toast(`Removed days: ${removedDays.join(', ')}. Lessons moved to ${firstNewDay}.`,
-                            'ok');
-                    }
-                    d.days = newDays;
-                    // Update state if current ttLevel's day is removed
-                    const tt = d.timetables[state.ttLevel];
-                    if (tt) {
-                        const entries = tt.entries[state.ttSem] || [];
-                        entries.forEach(e => {
-                            if (!newDays.includes(e.day)) {
-                                e.day = newDays[0] || oldDays[0];
-                            }
-                        });
-                    }
-                    persist();
-                    toast('Days updated');
-                }
-            });
-        }
-
-        // ==================================================================
-        //  TIMETABLE EXPORT / IMPORT (Excel)
-        // ==================================================================
-
-        async function exportTimetablesExcel() {
-            const d = D();
-            const levels = getCurriculumLevels(d);
-            if (!levels.length) { toast('No timetable levels found.', 'err'); return; }
-
-            try {
-                const XLSX = await loadSheetJS();
-                const wb = XLSX.utils.book_new();
-
-                let sheetCount = 0;
-                levels.forEach(level => {
-                    const tt = d.timetables[level];
-                    if (!tt) return;
-                    ['S1', 'S2'].forEach(sem => {
-                        const entries = (tt.entries && tt.entries[sem]) || [];
-                        if (!entries.length) return;
-                        const rows = [
-                            ['Day', 'Time Slot', 'Module', 'Instructor', 'Room', 'Group']
-                        ];
-                        const daysList = getDays(d);
-                        const dayOrder = {};
-                        daysList.forEach((day, i) => { dayOrder[day] = i; });
-                        const sorted = [...entries].sort((a, b) => (dayOrder[a.day] ?? 99) - (dayOrder[b
-                            .day] ?? 99) || (a.slotIdx - b.slotIdx));
-                        sorted.forEach(e => {
-                            const slotLabel = tt.slots[e.slotIdx] || '';
-                            rows.push([e.day || '', slotLabel, e.module || '', e.instructor || '',
-                                e.room || '', e.group || ''
-                            ]);
-                        });
-                        const sheetName = (level + ' ' + sem).replace(/[\\/\?\*\[\]:]/g, '-').slice(0,
-                            31);
-                        XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), sheetName);
-                        sheetCount++;
-                    });
-                });
-
-                if (!sheetCount) { toast('No timetable data to export.', 'err'); return; }
-
-                const filename =
-                    `timetables_${store.years[store.activeIdx].name.replace(/\//g,'-')}.xlsx`;
-                XLSX.writeFile(wb, filename);
-                toast(`Exported ${sheetCount} sheet${sheetCount>1?'s':''} to ${filename}`, 'ok');
-            } catch (e) {
-                toast('Export failed: ' + e.message, 'err');
-                console.error(e);
+        function hideTooltipImmediate() {
+            tooltipHideTimer = null;
+            const el = document.getElementById('teacherTooltip');
+            if (el) {
+                el.classList.remove('visible');
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(4px) scale(0.98)';
+                tooltipVisible = false;
             }
         }
 
-        async function importTimetablesExcel() {
-            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+        function showTeacherTooltip(target, e) {
+            const teacherName = target.dataset.teacher;
+            const sem = target.dataset.sem || state.ttSem || 'S1';
+            if (!teacherName) return;
+
             const d = D();
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.xlsx,.xls';
-            input.onchange = async (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                try {
-                    const XLSX = await loadSheetJS();
-                    const data = await file.arrayBuffer();
-                    const wb = XLSX.read(data, { type: 'array' });
+            const lessons = teacherLessons(d, teacherName, sem);
 
-                    const levels = getCurriculumLevels(d);
-                    ttSnapshot('Excel import');
-                    let imported = 0,
-                        skipped = 0,
-                        errors = [];
+            const el = document.getElementById('teacherTooltip');
+            if (!el) return;
 
-                    const validSheets = new Set();
-                    levels.forEach(lvl => {
-                        ['S1', 'S2'].forEach(sem => {
-                            validSheets.add((lvl + ' ' + sem).replace(/[\\/\?\*\[\]:]/g, '-').slice(
-                            0, 31));
-                        });
-                    });
+            // Build content
+            let html = '';
+            const count = lessons.length;
 
-                    wb.SheetNames.forEach(sheetName => {
-                        let matchedLevel = null,
-                            matchedSem = null;
-                        if (validSheets.has(sheetName)) {
-                            for (const lvl of levels) {
-                                for (const sem of ['S1', 'S2']) {
-                                    const key = (lvl + ' ' + sem).replace(/[\\/\?\*\[\]:]/g, '-')
-                                        .slice(0, 31);
-                                    if (key === sheetName) {
-                                        matchedLevel = lvl;
-                                        matchedSem = sem;
-                                        break;
-                                    }
-                                }
-                                if (matchedLevel) break;
-                            }
-                        } else {
-                            for (const lvl of levels) {
-                                if (sheetName.startsWith(lvl)) {
-                                    const rest = sheetName.slice(lvl.length).trim();
-                                    if (rest === 'S1' || rest === 'S2') {
-                                        matchedLevel = lvl;
-                                        matchedSem = rest;
-                                        break;
-                                    }
-                                    if (rest.startsWith('S1') || rest.startsWith('S2')) {
-                                        matchedLevel = lvl;
-                                        matchedSem = rest.slice(0, 2);
-                                        break;
-                                    }
-                                }
-                            }
-                        }
+            if (!count) {
+                html = `
+                  <div class="tt-header">
+                    <span>👤 ${escape(teacherName)}</span>
+                    <span class="tt-count">0 sessions</span>
+                  </div>
+                  <div class="tt-empty">No sessions scheduled for Semester ${sem.slice(1)}.</div>
+                `;
+            } else {
+                // Group by day
+                const daysList = getDays(d);
+                const dayOrder = {};
+                daysList.forEach((day, i) => { dayOrder[day] = i; });
+                const sorted = [...lessons].sort((a, b) => (dayOrder[a.day] ?? 99) - (dayOrder[b.day] ?? 99) || (a
+                    .slotIdx - b.slotIdx));
 
-                        if (!matchedLevel || !matchedSem) {
-                            errors.push(`Sheet "${sheetName}" skipped: could not parse level+semester.`);
-                            skipped++;
-                            return;
-                        }
-
-                        const ws = wb.Sheets[sheetName];
-                        const rows = XLSX.utils.sheet_to_json(ws, { header: 1 });
-                        if (rows.length < 2) {
-                            errors.push(`Sheet "${sheetName}" has no data rows.`);
-                            skipped++;
-                            return;
-                        }
-
-                        let headerRow = -1;
-                        let dayIdx = -1,
-                            slotIdx = -1,
-                            moduleIdx = -1,
-                            instructorIdx = -1,
-                            roomIdx = -1,
-                            groupIdx = -1;
-                        for (let r = 0; r < Math.min(rows.length, 5); r++) {
-                            const row = rows[r];
-                            if (!row || row.length === 0) continue;
-                            for (let c = 0; c < row.length; c++) {
-                                const cell = String(row[c] || '').trim().toLowerCase();
-                                if (cell === 'day') dayIdx = c;
-                                else if (cell === 'time slot' || cell === 'time' || cell === 'slot') slotIdx =
-                                    c;
-                                else if (cell === 'module' || cell === 'course') moduleIdx = c;
-                                else if (cell === 'instructor' || cell === 'teacher') instructorIdx = c;
-                                else if (cell === 'room' || cell === 'location') roomIdx = c;
-                                else if (cell === 'group') groupIdx = c;
-                            }
-                            if (dayIdx >= 0 && moduleIdx >= 0) { headerRow = r; break; }
-                        }
-
-                        if (headerRow < 0 || dayIdx < 0 || moduleIdx < 0) {
-                            errors.push(
-                                `Sheet "${sheetName}": could not find header row with Day and Module. Skipped.`
-                                );
-                            skipped++;
-                            return;
-                        }
-
-                        const tt = ensureLevelTt(d, matchedLevel);
-                        const entries = [];
-                        const slots = tt.slots || [];
-
-                        for (let r = headerRow + 1; r < rows.length; r++) {
-                            const row = rows[r];
-                            if (!row || row.length === 0) continue;
-                            const day = String(row[dayIdx] || '').trim();
-                            const slotLabel = slotIdx >= 0 ? String(row[slotIdx] || '').trim() : '';
-                            const moduleName = moduleIdx >= 0 ? String(row[moduleIdx] || '').trim() : '';
-                            const instructor = instructorIdx >= 0 ? String(row[instructorIdx] || '').trim() :
-                                '';
-                            const room = roomIdx >= 0 ? String(row[roomIdx] || '').trim() : '';
-                            const group = groupIdx >= 0 ? String(row[groupIdx] || '').trim() : '';
-
-                            if (!day || !moduleName) continue;
-                            const daysList = getDays(d);
-                            if (!daysList.includes(day)) continue;
-
-                            let sIdx = -1;
-                            if (slotLabel) {
-                                sIdx = slots.indexOf(slotLabel);
-                            }
-                            if (sIdx < 0 && slotLabel) {
-                                for (let i = 0; i < slots.length; i++) {
-                                    if (slots[i].includes(slotLabel) || slotLabel.includes(slots[i])) {
-                                        sIdx = i;
-                                        break;
-                                    }
-                                }
-                            }
-                            if (sIdx < 0) sIdx = 0;
-
-                            entries.push({ day, slotIdx: sIdx, module: moduleName, instructor, room,
-                                group });
-                        }
-
-                        tt.entries[matchedSem] = entries;
-                        imported += entries.length;
-                    });
-
-                    persist();
-                    let msg = `Imported ${imported} timetable entries.`;
-                    if (skipped > 0) msg += ` ${skipped} sheet${skipped>1?'s':''} skipped.`;
-                    if (errors.length) msg += `\n\n${errors.slice(0,5).join('\n')}`;
-                    toast(msg, imported ? 'ok' : 'err');
-                    if (errors.length) console.warn('Import errors:', errors);
-                } catch (err) {
-                    toast('Import failed: ' + err.message, 'err');
-                    console.error(err);
-                }
-            };
-            input.click();
-        }
-
-        // ==================================================================
-        //  TEACHER EXPORT / IMPORT (Excel)
-        // ==================================================================
-
-        async function exportTeachersExcel() {
-            const d = D();
-            if (!d.teachers.length) { toast('No teachers in the directory.', 'err'); return; }
-
-            try {
-                const XLSX = await loadSheetJS();
-                const rows = [
-                    ['Name', 'Name (Arabic)', 'Status', 'Grade', 'Phone', 'Emails', 'Role (FR)', 'Role (AR)']
-                ];
-                d.teachers.forEach(t => {
-                    rows.push([
-                        t.name || '',
-                        t.nameAr || '',
-                        t.kind || '',
-                        t.grade || '',
-                        t.phone || '',
-                        (t.emails || []).join(', '),
-                        t.role || '',
-                        t.roleAr || ''
-                    ]);
+                // Build the days structure
+                const byDay = {};
+                sorted.forEach(l => {
+                    if (!byDay[l.day]) byDay[l.day] = [];
+                    byDay[l.day].push(l);
                 });
 
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), 'Teachers');
-                const filename =
-                    `teachers_${store.years[store.activeIdx].name.replace(/\//g,'-')}.xlsx`;
-                XLSX.writeFile(wb, filename);
-                toast(`Exported ${d.teachers.length} teachers to ${filename}`, 'ok');
-            } catch (e) {
-                toast('Export failed: ' + e.message, 'err');
-                console.error(e);
+                const dayKeys = Object.keys(byDay).sort((a, b) => (dayOrder[a] ?? 99) - (dayOrder[b] ?? 99));
+
+                const dayHTML = dayKeys.map(day => {
+                    const items = byDay[day];
+                    const slotsHTML = items.map(l => `
+                        <div class="tt-slot">
+                          <span class="tt-time">${escape(l.slot || '—')}</span>
+                          <span class="tt-module">${escape(l.module || '—')}</span>
+                          <span class="tt-level">${escape(l.level)}</span>
+                          ${l.group ? `<span class="tt-level" style="background:var(--amber-soft);color:var(--amber)">${escape(l.group)}</span>` : ''}
+                        </div>
+                      `).join('');
+                    return `
+                        <div class="tt-day">
+                          <div class="tt-day-name">${escape(day)}</div>
+                          ${slotsHTML}
+                        </div>
+                      `;
+                }).join('');
+
+                const totalHours = count * 1.5;
+                html = `
+                  <div class="tt-header">
+                    <span>👤 ${escape(teacherName)}</span>
+                    <span class="tt-count">${count} session${count > 1 ? 's' : ''} · ~${totalHours}h</span>
+                  </div>
+                  ${dayHTML}
+                  ${count > 4 ? '<div class="tt-scroll-hint">↓ scroll for more</div>' : ''}
+                `;
+            }
+
+            el.innerHTML = html;
+            el.classList.add('visible');
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0) scale(1)';
+            tooltipVisible = true;
+
+            // Position the tooltip
+            const rect = target.getBoundingClientRect();
+            const tw = el.offsetWidth || 320;
+            const th = el.offsetHeight || 200;
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+
+            // Prefer to show below the element, but adjust if it goes off-screen
+            let left = rect.left + rect.width / 2 - tw / 2;
+            let top = rect.bottom + 8;
+
+            // Clamp horizontally
+            if (left < 10) left = 10;
+            if (left + tw > vw - 10) left = vw - tw - 10;
+
+            // If below would go off-screen, show above instead
+            if (top + th > vh - 20) {
+                top = rect.top - th - 8;
+                if (top < 10) top = 10;
+            }
+
+            // Make sure tooltip doesn't go off the top
+            if (top < 10) top = 10;
+
+            el.style.left = left + 'px';
+            el.style.top = top + 'px';
+            el.style.maxWidth = Math.min(440, vw - 24) + 'px';
+
+            // If tooltip height is huge, limit it and ensure scrolling
+            if (th > vh * 0.65) {
+                el.style.maxHeight = Math.min(400, vh * 0.6) + 'px';
+            } else {
+                el.style.maxHeight = '400px';
             }
         }
 
-        async function importTeachersExcel() {
-            if (!checkEdit('teachers')) { toast('Read-only mode', 'err'); return; }
-            const d = D();
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.xlsx,.xls';
-            input.onchange = async (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                try {
-                    const XLSX = await loadSheetJS();
-                    const data = await file.arrayBuffer();
-                    const wb = XLSX.read(data, { type: 'array' });
-                    const ws = wb.Sheets[wb.SheetNames[0]];
-                    const rows = XLSX.utils.sheet_to_json(ws, { header: 1 });
-                    if (rows.length < 2) { toast('File has no data rows.', 'err'); return; }
-
-                    let headerRow = -1;
-                    let nameIdx = -1,
-                        nameArIdx = -1,
-                        statusIdx = -1,
-                        gradeIdx = -1,
-                        phoneIdx = -1,
-                        emailsIdx = -1,
-                        roleIdx = -1,
-                        roleArIdx = -1;
-                    for (let r = 0; r < Math.min(rows.length, 5); r++) {
-                        const row = rows[r];
-                        if (!row || row.length === 0) continue;
-                        for (let c = 0; c < row.length; c++) {
-                            const cell = String(row[c] || '').trim().toLowerCase();
-                            if (cell === 'name') nameIdx = c;
-                            else if (cell === 'name (arabic)' || cell === 'name_ar' || cell === 'arabic name')
-                                nameArIdx = c;
-                            else if (cell === 'status') statusIdx = c;
-                            else if (cell === 'grade') gradeIdx = c;
-                            else if (cell === 'phone') phoneIdx = c;
-                            else if (cell === 'emails' || cell === 'email') emailsIdx = c;
-                            else if (cell === 'role (fr)' || cell === 'role_fr' || cell === 'role') roleIdx = c;
-                            else if (cell === 'role (ar)' || cell === 'role_ar') roleArIdx = c;
-                        }
-                        if (nameIdx >= 0) { headerRow = r; break; }
-                    }
-
-                    if (headerRow < 0 || nameIdx < 0) {
-                        toast('Could not find header with "Name" column.', 'err');
-                        return;
-                    }
-
-                    let added = 0,
-                        updated = 0,
-                        skipped = 0;
-                    const existingNames = new Map();
-                    d.teachers.forEach(t => {
-                        if (t.name) existingNames.set(t.name.trim().toLowerCase(), t);
-                    });
-
-                    const newTeachers = [];
-                    for (let r = headerRow + 1; r < rows.length; r++) {
-                        const row = rows[r];
-                        if (!row || row.length === 0) continue;
-                        const name = String(row[nameIdx] || '').trim();
-                        if (!name) { skipped++; continue; }
-
-                        const nameAr = nameArIdx >= 0 ? String(row[nameArIdx] || '').trim() : '';
-                        const status = statusIdx >= 0 ? String(row[statusIdx] || '').trim() : 'Permanent Teachers';
-                        const grade = gradeIdx >= 0 ? String(row[gradeIdx] || '').trim() : '';
-                        const phone = phoneIdx >= 0 ? String(row[phoneIdx] || '').trim() : '';
-                        const emailsRaw = emailsIdx >= 0 ? String(row[emailsIdx] || '').trim() : '';
-                        const emails = emailsRaw ? emailsRaw.split(',').map(s => s.trim()).filter(Boolean) : [];
-                        const role = roleIdx >= 0 ? String(row[roleIdx] || '').trim() : '';
-                        const roleAr = roleArIdx >= 0 ? String(row[roleArIdx] || '').trim() : '';
-
-                        const teacher = { kind: status, grade, name, nameAr, phone, emails, role, roleAr };
-
-                        const key = name.trim().toLowerCase();
-                        if (existingNames.has(key)) {
-                            const existing = existingNames.get(key);
-                            Object.assign(existing, teacher);
-                            updated++;
-                        } else {
-                            newTeachers.push(teacher);
-                            added++;
-                        }
-                    }
-
-                    if (newTeachers.length) {
-                        d.teachers.push(...newTeachers);
-                    }
-
-                    persist();
-                    toast(`Imported: ${added} new, ${updated} updated, ${skipped} skipped.`, (added + updated) ?
-                        'ok' : 'err');
-                } catch (err) {
-                    toast('Import failed: ' + err.message, 'err');
-                    console.error(err);
-                }
-            };
-            input.click();
-        }
-
-        // ==================================================================
-        //  CURRICULUM EXPORT / IMPORT (Excel)
-        // ==================================================================
-
-        async function exportCurriculumExcel() {
-            const d = D();
-            const canvases = [
-                ['lmd', 'LMD'],
-                ['didactics', 'Didactics'],
-                ['litciv', 'LitCiv']
-            ];
-            let totalRows = 0;
-            try {
-            const XLSX = await loadSheetJS();
-            const wb = XLSX.utils.book_new();
-
-            canvases.forEach(([key, label]) => {
-                const src = d[key] || [];
-                if (!src.length) return;
-                const rows = [
-                    ['Semester', 'Core Unit', 'Course', 'Credits', 'Coefficient', 'Lecture', 'TD',
-                        'Total (15w)', 'Exam %', 'CA (TD) %'
-                    ]
-                ];
-                src.forEach(s => {
-                    (s.courses || []).forEach(c => {
-                        rows.push([
-                            s.label,
-                            c.unit || '',
-                            c.course || '',
-                            c.credits ?? '',
-                            c.coef ?? '',
-                            c.lecture || '',
-                            c.td || '',
-                            c.total || '',
-                            c.exam ?? '',
-                            c.ca ?? ''
-                        ]);
-                        totalRows++;
-                    });
-                });
-                const sheetName = label.replace(/[\\/\?\*\[\]:]/g, '-').slice(0, 31);
-                XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), sheetName);
-            });
-
-            if (!totalRows) { toast('No curriculum data to export.', 'err'); return; }
-
-            const filename =
-                `curriculum_${store.years[store.activeIdx].name.replace(/\//g,'-')}.xlsx`;
-            XLSX.writeFile(wb, filename);
-            toast(`Exported ${totalRows} course${totalRows>1?'s':''} across ${wb.SheetNames.length} sheet${wb.SheetNames.length>1?'s':''}`, 'ok');
-            } catch (e) {
-                toast('Export failed: ' + e.message, 'err');
-                console.error(e);
-            }
-        }
-
-        async function importCurriculumExcel() {
-            if (!checkEdit('curriculum')) { toast('Read-only mode', 'err'); return; }
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.xlsx,.xls';
-            input.onchange = async (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                try {
-                    const XLSX = await loadSheetJS();
-                    const data = await file.arrayBuffer();
-                    const wb = XLSX.read(data, { type: 'array' });
-
-                    const d = D();
-                    const mapping = {
-                        'LMD': 'lmd',
-                        'Didactics': 'didactics',
-                        'LitCiv': 'litciv'
-                    };
-                    let added = 0,
-                        updated = 0,
-                        skipped = 0;
-                    const errors = [];
-
-                    wb.SheetNames.forEach(sheetName => {
-                        const key = mapping[sheetName];
-                        if (!key) {
-                            errors.push(`Sheet "${sheetName}" skipped (not LMD/Didactics/LitCiv).`);
-                            skipped++;
-                            return;
-                        }
-
-                        const ws = wb.Sheets[sheetName];
-                        const rows = XLSX.utils.sheet_to_json(ws, { header: 1 });
-                        if (rows.length < 2) {
-                            errors.push(`Sheet "${sheetName}" has no data rows.`);
-                            skipped++;
-                            return;
-                        }
-
-                        let headerRow = -1;
-                        let semIdx = -1,
-                            unitIdx = -1,
-                            courseIdx = -1,
-                            creditsIdx = -1,
-                            coefIdx = -1,
-                            lectureIdx = -1,
-                            tdIdx = -1,
-                            totalIdx = -1,
-                            examIdx = -1,
-                            caIdx = -1;
-                        for (let r = 0; r < Math.min(rows.length, 5); r++) {
-                            const row = rows[r];
-                            if (!row || row.length === 0) continue;
-                            for (let c = 0; c < row.length; c++) {
-                                const cell = String(row[c] || '').trim().toLowerCase();
-                                if (cell === 'semester') semIdx = c;
-                                else if (cell === 'core unit') unitIdx = c;
-                                else if (cell === 'course') courseIdx = c;
-                                else if (cell === 'credits') creditsIdx = c;
-                                else if (cell === 'coefficient') coefIdx = c;
-                                else if (cell === 'lecture') lectureIdx = c;
-                                else if (cell === 'td') tdIdx = c;
-                                else if (cell === 'total (15w)' || cell === 'total') totalIdx = c;
-                                else if (cell === 'exam %' || cell === 'exam') examIdx = c;
-                                else if (cell === 'ca (td) %' || cell === 'ca') caIdx = c;
-                            }
-                            if (semIdx >= 0 && courseIdx >= 0) { headerRow = r; break; }
-                        }
-
-                        if (headerRow < 0 || semIdx < 0 || courseIdx < 0) {
-                            errors.push(`Sheet "${sheetName}": could not find Semester and Course columns.`);
-                            skipped++;
-                            return;
-                        }
-
-                        const targetArray = d[key];
-                        if (!targetArray) {
-                            errors.push(`Sheet "${sheetName}": internal target missing.`);
-                            skipped++;
-                            return;
-                        }
-
-                        const semMap = {};
-                        targetArray.forEach((s, idx) => {
-                            semMap[s.label] = idx;
-                        });
-
-                        const newSemesters = [];
-                        for (let r = headerRow + 1; r < rows.length; r++) {
-                            const row = rows[r];
-                            if (!row || row.length === 0) continue;
-                            const semLabel = semIdx >= 0 ? String(row[semIdx] || '').trim() : '';
-                            const unit = unitIdx >= 0 ? String(row[unitIdx] || '').trim() : '';
-                            const course = courseIdx >= 0 ? String(row[courseIdx] || '').trim() : '';
-                            if (!semLabel || !course) { skipped++; continue; }
-
-                            const credits = creditsIdx >= 0 ? parseFloat(row[creditsIdx]) || null : null;
-                            const coef = coefIdx >= 0 ? parseFloat(row[coefIdx]) || null : null;
-                            const lecture = lectureIdx >= 0 ? String(row[lectureIdx] || '').trim() : '';
-                            const td = tdIdx >= 0 ? String(row[tdIdx] || '').trim() : '';
-                            const total = totalIdx >= 0 ? String(row[totalIdx] || '').trim() : '';
-                            const exam = examIdx >= 0 ? parseFloat(row[examIdx]) || null : null;
-                            const ca = caIdx >= 0 ? parseFloat(row[caIdx]) || null : null;
-
-                            const courseObj = {
-                                unit: unit,
-                                course: course,
-                                credits: credits,
-                                coef: coef,
-                                lecture: lecture,
-                                td: td,
-                                total: total,
-                                exam: exam,
-                                ca: ca
-                            };
-
-                            if (semMap[semLabel] !== undefined) {
-                                const idx = semMap[semLabel];
-                                const existing = targetArray[idx];
-                                const existingIdx = existing.courses.findIndex(c => c.course === course);
-                                if (existingIdx >= 0) {
-                                    existing.courses[existingIdx] = courseObj;
-                                    updated++;
-                                } else {
-                                    existing.courses.push(courseObj);
-                                    added++;
-                                }
-                            } else {
-                                let semIdx2 = newSemesters.findIndex(s => s.label === semLabel);
-                                if (semIdx2 < 0) {
-                                    semIdx2 = newSemesters.length;
-                                    newSemesters.push({ label: semLabel, courses: [] });
-                                }
-                                newSemesters[semIdx2].courses.push(courseObj);
-                                added++;
-                            }
-                        }
-
-                        targetArray.push(...newSemesters);
-                    });
-
-                    persist();
-                    let msg = `Imported: ${added} new, ${updated} updated, ${skipped} skipped.`;
-                    if (errors.length) msg += `\n\n${errors.slice(0, 3).join('\n')}`;
-                    toast(msg, (added + updated) ? 'ok' : 'err');
-                    if (errors.length) console.warn('Curriculum import errors:', errors);
-                } catch (err) {
-                    toast('Import failed: ' + err.message, 'err');
-                    console.error(err);
-                }
-            };
-            input.click();
-        }
-
-        // ==================================================================
-        //  EXISTING VIEWS CONTINUED (timetables, exams, etc.)
-        // ==================================================================
-
+        // --- timetables (modified to add teacher tooltip triggers) ---
         function viewTimetables() {
             if (!checkAuth('timetables')) return;
             const d = D();
@@ -6604,7 +6229,6 @@
                 if (q && !((e.module || '').toLowerCase().includes(q) || (e.instructor || '').toLowerCase()
                         .includes(q) || (e.room || '').toLowerCase().includes(q))) return;
                 if (!grid[e.day]) {
-                    // If the lesson's day is not in the current days list, move it to the first day
                     e.day = daysList[0] || 'Sunday';
                 }
                 if (e.slotIdx < tt.slots.length) grid[e.day][e.slotIdx].push({ ...e, __idx: idx });
@@ -6624,6 +6248,7 @@
                 <div>
                   <h1>Timetables</h1>
                   <p>${escape(state.ttLevel)} · Semester ${sem.slice(1)} · ${courses.length} course${courses.length===1?'':'s'} in curriculum · ${(tt.entries[sem]||[]).length} scheduled</p>
+                  <p style="font-size:12px;color:var(--text-3);margin-top:2px">👤 Hover a teacher's name to see their individual schedule.</p>
                 </div>
                 <div class="page-actions">
                   <button class="btn ghost sm" onclick="exportTimetablesExcel()">${ICON.download} Export Excel</button>
@@ -6677,7 +6302,11 @@
                               <button class="icon-btn danger" onclick="event.stopPropagation();deleteTimetableEntry(${e.__idx})" title="Delete">${ICON.del}</button>
                             </div>` : ''}
                             <div class="m">${escape(e.module)}</div>
-                            <div class="i">${(e.instructor||'').trim() ? escape(e.instructor) : '<span style="color:var(--danger);font-weight:600">⚠ no teacher</span>'}</div>
+                            <div class="i">
+                              ${(e.instructor||'').trim()
+                                ? `<span class="teacher-tooltip-trigger" data-teacher="${escape(e.instructor).replace(/"/g,'&quot;')}" data-sem="${escape(sem)}" style="cursor:pointer;border-bottom:1px dashed var(--brand-3);padding-bottom:1px;">${escape(e.instructor)}</span>`
+                                : '<span style="color:var(--danger);font-weight:600">⚠ no teacher</span>'}
+                            </div>
                             <div style="margin-top:3px">
                               <span class="r">📍 ${escape(e.room||'—')}</span>
                               ${e.group?`<span class="g">${escape(e.group)}</span>`:''}
@@ -6691,11 +6320,21 @@
                 </tbody>
               </table>
               </div>
-              <div style="margin-top:12px;font-size:11.5px;color:var(--text-2)">💡 <b>Drag</b> any lesson to another day / time slot. <b>Click</b> to edit its details. <b>▲▼</b> reorder lessons that share the same slot. <b>↶ Undo</b> (or Ctrl+Z) reverts the last timetable change. <b>📅 Edit days</b> to add or remove days of the week.</div>
+              <div style="margin-top:12px;font-size:11.5px;color:var(--text-2)">💡 <b>Hover</b> a teacher's name to see their schedule for this semester. <b>Drag</b> any lesson to another day / time slot. <b>Click</b> to edit its details. <b>▲▼</b> reorder lessons that share the same slot. <b>↶ Undo</b> (or Ctrl+Z) reverts the last timetable change. <b>📅 Edit days</b> to add or remove days of the week.</div>
               <div style="margin-top:8px;font-size:11.5px;color:var(--text-2);background:var(--surface);padding:8px 12px;border-radius:6px;border:1px solid var(--border-soft)">
                 📊 <b>Excel:</b> Export → all levels + semesters as separate sheets. Import → upload a .xlsx/.xls file with sheets named e.g. "L1 S1", "L2 S2". Each sheet must have columns: Day, Time Slot, Module, Instructor, Room, Group.
               </div>
             `;
+        }
+
+
+        // --- teacher tooltip init after DOM ready ---
+        document.addEventListener('DOMContentLoaded', function() {
+            initTeacherTooltip();
+        });
+        // Also init if DOM is already loaded (unlikely, but safe)
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            initTeacherTooltip();
         }
 
         // ---- EXAMS ----
@@ -9430,8 +9069,8 @@
 
         function prOrdinal(day) {
             if (day % 10 === 1 && day !== 11) return 'st';
-            if (day % 10 === 2 && day !== 12) return 'nd';
-            if (day % 10 === 3 && day !== 13) return 'rd';
+            if (day % 10 === 2 && day !== 11) return 'nd';
+            if (day % 10 === 3 && day !== 11) return 'rd';
             return 'th';
         }
 
@@ -9589,7 +9228,8 @@
             const sess = prSession(d, sem, level, true);
             const it = ii == null ? { module: '', teacher: '' } : { ...sess.items[ii] };
             const modules = [...new Set([...getModulesForLevelSem(d, level, sem),
-                ...prLevelExams(d, sem, level).map(e => e.module)])].sort();
+                ...prLevelExams(d, sem, level).map(e => e.module)
+            ])].sort();
             const teacherNames = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort();
             openModal({
                 title: (ii == null ? 'Add' : 'Edit') + ` review session · ${level}`,
@@ -9839,10 +9479,16 @@
                     const data = await file.arrayBuffer();
                     const wb = XLSX.read(data, { type: 'array' });
                     const d = D();
-                    let sessions = 0, items = 0;
+                    let sessions = 0,
+                        items = 0;
                     wb.SheetNames.forEach(sheetName => {
                         const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1 });
-                        let level = sheetName, room = '', date = '', start = '', dur = null, gap = null;
+                        let level = sheetName,
+                            room = '',
+                            date = '',
+                            start = '',
+                            dur = null,
+                            gap = null;
                         let headerIdx = -1;
                         rows.forEach((r, i) => {
                             const k = String(r[0] || '').trim().toLowerCase();
@@ -10056,7 +9702,8 @@
             const pool = rkModulePool(d, level);
             const options = [...pool.cur, ...pool.debt.filter(m => !pool.cur.includes(m))
                 .map(m => m + ' (debt)')];
-            const teacherNames = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort();
+            const teacherNames = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort((a, b) => a.localeCompare(
+                b));
             openModal({
                 title: `Retake exam · ${level} · ${L.slots[si] || ''}`,
                 subtitle: day.date ? prLongDate(day.date) : 'No date set',
@@ -10302,10 +9949,14 @@
                     const data = await file.arrayBuffer();
                     const wb = XLSX.read(data, { type: 'array' });
                     const d = D();
-                    let nLevels = 0, nDays = 0;
+                    let nLevels = 0,
+                        nDays = 0;
                     wb.SheetNames.forEach(sheetName => {
                         const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1 });
-                        let level = sheetName, room = '', slots = null, headerIdx = -1;
+                        let level = sheetName,
+                            room = '',
+                            slots = null,
+                            headerIdx = -1;
                         rows.forEach((r, i) => {
                             const k = String(r[0] || '').trim().toLowerCase();
                             if (k === 'level' && r[1]) level = String(r[1]).trim();
@@ -10359,9 +10010,9 @@
         // ==================================================================
         const EH_MONTHS = {
             S1: { ar: ['سبتمبر', 'اكتوبر', 'نوفمبر', 'ديسمبر'],
-                  en: ['September', 'October', 'November', 'December'] },
+                en: ['September', 'October', 'November', 'December'] },
             S2: { ar: ['جانفي', 'فيفري', 'مارس', 'افريل', 'ماي'],
-                  en: ['January', 'February', 'March', 'April', 'May'] }
+                en: ['January', 'February', 'March', 'April', 'May'] }
         };
         // Default monthly hours for TEMPORARY teachers
         const EH_TEMP_DEFAULTS = { S1: [3, 12, 12, 6], S2: [3, 18, 15, 15, 18] };
@@ -10372,13 +10023,13 @@
                 en: "People's Democratic Republic of Algeria\nMinistry of Higher Education and Scientific Research\nZiane Achour University - Djelfa\nFaculty of Letters, Languages and Arts\nDepartment of English",
                 titles: {
                     S1: { permAr: 'الحجم الساعي الإضافي للأساتذة الدائمين من سبتمبر إلى ديسمبر',
-                          tempAr: 'الحجم الساعي الإضافي للأساتذة المؤقتين من سبتمبر إلى ديسمبر',
-                          permEn: 'Extra Teaching Hours for Permanent Teachers — September to December',
-                          tempEn: 'Extra Teaching Hours for Temporary Teachers — September to December' },
+                        tempAr: 'الحجم الساعي الإضافي للأساتذة المؤقتين من سبتمبر إلى ديسمبر',
+                        permEn: 'Extra Teaching Hours for Permanent Teachers — September to December',
+                        tempEn: 'Extra Teaching Hours for Temporary Teachers — September to December' },
                     S2: { permAr: 'الحجم الساعي الإضافي للأساتذة الدائمين من جانفي إلى ماي',
-                          tempAr: 'الحجم الساعي الإضافي للأساتذة المؤقتين من جانفي إلى ماي',
-                          permEn: 'Extra Teaching Hours for Permanent Teachers — January to May',
-                          tempEn: 'Extra Teaching Hours for Temporary Teachers — January to May' }
+                        tempAr: 'الحجم الساعي الإضافي للأساتذة المؤقتين من جانفي إلى ماي',
+                        permEn: 'Extra Teaching Hours for Permanent Teachers — January to May',
+                        tempEn: 'Extra Teaching Hours for Temporary Teachers — January to May' }
                 }
             };
         }
@@ -10462,7 +10113,8 @@
 
         function ehSetHour(sem, section, ri, mi, val) {
             if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             const t = __ehCtx.teachers[section][ri];
             if (!t) return;
             const arr = ehGetHours(eh, sem, t);
@@ -10479,7 +10131,8 @@
             const j = ri + dir;
             if (j < 0 || j >= names.length) return;
             [names[ri], names[j]] = [names[j], names[ri]];
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             eh[sem].order[section] = names;
             persist();
         }
@@ -10487,7 +10140,8 @@
         function ehSort(sem, section, mode) {
             if (!mode) return;
             if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             const ts = [...__ehCtx.teachers[section]];
             if (mode === 'az') ts.sort((a, b) => a.name.localeCompare(b.name));
             if (mode === 'za') ts.sort((a, b) => b.name.localeCompare(a.name));
@@ -10503,7 +10157,8 @@
             if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
             const t = __ehCtx.teachers[section][ri];
             if (!t) return;
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             delete eh[sem].hours[t.name];
             persist();
             toast(`Reset "${t.name}" to default values`, 'ok');
@@ -10511,7 +10166,8 @@
 
         function ehEditHeader() {
             if (!checkEdit('extrahours')) { toast('Read-only mode', 'err'); return; }
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             const sem = state.extraSem;
             const T = eh.header.titles[sem];
             openModal({
@@ -10588,7 +10244,8 @@
         }
 
         async function exportExtraHoursExcel() {
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             try {
                 const XLSX = await loadSheetJS();
                 const wb = XLSX.utils.book_new();
@@ -10628,7 +10285,8 @@
 
         function viewExtraHours() {
             if (!checkAuth('extrahours')) return;
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             const sem = state.extraSem;
             crumb('People', 'Extra hours', 'Semester ' + sem.slice(1));
             const { perm, temp, excludedRole, unmatched } = ehEligible(d, sem);
@@ -10684,7 +10342,8 @@
         function ehPrintHeader(eh, lang) {
             const lines = (lang === 'ar' ? eh.header.ar : eh.header.en).split('\n')
                 .map(s => s.trim()).filter(Boolean);
-            const L = store.logos.left, R = store.logos.right;
+            const L = store.logos.left,
+                R = store.logos.right;
             return `
               <div style="display:flex;align-items:flex-start;gap:12px">
                 <div style="flex:0 0 80px;text-align:center">${L?`<img src="${L}" style="max-width:80px;max-height:75px;object-fit:contain">`:''}</div>
@@ -10696,7 +10355,8 @@
         }
 
         function printExtraHours(lang) {
-            const d = D(), eh = ensureExtraHours(d);
+            const d = D(),
+                eh = ensureExtraHours(d);
             const sem = state.extraSem;
             const months = EH_MONTHS[sem];
             const yr = store.years[store.activeIdx].name;
@@ -12451,10 +12111,10 @@
         //  Defaults are tuned so ~40 students fit on ONE A4 page.
         // ==================================================================
         const STUDENT_PRINT_DEFAULTS = {
-            fontSize: 10,        // table text size in pt
-            rowPadV: 1,          // vertical padding inside each row (px)
-            rowPadH: 6,          // horizontal padding inside each cell (px)
-            borderW: 1.5,        // table line thickness (px)
+            fontSize: 10, // table text size in pt
+            rowPadV: 1, // vertical padding inside each row (px)
+            rowPadH: 6, // horizontal padding inside each cell (px)
+            borderW: 1.5, // table line thickness (px)
             inkColor: '#000000', // line + text colour (pure black = clearest)
             compactHeader: true, // smaller logos/titles to save vertical space
             compactSignatures: true
@@ -12485,23 +12145,30 @@
                 title: '🖨️ Student list print settings',
                 subtitle: 'Applies to group lists and per-exam student lists. Defaults fit ~40 students on one A4 page.',
                 fields: [
-                    { key: 'fontSize', label: 'Table text size (pt)', type: 'number', value: s.fontSize, row: true,
-                      hint: '9–10 fits 40 rows per page · 12–14 is bigger but fewer rows' },
-                    { key: 'rowPadV', label: 'Row padding (px)', type: 'number', value: s.rowPadV, row: true,
-                      hint: 'Vertical space in each row · 0–3 for 40 per page' },
-                    { key: 'borderW', label: 'Line thickness', type: 'select', value: String(s.borderW), row: true, options: [
-                        { value: '1', label: '1 px — thin' },
-                        { value: '1.5', label: '1.5 px — clear (default)' },
-                        { value: '2', label: '2 px — bold' },
-                        { value: '2.5', label: '2.5 px — extra bold' }
-                    ] },
-                    { key: 'inkColor', label: 'Line & text colour', type: 'select', value: s.inkColor, row: true, options: [
-                        { value: '#000000', label: 'Pure black (clearest)' },
-                        { value: '#1a1a1a', label: 'Soft black' }
-                    ] },
-                    { key: 'compactHeader', label: 'Compact page header (smaller logos & titles — recommended for 40/page)', type: 'checkbox', value: s.compactHeader },
-                    { key: 'compactSignatures', label: 'Compact signature area at the bottom', type: 'checkbox', value: s.compactSignatures },
-                    { key: 'reset', label: 'Reset everything to the recommended 40-per-page defaults', type: 'checkbox', value: false }
+                    { key: 'fontSize', label: 'Table text size (pt)', type: 'number', value: s.fontSize,
+                        row: true,
+                        hint: '9–10 fits 40 rows per page · 12–14 is bigger but fewer rows' },
+                    { key: 'rowPadV', label: 'Row padding (px)', type: 'number', value: s.rowPadV,
+                        row: true,
+                        hint: 'Vertical space in each row · 0–3 for 40 per page' },
+                    { key: 'borderW', label: 'Line thickness', type: 'select', value: String(s.borderW),
+                        row: true, options: [
+                            { value: '1', label: '1 px — thin' },
+                            { value: '1.5', label: '1.5 px — clear (default)' },
+                            { value: '2', label: '2 px — bold' },
+                            { value: '2.5', label: '2.5 px — extra bold' }
+                        ] },
+                    { key: 'inkColor', label: 'Line & text colour', type: 'select', value: s.inkColor,
+                        row: true, options: [
+                            { value: '#000000', label: 'Pure black (clearest)' },
+                            { value: '#1a1a1a', label: 'Soft black' }
+                        ] },
+                    { key: 'compactHeader', label: 'Compact page header (smaller logos & titles — recommended for 40/page)',
+                        type: 'checkbox', value: s.compactHeader },
+                    { key: 'compactSignatures', label: 'Compact signature area at the bottom', type: 'checkbox',
+                        value: s.compactSignatures },
+                    { key: 'reset', label: 'Reset everything to the recommended 40-per-page defaults', type: 'checkbox',
+                        value: false }
                 ],
                 submitLabel: 'Save settings',
                 onSave: vals => {
@@ -13044,14 +12711,14 @@
 
         async function wipeAllData(includeGithub) {
             const what = 'teachers, curriculum, saved timetables, students, exams, users and settings';
-            const msg = includeGithub
-                ? 'Remove ALL stored information (' + what + ') from this device AND reset the GitHub file to a blank state?\n\nThis cannot be undone.'
-                : 'Remove ALL locally stored information (' + what + ', session and backups) from this device?\n\nThe GitHub file, if any, is NOT touched.';
+            const msg = includeGithub ?
+                'Remove ALL stored information (' + what + ') from this device AND reset the GitHub file to a blank state?\n\nThis cannot be undone.' :
+                'Remove ALL locally stored information (' + what + ', session and backups) from this device?\n\nThe GitHub file, if any, is NOT touched.';
             if (!confirm(msg)) return;
             if (!confirm('Are you absolutely sure? This is the final confirmation.')) return;
             if (includeGithub && ghReady()) {
                 const yearName = (store.years && store.years[store.activeIdx] && store.years[store.activeIdx].name) ||
-                '2025/2026';
+                    '2025/2026';
                 store = {
                     years: [{ name: yearName, data: blankData() }],
                     activeIdx: 0,
@@ -13403,7 +13070,8 @@
             const w = window.open('', '_blank', 'width=' + (opts.orientation === 'landscape' ? 1250 : 1000) + ',height=800');
             if (!w) { toast('Popup blocked — allow popups to print/export PDF', 'err'); return; }
             const now = new Date().toLocaleString();
-            const orientationCSS = opts.orientation ? `@page { size: A4 ${opts.orientation}; margin: 1cm; } @media screen { body { max-width: ${opts.orientation === 'landscape' ? '1200px' : '900px'}; } }` : '';
+            const orientationCSS = opts.orientation ? `@page { size: A4 ${opts.orientation}; margin: 1cm; } @media screen { body { max-width: ${opts.orientation === 'landscape' ? '1200px' : '900px'}; } }` :
+                '';
             w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${escape(title)}</title>
               <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
               <style>${PRINT_CSS}${orientationCSS}${opts.extraCSS || ''}</style></head>
@@ -13644,11 +13312,11 @@
         const TT_PRINT_DEFAULTS = {
             orientation: 'landscape', // landscape fits the weekly grid best
             fontFamily: 'Inter',
-            fontSize: 10,             // pt, table text
-            borderW: 1.5,             // px, table line thickness
-            inkColor: '#000000',      // pure black = clearest lines
-            headerShade: true,        // light green shading on header row & lessons
-            cellPad: 4                // px, vertical cell padding
+            fontSize: 10, // pt, table text
+            borderW: 1.5, // px, table line thickness
+            inkColor: '#000000', // pure black = clearest lines
+            headerShade: true, // light green shading on header row & lessons
+            cellPad: 4 // px, vertical cell padding
         };
 
         const TT_PRINT_FONTS = {
@@ -13679,30 +13347,38 @@
                 title: '🖨️ Timetable print settings',
                 subtitle: 'Applies to "Print this" and "Print all" timetables. Landscape is recommended for the weekly grid.',
                 fields: [
-                    { key: 'orientation', label: 'Page orientation', type: 'select', value: s.orientation, row: true, options: [
-                        { value: 'landscape', label: 'Landscape (recommended)' },
-                        { value: 'portrait', label: 'Portrait' }
-                    ] },
-                    { key: 'fontFamily', label: 'Font', type: 'select', value: s.fontFamily, row: true, options:
-                        Object.keys(TT_PRINT_FONTS).map(f => ({ value: f, label: f + (f === 'Inter' ? ' (default)' : '') })) },
-                    { key: 'fontSize', label: 'Table text size (pt)', type: 'number', value: s.fontSize, row: true,
-                      hint: '9–10 fits wide timetables · 11–12 is bigger' },
-                    { key: 'cellPad', label: 'Cell padding (px)', type: 'number', value: s.cellPad, row: true,
-                      hint: 'Vertical breathing room in each cell' },
-                    { key: 'borderW', label: 'Line thickness', type: 'select', value: String(s.borderW), row: true, options: [
-                        { value: '0.5', label: '0.5 px — hairline' },
-                        { value: '1', label: '1 px — thin' },
-                        { value: '1.5', label: '1.5 px — clear (default)' },
-                        { value: '2', label: '2 px — bold' },
-                        { value: '2.5', label: '2.5 px — extra bold' }
-                    ] },
-                    { key: 'inkColor', label: 'Line & text colour', type: 'select', value: s.inkColor, row: true, options: [
-                        { value: '#000000', label: 'Pure black (clearest)' },
-                        { value: '#1a1a1a', label: 'Soft black' },
-                        { value: '#1f4f3f', label: 'Department green' }
-                    ] },
-                    { key: 'headerShade', label: 'Shade header row & lesson blocks (light green background)', type: 'checkbox', value: s.headerShade },
-                    { key: 'reset', label: 'Reset everything to the recommended defaults', type: 'checkbox', value: false }
+                    { key: 'orientation', label: 'Page orientation', type: 'select', value: s.orientation,
+                        row: true, options: [
+                            { value: 'landscape', label: 'Landscape (recommended)' },
+                            { value: 'portrait', label: 'Portrait' }
+                        ] },
+                    { key: 'fontFamily', label: 'Font', type: 'select', value: s.fontFamily, row: true,
+                        options: Object.keys(TT_PRINT_FONTS).map(f => ({ value: f, label: f + (f === 'Inter' ?
+                                ' (default)' : '') })) },
+                    { key: 'fontSize', label: 'Table text size (pt)', type: 'number', value: s.fontSize,
+                        row: true,
+                        hint: '9–10 fits wide timetables · 11–12 is bigger' },
+                    { key: 'cellPad', label: 'Cell padding (px)', type: 'number', value: s.cellPad,
+                        row: true,
+                        hint: 'Vertical breathing room in each cell' },
+                    { key: 'borderW', label: 'Line thickness', type: 'select', value: String(s.borderW),
+                        row: true, options: [
+                            { value: '0.5', label: '0.5 px — hairline' },
+                            { value: '1', label: '1 px — thin' },
+                            { value: '1.5', label: '1.5 px — clear (default)' },
+                            { value: '2', label: '2 px — bold' },
+                            { value: '2.5', label: '2.5 px — extra bold' }
+                        ] },
+                    { key: 'inkColor', label: 'Line & text colour', type: 'select', value: s.inkColor,
+                        row: true, options: [
+                            { value: '#000000', label: 'Pure black (clearest)' },
+                            { value: '#1a1a1a', label: 'Soft black' },
+                            { value: '#1f4f3f', label: 'Department green' }
+                        ] },
+                    { key: 'headerShade', label: 'Shade header row & lesson blocks (light green background)',
+                        type: 'checkbox', value: s.headerShade },
+                    { key: 'reset', label: 'Reset everything to the recommended defaults', type: 'checkbox',
+                        value: false }
                 ],
                 submitLabel: 'Save settings',
                 onSave: vals => {
@@ -13713,7 +13389,8 @@
                     }
                     saveTTPrintSettings({
                         orientation: vals.orientation === 'portrait' ? 'portrait' : 'landscape',
-                        fontFamily: TT_PRINT_FONTS[vals.fontFamily] ? vals.fontFamily : TT_PRINT_DEFAULTS.fontFamily,
+                        fontFamily: TT_PRINT_FONTS[vals.fontFamily] ? vals.fontFamily : TT_PRINT_DEFAULTS
+                            .fontFamily,
                         fontSize: clampNum(vals.fontSize, 7, 16, TT_PRINT_DEFAULTS.fontSize),
                         cellPad: clampNum(vals.cellPad, 0, 12, TT_PRINT_DEFAULTS.cellPad),
                         borderW: parseFloat(vals.borderW) || TT_PRINT_DEFAULTS.borderW,
@@ -13944,7 +13621,7 @@
                             s.mark || '', s.note || ''
                         ]);
                     });
-                    const sheetName = (`${level} ${label}`).replace(/[\\/\?\*\[\]:]/g, '-').slice(0, 31);
+                    const sheetName = (`${level} ${label}`).replace(/[\\\/\?\*\[\]:]/g, '-').slice(0, 31);
                     sheets[sheetName] = rows;
                 });
             });
@@ -14262,7 +13939,6 @@
             students[idx].note = value.trim() || '';
             persist();
         };
-
         window.stopAutoReload = stopAutoReload;
         window.startAutoReload = startAutoReload;
     </script>
