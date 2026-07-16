@@ -1008,14 +1008,6 @@
                   "group": "GROUP 3+4"
                 },
                 {
-                  "day": "Wednesday",
-                  "slotIdx": 1,
-                  "module": "Foreign Language(s) 3",
-                  "instructor": "",
-                  "room": "Room 26",
-                  "group": "GROUP 3+4"
-                },
-                {
                   "day": "Monday",
                   "slotIdx": 0,
                   "module": "Linguistics and Phonetics 3",
