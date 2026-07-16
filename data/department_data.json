@@ -955,6 +955,14 @@
                   "instructor": "Nourani A",
                   "room": "Room 25",
                   "group": "GROUP 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "Foreign Language(s) 2 (copy)",
+                  "instructor": "",
+                  "room": "Room 25",
+                  "group": "GROUP 4"
                 }
               ]
             }
