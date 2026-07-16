@@ -1240,6 +1240,14 @@
                   "instructor": "",
                   "room": "Room 13",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 3,
+                  "module": "Logiciels libres et Open sources",
+                  "instructor": "Bendecho H.",
+                  "room": "Room 13",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
