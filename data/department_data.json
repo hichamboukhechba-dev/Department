@@ -1429,6 +1429,14 @@
                   "instructor": "Charrak O.",
                   "room": "Amphi B",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Logiciels libres et Open sources",
+                  "instructor": "Bendecho H.",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
