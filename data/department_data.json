@@ -1187,7 +1187,7 @@
                 },
                 {
                   "day": "Wednesday",
-                  "slotIdx": 3,
+                  "slotIdx": 1,
                   "module": "American Literature",
                   "instructor": "Benderrah A.",
                   "room": "Room 13",
@@ -1195,7 +1195,7 @@
                 },
                 {
                   "day": "Wednesday",
-                  "slotIdx": 1,
+                  "slotIdx": 2,
                   "module": "Literary Theories",
                   "instructor": "Mahammedi I.",
                   "room": "Room 13",
