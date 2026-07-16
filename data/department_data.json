@@ -1054,6 +1054,14 @@
                   "instructor": "Chelali M.",
                   "room": "Room 25",
                   "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 3",
+                  "instructor": "Othmani A",
+                  "room": "Room 25",
+                  "group": "GROUP 3+4"
                 }
               ],
               "S2": []
