@@ -1030,6 +1030,14 @@
                   "instructor": "Djalab A.",
                   "room": "Room 25",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
