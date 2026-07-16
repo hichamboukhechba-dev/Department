@@ -838,6 +838,13 @@
               {
                 "date": "",
                 "time": "",
+                "module": "African Studies",
+                "teacher": "Rahmouni A",
+                "level": "M1 Lit/Civ"
+              },
+              {
+                "date": "",
+                "time": "",
                 "module": "British Literature",
                 "teacher": "Boukhalkhal Y.",
                 "level": "M1 Lit/Civ"
@@ -847,6 +854,13 @@
                 "time": "",
                 "module": "Research Skills",
                 "teacher": "Gatcha Y",
+                "level": "M1 Lit/Civ"
+              },
+              {
+                "date": "",
+                "time": "",
+                "module": "Teaching Literary Texts",
+                "teacher": "",
                 "level": "M1 Lit/Civ"
               }
             ]
