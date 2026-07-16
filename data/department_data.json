@@ -947,7 +947,16 @@
                   "group": "ALL GROUPS"
                 }
               ],
-              "S2": []
+              "S2": [
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "Foreign Language(s) 2",
+                  "instructor": "Nourani A",
+                  "room": "Room 25",
+                  "group": "GROUP 4"
+                }
+              ]
             }
           },
           "L2": {
