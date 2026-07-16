@@ -1102,6 +1102,14 @@
                   "instructor": "",
                   "room": "Room 25",
                   "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "University Study Skills 3",
+                  "instructor": "",
+                  "room": "Room 25",
+                  "group": "GROUP 1+2"
                 }
               ],
               "S2": []
