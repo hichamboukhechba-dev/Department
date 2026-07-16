@@ -1006,6 +1006,14 @@
                   "instructor": "Nourani A",
                   "room": "Room 26",
                   "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "Charrak O.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
