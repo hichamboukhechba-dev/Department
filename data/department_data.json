@@ -1178,7 +1178,7 @@
             "entries": {
               "S1": [
                 {
-                  "day": "Tuesday",
+                  "day": "Wednesday",
                   "slotIdx": 0,
                   "module": "British Civilisation",
                   "instructor": "Amraoui Z",
@@ -1186,8 +1186,8 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Wednesday",
-                  "slotIdx": 0,
+                  "day": "Tuesday",
+                  "slotIdx": 1,
                   "module": "American Literature",
                   "instructor": "Benderrah A.",
                   "room": "Room 13",
