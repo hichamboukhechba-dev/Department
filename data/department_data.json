@@ -1407,6 +1407,14 @@
                   "instructor": "Khadroun S.",
                   "room": "Room 14",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Writing a dissertation",
+                  "instructor": "Charrak O.",
+                  "room": "Room 14",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
