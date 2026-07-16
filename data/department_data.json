@@ -1325,6 +1325,14 @@
                   "instructor": "Khadroun S.",
                   "room": "Amphi B",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Sociolinguistics",
+                  "instructor": "Charrak O.",
+                  "room": "Amphi B",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
