@@ -1274,6 +1274,14 @@
                   "instructor": "Mahammedi I.",
                   "room": "Room 13",
                   "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Cultural Studies",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 14",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
