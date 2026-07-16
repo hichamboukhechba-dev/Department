@@ -1284,8 +1284,8 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Monday",
-                  "slotIdx": 0,
+                  "day": "Thursday",
+                  "slotIdx": 1,
                   "module": "Cultural Studies",
                   "instructor": "Boukhalkhal Y.",
                   "room": "Room 14",
