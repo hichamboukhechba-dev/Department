@@ -1078,6 +1078,14 @@
                   "instructor": "Hayour",
                   "room": "Room 25",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Digital Literatures 1",
+                  "instructor": "",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
