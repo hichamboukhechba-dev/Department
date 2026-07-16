@@ -1551,6 +1551,14 @@
                   "instructor": "",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Sociodidactics",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
