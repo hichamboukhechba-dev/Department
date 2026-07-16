@@ -1511,6 +1511,14 @@
                   "instructor": "Charrak O.",
                   "room": "Room 14",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Curriculum and Syllabus Design",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 14",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
