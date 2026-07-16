@@ -1530,6 +1530,14 @@
                   "instructor": "",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Critical Reading",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
