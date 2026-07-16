@@ -3598,6 +3598,372 @@
         // ================================================================
 
 
+        // ================================================================
+        //  MISSING TIMETABLE FUNCTIONS
+        // ================================================================
+
+        function editTimetableEntry(idx) {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const tt = ensureLevelTt(d, state.ttLevel);
+            const list = tt.entries[state.ttSem];
+            const entry = idx !== null ? { ...list[idx] } : { module: '', instructor: '', room: '', group: '', day: getDays(d)[0] || 'Sunday', slotIdx: 0 };
+
+            const days = getDays(d);
+            const slots = tt.slots || ['08:30-10:00', '10:00-11:30', '12:30-14:00', '14:00-15:30'];
+            const teachers = [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort();
+            const rooms = d.rooms || [];
+
+            // Get modules from curriculum for this level + semester
+            const modules = getModulesForLevelSem(d, state.ttLevel, state.ttSem);
+            // Also include any modules already scheduled (even if not in curriculum)
+            const scheduledMods = new Set(list.map(e => (e.module || '').trim().toLowerCase()));
+            const allModules = [...new Set([...modules, ...list.map(e => e.module).filter(Boolean)])].sort();
+
+            const isEdit = idx !== null;
+            openModal({
+                title: isEdit ? 'Edit lesson' : 'Add lesson',
+                subtitle: isEdit ? `Editing ${entry.module || 'lesson'} · ${entry.day || ''} ${slots[entry.slotIdx] || ''}` : `Add a new lesson to ${state.ttLevel} · ${state.ttSem}`,
+                fields: [
+                    { key: 'day', label: 'Day', type: 'select', options: days, value: entry.day, required: true },
+                    { key: 'slotIdx', label: 'Time slot', type: 'select', options: slots.map((s, i) => ({ value: i, label: s })), value: entry.slotIdx, required: true },
+                    { key: 'module', label: 'Module', type: 'combo', options: allModules, value: entry.module || '', required: true, hint: 'Type or pick from curriculum / existing modules' },
+                    { key: 'instructor', label: 'Instructor', type: 'combo', options: teachers, value: entry.instructor || '', hint: 'Teacher responsible for this session' },
+                    { key: 'room', label: 'Room', type: 'combo', options: rooms, value: entry.room || '' },
+                    { key: 'group', label: 'Group (optional)', value: entry.group || '', hint: 'e.g. GROUP 1, GROUP 2, etc.' }
+                ],
+                onSave: v => {
+                    const newEntry = {
+                        day: v.day,
+                        slotIdx: +v.slotIdx,
+                        module: v.module.trim(),
+                        instructor: v.instructor.trim(),
+                        room: v.room.trim(),
+                        group: v.group.trim()
+                    };
+                    if (!newEntry.module) { toast('Module is required', 'err'); return false; }
+
+                    // Check for teacher conflicts
+                    if (newEntry.instructor) {
+                        const conflicts = findTeacherConflicts(d, state.ttSem, newEntry, state.ttLevel, idx);
+                        if (conflicts.length) {
+                            const lines = conflicts.map(c =>
+                                `• ${c.level} ${c.day} ${c.slot} — ${c.module}${c.group ? ' (' + c.group + ')' : ''}`
+                            ).join('\n');
+                            if (!confirm(
+                                `⚠ Teacher conflict:\n${newEntry.instructor} is already scheduled at ${newEntry.day} ${slots[newEntry.slotIdx]} in:\n\n${lines}\n\nSave anyway?`
+                            )) return false;
+                        }
+                    }
+
+                    ttSnapshot(isEdit ? 'edit ' + (entry.module || 'lesson') : 'add ' + newEntry.module);
+                    if (isEdit) list[idx] = newEntry;
+                    else list.push(newEntry);
+                    persist();
+                    toast(isEdit ? 'Lesson updated' : 'Lesson added');
+                }
+            });
+        }
+
+        function deleteTimetableEntry(idx) {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const tt = ensureLevelTt(d, state.ttLevel);
+            const list = tt.entries[state.ttSem];
+            const entry = list[idx];
+            if (!entry) return;
+            if (!confirm(`Delete "${entry.module || 'lesson'}" from ${entry.day || ''} ${(tt.slots || [])[entry.slotIdx] || ''}?`)) return;
+            ttSnapshot('delete ' + (entry.module || 'lesson'));
+            list.splice(idx, 1);
+            persist();
+            toast('Lesson deleted');
+        }
+
+        function duplicateTimetableEntry(idx) {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const tt = ensureLevelTt(d, state.ttLevel);
+            const list = tt.entries[state.ttSem];
+            const src = list[idx];
+            if (!src) return;
+            const copy = { ...src, module: src.module + ' (copy)', instructor: '' };
+            ttSnapshot('duplicate ' + (src.module || 'lesson'));
+            list.splice(idx + 1, 0, copy);
+            persist();
+            toast('Lesson duplicated — edit the copy to assign a teacher');
+        }
+
+        function addLessonForModule(moduleName) {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            // Find the first free slot, or just open the add modal with the module pre-filled
+            const d = D();
+            const tt = ensureLevelTt(d, state.ttLevel);
+            const days = getDays(d);
+            const slots = tt.slots || ['08:30-10:00', '10:00-11:30', '12:30-14:00', '14:00-15:30'];
+
+            // Find a free slot (prefer the first available)
+            const list = tt.entries[state.ttSem];
+            const used = new Set(list.map(e => e.day + '|' + e.slotIdx));
+            let bestDay = days[0] || 'Sunday';
+            let bestSlot = 0;
+            for (const day of days) {
+                for (let si = 0; si < slots.length; si++) {
+                    if (!used.has(day + '|' + si)) {
+                        bestDay = day;
+                        bestSlot = si;
+                        break;
+                    }
+                }
+                if (!used.has(bestDay + '|' + bestSlot)) break;
+            }
+
+            // Open the edit modal with pre-filled module
+            openModal({
+                title: 'Add lesson for ' + moduleName,
+                subtitle: `Pre-filled module · ${state.ttLevel} · ${state.ttSem}`,
+                fields: [
+                    { key: 'day', label: 'Day', type: 'select', options: days, value: bestDay, required: true },
+                    { key: 'slotIdx', label: 'Time slot', type: 'select', options: slots.map((s, i) => ({ value: i, label: s })), value: bestSlot, required: true },
+                    { key: 'module', label: 'Module', type: 'text', value: moduleName, required: true, disabled: true },
+                    { key: 'instructor', label: 'Instructor', type: 'combo', options: [...new Set(d.teachers.map(t => t.name).filter(Boolean))].sort(), value: '', hint: 'Teacher responsible' },
+                    { key: 'room', label: 'Room', type: 'combo', options: d.rooms || [], value: '' },
+                    { key: 'group', label: 'Group (optional)', value: '' }
+                ],
+                onSave: v => {
+                    const newEntry = {
+                        day: v.day,
+                        slotIdx: +v.slotIdx,
+                        module: v.module.trim(),
+                        instructor: v.instructor.trim(),
+                        room: v.room.trim(),
+                        group: v.group.trim()
+                    };
+                    if (!newEntry.module) { toast('Module is required', 'err'); return false; }
+                    if (newEntry.instructor) {
+                        const conflicts = findTeacherConflicts(d, state.ttSem, newEntry, state.ttLevel, null);
+                        if (conflicts.length) {
+                            const lines = conflicts.map(c =>
+                                `• ${c.level} ${c.day} ${c.slot} — ${c.module}${c.group ? ' (' + c.group + ')' : ''}`
+                            ).join('\n');
+                            if (!confirm(
+                                `⚠ Teacher conflict:\n${newEntry.instructor} is already scheduled at ${newEntry.day} ${slots[newEntry.slotIdx]} in:\n\n${lines}\n\nSave anyway?`
+                            )) return false;
+                        }
+                    }
+                    ttSnapshot('add ' + newEntry.module);
+                    list.push(newEntry);
+                    persist();
+                    toast('Lesson added for ' + newEntry.module);
+                }
+            });
+        }
+
+        function editSlots() {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const tt = ensureLevelTt(d, state.ttLevel);
+            const currentSlots = tt.slots || ['08:30-10:00', '10:00-11:30', '12:30-14:00', '14:00-15:30'];
+            openModal({
+                title: `Edit time slots · ${state.ttLevel}`,
+                subtitle: 'One slot per line. Existing lessons will keep their slot indices; changing the order may affect the timetable display.',
+                fields: [
+                    { key: 'slots', label: 'Time slots (one per line)', type: 'textarea', value: currentSlots.join('\n') }
+                ],
+                onSave: v => {
+                    const newSlots = v.slots.split('\n').map(s => s.trim()).filter(Boolean);
+                    if (newSlots.length < 1) { toast('At least one slot required', 'err'); return false; }
+                    ttSnapshot('edit slots');
+                    tt.slots = newSlots;
+                    // Adjust any entries with slotIdx out of range
+                    const list = tt.entries[state.ttSem] || [];
+                    list.forEach(e => {
+                        if (e.slotIdx >= newSlots.length) e.slotIdx = newSlots.length - 1;
+                    });
+                    persist();
+                    toast('Slots updated');
+                }
+            });
+        }
+
+        function editDays() {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            const d = D();
+            const currentDays = d.days || ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday'];
+            openModal({
+                title: 'Edit days of the week',
+                subtitle: 'One day per line. Existing lessons on removed days will be moved to the first available day.',
+                fields: [
+                    { key: 'days', label: 'Days (one per line)', type: 'textarea', value: currentDays.join('\n') }
+                ],
+                onSave: v => {
+                    const newDays = v.days.split('\n').map(s => s.trim()).filter(Boolean);
+                    if (newDays.length < 1) { toast('At least one day required', 'err'); return false; }
+                    ttSnapshot('edit days');
+                    const oldDays = d.days || [];
+                    d.days = newDays;
+                    // Remap entries: if a day is no longer in the list, move to the first day
+                    const firstDay = newDays[0];
+                    Object.values(d.timetables).forEach(tt => {
+                        ['S1', 'S2'].forEach(sem => {
+                            const list = tt.entries[sem] || [];
+                            list.forEach(e => {
+                                if (!newDays.includes(e.day)) {
+                                    e.day = firstDay;
+                                }
+                            });
+                        });
+                    });
+                    persist();
+                    toast('Days updated');
+                }
+            });
+        }
+
+        // ================================================================
+        //  TIMETABLE EXCEL IMPORT/EXPORT
+        // ================================================================
+
+        async function exportTimetablesExcel() {
+            const d = D();
+            const levels = getCurriculumLevels(d);
+            if (!levels.length) { toast('No levels to export', 'err'); return; }
+            try {
+                const XLSX = await loadSheetJS();
+                const wb = XLSX.utils.book_new();
+                const daysList = getDays(d);
+                levels.forEach(level => {
+                    const tt = d.timetables[level];
+                    if (!tt) return;
+                    ['S1', 'S2'].forEach(sem => {
+                        const list = tt.entries[sem] || [];
+                        const rows = [
+                            ['Day', 'Time Slot', 'Module', 'Instructor', 'Room', 'Group']
+                        ];
+                        // Sort by day order then slot index
+                        const dayOrder = {};
+                        daysList.forEach((day, i) => { dayOrder[day] = i; });
+                        const sorted = [...list].sort((a, b) => (dayOrder[a.day] ?? 99) - (dayOrder[b.day] ?? 99) || (a.slotIdx - b.slotIdx));
+                        sorted.forEach(e => {
+                            rows.push([
+                                e.day || '',
+                                (tt.slots && tt.slots[e.slotIdx]) || '',
+                                e.module || '',
+                                e.instructor || '',
+                                e.room || '',
+                                e.group || ''
+                            ]);
+                        });
+                        const sheetName = (level + ' ' + sem).replace(/[\\\/\?\*\[\]:]/g, '-').slice(0, 31);
+                        if (rows.length > 1 || (rows.length === 1 && rows[0].length > 0)) {
+                            XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), sheetName);
+                        }
+                    });
+                });
+                const filename = `timetables_${store.years[store.activeIdx].name.replace(/\//g, '-')}.xlsx`;
+                XLSX.writeFile(wb, filename);
+                toast('Exported ' + filename, 'ok');
+            } catch (e) {
+                toast('Export failed: ' + e.message, 'err');
+                console.error(e);
+            }
+        }
+
+        async function importTimetablesExcel() {
+            if (!checkEdit('timetables')) { toast('Read-only mode', 'err'); return; }
+            try {
+                const XLSX = await loadSheetJS();
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.xlsx,.xls';
+                input.onchange = async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    try {
+                        const data = await file.arrayBuffer();
+                        const wb = XLSX.read(data, { type: 'array' });
+                        const d = D();
+                        let loaded = 0;
+                        const daysList = getDays(d);
+                        const dayOrder = {};
+                        daysList.forEach((day, i) => { dayOrder[day] = i; });
+                        wb.SheetNames.forEach(sheetName => {
+                            // Parse level and semester from sheet name, e.g. "L1 S1"
+                            const m = /^(.+?)\s+(S[12])$/i.exec(sheetName.trim());
+                            if (!m) return;
+                            const level = m[1].trim();
+                            const sem = m[2].toUpperCase();
+                            const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1 });
+                            // Find header row
+                            let headerIdx = -1;
+                            for (let i = 0; i < Math.min(rows.length, 6); i++) {
+                                const row = rows[i];
+                                if (!row || row.length < 2) continue;
+                                const first = String(row[0] || '').trim().toLowerCase();
+                                if (first === 'day' || first === 'time slot' || first === 'module') {
+                                    headerIdx = i;
+                                    break;
+                                }
+                            }
+                            if (headerIdx === -1) return;
+                            const tt = ensureLevelTt(d, level);
+                            const list = tt.entries[sem] || [];
+                            // Determine column indices
+                            const header = rows[headerIdx].map(c => String(c || '').trim().toLowerCase());
+                            const colDay = header.findIndex(h => h === 'day');
+                            const colSlot = header.findIndex(h => h === 'time slot' || h === 'slot' || h === 'timeslot');
+                            const colModule = header.findIndex(h => h === 'module');
+                            const colInstructor = header.findIndex(h => h === 'instructor' || h === 'teacher');
+                            const colRoom = header.findIndex(h => h === 'room');
+                            const colGroup = header.findIndex(h => h === 'group');
+                            if (colModule === -1 || colDay === -1) return;
+                            // Build slot index map from slot strings
+                            const slotMap = {};
+                            tt.slots.forEach((s, i) => { slotMap[s.trim().toLowerCase()] = i; });
+                            const newEntries = [];
+                            for (let i = headerIdx + 1; i < rows.length; i++) {
+                                const row = rows[i];
+                                if (!row || row.length === 0) continue;
+                                const moduleName = String(row[colModule] || '').trim();
+                                if (!moduleName) continue;
+                                const day = String(row[colDay] || '').trim();
+                                const slotLabel = colSlot >= 0 ? String(row[colSlot] || '').trim() : '';
+                                let slotIdx = 0;
+                                if (slotLabel && slotMap[slotLabel.toLowerCase()] !== undefined) {
+                                    slotIdx = slotMap[slotLabel.toLowerCase()];
+                                } else {
+                                    // Try to match by position if slot label not found
+                                    const slotStr = (tt.slots[newEntries.length % tt.slots.length] || '').trim();
+                                    if (slotStr) slotIdx = newEntries.length % tt.slots.length;
+                                }
+                                const instructor = colInstructor >= 0 ? String(row[colInstructor] || '').trim() : '';
+                                const room = colRoom >= 0 ? String(row[colRoom] || '').trim() : '';
+                                const group = colGroup >= 0 ? String(row[colGroup] || '').trim() : '';
+                                newEntries.push({ day: day || daysList[0] || 'Sunday', slotIdx, module: moduleName, instructor, room, group });
+                            }
+                            if (newEntries.length) {
+                                ttSnapshot('import from Excel (' + level + ' ' + sem + ')');
+                                // Replace existing entries for this level + semester
+                                tt.entries[sem] = newEntries;
+                                loaded += newEntries.length;
+                            }
+                        });
+                        if (loaded) {
+                            persist();
+                            toast(`Imported ${loaded} lesson${loaded > 1 ? 's' : ''} from ${wb.SheetNames.length} sheet${wb.SheetNames.length > 1 ? 's' : ''}`, 'ok');
+                        } else {
+                            toast('No data imported. Check that sheet names are like "L1 S1", "L2 S2" etc.', 'err');
+                        }
+                    } catch (err) {
+                        toast('Import failed: ' + err.message, 'err');
+                        console.error(err);
+                    }
+                };
+                input.click();
+            } catch (err) {
+                toast('Excel library not loaded: ' + err.message, 'err');
+            }
+        }
+
         // Teacher statuses (kinds)
         const KINDS = ['Permanent Teachers', 'Temporary Teachers'];
 
