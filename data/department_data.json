@@ -1359,6 +1359,14 @@
                   "instructor": "Ouarniki W",
                   "room": "Room 23",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Reflective Practice and Teacher Development",
+                  "instructor": "Khadroun S.",
+                  "room": "Room 14",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
