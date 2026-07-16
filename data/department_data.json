@@ -1230,7 +1230,7 @@
                 },
                 {
                   "day": "Tuesday",
-                  "slotIdx": 0,
+                  "slotIdx": 2,
                   "module": "Oral Communication Practices 1",
                   "instructor": "Retimi C.",
                   "room": "Room 12",
@@ -1238,7 +1238,7 @@
                 },
                 {
                   "day": "Tuesday",
-                  "slotIdx": 1,
+                  "slotIdx": 3,
                   "module": "Oral Communication Practices 1",
                   "instructor": "Retimi C.",
                   "room": "Room 11",
