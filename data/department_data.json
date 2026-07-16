@@ -1506,6 +1506,14 @@
                   "instructor": "Boukhalkhal Y.",
                   "room": "Room 14",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "African Literature",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 13",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
