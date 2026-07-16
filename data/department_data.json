@@ -1514,6 +1514,14 @@
                   "instructor": "Bouchemal A.",
                   "room": "Room 13",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Intelligence artificielle",
+                  "instructor": "Bendecho H.",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
