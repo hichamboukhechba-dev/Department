@@ -1519,6 +1519,14 @@
                   "instructor": "Boukhechba H",
                   "room": "Room 14",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Communicational Practices",
+                  "instructor": "",
+                  "room": "Room 25",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
