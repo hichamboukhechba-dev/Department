@@ -1001,14 +1001,6 @@
                 },
                 {
                   "day": "Monday",
-                  "slotIdx": 2,
-                  "module": "Foreign Language(s) 3",
-                  "instructor": "",
-                  "room": "Room 26",
-                  "group": "GROUP 1 + 2"
-                },
-                {
-                  "day": "Monday",
                   "slotIdx": 3,
                   "module": "Foreign Language(s) 3",
                   "instructor": "Nourani A",
