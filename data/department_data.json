@@ -1546,6 +1546,14 @@
                   "instructor": "",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 0,
+                  "module": "Contemporary British Literature",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
