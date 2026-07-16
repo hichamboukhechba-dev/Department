@@ -1277,6 +1277,14 @@
                   "instructor": "Ouarniki W",
                   "room": "Amphi B",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Research Methodology",
+                  "instructor": "Gatcha Y",
+                  "room": "Amphi B",
+                  "group": ""
                 }
               ],
               "S2": []
