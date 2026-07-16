@@ -1014,6 +1014,14 @@
                   "instructor": "Charrak O.",
                   "room": "Room 25",
                   "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
                 }
               ],
               "S2": []
