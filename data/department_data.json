@@ -1538,6 +1538,14 @@
                   "instructor": "",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "World Arabic Literature",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
