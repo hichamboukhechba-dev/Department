@@ -1038,6 +1038,14 @@
                   "instructor": "Djalab A.",
                   "room": "Room 26",
                   "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Oral Comprehension and Expression 3",
+                  "instructor": "Chelali M.",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
                 }
               ],
               "S2": []
