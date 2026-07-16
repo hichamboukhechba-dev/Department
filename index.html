@@ -3686,7 +3686,7 @@
             const list = tt.entries[state.ttSem];
             const src = list[idx];
             if (!src) return;
-            const copy = { ...src, module: src.module + ' (copy)', instructor: '' };
+            const copy = { ...src, module: src.module, instructor: '' };
             ttSnapshot('duplicate ' + (src.module || 'lesson'));
             list.splice(idx + 1, 0, copy);
             persist();
