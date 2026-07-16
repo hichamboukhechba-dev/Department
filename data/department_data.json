@@ -2759,7 +2759,8 @@
           "Sunday",
           "Monday",
           "Tuesday",
-          "Wednesday"
+          "Wednesday",
+          "Thursday"
         ],
         "examTimings": {},
         "examTimingsV2": true,
