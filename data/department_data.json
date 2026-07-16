@@ -1000,8 +1000,8 @@
                   "group": "GROUP 1 + 2"
                 },
                 {
-                  "day": "Monday",
-                  "slotIdx": 3,
+                  "day": "Wednesday",
+                  "slotIdx": 1,
                   "module": "Foreign Language(s) 3",
                   "instructor": "Nourani A",
                   "room": "Room 26",
