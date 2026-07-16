@@ -1186,8 +1186,8 @@
                   "group": "GROUP 1"
                 },
                 {
-                  "day": "Tuesday",
-                  "slotIdx": 1,
+                  "day": "Wednesday",
+                  "slotIdx": 3,
                   "module": "American Literature",
                   "instructor": "Benderrah A.",
                   "room": "Room 13",
