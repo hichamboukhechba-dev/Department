@@ -1535,6 +1535,14 @@
                   "instructor": "Gatcha Y",
                   "room": "Room 11",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 1,
+                  "module": "Educational psychology",
+                  "instructor": "",
+                  "room": "",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
