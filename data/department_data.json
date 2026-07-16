@@ -992,8 +992,8 @@
                   "group": "GROUP 1 + 2"
                 },
                 {
-                  "day": "Monday",
-                  "slotIdx": 2,
+                  "day": "Wednesday",
+                  "slotIdx": 0,
                   "module": "Foreign Language(s) 3",
                   "instructor": "Nourani A",
                   "room": "Room 26",
