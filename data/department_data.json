@@ -1543,6 +1543,14 @@
                   "instructor": "",
                   "room": "",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "French",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
