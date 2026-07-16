@@ -1453,6 +1453,14 @@
                   "instructor": "",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Second language acquisition",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
