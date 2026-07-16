@@ -1303,7 +1303,16 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Language Teaching Approaches & Methods",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 14",
+                  "group": ""
+                }
+              ],
               "S2": []
             }
           }
