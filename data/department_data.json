@@ -1522,6 +1522,14 @@
                   "instructor": "Bendecho H.",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Research Skills",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
