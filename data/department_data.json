@@ -1232,6 +1232,14 @@
                   "instructor": "",
                   "room": "Room 13",
                   "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Ethics et deontology",
+                  "instructor": "",
+                  "room": "Room 13",
+                  "group": "All Groups"
                 }
               ],
               "S2": []
