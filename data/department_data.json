@@ -1085,8 +1085,8 @@
                   "group": "GROUP 1+2"
                 },
                 {
-                  "day": "Wednesday",
-                  "slotIdx": 1,
+                  "day": "Monday",
+                  "slotIdx": 3,
                   "module": "Linguistics 1",
                   "instructor": "",
                   "room": "Room 12",
@@ -1125,8 +1125,8 @@
                   "group": "GROUP 3 + 4"
                 },
                 {
-                  "day": "Wednesday",
-                  "slotIdx": 1,
+                  "day": "Monday",
+                  "slotIdx": 3,
                   "module": "Civilization, Culture, and Interculturality 1",
                   "instructor": "Otman W",
                   "room": "Room 11",
