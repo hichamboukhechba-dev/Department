@@ -1559,6 +1559,14 @@
                   "instructor": "",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Intelligence artificielle",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
