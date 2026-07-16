@@ -1210,8 +1210,8 @@
                   "group": "Group 1"
                 },
                 {
-                  "day": "Monday",
-                  "slotIdx": 1,
+                  "day": "Thursday",
+                  "slotIdx": 0,
                   "module": "British Literature",
                   "instructor": "Boukhalkhal Y.",
                   "room": "Room 13",
