@@ -1445,6 +1445,14 @@
                   "instructor": "",
                   "room": "",
                   "group": ""
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 1,
+                  "module": "Applied Linguistics",
+                  "instructor": "",
+                  "room": "",
+                  "group": ""
                 }
               ],
               "S2": []
