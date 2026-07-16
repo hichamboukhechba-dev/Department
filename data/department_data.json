@@ -1213,7 +1213,16 @@
               "14:00-15:30"
             ],
             "entries": {
-              "S1": [],
+              "S1": [
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Interculturality",
+                  "instructor": "Rahmouni A",
+                  "room": "Amphi B",
+                  "group": "All Groups"
+                }
+              ],
               "S2": []
             }
           },
