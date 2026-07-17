@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Department Management System v1.7</title>
+    <title>Department Management System v1.8</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Fraunces:opsz,wght@9..144,500..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet" />
@@ -44,6 +44,15 @@
             --ax-td-bd: #ecd8a8;
             --danger: #a12b2b;
             --danger-soft: #faeaea;
+            --plum: #6b3f6e;
+            --plum-soft: #f1e9f2;
+            --plum-bd: #ddc7e0;
+            --slate: #2f5b7a;
+            --slate-soft: #e9eff4;
+            --slate-bd: #c3d5e3;
+            --clay: #a5522f;
+            --clay-soft: #fbede4;
+            --clay-bd: #eac6ae;
             --radius: 14px;
             --radius-sm: 8px;
             --radius-xs: 4px;
@@ -63,7 +72,7 @@
             --font: 'Inter', -apple-system, system-ui, sans-serif;
             --font-display: 'Fraunces', Georgia, serif;
             --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-            --version: 'v1.7';
+            --version: 'v1.8';
         }
 
         html {
@@ -135,7 +144,7 @@
            SIDEBAR — Modern, glassy, refined
            ================================================================ */
         .sidebar {
-            background: var(--sidebar);
+            background: linear-gradient(175deg, #12211c 0%, var(--sidebar) 45%, #0c1512 100%);
             color: var(--sidebar-text);
             padding: 20px 14px 18px;
             overflow-y: auto;
@@ -385,7 +394,10 @@
            ================================================================ */
         .main {
             overflow-y: auto;
-            background: var(--bg);
+            background:
+                radial-gradient(1100px 520px at 100% -8%, rgba(47, 122, 97, 0.05), transparent 60%),
+                radial-gradient(900px 480px at -6% 8%, rgba(165, 105, 22, 0.035), transparent 55%),
+                var(--bg);
             transition: background var(--transition);
         }
 
@@ -979,7 +991,7 @@
             right: 0;
             height: 3px;
             background: var(--brand-gradient);
-            opacity: 0;
+            opacity: 0.55;
             transition: opacity var(--transition);
         }
         .stat:hover::before {
@@ -990,10 +1002,19 @@
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
         }
+        /* Rotate a quiet accent color per card position so a row of stats reads
+           as distinct measures rather than one repeated block. */
+        .stat-grid .stat:nth-of-type(5n+2)::before { background: linear-gradient(135deg, var(--slate) 0%, #4d7d9c 100%); }
+        .stat-grid .stat:nth-of-type(5n+3)::before { background: linear-gradient(135deg, var(--amber) 0%, #c88a2e 100%); }
+        .stat-grid .stat:nth-of-type(5n+4)::before { background: linear-gradient(135deg, var(--plum) 0%, #8a5c8e 100%); }
+        .stat-grid .stat:nth-of-type(5n+5)::before { background: linear-gradient(135deg, var(--clay) 0%, #c46f45 100%); }
         .stat.accent {
             border-color: transparent;
             background: linear-gradient(135deg, #eaf1ed 0%, #dce9e2 100%);
             box-shadow: var(--shadow-sm);
+        }
+        .stat.accent::before {
+            opacity: 1;
         }
         .stat.accent .stat-value {
             color: var(--brand);
@@ -1193,8 +1214,11 @@
         .datatable tr:last-child td {
             border-bottom: none;
         }
-        .datatable tr:hover td {
+        .datatable tbody tr:nth-child(even) td {
             background: var(--surface-2);
+        }
+        .datatable tr:hover td {
+            background: var(--brand-soft);
         }
         .datatable td .row-actions {
             opacity: 0;
@@ -1278,6 +1302,45 @@
         }
         .lesson:hover .actions {
             display: flex;
+        }
+
+        /* ---- Overlap variants: when a slot holds more than one lesson,
+               each one gets a distinct hue so they read apart at a glance ---- */
+        .lesson.b1 {
+            background: var(--slate-soft);
+            border-left-color: var(--slate);
+        }
+        .lesson.b1:hover {
+            border-left-color: var(--slate);
+            box-shadow: 0 6px 20px -8px rgba(47, 91, 122, 0.3);
+        }
+        .lesson.b1 .g {
+            color: var(--slate);
+            border-color: var(--slate-bd);
+        }
+        .lesson.b2 {
+            background: var(--amber-soft);
+            border-left-color: var(--amber);
+        }
+        .lesson.b2:hover {
+            border-left-color: var(--amber);
+            box-shadow: 0 6px 20px -8px rgba(165, 105, 22, 0.3);
+        }
+        .lesson.b2 .g {
+            color: var(--amber);
+            border-color: var(--ax-td-bd);
+        }
+        .lesson.b3 {
+            background: var(--plum-soft);
+            border-left-color: var(--plum);
+        }
+        .lesson.b3:hover {
+            border-left-color: var(--plum);
+            box-shadow: 0 6px 20px -8px rgba(107, 63, 110, 0.3);
+        }
+        .lesson.b3 .g {
+            color: var(--plum);
+            border-color: var(--plum-bd);
         }
 
         /* ---- Room double-booking warning ---- */
@@ -2235,7 +2298,7 @@
         }
         .rep-exam-item {
             display: grid;
-            grid-template-columns: 130px 100px 100px 1fr 140px auto;
+            grid-template-columns: 20px 130px 100px 1fr 140px auto;
             gap: 10px;
             padding: 10px 14px;
             border-bottom: 1px solid var(--border-soft);
@@ -2248,6 +2311,23 @@
         }
         .rep-exam-item:hover {
             background: var(--surface-2);
+        }
+        .rep-exam-item.dragging {
+            opacity: 0.4;
+        }
+        .rep-exam-item.drag-over {
+            background: var(--brand-soft);
+            box-shadow: inset 0 2px 0 var(--brand-3);
+        }
+        .rep-exam-item .rep-drag-handle {
+            cursor: grab;
+            color: var(--text-3);
+            font-size: 14px;
+            text-align: center;
+            user-select: none;
+        }
+        .rep-exam-item .rep-drag-handle:active {
+            cursor: grabbing;
         }
         .rep-exam-item .rep-date {
             font-family: var(--font-display);
@@ -2292,7 +2372,7 @@
             padding: 10px 14px;
             margin-bottom: 6px;
             display: grid;
-            grid-template-columns: 30px 1fr 1fr 1fr 1fr;
+            grid-template-columns: 26px 76px minmax(0, 2fr) minmax(0, 1.15fr) 140px 170px;
             gap: 10px;
             align-items: center;
             font-size: 13px;
@@ -2326,10 +2406,46 @@
         }
         .rep-prefill-suggestion .sug-module {
             font-weight: 500;
+            line-height: 1.3;
+            overflow-wrap: anywhere;
         }
         .rep-prefill-suggestion .sug-teacher {
             color: var(--text-2);
             font-size: 12px;
+            overflow-wrap: anywhere;
+        }
+        .rep-prefill-suggestion .sug-level {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--brand);
+            background: var(--brand-soft);
+            border-radius: 6px;
+            padding: 3px 6px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .rep-prefill-head {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: var(--surface-2);
+            border: none;
+            border-bottom: 1px solid var(--border-soft);
+            border-radius: 0;
+            padding: 8px 14px;
+            margin-bottom: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--text-3);
+        }
+        .rep-prefill-head:hover {
+            background: var(--surface-2);
+            transform: none;
         }
         .rep-prefill-legend {
             font-size: 11px;
@@ -2670,6 +2786,9 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 6px;
             }
+            .rep-exam-item .rep-drag-handle {
+                display: none;
+            }
             .rep-exam-item .rep-actions {
                 opacity: 1;
                 grid-column: span 2;
@@ -2678,6 +2797,9 @@
             .rep-prefill-suggestion {
                 grid-template-columns: 1fr;
                 gap: 6px;
+            }
+            .rep-prefill-head {
+                display: none;
             }
             .rep-prefill-suggestion input[type="checkbox"] {
                 justify-self: start;
@@ -2800,6 +2922,9 @@
             .rep-exam-item .rep-actions {
                 display: none !important;
             }
+            .rep-exam-item .rep-drag-handle {
+                display: none !important;
+            }
             .report-header {
                 border-bottom-color: #1b4d3b !important;
             }
@@ -2835,7 +2960,10 @@
             position: fixed;
             inset: 0;
             z-index: 999;
-            background: rgba(15, 25, 21, 0.75);
+            background:
+                radial-gradient(720px 480px at 18% 12%, rgba(47, 122, 97, 0.35), transparent 60%),
+                radial-gradient(640px 420px at 85% 88%, rgba(165, 105, 22, 0.18), transparent 55%),
+                rgba(12, 21, 18, 0.82);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             display: none;
@@ -2856,6 +2984,33 @@
             box-shadow: var(--shadow-xl);
             animation: modalSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        #loginOverlay .login-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--brand-gradient);
+        }
+        #loginOverlay .login-box::after {
+            content: 'D';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 16px;
+            border-radius: 13px;
+            background: var(--brand-gradient);
+            box-shadow: 0 8px 22px -6px rgba(27, 77, 59, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 20px;
         }
         #loginOverlay .login-box h2 {
             font-size: 26px;
@@ -3748,7 +3903,7 @@
     <div id="loginOverlay">
         <div class="login-box">
             <h2>Department Management</h2>
-            <div class="login-sub">English Department · v1.7</div>
+            <div class="login-sub">English Department · v1.8</div>
             <form id="loginForm" onsubmit="return handleLogin(event)">
                 <div class="field">
                     <label for="loginUser">Username</label>
@@ -7781,22 +7936,10 @@
             if (!checkAuth('exams')) return;
             const d = D();
             const sem = state.examSemester;
-            const alloc = ensureRoomAllocation(d, sem);
-            const slots = getExamSlotsForSemester(d, sem);
-            if (slots.length !== alloc.slots.length) {
-                const newSlots = slots;
-                Object.keys(alloc.rooms).forEach(room => {
-                    const arr = alloc.rooms[room];
-                    if (arr.length < newSlots.length) {
-                        while (arr.length < newSlots.length) arr.push('');
-                    } else if (arr.length > newSlots.length) {
-                        alloc.rooms[room] = arr.slice(0, newSlots.length);
-                    }
-                });
-                alloc.slots = newSlots;
-                persist();
-            }
-            const finalSlots = alloc.slots;
+            const alloc = syncAllocationSlots(d, sem);
+            const scheduleSlots = getExamSlotsForSemester(d, sem);
+            const hasTimes = scheduleSlots.length > 0;
+            const finalSlots = hasTimes ? alloc.slots : [];
             const rooms = Object.keys(alloc.rooms);
             const canEdit = checkEdit('exams');
 
@@ -7805,18 +7948,17 @@
               <div class="page-head">
                 <div>
                   <h1>Room allocation · Semester ${sem.slice(1)}</h1>
-                  <p>Which group sits in which room for each exam time slot. Times come from the <b>exam timings</b> set in the Schedule tab.</p>
+                  <p>Which group sits in which room for each exam time slot. Times are taken directly from the <b>Schedule</b> tab — set each level's start/end time there and the columns here update automatically.</p>
                   <p style="font-size:12px;color:var(--text-3);margin-top:4px">💡 Assignments should include <b>level + group</b> (e.g. <code>L1 GROUP 1</code>, <code>L2 GROUP 2</code>) for correct room lookup when printing student lists.</p>
                 </div>
                 <div class="page-actions">
                   <button class="btn ghost sm" onclick="printRoomAllocation('${sem}')">📄 Print</button>
-                  ${canEdit ? `<button class="btn ghost sm" onclick="editAllocationSlots('${sem}')">Edit times</button>` : ''}
                   ${canEdit ? `<button class="btn" onclick="addAllocationRoom('${sem}')">${ICON.plus} Add room</button>` : ''}
                 </div>
               </div>
               ${examSubtabBar()}
               ${examSemChips()}
-              ${rooms.length===0 ? '<div class="alert warn"><div class="alert-body"><strong>No rooms allocated yet</strong><div style="margin-top:4px">Click "Add room" to start building your allocation.</div></div></div>' : `
+              ${!hasTimes ? `<div class="alert warn"><div class="alert-body"><strong>No exam times set in the Schedule yet</strong><div style="margin-top:4px">Open the <a onclick="state.examTab='schedule';render()" style="cursor:pointer;text-decoration:underline;color:#5a3a05">Schedule</a> tab and set each level's exam start/end time (edit a group). Each distinct time becomes a column here automatically — nothing is stored separately, so this view always mirrors the schedule.</div></div></div>` : rooms.length===0 ? '<div class="alert warn"><div class="alert-body"><strong>No rooms allocated yet</strong><div style="margin-top:4px">Click "Add room" to start building your allocation.</div></div></div>' : `
               <div style="overflow-x:auto">
                 <table class="timetable">
                   <thead><tr><th style="width:140px">Room</th>${finalSlots.map(s=>`<th>${escape(s)}</th>`).join('')}<th style="width:44px"></th></tr></thead>
@@ -7856,19 +7998,25 @@
             return alloc;
         }
 
+        // Collect the distinct exam times that currently exist in the schedule for
+        // this semester. Looks at BOTH the level-wide unified time (examTimings) and
+        // any per-exam time. Returns an empty array when the schedule defines no
+        // times — it deliberately does NOT fall back to previously stored slots, so
+        // clearing the schedule clears the allocation columns instead of leaving
+        // phantom times behind.
         function getExamSlotsForSemester(d, sem) {
             const times = new Set();
             const key = sem === 'S1' ? 'examsS1' : 'examsS2';
             const groups = d[key] || [];
             groups.forEach(g => {
-                const time = d.examTimings[examTimeKey(g.level, sem)];
-                if (time) times.add(time);
+                const lvlTime = d.examTimings[examTimeKey(g.level, sem)];
+                if (lvlTime) times.add(lvlTime);
+                (g.exams || []).forEach(e => {
+                    const t = d.examTimings[examTimeKey(e.level || g.level, sem)] || e.time;
+                    if (t) times.add(t);
+                });
             });
-            if (times.size === 0) {
-                const alloc = d.roomAllocation && d.roomAllocation[sem];
-                if (alloc && alloc.slots && alloc.slots.length) return alloc.slots;
-                return ['09:00 – 10:30', '11:00 – 12:30'];
-            }
+            if (times.size === 0) return [];
             const sorted = [...times].sort((a, b) => {
                 const ma = a.match(/(\d{1,2}):(\d{2})/);
                 const mb = b.match(/(\d{1,2}):(\d{2})/);
@@ -7881,6 +8029,33 @@
                 return a.localeCompare(b);
             });
             return sorted;
+        }
+
+        // Keep the room-allocation time slots in lock-step with the exam-schedule
+        // timings. Re-syncs whenever the number of slots OR their contents change
+        // (e.g. an exam time is edited in the Schedule tab). Room assignments are
+        // preserved by slot position; arrays are padded/truncated to match.
+        // When the schedule defines no times, stored slots/assignments are left
+        // untouched (not destroyed) — the view shows an empty-state instead.
+        function syncAllocationSlots(d, sem) {
+            const alloc = ensureRoomAllocation(d, sem);
+            const newSlots = getExamSlotsForSemester(d, sem);
+            if (newSlots.length === 0) return alloc;
+            const changed = newSlots.length !== alloc.slots.length ||
+                newSlots.some((s, i) => s !== alloc.slots[i]);
+            if (changed) {
+                Object.keys(alloc.rooms).forEach(room => {
+                    const arr = alloc.rooms[room];
+                    if (arr.length < newSlots.length) {
+                        while (arr.length < newSlots.length) arr.push('');
+                    } else if (arr.length > newSlots.length) {
+                        alloc.rooms[room] = arr.slice(0, newSlots.length);
+                    }
+                });
+                alloc.slots = newSlots;
+                persist();
+            }
+            return alloc;
         }
 
         function editAllocationSlots(sem) {
@@ -7949,29 +8124,21 @@
 
         function printRoomAllocation(sem) {
             const d = D();
-            const alloc = ensureRoomAllocation(d, sem);
+            const alloc = syncAllocationSlots(d, sem);
             const slots = getExamSlotsForSemester(d, sem);
-            if (slots.length !== alloc.slots.length) {
-                alloc.slots = slots;
-                Object.keys(alloc.rooms).forEach(room => {
-                    const arr = alloc.rooms[room];
-                    if (arr.length < slots.length) {
-                        while (arr.length < slots.length) arr.push('');
-                    } else if (arr.length > slots.length) {
-                        alloc.rooms[room] = arr.slice(0, slots.length);
-                    }
-                });
-                persist();
+            if (slots.length === 0) {
+                toast('No exam times set in the Schedule tab yet — set them there first.', 'err');
+                return;
             }
             const rooms = Object.keys(alloc.rooms);
             const html =
                 `<div class="print-page">${reportHeaderHTML()}<div class="page-heading">Room allocation · Semester ${sem.slice(1)}</div>
               <table>
-                <thead><tr><th style="width:120px">Room</th>${alloc.slots.map(s=>`<th>${escape(s)}</th>`).join('')}</tr></thead>
+                <thead><tr><th style="width:120px">Room</th>${slots.map(s=>`<th>${escape(s)}</th>`).join('')}</tr></thead>
                 <tbody>
                   ${rooms.map(r => `<tr>
                     <td style="font-weight:600;background:#fbf9f2">${escape(r)}</td>
-                    ${alloc.slots.map((_,i) => `<td>${escape(alloc.rooms[r][i]||'')}</td>`).join('')}
+                    ${slots.map((_,i) => `<td>${escape(alloc.rooms[r][i]||'')}</td>`).join('')}
                   </tr>`).join('')}
                 </tbody>
               </table>
@@ -7986,7 +8153,7 @@
             const d = D();
             const sem = state.examSemester;
             const inv = ensureInvigilation(d, sem);
-            const alloc = ensureRoomAllocation(d, sem);
+            const alloc = syncAllocationSlots(d, sem);
             const rooms = Object.keys(alloc.rooms);
             const counts = teacherSessionCounts(inv);
             const sortedCounts = Object.entries(counts).sort((a, b) => b[1] - a[1]);
@@ -9068,7 +9235,13 @@
                         filteredExams.map((e, ei) => {
                           const idx = exams.indexOf(e);
                           return `
-                            <div class="rep-exam-item">
+                            <div class="rep-exam-item" draggable="${canEdit}"
+                              ondragstart="${canEdit ? `onReplExamDragStart(event,'${sem}',${idx})` : ''}"
+                              ondragend="${canEdit ? 'onReplExamDragEnd(event)' : ''}"
+                              ondragover="${canEdit ? `onReplExamDragOver(event,'${sem}','${escape(room).replace(/'/g,"\\'")}')` : ''}"
+                              ondragleave="${canEdit ? 'onReplExamDragLeave(event)' : ''}"
+                              ondrop="${canEdit ? `onReplExamDrop(event,'${sem}','${escape(room).replace(/'/g,"\\'")}',${idx})` : ''}">
+                              ${canEdit ? `<div class="rep-drag-handle" title="Drag to reorder">⠿</div>` : '<div></div>'}
                               <div class="rep-date">${escape(formatDate(e.date))}</div>
                               <div class="rep-time-range">${escape(formatTimeRange(e.startTime, e.endTime))}</div>
                               <div class="rep-module">${escape(e.module)}</div>
@@ -9082,7 +9255,7 @@
                         }).join('')
                       }
                     </div>
-                    ${filteredExams.length > 0 ? `<div style="font-size:10px;color:var(--text-3);margin-top:4px;padding-left:4px">💡 Click edit to change date, time, module, or teacher.</div>` : ''}
+                    ${filteredExams.length > 0 ? `<div style="font-size:10px;color:var(--text-3);margin-top:4px;padding-left:4px">💡 Click edit to change date, time, module, or teacher. Drag ⠿ to reorder exams within this room.</div>` : ''}
                   </div>
                 `;
               }).join('')}
@@ -9232,10 +9405,6 @@
                     }
                     repl.exams.push({ room: room, date: date, startTime: startTime, endTime: endTime,
                         module: moduleName, teacher: teacher, level: baseLevel });
-                    repl.exams.sort((a, b) => {
-                        if (a.date !== b.date) return a.date.localeCompare(b.date);
-                        return (a.startTime || '').localeCompare(b.startTime || '');
-                    });
                     persist();
                     toast(`Exam added: ${moduleName} · ${teacher} · ${formatDate(date)} ${startTime}–${endTime}`);
                 }
@@ -9311,10 +9480,6 @@
                     repl.exams[idx] = { room: exam.room, date: v.date, startTime: v.startTime,
                         endTime: v.endTime, module: moduleName, teacher: v.teacher.trim(),
                         level: baseLevel };
-                    repl.exams.sort((a, b) => {
-                        if (a.date !== b.date) return a.date.localeCompare(b.date);
-                        return (a.startTime || '').localeCompare(b.startTime || '');
-                    });
                     persist();
                     toast('Exam updated');
                 }
@@ -9344,6 +9509,53 @@
             if (!confirm2('Delete this replacement exam?')) return;
             D().replacementExams[sem].exams.splice(idx, 1);
             persist();
+        }
+
+        // Manual reordering of replacement exams (within the same room)
+        let replExamDragKey = null;
+
+        function onReplExamDragStart(ev, sem, idx) {
+            if (!checkEdit('exams')) { toast('Read-only mode', 'err'); return; }
+            replExamDragKey = { sem, idx };
+            ev.dataTransfer.effectAllowed = 'move';
+            try { ev.dataTransfer.setData('text/plain', String(idx)); } catch (e) {}
+            ev.currentTarget.classList.add('dragging');
+        }
+
+        function onReplExamDragEnd(ev) {
+            ev.currentTarget.classList.remove('dragging');
+            replExamDragKey = null;
+            document.querySelectorAll('.rep-exam-item.drag-over').forEach(r => r.classList.remove('drag-over'));
+        }
+
+        function onReplExamDragOver(ev, sem, room) {
+            if (!replExamDragKey || replExamDragKey.sem !== sem) return;
+            const list = D().replacementExams[sem].exams;
+            const srcExam = list[replExamDragKey.idx];
+            if (!srcExam || srcExam.room !== room) return;
+            ev.preventDefault();
+            ev.dataTransfer.dropEffect = 'move';
+            ev.currentTarget.classList.add('drag-over');
+        }
+
+        function onReplExamDragLeave(ev) { ev.currentTarget.classList.remove('drag-over'); }
+
+        function onReplExamDrop(ev, sem, room, targetIdx) {
+            ev.preventDefault();
+            ev.currentTarget.classList.remove('drag-over');
+            if (!replExamDragKey || replExamDragKey.sem !== sem) { replExamDragKey = null; return; }
+            const fromIdx = replExamDragKey.idx;
+            replExamDragKey = null;
+            if (fromIdx === targetIdx) return;
+            const list = D().replacementExams[sem].exams;
+            const srcExam = list[fromIdx];
+            const tgtExam = list[targetIdx];
+            if (!srcExam || !tgtExam || srcExam.room !== room || tgtExam.room !== room) return;
+            const [moved] = list.splice(fromIdx, 1);
+            const insertAt = targetIdx > fromIdx ? targetIdx - 1 : targetIdx;
+            list.splice(insertAt, 0, moved);
+            persist();
+            toast(`${moved.module || 'Exam'} reordered`);
         }
 
         function buildModuleTeacherMap(d) {
@@ -9386,10 +9598,12 @@
                 const modules = getModulesForLevelSemExcludingTD(d, baseLevel, sem);
                 const allModsForLevel = getModulesForLevelSem(d, baseLevel, sem);
                 const dataMap = getCourseDataMap(d, baseLevel, sem);
+                const td100Set = new Set();
                 allModsForLevel.forEach(mod => {
                     const data = dataMap[mod];
-                    if (data && is100PercentTD(data.ca, data.exam)) skipped100TD++;
+                    if (data && is100PercentTD(data.ca, data.exam)) td100Set.add(mod.trim().toLowerCase());
                 });
+                skipped100TD += td100Set.size;
 
                 const existing = new Set(repl.exams.filter(e => e.room === room).map(e => e.module.trim()
                     .toLowerCase()));
@@ -9402,16 +9616,20 @@
                         if (e.module) ttModules.add(e.module.trim());
                     });
                 }
-                const extraModules = [...ttModules].filter(m => !modules.some(c => c.trim().toLowerCase() === m
-                    .toLowerCase()));
+                const extraModules = [...ttModules].filter(m => {
+                    const ml = m.trim().toLowerCase();
+                    if (modules.some(c => c.trim().toLowerCase() === ml)) return false;
+                    if (td100Set.has(ml)) return false; // never resurrect a 100% TD module via the timetable
+                    return true;
+                });
 
                 const allMods = [...available, ...extraModules];
                 const uniqueMods = [...new Set(allMods)];
 
                 if (!uniqueMods.length) return;
 
-                const timeSlots = ['09:00', '10:00', '11:00', '12:00', '13:00'];
-                const endTimes = ['10:00', '11:00', '12:00', '13:00', '14:00'];
+                const timeSlots = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00'];
+                const endTimes = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00'];
 
                 uniqueMods.forEach((mod, i) => {
                     const slotIdx = i % timeSlots.length;
@@ -9444,8 +9662,9 @@
             const suggestionHTML = unique.map((s, i) => {
                 const checked = s.selected ? 'checked' : '';
                 return `
-                  <div class="rep-prefill-suggestion" style="grid-template-columns:30px 1fr 1fr 1fr 1fr;">
+                  <div class="rep-prefill-suggestion">
                     <input type="checkbox" ${checked} data-idx="${i}">
+                    <span class="sug-level" title="${escape(s.level)}">${escape(s.level)}</span>
                     <span class="sug-module">${escape(s.module)}</span>
                     <span class="sug-teacher">${escape(s.teacher)}</span>
                     <input type="date" value="${escape(s.date)}" data-idx="${i}" class="sug-date">
@@ -9467,11 +9686,14 @@
               <div class="rep-prefill-legend">
                 <span><span class="dot-example today" style="background:var(--brand-soft)"></span> Today (${escape(todayStr)})</span>
                 <span><span class="dot-example tomorrow" style="background:var(--amber-soft)"></span> Tomorrow (${escape(tomorrowStr)})</span>
-                <span>🕐 1‑hour slots from 9:00 to 14:00</span>
+                <span>🕐 1‑hour slots from 9:00 to 15:00</span>
                 <span style="float:right"><button class="btn ghost sm" onclick="document.querySelectorAll('.rep-prefill-suggestion input[type=checkbox]').forEach(c=>c.checked=true)">Select all</button>
                 <button class="btn ghost sm" onclick="document.querySelectorAll('.rep-prefill-suggestion input[type=checkbox]').forEach(c=>c.checked=false)">Deselect all</button></span>
               </div>
               <div style="max-height:400px;overflow-y:auto;border:1px solid var(--border-soft);border-radius:8px;padding:4px 0;background:var(--surface-2)">
+                <div class="rep-prefill-suggestion rep-prefill-head">
+                  <span></span><span>Level</span><span>Module</span><span>Teacher</span><span>Date</span><span>Time</span>
+                </div>
                 ${suggestionHTML}
               </div>
               <div style="margin-top:16px;display:flex;gap:8px;justify-content:flex-end">
@@ -15412,6 +15634,11 @@
         window.addReplacementExam = addReplacementExam;
         window.editReplacementExam = editReplacementExam;
         window.deleteReplacementExam = deleteReplacementExam;
+        window.onReplExamDragStart = onReplExamDragStart;
+        window.onReplExamDragEnd = onReplExamDragEnd;
+        window.onReplExamDragOver = onReplExamDragOver;
+        window.onReplExamDragLeave = onReplExamDragLeave;
+        window.onReplExamDrop = onReplExamDrop;
         window.editTeacher = editTeacher;
         window.deleteTeacher = deleteTeacher;
         window.editDelegate = editDelegate;
