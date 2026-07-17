@@ -1,8 +1,8 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Department Management System v1.8</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -2741,8 +2741,25 @@
             .app {
                 grid-template-columns: 1fr;
             }
+            /* Sidebar becomes an off-canvas drawer on mobile */
             .sidebar {
-                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 84vw;
+                max-width: 300px;
+                z-index: 200;
+                transform: translateX(-100%);
+                transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+                padding-top: calc(20px + env(safe-area-inset-top));
+                padding-bottom: calc(18px + env(safe-area-inset-bottom));
+                box-shadow: none;
+                will-change: transform;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+                box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.55);
             }
             .search input {
                 max-width: 160px;
@@ -3893,6 +3910,224 @@
             display: inline-block;
             border: 1px solid rgba(0, 0, 0, 0.15);
         }
+
+        /* ================================================================
+           MOBILE FRIENDLINESS — drawer nav, touch targets, scrollable
+           tables, safe areas. Additive; desktop layout is unchanged.
+           ================================================================ */
+
+        /* Hamburger button — hidden on desktop, shown in the topbar on mobile */
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            margin-left: -6px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: background var(--transition), border-color var(--transition);
+        }
+        .menu-toggle:active {
+            background: var(--surface-3);
+        }
+        .menu-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Dim scrim behind the open drawer */
+        .sidebar-scrim {
+            position: fixed;
+            inset: 0;
+            z-index: 150;
+            background: rgba(15, 25, 21, 0.5);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .sidebar-scrim.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Close (X) button inside the drawer — mobile only */
+        .sidebar-close {
+            display: none;
+            position: absolute;
+            top: calc(14px + env(safe-area-inset-top));
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--sidebar-border);
+            background: var(--sidebar-2);
+            color: var(--sidebar-text);
+            border-radius: 8px;
+            font-size: 18px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .sidebar-close:active {
+            background: var(--sidebar-3);
+        }
+
+        /* Horizontal-scroll wrapper injected around wide tables on mobile.
+           On desktop it is a transparent pass-through (no clipping). */
+        .mtbl-scroll {
+            max-width: 100%;
+        }
+
+        /* On touch devices, hover-revealed row actions never appear — force
+           them visible so edit/delete stay usable. */
+        @media (hover: none) {
+            .datatable td .row-actions,
+            .exam-row .row-actions,
+            .curr-row .row-actions,
+            .rep-exam-item .rep-actions,
+            .sup-group-body table td .row-actions,
+            .student-table-wrap table td .row-actions {
+                opacity: 1 !important;
+            }
+            .chip .chip-actions {
+                display: flex !important;
+            }
+            /* Remove hover-scale jitter that can stick on tap */
+            .icon-btn:active {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: inline-flex;
+            }
+            .sidebar-close {
+                display: inline-flex;
+            }
+            /* Scrollable wide tables */
+            .mtbl-scroll {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior-x: contain;
+                border-radius: var(--radius);
+            }
+            .mtbl-scroll > .timetable,
+            .mtbl-scroll > .datatable {
+                min-width: 560px;
+            }
+            /* Bigger nav touch targets */
+            .nav a {
+                padding: 12px 12px;
+                font-size: 14.5px;
+                border-radius: 12px;
+            }
+            .nav-section {
+                padding: 16px 10px 6px;
+            }
+            .year-btn {
+                padding: 9px 8px;
+                font-size: 12px;
+            }
+            .year-picker select {
+                font-size: 16px;
+                padding: 10px 12px;
+            }
+            .sidebar-footer button {
+                padding: 10px 12px;
+            }
+            /* Prevent iOS auto-zoom on focus (inputs must be >= 16px) */
+            .field input,
+            .field select,
+            .field textarea,
+            .search input,
+            .login-box input {
+                font-size: 16px;
+            }
+            /* Topbar: tidy, with safe-area padding on notched phones */
+            .topbar {
+                padding: 10px max(16px, env(safe-area-inset-right)) 10px max(14px, env(safe-area-inset-left));
+                gap: 10px;
+            }
+            /* The page-zoom slider is redundant on mobile (native pinch-zoom) */
+            .zoom-control {
+                display: none;
+            }
+            .crumb {
+                flex: 1;
+                min-width: 0;
+            }
+            .page {
+                padding-bottom: calc(64px + env(safe-area-inset-bottom));
+            }
+            /* Slightly larger tap targets for compact action buttons */
+            .icon-btn {
+                width: 34px;
+                height: 34px;
+            }
+            .icon-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+            .tab {
+                padding: 12px 16px;
+                font-size: 13.5px;
+            }
+            .btn {
+                min-height: 40px;
+            }
+            .app-footer {
+                padding-bottom: calc(16px + env(safe-area-inset-bottom));
+            }
+        }
+
+        @media (max-width: 500px) {
+            /* Full-width, bottom-anchored modal that behaves like a sheet */
+            .modal-backdrop {
+                padding: 0;
+                align-items: flex-end;
+            }
+            .modal {
+                max-width: 100%;
+                max-height: 92vh;
+                border-radius: 20px 20px 0 0;
+                padding: 22px 18px calc(20px + env(safe-area-inset-bottom));
+            }
+            .modal-actions {
+                flex-direction: column-reverse;
+            }
+            .modal-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .field-row2 {
+                grid-template-columns: 1fr;
+            }
+            .page {
+                padding-left: max(14px, env(safe-area-inset-left));
+                padding-right: max(14px, env(safe-area-inset-right));
+            }
+        }
+
+        /* Never show mobile-only chrome on desktop */
+        @media (min-width: 901px) {
+            .menu-toggle,
+            .sidebar-scrim,
+            .sidebar-close {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3933,6 +4168,7 @@
     ================================================================ -->
     <div class="app">
         <aside class="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()" aria-label="Close menu">&times;</button>
             <div class="brand">
                 <div class="brand-mark">D</div>
                 <div>
@@ -4016,8 +4252,13 @@
             </div>
         </aside>
 
+        <div class="sidebar-scrim" id="sidebarScrim" onclick="closeSidebar()" aria-hidden="true"></div>
+
         <main class="main">
             <div class="topbar">
+                <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
                 <div class="crumb" id="crumb"><b>Dashboard</b></div>
                 <div class="save-indicator" id="saveIndicator" title="Storage status">
                     <span class="dot"></span>
@@ -15716,6 +15957,92 @@
         };
         window.stopAutoReload = stopAutoReload;
         window.startAutoReload = startAutoReload;
+    </script>
+
+    <!-- ================================================================
+         MOBILE ENHANCEMENTS — off-canvas nav drawer + scrollable tables.
+         Self-contained; runs after the main app script.
+         ================================================================ -->
+    <script>
+        (function () {
+            var MOBILE_BP = 900;
+            function sidebarEl() { return document.querySelector('.sidebar'); }
+            function scrimEl() { return document.getElementById('sidebarScrim'); }
+            function toggleBtn() { return document.getElementById('menuToggle'); }
+            function isMobile() { return window.matchMedia('(max-width: ' + MOBILE_BP + 'px)').matches; }
+
+            function openSidebar() {
+                var s = sidebarEl(); if (!s) return;
+                s.classList.add('open');
+                var sc = scrimEl(); if (sc) sc.classList.add('open');
+                var b = toggleBtn(); if (b) { b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', 'Close menu'); }
+            }
+            function closeSidebar() {
+                var s = sidebarEl(); if (s) s.classList.remove('open');
+                var sc = scrimEl(); if (sc) sc.classList.remove('open');
+                var b = toggleBtn(); if (b) { b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Open menu'); }
+            }
+            function toggleSidebar() {
+                var s = sidebarEl();
+                if (s && s.classList.contains('open')) closeSidebar(); else openSidebar();
+            }
+
+            // Expose for inline onclick handlers
+            window.toggleSidebar = toggleSidebar;
+            window.openSidebar = openSidebar;
+            window.closeSidebar = closeSidebar;
+
+            // Close the drawer after any navigation / footer action inside it
+            var sb = sidebarEl();
+            if (sb) {
+                sb.addEventListener('click', function (e) {
+                    if (e.target.closest('a[data-view], .sidebar-footer button, .year-actions .year-btn')) {
+                        // let the original handler run first, then slide the drawer away
+                        setTimeout(closeSidebar, 60);
+                    }
+                });
+            }
+
+            // Escape closes the drawer
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeSidebar();
+            });
+
+            // Reset state when leaving mobile width
+            window.addEventListener('resize', function () {
+                if (!isMobile()) closeSidebar();
+            });
+
+            // ---- Auto-wrap wide tables so they scroll horizontally on mobile ----
+            var pageEl = document.getElementById('page');
+            function wrapTables(root) {
+                if (!root) return;
+                var tables = root.querySelectorAll('table.timetable, table.datatable');
+                for (var i = 0; i < tables.length; i++) {
+                    var t = tables[i];
+                    var p = t.parentElement;
+                    // Skip if already inside our wrapper or an existing overflow container
+                    if (p && p.classList && p.classList.contains('mtbl-scroll')) continue;
+                    if (p && p.style && (p.style.overflowX === 'auto' || p.style.overflowX === 'scroll')) continue;
+                    var w = document.createElement('div');
+                    w.className = 'mtbl-scroll';
+                    t.parentNode.insertBefore(w, t);
+                    w.appendChild(t);
+                }
+            }
+            if (pageEl) {
+                wrapTables(pageEl);
+                // Re-wrap whenever a view re-renders (#page.innerHTML is replaced).
+                // Disconnect during our own mutations to avoid a feedback loop.
+                var mo = new MutationObserver(function () {
+                    mo.disconnect();
+                    try { wrapTables(pageEl); } finally {
+                        mo.observe(pageEl, { childList: true, subtree: true });
+                    }
+                });
+                mo.observe(pageEl, { childList: true, subtree: true });
+            }
+        })();
     </script>
 
 </body>
