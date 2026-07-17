@@ -44,10 +44,10 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Barboura S",
             "nameAr": "بربورة السبخاوي",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
             "phone": "",
             "emails": [
               "s.barboura@univ-djelfa.dz",
