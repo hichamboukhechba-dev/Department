@@ -36,6 +36,12 @@
             --accent: #8a3b2c;
             --amber: #a56916;
             --amber-soft: #fbf4e3;
+            --ax-exam-ink: #35529c;
+            --ax-exam-soft: #eef2fc;
+            --ax-exam-bd: #ccd8f4;
+            --ax-td-ink: #8a5c12;
+            --ax-td-soft: #fbf3e0;
+            --ax-td-bd: #ecd8a8;
             --danger: #a12b2b;
             --danger-soft: #faeaea;
             --radius: 14px;
@@ -381,6 +387,104 @@
             overflow-y: auto;
             background: var(--bg);
             transition: background var(--transition);
+        }
+
+        /* ================================================================
+           ZOOM CONTROL — main view zoom slider
+           ================================================================ */
+        .zoom-control {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+            flex-shrink: 0;
+        }
+        .zoom-control:hover {
+            border-color: #ccc7bb;
+        }
+        .zoom-control .zoom-btn {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border: none;
+            background: transparent;
+            color: var(--text-2);
+            border-radius: 50%;
+            font-size: 15px;
+            line-height: 1;
+            transition: all var(--transition);
+        }
+        .zoom-control .zoom-btn:hover {
+            background: var(--brand-soft);
+            color: var(--brand);
+        }
+        .zoom-control .zoom-btn svg {
+            width: 13px;
+            height: 13px;
+        }
+        .zoom-control input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 84px;
+            height: 3px;
+            border-radius: 999px;
+            background: var(--border);
+            outline: none;
+            cursor: pointer;
+        }
+        .zoom-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--brand-2);
+            border: 2px solid var(--surface);
+            box-shadow: 0 0 0 1px var(--brand-2);
+            cursor: pointer;
+            transition: transform var(--transition);
+        }
+        .zoom-control input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+        .zoom-control input[type="range"]::-moz-range-thumb {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--brand-2);
+            border: 2px solid var(--surface);
+            box-shadow: 0 0 0 1px var(--brand-2);
+            cursor: pointer;
+        }
+        .zoom-control input[type="range"]::-moz-range-track {
+            height: 3px;
+            border-radius: 999px;
+            background: var(--border);
+        }
+        .zoom-control .zoom-pct {
+            font-size: 11px;
+            font-variant-numeric: tabular-nums;
+            color: var(--text-2);
+            width: 34px;
+            text-align: center;
+            user-select: none;
+            cursor: default;
+            flex-shrink: 0;
+        }
+        .zoom-control .zoom-pct:hover {
+            color: var(--brand);
+        }
+        @media (max-width: 720px) {
+            .zoom-control input[type="range"] {
+                width: 56px;
+            }
         }
 
         /* ================================================================
@@ -1106,6 +1210,89 @@
             display: flex;
         }
 
+        /* ---- Room double-booking warning ---- */
+        .lesson.has-clash {
+            border-left-color: var(--danger);
+            background: var(--danger-soft);
+            box-shadow: 0 0 0 1px rgba(161, 43, 43, 0.35), var(--shadow-sm);
+        }
+        .lesson.has-clash:hover {
+            border-left-color: var(--danger);
+            box-shadow: 0 6px 20px -8px rgba(161, 43, 43, 0.42);
+        }
+        .lesson .r.clash {
+            color: var(--danger);
+            font-weight: 700;
+            background: #fff;
+            border: 1px solid #e6b8b8;
+            padding: 1px 7px;
+            border-radius: 6px;
+            cursor: help;
+        }
+        @keyframes roomClashPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(161, 43, 43, 0.55), var(--shadow-sm); }
+            70%  { box-shadow: 0 0 0 12px rgba(161, 43, 43, 0), var(--shadow-sm); }
+            100% { box-shadow: 0 0 0 0 rgba(161, 43, 43, 0), var(--shadow-sm); }
+        }
+        .lesson.has-clash.clash-pulse {
+            animation: roomClashPulse 1.1s ease-out 2;
+        }
+        .clash-banner {
+            background: #fdeeee;
+            border: 1px solid #f0c5c5;
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+        .clash-banner .cb-title {
+            color: #8f2727;
+            font-weight: 700;
+            font-size: 13.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .clash-row {
+            font-size: 12.5px;
+            color: var(--text);
+            padding: 6px 0 2px;
+            border-top: 1px dashed #f0c5c5;
+            margin-top: 6px;
+        }
+        .clash-row.first {
+            border-top: none;
+            margin-top: 8px;
+        }
+        .clash-row .clash-where {
+            font-weight: 600;
+            color: #8f2727;
+        }
+        .clash-chip {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #e6b8b8;
+            color: #8f2727;
+            border-radius: 6px;
+            padding: 2px 9px;
+            margin: 4px 4px 0 0;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background var(--transition), color var(--transition);
+        }
+        .clash-chip:hover {
+            background: #8f2727;
+            color: #fff;
+        }
+        .btn.room-clash-alarm {
+            background: var(--danger);
+            border-color: var(--danger);
+            color: #fff;
+        }
+        .btn.room-clash-alarm:hover {
+            filter: brightness(1.08);
+        }
+
         /* ---- Teacher tooltip (hover schedule) ---- */
         .teacher-tooltip {
             position: fixed;
@@ -1417,6 +1604,10 @@
         }
         .exam-row .row-actions {
             opacity: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: flex-end;
         }
         .exam-row:hover .row-actions {
             opacity: 1;
@@ -1470,6 +1661,52 @@
         .curr-row:hover .row-actions {
             opacity: 1;
         }
+
+        /* ================================================================
+           ASSESSMENT COLOUR-CODING  (curriculum pills + timetable tags)
+           Exam split = blue · TD (continuous assessment) = amber.
+           100% components are drawn solid ("full"); partial splits tinted
+           ("soft"); no data shows a muted dash.
+           ================================================================ */
+        .assess {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 42px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.55;
+            letter-spacing: -0.01em;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+        .assess.none {
+            background: transparent;
+            color: var(--text-3);
+            font-weight: 500;
+            min-width: 0;
+            padding: 0;
+            border: 0;
+        }
+        .assess.exam.soft { background: var(--ax-exam-soft); color: var(--ax-exam-ink); border-color: var(--ax-exam-bd); }
+        .assess.td.soft   { background: var(--ax-td-soft);   color: var(--ax-td-ink);   border-color: var(--ax-td-bd); }
+        .assess.exam.full { background: #3d5aa8; color: #ffffff; border-color: #35529c; }
+        .assess.td.full   { background: #e6ac2e; color: #3f2e07; border-color: #cf9721; }
+
+        /* inline "(TD 40% · Exam 60%)" tag next to a timetable module name */
+        .assess-tag {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--text-3);
+            white-space: nowrap;
+            letter-spacing: -0.02em;
+        }
+        .assess-tag .ax-exam { color: var(--ax-exam-ink); font-weight: 700; }
+        .assess-tag .ax-td   { color: var(--ax-td-ink);   font-weight: 700; }
 
         /* ================================================================
            MODAL — elevated, smooth
@@ -3300,6 +3537,12 @@
             --accent: #d08a75;
             --amber: #d4a145;
             --amber-soft: #33290f;
+            --ax-exam-ink: #9db4ec;
+            --ax-exam-soft: #1c2640;
+            --ax-exam-bd: #33436e;
+            --ax-td-ink: #e0b45e;
+            --ax-td-soft: #322612;
+            --ax-td-bd: #574618;
             --danger: #d46a6a;
             --danger-soft: #351b1b;
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -3544,7 +3787,7 @@
                 <button onclick="logout()">🚪 Sign out</button>
                 <button onclick="setView('settings')">↳ Data &amp; Backup</button>
                 <div style="margin-top:8px;font-size:10px;color:var(--sidebar-text-3)">Auto-saved to your account and, if linked, to a file on your computer.</div>
-                <div class="version">Version 2.0.0</div>
+                <div class="version">Version 2.14.0</div>
             </div>
         </aside>
 
@@ -3569,11 +3812,22 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                     <input id="search" placeholder="Search…" />
                 </div>
+                <div class="zoom-control" id="zoomControl" title="Zoom main view">
+                    <button class="zoom-btn" onclick="stepPageZoom(-10)" title="Zoom out" aria-label="Zoom out">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <input type="range" id="zoomSlider" min="50" max="150" step="10" value="100"
+                        oninput="setPageZoom(this.value)" aria-label="Zoom level" />
+                    <button class="zoom-btn" onclick="stepPageZoom(10)" title="Zoom in" aria-label="Zoom in">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <span class="zoom-pct" id="zoomPct" onclick="setPageZoom(100)" title="Reset to 100%">100%</span>
+                </div>
             </div>
             <div class="page" id="page"></div>
             <div class="app-footer">
                 Designed by <strong>Dr. Boukhechba Hicham</strong>
-                <span class="version-tag">v2.0.0</span>
+                <span class="version-tag">v2.14.0</span>
                 <span style="margin:0 8px;color:var(--border-soft)">·</span>
                 English Department · University of Djelfa
             </div>
@@ -3591,7 +3845,7 @@
         // ================================================================
         //  VERSION
         // ================================================================
-        const APP_VERSION = '2.0.0';
+        const APP_VERSION = '2.14.0';
 
         // ================================================================
         //  APPEARANCE (theme / font / size / density) — per-device settings
@@ -3686,7 +3940,7 @@
             const list = tt.entries[state.ttSem];
             const src = list[idx];
             if (!src) return;
-            const copy = { ...src, module: src.module, instructor: '' };
+            const copy = { ...src, module: src.module , instructor: '' };
             ttSnapshot('duplicate ' + (src.module || 'lesson'));
             list.splice(idx + 1, 0, copy);
             persist();
@@ -3970,7 +4224,7 @@
         // Academic grades – add any missing ones from your data
         const GRADES = ['', 'MAA', 'MCB', 'MCA', 'Professor', 'Assistant Professor', 'Senior Lecturer', 'Lecturer'];
         const APPEARANCE_KEY = 'dept_appearance';
-        const APPEARANCE_DEFAULTS = { theme: 'classic', font: 'default', size: 100, density: 'comfortable' };
+        const APPEARANCE_DEFAULTS = { theme: 'classic', font: 'default', size: 100, density: 'comfortable', ttAssess: true };
         const APPEARANCE_FONTS = {
             default: {
                 label: 'Default (Inter + Fraunces)',
@@ -4046,6 +4300,49 @@
         // Apply saved appearance as early as possible (works on the login screen too)
         if (document.body) loadAppearance();
         else document.addEventListener('DOMContentLoaded', loadAppearance);
+
+        // ================================================================
+        //  MAIN VIEW ZOOM — quick slider in the topbar, independent of
+        //  the sidebar/topbar and separate from the appearance font-size
+        //  setting. Only scales the #page content area.
+        // ================================================================
+        const PAGE_ZOOM_KEY = 'dept_page_zoom';
+        let pageZoom = 100;
+
+        function applyPageZoom() {
+            const pageEl = document.getElementById('page');
+            if (pageEl) pageEl.style.zoom = pageZoom === 100 ? '' : (pageZoom / 100);
+            const slider = document.getElementById('zoomSlider');
+            if (slider) slider.value = pageZoom;
+            const pct = document.getElementById('zoomPct');
+            if (pct) pct.textContent = pageZoom + '%';
+        }
+
+        function setPageZoom(value) {
+            pageZoom = Math.max(50, Math.min(150, Math.round((+value || 100) / 10) * 10));
+            try { localStorage.setItem(PAGE_ZOOM_KEY, String(pageZoom)); } catch (e) {}
+            applyPageZoom();
+        }
+
+        function stepPageZoom(delta) {
+            setPageZoom(pageZoom + delta);
+        }
+
+        function loadPageZoom() {
+            try {
+                const raw = localStorage.getItem(PAGE_ZOOM_KEY);
+                if (raw) pageZoom = Math.max(50, Math.min(150, +raw || 100));
+            } catch (e) {}
+            applyPageZoom();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadPageZoom);
+        } else {
+            loadPageZoom();
+        }
+        window.setPageZoom = setPageZoom;
+        window.stepPageZoom = stepPageZoom;
 
         // List of all available views (sections)
         const VIEWS_LIST = ['dashboard', 'timetables', 'exams', 'curriculum', 'students', 'teachers', 'extrahours', 'delegates', 'rooms',
@@ -4130,7 +4427,9 @@
             studentLevel: '',
             studentGroup: '',
             studentSort: 'familyName',
-            currentUser: null
+            currentUser: null,
+            roomsSem: 'S1',
+            roomsSelected: null
         };
 
         // ================================================================
@@ -6206,6 +6505,45 @@
             });
         }
 
+        // ================================================================
+        //  ASSESSMENT COLOUR-CODING  (curriculum pills + timetable tags)
+        //  Exam split shown in blue, TD (continuous assessment) in amber.
+        //  A 100% component is drawn "full" (solid); partial splits are
+        //  "soft" (tinted). The timetable tag omits any 0% side, so a 100%
+        //  module shows only its single component.
+        // ================================================================
+        function fmtPct(n) {
+            const r = Math.round(n * 10) / 10;
+            return (Number.isInteger(r) ? r : r.toFixed(1)) + '%';
+        }
+        function assessNum(v) {
+            if (v === null || v === undefined || v === '') return null;
+            const n = typeof v === 'number' ? v : parseFloat(v);
+            return isNaN(n) ? null : n;
+        }
+        // One coloured pill for the curriculum Exam / TD columns. kind = 'exam' | 'td'
+        function assessPill(value, kind) {
+            const n = assessNum(value);
+            if (n === null) return '<span class="assess none">\u2014</span>';
+            const level = n >= 100 ? 'full' : 'soft';
+            return '<span class="assess ' + kind + ' ' + level + '">' + fmtPct(n) + '</span>';
+        }
+        // Timetable "(TD \u00b7 Exam)" tag on/off — saved per device via appearance.
+        function ttAssessOn() { return appearance.ttAssess !== false; }
+        function toggleTtAssess() { setAppearance('ttAssess', !ttAssessOn()); }
+        // Inline "(TD 40% \u00b7 Exam 60%)" tag for one lesson. data = { ca, exam }.
+        // Only components > 0 are shown, so a 100% side hides the 0% side.
+        function ttAssessTag(data) {
+            if (!ttAssessOn() || !data) return '';
+            const ca = assessNum(data.ca);
+            const exam = assessNum(data.exam);
+            const parts = [];
+            if (ca !== null && ca > 0)   parts.push('<span class="ax-td">TD ' + fmtPct(ca) + '</span>');
+            if (exam !== null && exam > 0) parts.push('<span class="ax-exam">Exam ' + fmtPct(exam) + '</span>');
+            if (!parts.length) return '';
+            return ' <span class="assess-tag">(' + parts.join(' \u00b7 ') + ')</span>';
+        }
+
         function ensureLevelTt(d, level) {
             if (!d.timetables[level]) {
                 d.timetables[level] = {
@@ -6600,6 +6938,11 @@
                 if (e.slotIdx < tt.slots.length) grid[e.day][e.slotIdx].push({ ...e, __idx: idx });
             });
             const courses = getModulesForLevelSem(d, state.ttLevel, sem);
+            // Module -> {ca, exam} for this level+semester (case-insensitive),
+            // used by the assessment tag shown next to each lesson below.
+            const _assessMap = getCourseDataMap(d, state.ttLevel, sem);
+            const assessByModule = {};
+            Object.keys(_assessMap).forEach(k => { assessByModule[k.trim().toLowerCase()] = _assessMap[k]; });
             const missing = getMissingModules(d, state.ttLevel, sem);
             const scheduledSet = new Set((tt.entries[sem] || []).map(e => (e.module || '').trim().toLowerCase()));
             const curriculumSet = new Set(courses.map(c => c.trim().toLowerCase()));
@@ -6607,6 +6950,42 @@
             const noTeacher = (tt.entries[sem] || []).map((e, i) => Object.assign({ __idx: i }, e))
                 .filter(e => (e.module || '').trim() && !(e.instructor || '').trim());
             const canEdit = checkEdit('timetables');
+
+            // Room double-booking check (across all levels of this semester)
+            const roomClashMap = computeRoomClashes(d, sem);
+            const roomClashKeys = Object.keys(roomClashMap);
+            const roomClashCount = roomClashKeys.length;
+            const clashByIdx = {}; // entry index (this level) -> array of the OTHER lessons it clashes with
+            roomClashKeys.forEach(k => {
+                roomClashMap[k].forEach(item => {
+                    if (item.level === state.ttLevel) {
+                        clashByIdx[item.idx] = roomClashMap[k].filter(o => o !== item);
+                    }
+                });
+            });
+            const roomCheckBtn = roomClashCount
+                ? `<button class="btn sm room-clash-alarm" onclick="refreshRoomCheck()" title="A room is booked for more than one lesson at the same time. Click to re-highlight and jump to the clashes.">🔄 Room clashes: ${roomClashCount}</button>`
+                : `<button class="btn ghost sm" onclick="refreshRoomCheck()" title="Check whether any room is booked twice at the same time">🔄 Check rooms</button>`;
+            let clashBanner = '';
+            if (roomClashCount) {
+                const rows = roomClashKeys.map((k, ri) => {
+                    const arr = roomClashMap[k];
+                    const first = arr[0];
+                    const chips = arr.map(o => {
+                        const jump = (o.level !== state.ttLevel)
+                            ? `state.ttLevel='${escape(o.level)}';state.ttSem='${sem}';refreshRoomCheck()`
+                            : `refreshRoomCheck()`;
+                        const label = escape(o.level) + (o.module ? ' · ' + escape(o.module) : '') + (o.group ? ' (' + escape(o.group) + ')' : '');
+                        return `<span class="clash-chip" onclick="${jump}" title="Go to this lesson">${label}</span>`;
+                    }).join('');
+                    return `<div class="clash-row ${ri === 0 ? 'first' : ''}"><span class="clash-where">📍 ${escape(first.room)} · ${escape(first.day)} · ${escape(first.slotLabel)}</span> — booked by ${arr.length} lessons:<div>${chips}</div></div>`;
+                }).join('');
+                clashBanner = `<div class="clash-banner">
+                    <div class="cb-title">⚠ ${roomClashCount} room double-booking${roomClashCount > 1 ? 's' : ''} detected</div>
+                    <div style="font-size:11.5px;color:#7a3030;margin-top:2px">The same room is scheduled for more than one lesson at the same time. The room is shown in <b style="color:var(--danger)">red</b> on the grid below. Click a lesson to jump to it.</div>
+                    ${rows}
+                </div>`;
+            }
 
             document.getElementById('page').innerHTML = `
               ${showPermissionBanner('timetables')}
@@ -6622,6 +7001,8 @@
                   <button class="btn ghost sm" onclick="printCurrentTimetable()">📄 Print this</button>
                   <button class="btn ghost sm" onclick="printAllTimetables()">📄 Print all</button>
                   <button class="btn ghost sm" onclick="openTimetablePrintSettings()" title="Customize timetable printing: orientation, font, text size, line thickness">⚙️ Print settings</button>
+                  <button class="btn ghost sm" onclick="toggleTtAssess()" title="Show or hide the (TD % · Exam %) split shown next to each module. Saved on this device only.">🏷️ Split: <b style="margin-left:4px;color:${ttAssessOn()?'var(--brand-3)':'var(--text-3)'}">${ttAssessOn()?'On':'Off'}</b></button>
+                  ${roomCheckBtn}
                   ${canEdit ? `<button class="btn ghost sm" onclick="ttUndo()" ${ttUndoStack.length ? '' : 'disabled style="opacity:.45;cursor:not-allowed"'} title="${ttUndoStack.length ? 'Undo: ' + escape(ttUndoStack[ttUndoStack.length-1].label) + ' (Ctrl+Z)' : 'Nothing to undo yet'}">↶ Undo${ttUndoStack.length ? ' (' + ttUndoStack.length + ')' : ''}</button>` : ''}
                   ${canEdit ? `<button class="btn ghost sm" onclick="editSlots()">Edit slots</button>` : ''}
                   ${canEdit ? `<button class="btn ghost sm" onclick="editDays()">📅 Edit days</button>` : ''}
@@ -6650,6 +7031,7 @@
                 <div style="margin-top:4px;font-size:12.5px">${extras.map(m=>`<span class="chip-mini" style="cursor:default">${escape(m)}</span>`).join('')}</div>
                 <div style="margin-top:6px;font-size:11.5px;color:#7a5a15">Add to curriculum if these are official, or edit the lesson to fix.</div>
               </div></div>` : ''}
+              ${clashBanner}
               <div style="overflow-x:auto">
               <table class="timetable">
                 <thead><tr><th>Day</th>${tt.slots.map(s=>`<th>${escape(s)}</th>`).join('')}</tr></thead>
@@ -6659,7 +7041,7 @@
                       <td class="day">${day}</td>
                       ${tt.slots.map((_,i)=>{const cell = grid[day][i];
                         return `<td ondragover="onCellDragOver(event)" ondragleave="onCellDragLeave(event)" ondrop="onCellDrop(event, '${day}', ${i})">${cell.map((e,ci)=>`
-                          <div class="lesson ${ci>0?'b'+((ci%3)+1):''}" draggable="${canEdit}" ondragstart="${canEdit ? `onLessonDragStart(event, ${e.__idx})` : ''}" ondragend="${canEdit ? 'onLessonDragEnd(event)' : ''}" onclick="${canEdit ? `editTimetableEntry(${e.__idx})` : ''}" title="${canEdit ? 'Click to edit · drag to move' : 'Read-only'}">
+                          <div class="lesson ${ci>0?'b'+((ci%3)+1):''}${clashByIdx[e.__idx]?' has-clash':''}" draggable="${canEdit}" ondragstart="${canEdit ? `onLessonDragStart(event, ${e.__idx})` : ''}" ondragend="${canEdit ? 'onLessonDragEnd(event)' : ''}" onclick="${canEdit ? `editTimetableEntry(${e.__idx})` : ''}" title="${canEdit ? 'Click to edit · drag to move' : 'Read-only'}">
                             ${canEdit ? `<div class="actions">
                               ${cell.length > 1 ? `
                               <button class="icon-btn" onclick="event.stopPropagation();moveLessonInCell(${e.__idx},-1)" title="Move up within this slot" ${ci===0?'disabled style="opacity:.25;cursor:default"':''}>▲</button>
@@ -6667,14 +7049,14 @@
                               <button class="icon-btn" onclick="event.stopPropagation();duplicateTimetableEntry(${e.__idx})" title="Duplicate (blank copy, no teacher)">⧉</button>
                               <button class="icon-btn danger" onclick="event.stopPropagation();deleteTimetableEntry(${e.__idx})" title="Delete">${ICON.del}</button>
                             </div>` : ''}
-                            <div class="m">${escape(e.module)}</div>
+                            <div class="m">${escape(e.module)}${ttAssessTag(assessByModule[(e.module||'').trim().toLowerCase()])}</div>
                             <div class="i">
                               ${(e.instructor||'').trim()
                                 ? `<span class="teacher-tooltip-trigger" data-teacher="${escape(e.instructor).replace(/"/g,'&quot;')}" data-sem="${escape(sem)}" style="cursor:pointer;border-bottom:1px dashed var(--brand-3);padding-bottom:1px;">${escape(e.instructor)}</span>`
                                 : '<span style="color:var(--danger);font-weight:600">⚠ no teacher</span>'}
                             </div>
                             <div style="margin-top:3px">
-                              <span class="r">📍 ${escape(e.room||'—')}</span>
+                              <span class="r${clashByIdx[e.__idx]?' clash':''}"${clashByIdx[e.__idx]?` title="${escape(roomClashTitle(clashByIdx[e.__idx]))}"`:''}>${clashByIdx[e.__idx]?'⚠':'📍'} ${escape(e.room||'—')}</span>
                               ${e.group?`<span class="g">${escape(e.group)}</span>`:''}
                             </div>
                           </div>`).join('')}
@@ -6693,6 +7075,76 @@
             `;
         }
 
+
+        // ---- ROOM DOUBLE-BOOKING DETECTION ----
+        // A room is "taken twice" when the SAME room is scheduled for more than
+        // one lesson on the same day and same time slot — across ALL levels of
+        // the given semester. "Online" and blank rooms are ignored (no physical
+        // capacity limit). Slot labels are matched exactly, the same way
+        // findTeacherConflicts() matches them.
+        function computeRoomClashes(d, sem) {
+            const levels = getCurriculumLevels(d);
+            const buckets = {};
+            levels.forEach(level => {
+                const tt = ensureLevelTt(d, level);
+                const list = (tt.entries && tt.entries[sem]) || [];
+                list.forEach((e, idx) => {
+                    const room = (e.room || '').trim();
+                    if (!room || room === '—') return;
+                    if (/^\s*online\s*$/i.test(room)) return; // online is not a physical room
+                    const slotLabel = ((tt.slots && tt.slots[e.slotIdx]) || '').trim();
+                    if (!slotLabel) return;
+                    const day = e.day || '';
+                    const key = day + '\u0001' + slotLabel + '\u0001' + room.toLowerCase();
+                    (buckets[key] = buckets[key] || []).push({
+                        level, idx, room, day, slotLabel,
+                        module: (e.module || '').trim(),
+                        instructor: (e.instructor || '').trim(),
+                        group: (e.group || '').trim()
+                    });
+                });
+            });
+            const clashes = {};
+            Object.keys(buckets).forEach(k => { if (buckets[k].length > 1) clashes[k] = buckets[k]; });
+            return clashes;
+        }
+
+        // Tooltip text shown on a room that is double-booked.
+        function roomClashTitle(others) {
+            if (!others || !others.length) return '';
+            const first = others[0];
+            const parts = others.map(o =>
+                o.level + (o.module ? ' — ' + o.module : '') + (o.group ? ' (' + o.group + ')' : ''));
+            return '⚠ Room clash: ' + first.room + ' is also booked ' + first.day + ' ' +
+                first.slotLabel + ' by ' + parts.join('; ');
+        }
+
+        // Re-highlight every room clash: re-render, flash the offending lessons,
+        // scroll to the first one, and report a summary.
+        function refreshRoomCheck() {
+            render();
+            setTimeout(function () {
+                const clashes = computeRoomClashes(D(), state.ttSem);
+                const keys = Object.keys(clashes);
+                if (keys.length) {
+                    pulseRoomClashes();
+                    const lessons = new Set();
+                    keys.forEach(k => clashes[k].forEach(o => lessons.add(o.level + '\u0001' + o.idx)));
+                    toast('⚠ ' + keys.length + ' room clash' + (keys.length > 1 ? 'es' : '') +
+                        ' — ' + lessons.size + ' lessons highlighted in red', 'err');
+                } else {
+                    toast('✓ No room clashes — every room is free at its scheduled time', 'ok');
+                }
+            }, 30);
+        }
+
+        function pulseRoomClashes() {
+            const els = Array.prototype.slice.call(document.querySelectorAll('.lesson.has-clash'));
+            if (!els.length) return;
+            els.forEach(el => { el.classList.remove('clash-pulse'); void el.offsetWidth; el.classList.add('clash-pulse'); });
+            try { els[0].scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+            setTimeout(() => els.forEach(el => el.classList.remove('clash-pulse')), 2600);
+        }
 
         // --- teacher tooltip init after DOM ready ---
         document.addEventListener('DOMContentLoaded', function() {
@@ -9103,6 +9555,139 @@
             persist();
         }
 
+        // ---- TEACHERS · EXCEL EXPORT / IMPORT ----
+        // Columns: Name | Name (Arabic) | Status | Grade | Phone | Emails | Administrative Role | Role (Arabic)
+        // Emails are stored as an array; exported joined by "; " and split on ; or , on import.
+        async function exportTeachersExcel() {
+            const d = D();
+            if (!d.teachers || !d.teachers.length) { toast('No teachers to export', 'err'); return; }
+            try {
+                const XLSX = await loadSheetJS();
+                const header = ['Name', 'Name (Arabic)', 'Status', 'Grade', 'Phone', 'Emails', 'Administrative Role', 'Role (Arabic)'];
+                const rows = [header];
+                d.teachers.forEach(t => {
+                    rows.push([
+                        t.name || '',
+                        t.nameAr || '',
+                        t.kind || '',
+                        t.grade || '',
+                        t.phone || '',
+                        (t.emails || []).filter(Boolean).map(e => String(e).trim()).join('; '),
+                        t.role || '',
+                        t.roleAr || ''
+                    ]);
+                });
+                const ws = XLSX.utils.aoa_to_sheet(rows);
+                ws['!cols'] = [{ wch: 26 }, { wch: 22 }, { wch: 20 }, { wch: 10 }, { wch: 16 }, { wch: 34 }, { wch: 26 }, { wch: 22 }];
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Teachers');
+                const filename = `teachers_${store.years[store.activeIdx].name.replace(/\//g, '-')}.xlsx`;
+                XLSX.writeFile(wb, filename);
+                toast('Exported ' + filename, 'ok');
+            } catch (e) {
+                toast('Export failed: ' + e.message, 'err');
+                console.error(e);
+            }
+        }
+
+        async function importTeachersExcel() {
+            if (!checkEdit('teachers')) { toast('Read-only mode', 'err'); return; }
+            try {
+                const XLSX = await loadSheetJS();
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.xlsx,.xls';
+                input.onchange = async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    try {
+                        const data = await file.arrayBuffer();
+                        const wb = XLSX.read(data, { type: 'array' });
+                        const d = D();
+                        const sheetName = wb.SheetNames.find(n => n.trim().toLowerCase() === 'teachers') || wb.SheetNames[0];
+                        if (!sheetName) { toast('No sheet found in file.', 'err'); return; }
+                        const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1 });
+                        let headerIdx = -1;
+                        for (let i = 0; i < Math.min(rows.length, 6); i++) {
+                            const row = (rows[i] || []).map(c => String(c || '').trim().toLowerCase());
+                            if (row.includes('name')) { headerIdx = i; break; }
+                        }
+                        if (headerIdx === -1) { toast('Could not find a header row with a "Name" column.', 'err'); return; }
+                        const header = rows[headerIdx].map(c => String(c || '').trim().toLowerCase());
+                        const find = (...names) => header.findIndex(h => names.includes(h));
+                        const cName = find('name');
+                        const cNameAr = find('name (arabic)', 'name arabic', 'namear', 'arabic name');
+                        const cKind = find('status', 'kind', 'type');
+                        const cGrade = find('grade');
+                        const cPhone = find('phone', 'telephone', 'tel');
+                        const cEmails = find('emails', 'email', 'e-mail', 'e-mails');
+                        const cRole = find('administrative role', 'role', 'admin role', 'admin. role');
+                        const cRoleAr = find('role (arabic)', 'rolear', 'administrative role (arabic)', 'arabic role');
+                        if (cName === -1) { toast('No "Name" column found.', 'err'); return; }
+
+                        const norm = s => String(s || '').trim().toLowerCase();
+                        const normalizeKind = k => {
+                            const s = norm(k);
+                            if (s.includes('perman')) return 'Permanent Teachers';
+                            if (s.includes('tempor')) return 'Temporary Teachers';
+                            return k ? String(k).trim() : 'Permanent Teachers';
+                        };
+                        const index = {};
+                        d.teachers.forEach((t, i) => { index[norm(t.name)] = i; });
+
+                        let added = 0, updated = 0;
+                        for (let i = headerIdx + 1; i < rows.length; i++) {
+                            const row = rows[i];
+                            if (!row) continue;
+                            const name = String(row[cName] || '').trim();
+                            if (!name) continue;
+                            const emails = cEmails >= 0
+                                ? String(row[cEmails] || '').split(/[;,]/).map(s => s.trim()).filter(Boolean)
+                                : [];
+                            const rec = {
+                                name,
+                                nameAr: cNameAr >= 0 ? String(row[cNameAr] || '').trim() : '',
+                                kind: cKind >= 0 ? normalizeKind(row[cKind]) : 'Permanent Teachers',
+                                grade: cGrade >= 0 ? String(row[cGrade] || '').trim() : '',
+                                phone: cPhone >= 0 ? String(row[cPhone] || '').trim() : '',
+                                emails,
+                                role: cRole >= 0 ? String(row[cRole] || '').trim() : '',
+                                roleAr: cRoleAr >= 0 ? String(row[cRoleAr] || '').trim() : ''
+                            };
+                            // Auto-fill Arabic role for known roles when left blank (mirrors the editor)
+                            if (!rec.roleAr && typeof ROLE_AR_MAP !== 'undefined' && ROLE_AR_MAP[rec.role]) {
+                                rec.roleAr = ROLE_AR_MAP[rec.role];
+                            }
+                            const key = norm(name);
+                            if (index[key] !== undefined) {
+                                const existing = d.teachers[index[key]] || {};
+                                // don't wipe existing emails if the imported cell is empty
+                                if (!rec.emails.length && existing.emails && existing.emails.length) rec.emails = existing.emails;
+                                d.teachers[index[key]] = rec;
+                                updated++;
+                            } else {
+                                d.teachers.push(rec);
+                                index[key] = d.teachers.length - 1;
+                                added++;
+                            }
+                        }
+                        if (added || updated) {
+                            persist();
+                            toast(`Imported teachers · ${added} added, ${updated} updated`, 'ok');
+                        } else {
+                            toast('No teachers imported. Ensure the "Name" column has values.', 'err');
+                        }
+                    } catch (err) {
+                        toast('Import failed: ' + err.message, 'err');
+                        console.error(err);
+                    }
+                };
+                input.click();
+            } catch (err) {
+                toast('Excel library not loaded: ' + err.message, 'err');
+            }
+        }
+
         function collectTeacherEmails(teachers) {
             const set = new Set();
             teachers.forEach(t => (t.emails || []).forEach(e => { if (e && /@/.test(e)) set.add(e.trim()); }));
@@ -9153,6 +9738,20 @@
                     if ((e.instructor || '').trim().toLowerCase() === nameLC) {
                         out.push({ level, day: e.day, slotIdx: e.slotIdx, slot: tt.slots[e.slotIdx] || '',
                             module: e.module || '', room: e.room || '', group: e.group || '' });
+                    }
+                });
+            });
+            return out;
+        }
+
+        function roomLessons(d, room, sem) {
+            const nameLC = (room || '').trim().toLowerCase();
+            const out = [];
+            Object.entries(d.timetables || {}).forEach(([level, tt]) => {
+                (tt.entries?.[sem] || []).forEach(e => {
+                    if ((e.room || '').trim().toLowerCase() === nameLC) {
+                        out.push({ level, day: e.day, slotIdx: e.slotIdx, slot: (tt.slots || [])[e.slotIdx] || '',
+                            module: e.module || '', instructor: e.instructor || '', group: e.group || '' });
                     }
                 });
             });
@@ -9380,11 +9979,12 @@
                 ).join('')}
               </div>
               <table class="datatable">
-                <thead><tr><th>Name</th><th>Name (Arabic)</th><th>Status</th><th>Phone</th><th>Email</th><th></th></tr></thead>
+                <thead><tr><th>Name</th><th>Name (Arabic)</th><th>Status</th><th>Phone</th><th>Email</th><th>Sessions</th><th></th></tr></thead>
                 <tbody>
                   ${filtered.map(t=>{
                     const firstEmail = (t.emails||[]).find(e=>e && /@/.test(e));
                     const exempt = isExemptFromInvigilation(t);
+                    const sessCount = teacherLessons(D(),t.name,'S1').length + teacherLessons(D(),t.name,'S2').length;
                     return `
                     <tr>
                       <td>
@@ -9395,6 +9995,7 @@
                       <td><span class="badge ${(t.kind||'').toLowerCase().includes('perman')?'perm':'temp'}">${(t.kind||'').toLowerCase().includes('perman')?'Permanent':'Temporary'}</span></td>
                       <td class="mono">${t.phone?escape(t.phone):'—'}</td>
                       <td>${(t.emails||[]).map(e=>`<div><a href="mailto:${escape(e.trim())}" style="font-size:12.5px">${escape(e.trim())}</a></div>`).join('')||'—'}</td>
+                      <td style="text-align:center"><span class="badge" style="background:var(--brand-soft);color:var(--brand)" title="${sessCount} session${sessCount!==1?'s':''} assigned (S1 + S2)">${sessCount}</span></td>
                       <td>
                         <div class="row-actions">
                           <button class="icon-btn" title="View schedule" onclick="openTeacherSchedule(${t.__i})">
@@ -10909,6 +11510,157 @@
             persist();
         }
 
+        // ---- CURRICULUM · EXCEL EXPORT / IMPORT ----
+        // Three canvases (LMD / Didactics / Lit·Civ) are written as three sheets.
+        // Each sheet lists every course across all its semesters; the Semester
+        // column groups rows back into semesters on import.
+        // Columns: Semester | Core Unit | Course | Credits | Coefficient | Lecture | TD | Total (15w) | Exam % | CA (TD) %
+        const CURRICULUM_CANVASES = [
+            { key: 'lmd', sheet: 'LMD' },
+            { key: 'didactics', sheet: 'Didactics' },
+            { key: 'litciv', sheet: 'LitCiv' }
+        ];
+
+        function curriculumCanvasKeyFromSheet(sheetName) {
+            const canon = String(sheetName || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+            if (canon === 'lmd') return 'lmd';
+            if (canon === 'didactics') return 'didactics';
+            if (canon === 'litciv' || canon === 'litcivilisation' ||
+                canon === 'litcivilization' || canon === 'literaturecivilisation') return 'litciv';
+            return null;
+        }
+
+        async function exportCurriculumExcel() {
+            const d = D();
+            try {
+                const XLSX = await loadSheetJS();
+                const wb = XLSX.utils.book_new();
+                const header = ['Semester', 'Core Unit', 'Course', 'Credits', 'Coefficient', 'Lecture', 'TD', 'Total (15w)', 'Exam %', 'CA (TD) %'];
+                CURRICULUM_CANVASES.forEach(cv => {
+                    const semesters = d[cv.key] || [];
+                    const rows = [header.slice()];
+                    semesters.forEach(sem => {
+                        (sem.courses || []).forEach(c => {
+                            rows.push([
+                                sem.label || '',
+                                c.unit || '',
+                                c.course || '',
+                                c.credits ?? '',
+                                c.coef ?? '',
+                                c.lecture || '',
+                                c.td || '',
+                                c.total || '',
+                                c.exam ?? '',
+                                c.ca ?? ''
+                            ]);
+                        });
+                    });
+                    const ws = XLSX.utils.aoa_to_sheet(rows);
+                    ws['!cols'] = [{ wch: 16 }, { wch: 24 }, { wch: 42 }, { wch: 7 }, { wch: 11 }, { wch: 10 }, { wch: 10 }, { wch: 12 }, { wch: 8 }, { wch: 11 }];
+                    XLSX.utils.book_append_sheet(wb, ws, cv.sheet);
+                });
+                const filename = `curriculum_${store.years[store.activeIdx].name.replace(/\//g, '-')}.xlsx`;
+                XLSX.writeFile(wb, filename);
+                toast('Exported ' + filename, 'ok');
+            } catch (e) {
+                toast('Export failed: ' + e.message, 'err');
+                console.error(e);
+            }
+        }
+
+        async function importCurriculumExcel() {
+            if (!checkEdit('curriculum')) { toast('Read-only mode', 'err'); return; }
+            try {
+                const XLSX = await loadSheetJS();
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.xlsx,.xls';
+                input.onchange = async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    try {
+                        const data = await file.arrayBuffer();
+                        const wb = XLSX.read(data, { type: 'array' });
+                        const d = D();
+                        const num = v => {
+                            if (v === '' || v === null || v === undefined) return null;
+                            const n = parseFloat(String(v).replace(',', '.'));
+                            return isNaN(n) ? null : n;
+                        };
+                        let totalCourses = 0, semTotal = 0;
+                        const touchedSheets = [];
+                        wb.SheetNames.forEach(sheetName => {
+                            const key = curriculumCanvasKeyFromSheet(sheetName);
+                            if (!key) return;
+                            const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1 });
+                            if (!rows.length) return;
+                            let headerIdx = -1;
+                            for (let i = 0; i < Math.min(rows.length, 6); i++) {
+                                const row = (rows[i] || []).map(c => String(c || '').trim().toLowerCase());
+                                if (row.includes('course') || row.includes('semester') || row.includes('core unit')) { headerIdx = i; break; }
+                            }
+                            if (headerIdx === -1) return;
+                            const header = rows[headerIdx].map(c => String(c || '').trim().toLowerCase());
+                            const find = (...names) => header.findIndex(h => names.includes(h));
+                            const cSem = find('semester', 'sem', 'label');
+                            const cUnit = find('core unit', 'unit', 'core_unit');
+                            const cCourse = find('course', 'course title', 'module', 'title');
+                            const cCredits = find('credits', 'credit', 'cr');
+                            const cCoef = find('coefficient', 'coef', 'coeff', 'coefficient (coef)');
+                            const cLecture = find('lecture', 'lecture (hours)', 'cours', 'cm');
+                            const cTd = find('td', 'tutorials', 'tutorials — td (hours)', 'td (hours)');
+                            const cTotal = find('total (15w)', 'total', 'total hours', 'total (15 weeks)', 'total (15 w)');
+                            const cExam = find('exam %', 'exam', 'exam evaluation (%)', 'exam%', 'exam (%)');
+                            const cCa = find('ca (td) %', 'ca', 'continuous evaluation td (%)', 'ca %', 'ca%', 'ca (td)', 'ca (td)%');
+                            if (cCourse === -1) return;
+
+                            const order = [];
+                            const bucket = {};
+                            for (let i = headerIdx + 1; i < rows.length; i++) {
+                                const row = rows[i];
+                                if (!row) continue;
+                                const courseTitle = String(row[cCourse] || '').trim();
+                                if (!courseTitle) continue;
+                                const semLabel = cSem >= 0 ? String(row[cSem] || '').trim() : '';
+                                const label = semLabel || 'Unlabelled';
+                                if (!bucket[label]) { bucket[label] = []; order.push(label); }
+                                bucket[label].push({
+                                    unit: cUnit >= 0 ? String(row[cUnit] || '').trim() : '',
+                                    course: courseTitle,
+                                    credits: cCredits >= 0 ? num(row[cCredits]) : null,
+                                    coef: cCoef >= 0 ? num(row[cCoef]) : null,
+                                    lecture: cLecture >= 0 ? String(row[cLecture] || '').trim() : '',
+                                    td: cTd >= 0 ? String(row[cTd] || '').trim() : '',
+                                    total: cTotal >= 0 ? String(row[cTotal] || '').trim() : '',
+                                    exam: cExam >= 0 ? num(row[cExam]) : null,
+                                    ca: cCa >= 0 ? num(row[cCa]) : null
+                                });
+                                totalCourses++;
+                            }
+                            if (!order.length) return;
+                            // Replace this canvas entirely with the sheet's contents (clean round-trip).
+                            d[key] = order.map(label => ({ label, courses: bucket[label] }));
+                            semTotal += order.length;
+                            touchedSheets.push(sheetName.trim());
+                        });
+                        if (touchedSheets.length) {
+                            if (state.currSem == null || state.currSem < 0) state.currSem = 0;
+                            persist();
+                            toast(`Imported ${totalCourses} course${totalCourses === 1 ? '' : 's'} · ${semTotal} semester${semTotal === 1 ? '' : 's'} · ${touchedSheets.join(', ')}`, 'ok');
+                        } else {
+                            toast('No data imported. Name sheets "LMD", "Didactics", or "LitCiv", each with a "Course" column.', 'err');
+                        }
+                    } catch (err) {
+                        toast('Import failed: ' + err.message, 'err');
+                        console.error(err);
+                    }
+                };
+                input.click();
+            } catch (err) {
+                toast('Excel library not loaded: ' + err.message, 'err');
+            }
+        }
+
         function viewCurriculum() {
             if (!checkAuth('curriculum')) return;
             const src = D()[currentCurr()];
@@ -10939,7 +11691,7 @@
               ${!sem ? '<p style="color:var(--text-2)">No semesters yet.</p>' : `
               <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)">
                 <div class="curr-header">
-                  <span>Core unit</span><span>Course</span><span>Cr</span><span>Coef</span><span>Lecture</span><span>TD</span><span>Total</span><span>Exam</span><span>CA</span><span></span>
+                  <span>Core unit</span><span>Course</span><span>Cr</span><span>Coef</span><span>Lecture</span><span>Hours</span><span>Total</span><span>Exam</span><span>TD</span><span></span>
                 </div>
                 ${sem.courses.map((c,ci)=>`
                   <div class="curr-row">
@@ -10950,8 +11702,8 @@
                     <span class="num">${escape(c.lecture||'—')}</span>
                     <span class="num">${escape(c.td||'—')}</span>
                     <span class="num">${escape(c.total||'—')}</span>
-                    <span class="num">${c.exam!=null?c.exam+'%':'—'}</span>
-                    <span class="num">${c.ca!=null?c.ca+'%':'—'}</span>
+                    ${assessPill(c.exam,'exam')}
+                    ${assessPill(c.ca,'td')}
                     ${canEdit ? rowActions(()=>editCourse(ci),()=>deleteCourse(ci)) : ''}
                   </div>
                 `).join('')}
@@ -11011,31 +11763,37 @@
             if (!checkAuth('rooms')) return;
             crumb('Facilities', 'Rooms & Students');
             const canEdit = checkEdit('rooms');
+            const d = D();
+            if (!(state.roomsSelected >= 0 && state.roomsSelected < d.rooms.length)) {
+                state.roomsSelected = d.rooms.length ? 0 : null;
+            }
+            if (!['S1', 'S2'].includes(state.roomsSem)) state.roomsSem = 'S1';
             document.getElementById('page').innerHTML = `
               ${showPermissionBanner('rooms')}
               <div class="page-head">
                 <div><h1>Rooms & Student counts</h1></div>
               </div>
               <div class="card">
-                <div class="card-head"><h3>Rooms (${D().rooms.length})</h3>${canEdit ? `<button class="btn sm" onclick="editRoom(null)">${ICON.plus} Add</button>` : ''}</div>
+                <div class="card-head"><h3>Rooms (${d.rooms.length})</h3>${canEdit ? `<button class="btn sm" onclick="editRoom(null)">${ICON.plus} Add</button>` : ''}</div>
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px">
-                  ${D().rooms.map((r,i)=>`
-                    <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;position:relative">
+                  ${d.rooms.map((r,i)=>`
+                    <div onclick="state.roomsSelected=${i};render()" style="background:${state.roomsSelected===i?'var(--brand-soft)':'#fff'};border:1px solid ${state.roomsSelected===i?'var(--brand)':'var(--border)'};border-radius:8px;padding:14px;text-align:center;position:relative;cursor:pointer;transition:background var(--transition),border-color var(--transition)">
                       <div style="font-family:Fraunces;font-size:18px;font-weight:600;color:var(--brand)">${escape(r)}</div>
                       ${canEdit ? `<div style="position:absolute;top:6px;right:6px;display:flex;gap:2px">
-                        <button class="icon-btn" onclick="editRoom(${i})">${ICON.edit}</button>
-                        <button class="icon-btn danger" onclick="deleteRoom(${i})">${ICON.del}</button>
+                        <button class="icon-btn" onclick="event.stopPropagation();editRoom(${i})">${ICON.edit}</button>
+                        <button class="icon-btn danger" onclick="event.stopPropagation();deleteRoom(${i})">${ICON.del}</button>
                       </div>` : ''}
                     </div>
                   `).join('')}
                 </div>
               </div>
+              ${d.rooms.length ? roomAvailabilityCardHTML(d) : ''}
               <div class="card">
                 <div class="card-head"><h3>Students by level</h3>${canEdit ? `<button class="btn sm" onclick="editStudentCount(null)">${ICON.plus} Add level</button>` : ''}</div>
                 <table class="datatable" style="border:none">
                   <thead><tr><th>Level</th><th>Students</th><th></th></tr></thead>
                   <tbody>
-                    ${D().studentCounts.map((s,i)=>`
+                    ${d.studentCounts.map((s,i)=>`
                       <tr>
                         <td style="font-weight:500">${escape(s.level)}</td>
                         <td class="mono" style="font-size:14px;color:var(--brand);font-weight:600">${s.count||0}</td>
@@ -11044,6 +11802,62 @@
                     `).join('')}
                   </tbody>
                 </table>
+              </div>
+            `;
+        }
+
+        // Builds the "Room availability" card: a weekly grid (days × slots)
+        // for the selected room and semester, showing which slots are booked
+        // (with the level/module/instructor occupying them) versus free.
+        function roomAvailabilityCardHTML(d) {
+            const room = d.rooms[state.roomsSelected];
+            const sem = state.roomsSem;
+            const lessons = roomLessons(d, room, sem);
+            const slots = unifiedSlots(d);
+            const daysList = getDays(d);
+            const grid = {};
+            daysList.forEach(day => { grid[day] = slots.map(_ => []); });
+            lessons.forEach(l => {
+                const si = slots.indexOf(l.slot);
+                if (si >= 0 && grid[l.day]) grid[l.day][si].push(l);
+            });
+            const totalSlotsCount = daysList.length * slots.length;
+            const bookedCount = daysList.reduce((sum, day) => sum + grid[day].filter(c => c.length).length, 0);
+            const freeCount = totalSlotsCount - bookedCount;
+            return `
+              <div class="card">
+                <div class="card-head">
+                  <h3>Room availability · ${escape(room)}</h3>
+                  <div style="display:flex;gap:6px">
+                    ${['S1','S2'].map(s=>`<button class="tab ${sem===s?'active':''}" onclick="state.roomsSem='${s}';render()">Semester ${s.slice(1)}</button>`).join('')}
+                  </div>
+                </div>
+                <p style="margin:-6px 0 12px;color:var(--text-2)">${bookedCount} booked · ${freeCount} free out of ${totalSlotsCount} slots this week</p>
+                ${!slots.length ? `<div class="alert warn"><div class="alert-body"><strong>No timetable slots defined yet</strong><div style="margin-top:4px">Set up a level's timetable first to see slot times here.</div></div></div>` : `
+                <div style="overflow-x:auto">
+                  <table class="timetable">
+                    <thead><tr><th>Day</th>${slots.map(s=>`<th>${escape(s)}</th>`).join('')}</tr></thead>
+                    <tbody>
+                      ${daysList.map(day=>`
+                        <tr>
+                          <td class="day">${day}</td>
+                          ${slots.map((_,i)=>{const cell = grid[day][i];
+                            if(!cell.length) return `<td><div class="empty" style="color:var(--brand-3);font-weight:600">Available</div></td>`;
+                            return `<td>${cell.map(l=>`
+                              <div class="lesson" style="cursor:default">
+                                <div class="m">${escape(l.module)}</div>
+                                <div class="i">${escape(l.level)}</div>
+                                <div style="margin-top:3px">
+                                  ${l.instructor?`<span class="r">${escape(l.instructor)}</span>`:''}
+                                  ${l.group?`<span class="g">${escape(l.group)}</span>`:''}
+                                </div>
+                              </div>`).join('')}</td>`;
+                          }).join('')}
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                </div>`}
               </div>
             `;
         }
@@ -13159,6 +13973,13 @@
                       ${densities.map(([k, label]) => opt(appearance.density === k, `setAppearance('density','${k}')`, label)).join('')}
                     </div>
                   </div>
+                  <div class="appearance-group">
+                    <label class="app-label">Timetable module split</label>
+                    <div class="appearance-options">
+                      ${opt(ttAssessOn(), `setAppearance('ttAssess',true)`, 'Show (TD \u00b7 Exam)')}
+                      ${opt(!ttAssessOn(), `setAppearance('ttAssess',false)`, 'Hide')}
+                    </div>
+                  </div>
                 </div>
                 <div style="margin-top:14px;border-top:1px solid var(--border-soft);padding-top:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
                   <span style="font-size:11.5px;color:var(--text-3)">💡 The Dark theme is experimental — a few panels may keep light accents.</span>
@@ -13418,6 +14239,15 @@
             .tt-lesson:last-child { margin-bottom: 0; }
             .tt-lesson .m { font-weight: 600; font-size: 10px; }
             .tt-lesson .meta { color: #555; font-size: 9px; }
+            .assess { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; padding: 1px 6px; border-radius: 999px; font-size: 9px; font-weight: 700; line-height: 1.5; border: 1px solid transparent; white-space: nowrap; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .assess.none { background: transparent; color: #888; font-weight: 500; min-width: 0; padding: 0; border: 0; }
+            .assess.exam.soft { background: #eef2fc; color: #35529c; border-color: #ccd8f4; }
+            .assess.td.soft { background: #fbf3e0; color: #8a5c12; border-color: #ecd8a8; }
+            .assess.exam.full { background: #3d5aa8; color: #ffffff; border-color: #35529c; }
+            .assess.td.full { background: #e6ac2e; color: #3f2e07; border-color: #cf9721; }
+            .assess-tag { font-size: 8.5px; font-weight: 500; color: #666; white-space: nowrap; }
+            .assess-tag .ax-exam { color: #35529c; font-weight: 700; }
+            .assess-tag .ax-td { color: #8a5c12; font-weight: 700; }
             .day-col { background: #fbf9f2; font-weight: 600; font-family: 'Fraunces', Georgia, serif; color: #1f4f3f; width: 60px; }
             .muted { color: #777; font-style: italic; }
             .stat-line { display: flex; gap: 24px; margin: 8px 0; font-size: 11px; flex-wrap: wrap; }
@@ -13497,7 +14327,7 @@
                     if (!scope && !list.length) return;
                     parts.push(printablePage(
                         `Timetable · ${level} · Semester ${sem.slice(1)}`,
-                        list.length ? timetableTableHTML(tt, list) : '<div class="muted">No lessons scheduled.</div>'
+                        list.length ? timetableTableHTML(tt, list, level, sem) : '<div class="muted">No lessons scheduled.</div>'
                     ));
                 });
             }
@@ -13591,8 +14421,8 @@
                               <td>${escape(c.lecture||'')}</td>
                               <td>${escape(c.td||'')}</td>
                               <td>${escape(c.total||'')}</td>
-                              <td>${c.exam!=null?c.exam+'%':''}</td>
-                              <td>${c.ca!=null?c.ca+'%':''}</td>
+                              <td>${assessPill(c.exam,'exam')}</td>
+                              <td>${assessPill(c.ca,'td')}</td>
                             </tr>`).join('')}</tbody>
                           </table>`;
                         parts.push(printablePage(`Curriculum · ${title} · ${s.label}`, table));
@@ -13637,8 +14467,14 @@
             return parts.join('');
         }
 
-        function timetableTableHTML(tt, list) {
+        function timetableTableHTML(tt, list, level, sem) {
             const daysList = getDays(D());
+            // Module -> {ca, exam} for this printed level+semester, so each
+            // lesson can show the same (TD % / Exam %) tag as the on-screen grid.
+            const _amMap = (typeof level !== 'undefined' && typeof sem !== 'undefined')
+                ? getCourseDataMap(D(), level, sem) : {};
+            const assessByModule = {};
+            Object.keys(_amMap).forEach(k => { assessByModule[k.trim().toLowerCase()] = _amMap[k]; });
             const grid = {};
             daysList.forEach(day => { grid[day] = tt.slots.map(_ => []); });
             list.forEach(e => {
@@ -13664,7 +14500,7 @@
                         if(!cell.length) return '<td class="muted">—</td>';
                         return `<td>${cell.map(e=>`
                           <div class="tt-lesson">
-                            <div class="m">${escape(e.module)}</div>
+                            <div class="m">${escape(e.module)}${ttAssessTag(assessByModule[(e.module||'').trim().toLowerCase()])}</div>
                             <div class="meta">${escape(e.instructor||'—')}${e.room?' · '+escape(e.room):''}${e.group?' · '+escape(e.group):''}</div>
                           </div>`).join('')}</td>`;
                       }).join('')}
@@ -14129,6 +14965,10 @@
         // Expose key functions globally for inline onclick
         window.setView = setView;
         window.render = render;
+        window.refreshRoomCheck = refreshRoomCheck;
+        window.pulseRoomClashes = pulseRoomClashes;
+        window.computeRoomClashes = computeRoomClashes;
+        window.roomClashTitle = roomClashTitle;
         window.setAppearance = setAppearance;
         window.resetAppearance = resetAppearance;
         window.__appReady = true;
