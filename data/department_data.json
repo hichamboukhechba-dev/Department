@@ -108,10 +108,10 @@
             "roleAr": "نائب رئيس قسم مكلف بما بعد التدرج والبحث العلمي"
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Chaalani A.",
             "nameAr": "شعلاني عبد القادر",
+            "kind": "Permanent Teachers",
+            "grade": "MAA",
             "phone": "",
             "emails": [
               "a.chaalani@univ-djelfa.dz",
