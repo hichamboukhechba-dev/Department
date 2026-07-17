@@ -121,10 +121,10 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "MCB",
             "name": "Guen K.",
             "nameAr": "قن خديجة",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
             "phone": "0661 10 70 18",
             "emails": [
               "khadidja.guen@univ-djelfa.dz",
