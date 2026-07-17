@@ -3453,7 +3453,71 @@
             "roomLevels": {
               "Room 11": "L1"
             },
-            "exams": []
+            "exams": [
+              {
+                "room": "Room 11",
+                "date": "2026-07-17",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Civilisations of the Language of Study 1",
+                "teacher": "Bouchemal A.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 11",
+                "date": "2026-07-17",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Grammar of Language of Study 1",
+                "teacher": "Barboura S",
+                "level": "L1"
+              },
+              {
+                "room": "Room 11",
+                "date": "2026-07-17",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Linguistics and Phonetics 1",
+                "teacher": "Barboura O.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 11",
+                "date": "2026-07-17",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "Oral Comprehension and Expression 1",
+                "teacher": "Djoudi C.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 11",
+                "date": "2026-07-17",
+                "startTime": "13:00",
+                "endTime": "14:00",
+                "module": "Study of Literary Texts  1",
+                "teacher": "Amraoui O",
+                "level": "L1"
+              },
+              {
+                "room": "Room 11",
+                "date": "2026-07-17",
+                "startTime": "14:00",
+                "endTime": "15:00",
+                "module": "University Study Skills 1",
+                "teacher": "Othmani A",
+                "level": "L1"
+              },
+              {
+                "room": "Room 11",
+                "date": "2026-07-18",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Written Comprehension and Expression 1",
+                "teacher": "Chaalani A.",
+                "level": "L1"
+              }
+            ]
           },
           "S2": {
             "roomLevels": {},
