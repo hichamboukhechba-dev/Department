@@ -3555,7 +3555,602 @@
         },
         "invigilation": {
           "S1": {
-            "days": []
+            "days": [
+              {
+                "date": "2026-07-17",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Rahmouni A"
+                    ],
+                    [
+                      "Rahmouni A"
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Bouchemal A."
+                    ],
+                    [
+                      "Bouchemal A."
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ],
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-18",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Bouchemal A."
+                    ],
+                    [
+                      "Bouchemal A."
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Chaalani A."
+                    ],
+                    [
+                      "Chaalani A."
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Guen K.",
+                      "Khadroun S.",
+                      "Mahammedi I."
+                    ],
+                    [
+                      "Guen K.",
+                      "Khadroun S.",
+                      "Mahammedi I."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-19",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Charrak O."
+                    ],
+                    [
+                      "Charrak O."
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Bouchemal A."
+                    ],
+                    [
+                      "Bouchemal A."
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ],
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-20",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Othmani A"
+                    ],
+                    [
+                      "Othmani A"
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Djalab A."
+                    ],
+                    [
+                      "Djalab A."
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Bouchemal A.",
+                      "Chaalani A.",
+                      "Guen K."
+                    ],
+                    [
+                      "Bouchemal A.",
+                      "Chaalani A.",
+                      "Guen K."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-21",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Chelali M."
+                    ],
+                    [
+                      "Chelali M."
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Bouchemal A."
+                    ],
+                    [
+                      "Bouchemal A."
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ],
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-22",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Chaalani A."
+                    ],
+                    [
+                      "Chaalani A."
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Othmani A"
+                    ],
+                    [
+                      "Othmani A"
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Bouchemal A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ],
+                    [
+                      "Bouchemal A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-23",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Guadabi N."
+                    ],
+                    [
+                      "Guadabi N."
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Bouchemal A."
+                    ],
+                    [
+                      "Bouchemal A."
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ],
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-24",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Djoudi C."
+                    ],
+                    [
+                      "Djoudi C."
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Bouchemal A."
+                    ],
+                    [
+                      "Bouchemal A."
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ],
+                    [
+                      "Chaalani A.",
+                      "Guen K.",
+                      "Khadroun S."
+                    ]
+                  ]
+                }
+              },
+              {
+                "date": "2026-07-25",
+                "substitute": "",
+                "assignments": {
+                  "Room 21": [
+                    [
+                      "Amraoui O"
+                    ],
+                    [
+                      "Amraoui O"
+                    ]
+                  ],
+                  "Room 22": [
+                    [
+                      "Amraoui Z"
+                    ],
+                    [
+                      "Amraoui Z"
+                    ]
+                  ],
+                  "Room 23": [
+                    [
+                      "Barboura O."
+                    ],
+                    [
+                      "Barboura O."
+                    ]
+                  ],
+                  "Room 24": [
+                    [
+                      "Barboura S"
+                    ],
+                    [
+                      "Barboura S"
+                    ]
+                  ],
+                  "Room 25": [
+                    [
+                      "Bouchemal A."
+                    ],
+                    [
+                      "Bouchemal A."
+                    ]
+                  ],
+                  "Room 26": [
+                    [
+                      "Chaalani A."
+                    ],
+                    [
+                      "Chaalani A."
+                    ]
+                  ],
+                  "Amphi B": [
+                    [
+                      "Guen K.",
+                      "Khadroun S.",
+                      "Mahammedi I."
+                    ],
+                    [
+                      "Guen K.",
+                      "Khadroun S.",
+                      "Mahammedi I."
+                    ]
+                  ]
+                }
+              }
+            ]
           },
           "S2": null
         },
