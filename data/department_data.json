@@ -4336,12 +4336,12 @@
                 "gap": 5,
                 "items": [
                   {
-                    "module": "Linguistics and Phonetics 1",
-                    "teacher": "Barboura O."
-                  },
-                  {
                     "module": "Civilisations of the Language of Study 1",
                     "teacher": "Bouchemal A."
+                  },
+                  {
+                    "module": "Linguistics and Phonetics 1",
+                    "teacher": "Barboura O."
                   },
                   {
                     "module": "Grammar of Language of Study 1",
