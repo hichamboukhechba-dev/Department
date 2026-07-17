@@ -4610,65 +4610,7 @@
           }
         },
         "retakeExams": {
-          "levels": {
-            "L1": {
-              "room": "Room 11",
-              "slots": [
-                "08:30–09:30",
-                "09:30–10:30",
-                "10:30–11:30",
-                "11:30–12:30"
-              ],
-              "days": [
-                {
-                  "date": "2026-07-18",
-                  "cells": [
-                    {
-                      "module": "Linguistics and Phonetics 1",
-                      "tag": "S1",
-                      "teacher": "Barboura O."
-                    },
-                    {
-                      "module": "Civilisations of the Language of Study 1",
-                      "tag": "S1",
-                      "teacher": "Bouchemal A."
-                    },
-                    {
-                      "module": "Grammar of Language of Study 1",
-                      "tag": "S1",
-                      "teacher": "Barboura S"
-                    },
-                    {
-                      "module": "University Study Skills 1",
-                      "tag": "S1",
-                      "teacher": "Othmani A"
-                    }
-                  ]
-                },
-                {
-                  "date": "2026-07-19",
-                  "cells": [
-                    {
-                      "module": "Written Comprehension and Expression 1",
-                      "tag": "S1",
-                      "teacher": "Chaalani A."
-                    },
-                    {
-                      "module": "Oral Comprehension and Expression 1",
-                      "tag": "S1",
-                      "teacher": "Djoudi C."
-                    },
-                    {
-                      "module": "Study of Literary Texts  1",
-                      "tag": "S1",
-                      "teacher": "Amraoui O"
-                    },
-                    null
-                  ]
-                }
-              ]
-            }
-          }
+          "levels": {}
         }
       }
     }
