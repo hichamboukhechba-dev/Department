@@ -1658,28 +1658,6 @@
             "label": "L1 S1",
             "courses": [
               {
-                "unit": "Core Unit UEF 1.1.1",
-                "course": "Written Comprehension and Expression 1",
-                "credits": 4,
-                "coef": 2,
-                "lecture": "-",
-                "td": "3h00",
-                "total": "45h00",
-                "exam": 60,
-                "ca": 40
-              },
-              {
-                "unit": "",
-                "course": "Oral Comprehension and Expression 1",
-                "credits": 4,
-                "coef": 2,
-                "lecture": "-",
-                "td": "3h00",
-                "total": "45h00",
-                "exam": 60,
-                "ca": 40
-              },
-              {
                 "unit": "Core Unit UEF 1.1.2",
                 "course": "Grammar of Language of Study 1",
                 "credits": 4,
