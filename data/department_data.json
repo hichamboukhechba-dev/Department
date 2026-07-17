@@ -1332,14 +1332,6 @@
                 },
                 {
                   "day": "Sunday",
-                  "slotIdx": 1,
-                  "module": "Grammar of Language of Study 1",
-                  "instructor": "",
-                  "room": "Amphi B",
-                  "group": "ALL GROUPS"
-                },
-                {
-                  "day": "Sunday",
                   "slotIdx": 2,
                   "module": "Oral Comprehension and Expression 1",
                   "instructor": "Djoudi C.",
