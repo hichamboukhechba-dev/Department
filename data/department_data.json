@@ -5,10 +5,10 @@
       "data": {
         "teachers": [
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Amraoui O",
             "nameAr": "عمراوي أسامة",
+            "kind": "Permanent Teachers",
+            "grade": "MAA",
             "phone": "791576715",
             "emails": [
               "a.amraoui@univ-djelfa.dz",
