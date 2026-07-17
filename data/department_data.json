@@ -588,15 +588,15 @@
             "level": "L1",
             "exams": [
               {
-                "date": "2026-07-17",
-                "module": "Linguistics and Phonetics 1",
-                "teacher": "Barboura O.",
-                "level": "L1"
-              },
-              {
                 "date": "2026-07-18",
                 "module": "Civilisations of the Language of Study 1",
                 "teacher": "Bouchemal A.",
+                "level": "L1"
+              },
+              {
+                "date": "2026-07-17",
+                "module": "Linguistics and Phonetics 1",
+                "teacher": "Barboura O.",
                 "level": "L1"
               },
               {
