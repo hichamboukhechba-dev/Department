@@ -4410,12 +4410,12 @@
                 "gap": 5,
                 "items": [
                   {
-                    "module": "ESP",
-                    "teacher": "Ouarniki W"
-                  },
-                  {
                     "module": "Methodology of Academic Research 1",
                     "teacher": "Boukhechba H"
+                  },
+                  {
+                    "module": "ESP",
+                    "teacher": "Ouarniki W"
                   },
                   {
                     "module": "Introduction to Didactics 1",
