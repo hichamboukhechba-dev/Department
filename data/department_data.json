@@ -186,16 +186,16 @@
             "roleAr": "رئيس شعبة"
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Ouarniki W",
             "nameAr": "ورنيقي وفاء",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
             "phone": "699165414",
             "emails": [
               "ouafa.ouarniki@univ-djelfa.dz",
               "ouafa.ouarniki@yahoo.com"
             ],
-            "role": "chef de spécialité",
+            "role": "Head of Specialization",
             "roleAr": "رئيس تخصص"
           },
           {
