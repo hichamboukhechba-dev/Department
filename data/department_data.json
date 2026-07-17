@@ -3450,10 +3450,7 @@
         "roomUsage": [],
         "replacementExams": {
           "S1": {
-            "roomLevels": {
-              "Room 11": "L1",
-              "Room 12": "L1"
-            },
+            "roomLevels": {},
             "exams": []
           },
           "S2": {
