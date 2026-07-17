@@ -773,6 +773,76 @@
         }
 
         /* ================================================================
+           MENU DROPDOWN — compact overflow menu for toolbars
+           (used to group related buttons and reduce visual clutter)
+           ================================================================ */
+        .menu-wrap {
+            position: relative;
+            display: inline-block;
+        }
+        .menu-caret {
+            font-size: 9px;
+            margin-left: 1px;
+            opacity: 0.65;
+        }
+        .menu-pop {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            min-width: 232px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            padding: 6px;
+            display: none;
+            z-index: 500;
+        }
+        .menu-pop.open {
+            display: block;
+            animation: menuPop 0.14s ease;
+        }
+        @keyframes menuPop {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .menu-pop button {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 8px 10px;
+            font-size: 12.5px;
+            color: var(--text);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: background var(--transition), color var(--transition);
+        }
+        .menu-pop button svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+        .menu-pop button:hover:not(:disabled) {
+            background: var(--surface-2);
+            color: var(--brand);
+        }
+        .menu-pop button:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+        .menu-pop hr {
+            border: none;
+            border-top: 1px solid var(--border-soft);
+            margin: 4px 4px;
+        }
+
+        /* ================================================================
            BUTTONS — refined, modern
            ================================================================ */
         .btn {
@@ -5636,6 +5706,22 @@
             }
         });
 
+        // ---- GENERIC TOOLBAR DROPDOWN MENU (used to group related buttons) ----
+        function toggleMenu(id, ev) {
+            if (ev) ev.stopPropagation();
+            const el = document.getElementById(id);
+            if (!el) return;
+            const willOpen = !el.classList.contains('open');
+            document.querySelectorAll('.menu-pop.open').forEach(m => m.classList.remove('open'));
+            if (willOpen) el.classList.add('open');
+        }
+        function closeMenus() {
+            document.querySelectorAll('.menu-pop.open').forEach(m => m.classList.remove('open'));
+        }
+        document.addEventListener('click', e => {
+            if (!e.target.closest('.menu-wrap')) closeMenus();
+        });
+
         function writeLocalBackup() {
             try { localStorage.setItem(LOCAL_BACKUP_KEY, JSON.stringify(store)); } catch (e) {
                 console.warn('local backup failed', e);
@@ -6996,16 +7082,31 @@
                   <p style="font-size:12px;color:var(--text-3);margin-top:2px">👤 Hover a teacher's name to see their individual schedule.</p>
                 </div>
                 <div class="page-actions">
-                  <button class="btn ghost sm" onclick="exportTimetablesExcel()">${ICON.download} Export Excel</button>
-                  ${canEdit ? `<button class="btn ghost sm" onclick="importTimetablesExcel()">${ICON.upload} Import Excel</button>` : ''}
-                  <button class="btn ghost sm" onclick="printCurrentTimetable()">📄 Print this</button>
-                  <button class="btn ghost sm" onclick="printAllTimetables()">📄 Print all</button>
-                  <button class="btn ghost sm" onclick="openTimetablePrintSettings()" title="Customize timetable printing: orientation, font, text size, line thickness">⚙️ Print settings</button>
-                  <button class="btn ghost sm" onclick="toggleTtAssess()" title="Show or hide the (TD % · Exam %) split shown next to each module. Saved on this device only.">🏷️ Split: <b style="margin-left:4px;color:${ttAssessOn()?'var(--brand-3)':'var(--text-3)'}">${ttAssessOn()?'On':'Off'}</b></button>
                   ${roomCheckBtn}
+                  <div class="menu-wrap">
+                    <button class="btn ghost sm" onclick="toggleMenu('ttExportMenu',event)">⤓ Export &amp; Print <span class="menu-caret">▾</span></button>
+                    <div class="menu-pop" id="ttExportMenu">
+                      <button onclick="closeMenus();exportTimetablesExcel()">${ICON.download} Export Excel</button>
+                      ${canEdit ? `<button onclick="closeMenus();importTimetablesExcel()">${ICON.upload} Import Excel</button>` : ''}
+                      <hr>
+                      <button onclick="closeMenus();printCurrentTimetable()">📄 Print this</button>
+                      <button onclick="closeMenus();printAllTimetables()">📄 Print all</button>
+                      <button onclick="closeMenus();openTimetablePrintSettings()" title="Customize timetable printing: orientation, font, text size, line thickness">⚙️ Print settings</button>
+                      <hr>
+                      <button onclick="closeMenus();exportTimetableHTML()" title="Download a standalone, interactive HTML file of this timetable (searchable, works offline, no login needed)">🌐 Export HTML (this)</button>
+                      <button onclick="closeMenus();exportAllTimetablesHTML()" title="Download a standalone, interactive HTML file with every level's timetable">🌐 Export HTML (all)</button>
+                    </div>
+                  </div>
+                  <button class="btn ghost sm" onclick="toggleTtAssess()" title="Show or hide the (TD % · Exam %) split shown next to each module. Saved on this device only.">🏷️ Split: <b style="margin-left:4px;color:${ttAssessOn()?'var(--brand-3)':'var(--text-3)'}">${ttAssessOn()?'On':'Off'}</b></button>
+                  ${canEdit ? `
+                  <div class="menu-wrap">
+                    <button class="btn ghost sm" onclick="toggleMenu('ttSetupMenu',event)">⚙️ Edit setup <span class="menu-caret">▾</span></button>
+                    <div class="menu-pop" id="ttSetupMenu">
+                      <button onclick="closeMenus();editSlots()">🕐 Edit time slots</button>
+                      <button onclick="closeMenus();editDays()">📅 Edit days</button>
+                    </div>
+                  </div>` : ''}
                   ${canEdit ? `<button class="btn ghost sm" onclick="ttUndo()" ${ttUndoStack.length ? '' : 'disabled style="opacity:.45;cursor:not-allowed"'} title="${ttUndoStack.length ? 'Undo: ' + escape(ttUndoStack[ttUndoStack.length-1].label) + ' (Ctrl+Z)' : 'Nothing to undo yet'}">↶ Undo${ttUndoStack.length ? ' (' + ttUndoStack.length + ')' : ''}</button>` : ''}
-                  ${canEdit ? `<button class="btn ghost sm" onclick="editSlots()">Edit slots</button>` : ''}
-                  ${canEdit ? `<button class="btn ghost sm" onclick="editDays()">📅 Edit days</button>` : ''}
                   ${canEdit ? `<button class="btn" onclick="editTimetableEntry(null)">${ICON.plus} Add lesson</button>` : ''}
                 </div>
               </div>
@@ -14649,6 +14750,243 @@
                 ttPrintOpts());
         }
 
+        // ---- EXPORT INTERACTIVE HTML (timetables only) ----
+        // Builds a single, self-contained .html file (data embedded inline) with a
+        // level/semester picker, a live search box, and a TD/Exam split toggle.
+        // No server or app access needed to open/use it — a read-only snapshot.
+        function collectTimetableExportPayload(levelFilter) {
+            const d = D();
+            const daysList = getDays(d);
+            const levels = levelFilter ? [levelFilter] : getCurriculumLevels(d);
+            const out = [];
+            levels.forEach(level => {
+                const tt = d.timetables[level];
+                if (!tt) return;
+                const semesters = {};
+                let anyLessons = false;
+                ['S1', 'S2'].forEach(sem => {
+                    const list = tt.entries[sem] || [];
+                    if (list.length) anyLessons = true;
+                    const amMap = getCourseDataMap(d, level, sem);
+                    const assessByModule = {};
+                    Object.keys(amMap).forEach(k => { assessByModule[k.trim().toLowerCase()] = amMap[k]; });
+                    semesters[sem] = list.map(e => {
+                        const a = assessByModule[(e.module || '').trim().toLowerCase()];
+                        return {
+                            day: e.day,
+                            slotIdx: e.slotIdx,
+                            module: e.module || '',
+                            instructor: e.instructor || '',
+                            room: e.room || '',
+                            group: e.group || '',
+                            ca: a ? assessNum(a.ca) : null,
+                            exam: a ? assessNum(a.exam) : null
+                        };
+                    });
+                });
+                if (!levelFilter && !anyLessons) return;
+                out.push({ level, slots: tt.slots || [], semesters });
+            });
+            return {
+                year: store.years[store.activeIdx].name,
+                generated: new Date().toLocaleString(),
+                days: daysList,
+                levels: out
+            };
+        }
+
+        function buildTimetableExportDoc(payload, docTitle) {
+            const dataJSON = JSON.stringify(payload).replace(/<\/script/gi, '<\\/script');
+            return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${escape(docTitle)}</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#f6f4f0; --surface:#ffffff; --border:#e3dfd7; --text:#1a1917; --text-2:#5f5b54; --text-3:#9a968d;
+    --brand:#1b4d3b; --brand-2:#23644d; --brand-soft:#e4eee8;
+    --ax-exam:#35529c; --ax-td:#8a5c12;
+  }
+  * { box-sizing: border-box; }
+  body { font-family:'Inter',Arial,sans-serif; background:var(--bg); color:var(--text); margin:0; padding:24px; }
+  h1 { font-family:'Fraunces',Georgia,serif; font-size:22px; margin:0 0 2px; color:var(--brand); }
+  .sub { color:var(--text-2); font-size:12.5px; margin-bottom:18px; }
+  #controls { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:18px;
+              background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }
+  #controls select, #controls input[type=text] { font-family:inherit; font-size:13px; padding:7px 10px;
+              border:1px solid var(--border); border-radius:8px; background:#fff; }
+  #controls input[type=text] { flex:1; min-width:180px; }
+  .level-name { font-weight:600; color:var(--brand); font-family:'Fraunces',Georgia,serif; font-size:15px; }
+  .seg { display:flex; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  .seg button { border:none; background:#fff; padding:7px 14px; font-size:12.5px; cursor:pointer;
+              color:var(--text-2); font-family:inherit; }
+  .seg button.active { background:var(--brand); color:#fff; }
+  .chk { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--text-2); white-space:nowrap; }
+  .btn { border:1px solid var(--border); background:#fff; padding:7px 14px; border-radius:8px; font-size:12.5px;
+              cursor:pointer; color:var(--text); font-family:inherit; }
+  .btn:hover { border-color:var(--brand); color:var(--brand); }
+  table { width:100%; border-collapse:collapse; background:var(--surface); border:1px solid var(--border);
+              border-radius:10px; overflow:hidden; }
+  th, td { border:1px solid var(--border); padding:6px 8px; text-align:left; vertical-align:top; font-size:12px; }
+  thead th { background:var(--brand-soft); color:var(--brand); font-size:11px; text-transform:uppercase; letter-spacing:.03em; }
+  .day-col { background:#fbf9f2; font-weight:600; color:var(--brand); font-family:'Fraunces',Georgia,serif; width:70px; }
+  .muted { color:var(--text-3); font-style:italic; text-align:center; padding:20px; }
+  .tt-lesson { background:var(--brand-soft); border-left:3px solid var(--brand); padding:5px 7px; margin-bottom:4px;
+              border-radius:4px; transition:opacity .15s, box-shadow .15s; }
+  .tt-lesson:last-child { margin-bottom:0; }
+  .tt-lesson .m { font-weight:600; font-size:12px; color:var(--text); }
+  .tt-lesson .meta { font-size:10.5px; color:var(--text-2); margin-top:2px; }
+  .tt-lesson.dim { opacity:.25; }
+  .tt-lesson.hit { box-shadow:0 0 0 2px var(--brand); }
+  .assess-tag { font-size:9.5px; font-weight:500; color:#666; }
+  .assess-tag .ax-exam { color:var(--ax-exam); font-weight:700; }
+  .assess-tag .ax-td { color:var(--ax-td); font-weight:700; }
+  .footer { margin-top:16px; font-size:10.5px; color:var(--text-3); text-align:center; }
+  @media print {
+    #controls { display:none; }
+    body { background:#fff; padding:0; }
+    table { border-color:#999; }
+  }
+</style>
+</head>
+<body>
+  <h1>${escape(docTitle)}</h1>
+  <div class="sub">${escape(payload.year)} · Generated ${escape(payload.generated)} · Read-only snapshot</div>
+  <div id="controls"></div>
+  <div id="grid"></div>
+  <div class="footer">Exported from the Department Management System — this file works offline and does not sync with the app.</div>
+  <script>
+    const DATA = ${dataJSON};
+    const state = { li: 0, sem: 'S1', q: '', assess: true };
+    (function initSem(){
+      const lvl = DATA.levels[0];
+      if (lvl && !(lvl.semesters.S1||[]).length && (lvl.semesters.S2||[]).length) state.sem = 'S2';
+    })();
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+    function fmtPct(n) {
+      const r = Math.round(n * 10) / 10;
+      return (Number.isInteger(r) ? r : r.toFixed(1)) + '%';
+    }
+    function assessTag(e) {
+      if (!state.assess) return '';
+      const parts = [];
+      if (e.ca != null && e.ca > 0) parts.push('<span class="ax-td">TD ' + fmtPct(e.ca) + '</span>');
+      if (e.exam != null && e.exam > 0) parts.push('<span class="ax-exam">Exam ' + fmtPct(e.exam) + '</span>');
+      if (!parts.length) return '';
+      return ' <span class="assess-tag">(' + parts.join(' · ') + ')</span>';
+    }
+    function matches(e, q) {
+      if (!q) return true;
+      return [e.module, e.instructor, e.room, e.group].some(v => (v || '').toLowerCase().includes(q));
+    }
+    function syncSemDefault() {
+      const level = DATA.levels[state.li];
+      if (!level) return;
+      if (!(level.semesters[state.sem] || []).length) {
+        state.sem = (level.semesters.S1 || []).length ? 'S1' : 'S2';
+      }
+    }
+    function renderControls() {
+      const wrap = document.getElementById('controls');
+      const levelOpts = DATA.levels.map((l, i) => '<option value="' + i + '"' + (i === state.li ? ' selected' : '') + '>' + esc(l.level) + '</option>').join('');
+      wrap.innerHTML =
+        (DATA.levels.length > 1
+          ? '<select id="levelSel">' + levelOpts + '</select>'
+          : '<div class="level-name">' + esc(DATA.levels[0] ? DATA.levels[0].level : 'No data') + '</div>') +
+        '<div class="seg">' +
+          '<button data-sem="S1" class="' + (state.sem === 'S1' ? 'active' : '') + '">Semester 1</button>' +
+          '<button data-sem="S2" class="' + (state.sem === 'S2' ? 'active' : '') + '">Semester 2</button>' +
+        '</div>' +
+        '<input id="searchBox" type="text" placeholder="Search module, teacher, room…" value="' + esc(state.q) + '" />' +
+        '<label class="chk"><input type="checkbox" id="assessChk"' + (state.assess ? ' checked' : '') + '/> Show TD/Exam split</label>' +
+        '<button id="printBtn" class="btn">🖨️ Print</button>';
+      if (DATA.levels.length > 1) {
+        document.getElementById('levelSel').addEventListener('change', e => {
+          state.li = +e.target.value; syncSemDefault(); renderAll();
+        });
+      }
+      wrap.querySelectorAll('.seg button').forEach(b => {
+        b.addEventListener('click', () => { state.sem = b.dataset.sem; renderAll(); });
+      });
+      document.getElementById('searchBox').addEventListener('input', e => { state.q = e.target.value; renderGrid(); });
+      document.getElementById('assessChk').addEventListener('change', e => { state.assess = e.target.checked; renderGrid(); });
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+    }
+    function renderGrid() {
+      const level = DATA.levels[state.li];
+      const container = document.getElementById('grid');
+      if (!level) { container.innerHTML = '<p class="muted">No timetable data.</p>'; return; }
+      const list = level.semesters[state.sem] || [];
+      if (!list.length) { container.innerHTML = '<p class="muted">No lessons scheduled for this semester.</p>'; return; }
+      const q = state.q.trim().toLowerCase();
+      const gridMap = {};
+      DATA.days.forEach(d => { gridMap[d] = level.slots.map(_ => []); });
+      list.forEach(e => { if (gridMap[e.day] && e.slotIdx < level.slots.length) gridMap[e.day][e.slotIdx].push(e); });
+      let html = '<table><thead><tr><th class="day-col">Day</th>' +
+        level.slots.map(s => '<th>' + esc(s) + '</th>').join('') + '</tr></thead><tbody>';
+      DATA.days.forEach(day => {
+        html += '<tr><td class="day-col">' + esc(day) + '</td>';
+        level.slots.forEach((_, i) => {
+          const cell = gridMap[day][i];
+          if (!cell.length) { html += '<td class="muted">—</td>'; return; }
+          html += '<td>' + cell.map(e => {
+            const hit = matches(e, q);
+            const cls = q ? (hit ? 'hit' : 'dim') : '';
+            return '<div class="tt-lesson ' + cls + '">' +
+              '<div class="m">' + esc(e.module) + assessTag(e) + '</div>' +
+              '<div class="meta">' + esc(e.instructor || '—') +
+              (e.room ? ' · ' + esc(e.room) : '') + (e.group ? ' · ' + esc(e.group) : '') + '</div>' +
+            '</div>';
+          }).join('') + '</td>';
+        });
+        html += '</tr>';
+      });
+      html += '</tbody></table>';
+      container.innerHTML = html;
+    }
+    function renderAll() { renderControls(); renderGrid(); }
+    renderAll();
+  <\/script>
+</body>
+</html>`;
+        }
+
+        function downloadTimetableExportDoc(payload, docTitle, filenameBase) {
+            if (!payload.levels.length) { toast('No timetable data to export', 'err'); return; }
+            const html = buildTimetableExportDoc(payload, docTitle);
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filenameBase.replace(/[^\w\-]+/g, '_') + '.html';
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+            toast('Interactive HTML downloaded', 'ok');
+        }
+
+        function exportTimetableHTML() {
+            const payload = collectTimetableExportPayload(state.ttLevel);
+            downloadTimetableExportDoc(
+                payload,
+                'Timetable — ' + state.ttLevel + ' · ' + store.years[store.activeIdx].name,
+                'timetable_' + state.ttLevel + '_' + store.years[store.activeIdx].name
+            );
+        }
+
+        function exportAllTimetablesHTML() {
+            const payload = collectTimetableExportPayload(null);
+            downloadTimetableExportDoc(
+                payload,
+                'All timetables — ' + store.years[store.activeIdx].name,
+                'timetables_all_' + store.years[store.activeIdx].name
+            );
+        }
+
         function printExams() {
             openPrintWindow('Exams — ' + store.years[store.activeIdx].name,
                 buildReportBody(['exams'], { examSem: state.examSemester }));
@@ -15006,8 +15344,12 @@
         window.exportPDFAll = exportPDFAll;
         window.exportXLSX = exportXLSX;
         window.exportCombinedCSV = exportCombinedCSV;
+        window.toggleMenu = toggleMenu;
+        window.closeMenus = closeMenus;
         window.printCurrentTimetable = printCurrentTimetable;
         window.printAllTimetables = printAllTimetables;
+        window.exportTimetableHTML = exportTimetableHTML;
+        window.exportAllTimetablesHTML = exportAllTimetablesHTML;
         window.openTimetablePrintSettings = openTimetablePrintSettings;
         window.printExams = printExams;
         window.printAllExams = printAllExams;
