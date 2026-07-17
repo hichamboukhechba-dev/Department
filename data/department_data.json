@@ -4653,7 +4653,11 @@
                       "tag": "S1",
                       "teacher": "Chaalani A."
                     },
-                    null,
+                    {
+                      "module": "Oral Comprehension and Expression 1",
+                      "tag": "S1",
+                      "teacher": "Djoudi C."
+                    },
                     {
                       "module": "Study of Literary Texts  1",
                       "tag": "S1",
