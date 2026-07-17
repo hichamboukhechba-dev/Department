@@ -211,10 +211,10 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Charrak O.",
-            "nameAr": "",
+            "nameAr": "شراك أم كلثوم",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
             "phone": "660777460",
             "emails": [
               "charak.k95@gmail.com"
