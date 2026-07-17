@@ -3486,6 +3486,33 @@
               {
                 "room": "Room 21",
                 "date": "2026-07-17",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Oral Comprehension and Expression 1",
+                "teacher": "Djoudi C.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Foreign Language(s) 3",
+                "teacher": "Nourani A",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Reading and Writing Workshop 1",
+                "teacher": "Ziouche K.",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-17",
                 "startTime": "10:00",
                 "endTime": "11:00",
                 "module": "Grammar of Language of Study 1",
@@ -3508,6 +3535,33 @@
                 "endTime": "11:00",
                 "module": "ESP",
                 "teacher": "Ouarniki W",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-17",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Reading and Text Analysis 1",
+                "teacher": "Gueriniai I.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Digital Literatures 1",
+                "teacher": "M'sabel A.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Oral Communication Practices 1",
+                "teacher": "Retimi C.",
                 "level": "L3"
               },
               {
@@ -3538,6 +3592,33 @@
                 "level": "L3"
               },
               {
+                "room": "Room 21",
+                "date": "2026-07-17",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "ICT and E-Learning 1",
+                "teacher": "Saidi H.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Reading and Text Analysis 3",
+                "teacher": "Saddedine Y.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Entrepreneurship 1",
+                "teacher": "Laroussi M.",
+                "level": "L3"
+              },
+              {
                 "room": "Room 22",
                 "date": "2026-07-17",
                 "startTime": "12:00",
@@ -3554,6 +3635,15 @@
                 "module": "Linguistics 1",
                 "teacher": "Dahia H.",
                 "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-17",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "Foreign Language(s) 1",
+                "teacher": "Nourani A",
+                "level": "L1"
               },
               {
                 "room": "Room 21",
