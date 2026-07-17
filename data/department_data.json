@@ -70,10 +70,10 @@
             "roleAr": "نائب رئيس القسم المكلف بالتدريس والتعليم في التدرج"
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "MCA",
             "name": "Bouchemal A.",
             "nameAr": "بوشمال أحمد",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
             "phone": "655646803",
             "emails": [
               "h.bouchemal@univ-djelfa.dz",
