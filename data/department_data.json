@@ -4537,6 +4537,10 @@
                     "teacher": "Charrak O."
                   },
                   {
+                    "module": "French",
+                    "teacher": "Boukhechba H"
+                  },
+                  {
                     "module": "Curriculum and Syllabus Design",
                     "teacher": "Boukhechba H"
                   },
@@ -4551,10 +4555,6 @@
                   {
                     "module": "Educational psychology",
                     "teacher": "Bouaissa T"
-                  },
-                  {
-                    "module": "French",
-                    "teacher": "Boukhechba H"
                   },
                   {
                     "module": "Sociodidactics",
