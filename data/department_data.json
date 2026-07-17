@@ -3452,7 +3452,8 @@
           "S1": {
             "roomLevels": {
               "Room 21": "L1",
-              "Room 22": "L2"
+              "Room 22": "L2",
+              "Room 23": "L3"
             },
             "exams": []
           },
