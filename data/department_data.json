@@ -199,10 +199,10 @@
             "roleAr": "رئيس تخصص"
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Rahmouni A",
             "nameAr": "رحموني أمال",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
             "phone": "0541 95 79 87",
             "emails": [
               "amelrahmouni89@gmail.com"
