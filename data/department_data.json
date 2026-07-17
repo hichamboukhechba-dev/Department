@@ -4526,7 +4526,283 @@
         },
         "paperReview": {
           "S1": {
-            "levels": {}
+            "levels": {
+              "L1": {
+                "room": "",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": [
+                  {
+                    "module": "Linguistics and Phonetics 1",
+                    "teacher": "Barboura O."
+                  },
+                  {
+                    "module": "Civilisations of the Language of Study 1",
+                    "teacher": "Bouchemal A."
+                  },
+                  {
+                    "module": "Grammar of Language of Study 1",
+                    "teacher": "Barboura S"
+                  },
+                  {
+                    "module": "University Study Skills 1",
+                    "teacher": "Othmani A"
+                  },
+                  {
+                    "module": "Written Comprehension and Expression 1",
+                    "teacher": "Chaalani A."
+                  },
+                  {
+                    "module": "Oral Comprehension and Expression 1",
+                    "teacher": "Djoudi C."
+                  },
+                  {
+                    "module": "Study of Literary Texts  1",
+                    "teacher": "Amraoui O"
+                  }
+                ]
+              },
+              "L2": {
+                "room": "",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": [
+                  {
+                    "module": "Literatures of the Language of Study 3",
+                    "teacher": "Rahmouni A"
+                  },
+                  {
+                    "module": "Civilisations of the Language of Study 3",
+                    "teacher": "Amraoui Z"
+                  },
+                  {
+                    "module": "Linguistics and Phonetics 3",
+                    "teacher": "Charrak O."
+                  },
+                  {
+                    "module": "Grammar of Language of Study 3",
+                    "teacher": "Djalab A."
+                  },
+                  {
+                    "module": "Oral Comprehension and Expression 3",
+                    "teacher": "Chelali M."
+                  },
+                  {
+                    "module": "Written Comprehension and Expression 3",
+                    "teacher": "Othmani A"
+                  },
+                  {
+                    "module": "University Study Skills 3",
+                    "teacher": "Guadabi N."
+                  }
+                ]
+              },
+              "L3": {
+                "room": "",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": [
+                  {
+                    "module": "ESP",
+                    "teacher": "Ouarniki W"
+                  },
+                  {
+                    "module": "Methodology of Academic Research 1",
+                    "teacher": "Boukhechba H"
+                  },
+                  {
+                    "module": "Introduction to Didactics 1",
+                    "teacher": "Khadroun S."
+                  },
+                  {
+                    "module": "Translation: National Language(s) / Language of Study 1",
+                    "teacher": "Guen K."
+                  },
+                  {
+                    "module": "Linguistics 1",
+                    "teacher": "Dahia H."
+                  },
+                  {
+                    "module": "Civilization, Culture, and Interculturality 1",
+                    "teacher": "Otman W"
+                  },
+                  {
+                    "module": "Literature: Theories and Practices 1",
+                    "teacher": "Mahammedi I."
+                  }
+                ]
+              },
+              "M1 Didactics": {
+                "room": "",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": [
+                  {
+                    "module": "Interculturality",
+                    "teacher": "Rahmouni A"
+                  },
+                  {
+                    "module": "English for Specific Purposes",
+                    "teacher": "Ouarniki W"
+                  },
+                  {
+                    "module": "Research Methodology",
+                    "teacher": "Gatcha Y"
+                  },
+                  {
+                    "module": "Didactics",
+                    "teacher": "Khadroun S."
+                  },
+                  {
+                    "module": "Sociolinguistics",
+                    "teacher": "Charrak O."
+                  },
+                  {
+                    "module": "Ethics et deontology",
+                    "teacher": "Abbas C."
+                  },
+                  {
+                    "module": "Applied Linguistics",
+                    "teacher": "Kherfan"
+                  },
+                  {
+                    "module": "Second language acquisition",
+                    "teacher": "Mokhtari A."
+                  }
+                ]
+              },
+              "M1 Lit/Civ": {
+                "room": "",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": [
+                  {
+                    "module": "British Civilisation",
+                    "teacher": "Amraoui Z"
+                  },
+                  {
+                    "module": "American Literature",
+                    "teacher": "Benderrah A."
+                  },
+                  {
+                    "module": "Literary Theories",
+                    "teacher": "Mahammedi I."
+                  },
+                  {
+                    "module": "African Studies",
+                    "teacher": "Rahmouni A"
+                  },
+                  {
+                    "module": "British Literature",
+                    "teacher": "Boukhalkhal Y."
+                  },
+                  {
+                    "module": "Research Skills",
+                    "teacher": "Gatcha Y"
+                  },
+                  {
+                    "module": "Teaching Literary Texts",
+                    "teacher": "Dahia H."
+                  }
+                ]
+              },
+              "M2 Didactics": {
+                "room": "",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": [
+                  {
+                    "module": "Language Teaching Approaches & Methods",
+                    "teacher": "Ouarniki W"
+                  },
+                  {
+                    "module": "Reflective Practice and Teacher Development",
+                    "teacher": "Khadroun S."
+                  },
+                  {
+                    "module": "Writing a dissertation",
+                    "teacher": "Charrak O."
+                  },
+                  {
+                    "module": "Curriculum and Syllabus Design",
+                    "teacher": "Boukhechba H"
+                  },
+                  {
+                    "module": "Communicational Practices",
+                    "teacher": "Amraoui Z"
+                  },
+                  {
+                    "module": "Research Methodology",
+                    "teacher": "Gatcha Y"
+                  },
+                  {
+                    "module": "Educational psychology",
+                    "teacher": "Bouaissa T"
+                  },
+                  {
+                    "module": "French",
+                    "teacher": "Boukhechba H"
+                  },
+                  {
+                    "module": "Sociodidactics",
+                    "teacher": "Amraoui Z"
+                  }
+                ]
+              },
+              "M2 Lit/Civ": {
+                "room": "",
+                "date": "",
+                "startTime": "09:00",
+                "duration": 30,
+                "gap": 5,
+                "items": [
+                  {
+                    "module": "American Civilisation",
+                    "teacher": "Amraoui Z"
+                  },
+                  {
+                    "module": "Contemporary American Literature",
+                    "teacher": "Benderrah A."
+                  },
+                  {
+                    "module": "Cultural Studies",
+                    "teacher": "Boukhalkhal Y."
+                  },
+                  {
+                    "module": "African Literature",
+                    "teacher": "Bouchemal A."
+                  },
+                  {
+                    "module": "Research Skills",
+                    "teacher": "Bouaissa T"
+                  },
+                  {
+                    "module": "Critical Reading",
+                    "teacher": "Boukhechba H"
+                  },
+                  {
+                    "module": "World Arabic Literature",
+                    "teacher": "Bouzidi A"
+                  },
+                  {
+                    "module": "Contemporary British Literature",
+                    "teacher": "Hassani M"
+                  }
+                ]
+              }
+            }
           },
           "S2": {
             "levels": {}
