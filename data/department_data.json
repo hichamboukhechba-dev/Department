@@ -18,10 +18,10 @@
             "roleAr": ""
           },
           {
+            "kind": "Permanant Teachers",
+            "grade": "MAA",
             "name": "Amraoui Z",
             "nameAr": "عمراوي فاطمة الزهراء",
-            "kind": "Permanent Teachers",
-            "grade": "MCB",
             "phone": "0771 71 17 86",
             "emails": [
               "fz.amraoui@univ-djelfa.dz",
@@ -31,10 +31,10 @@
             "roleAr": ""
           },
           {
+            "kind": "Permanant Teachers",
+            "grade": "MAA",
             "name": "Barboura O.",
             "nameAr": "بربورة اسامة",
-            "kind": "Permanent Teachers",
-            "grade": "MCB",
             "phone": "",
             "emails": [
               "oussama.barboura@univ-djelfa.dz",
@@ -60,7 +60,7 @@
             "name": "Benderrah A.",
             "nameAr": "بن دراح أحلام",
             "kind": "Permanent Teachers",
-            "grade": "MCA",
+            "grade": "MCB",
             "phone": "0783 99 51 81",
             "emails": [
               "Ahlam.benderrah@univ-djelfa.dz",
@@ -70,10 +70,10 @@
             "roleAr": "نائب رئيس القسم المكلف بالتدريس والتعليم في التدرج"
           },
           {
+            "kind": "Permanant Teachers",
+            "grade": "MCA",
             "name": "Bouchemal A.",
             "nameAr": "بوشمال أحمد",
-            "kind": "Permanent Teachers",
-            "grade": "MCA",
             "phone": "655646803",
             "emails": [
               "h.bouchemal@univ-djelfa.dz",
@@ -121,10 +121,10 @@
             "roleAr": ""
           },
           {
+            "kind": "Permanant Teachers",
+            "grade": "MCB",
             "name": "Guen K.",
             "nameAr": "قن خديجة",
-            "kind": "Permanent Teachers",
-            "grade": "MCA",
             "phone": "0661 10 70 18",
             "emails": [
               "khadidja.guen@univ-djelfa.dz",
@@ -160,10 +160,10 @@
             "roleAr": ""
           },
           {
+            "kind": "Permanant Teachers",
+            "grade": "",
             "name": "Nourani A",
             "nameAr": "نوراني عبد الحميد",
-            "kind": "Permanent Teachers",
-            "grade": "MCA",
             "phone": "",
             "emails": [
               "a.nourani@univ-djelfa.dz",
