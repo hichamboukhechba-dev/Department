@@ -4653,7 +4653,11 @@
                       "tag": "S1",
                       "teacher": "Chaalani A."
                     },
-                    null,
+                    {
+                      "module": "Study of Literary Texts",
+                      "tag": "S2",
+                      "teacher": ""
+                    },
                     {
                       "module": "Study of Literary Texts  1",
                       "tag": "S1",
