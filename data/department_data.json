@@ -160,10 +160,10 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "",
             "name": "Nourani A",
             "nameAr": "نوراني عبد الحميد",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
             "phone": "",
             "emails": [
               "a.nourani@univ-djelfa.dz",
