@@ -18,10 +18,10 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "MAA",
             "name": "Amraoui Z",
             "nameAr": "عمراوي فاطمة الزهراء",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
             "phone": "0771 71 17 86",
             "emails": [
               "fz.amraoui@univ-djelfa.dz",
