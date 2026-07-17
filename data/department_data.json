@@ -31,10 +31,10 @@
             "roleAr": ""
           },
           {
-            "kind": "Permanant Teachers",
-            "grade": "MAA",
             "name": "Barboura O.",
             "nameAr": "بربورة اسامة",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
             "phone": "",
             "emails": [
               "oussama.barboura@univ-djelfa.dz",
