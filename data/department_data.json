@@ -3455,7 +3455,251 @@
               "Room 22": "L2",
               "Room 23": "L3"
             },
-            "exams": []
+            "exams": [
+              {
+                "room": "Room 21",
+                "date": "2026-07-17",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Civilisations of the Language of Study 1",
+                "teacher": "Bouchemal A.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Civilisations of the Language of Study 3",
+                "teacher": "Amraoui Z",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Civilization, Culture, and Interculturality 1",
+                "teacher": "Otman W",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-17",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Grammar of Language of Study 1",
+                "teacher": "Barboura S",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Grammar of Language of Study 3",
+                "teacher": "Djalab A.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "ESP",
+                "teacher": "Ouarniki W",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-17",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Linguistics and Phonetics 1",
+                "teacher": "Barboura O.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Linguistics and Phonetics 3",
+                "teacher": "Charrak O.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Introduction to Didactics 1",
+                "teacher": "Khadroun S.",
+                "level": "L3"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "Literatures of the Language of Study 3",
+                "teacher": "Rahmouni A",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "Linguistics 1",
+                "teacher": "Dahia H.",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-17",
+                "startTime": "13:00",
+                "endTime": "14:00",
+                "module": "Study of Literary Texts  1",
+                "teacher": "Amraoui O",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-17",
+                "startTime": "13:00",
+                "endTime": "14:00",
+                "module": "Oral Comprehension and Expression 3",
+                "teacher": "Chelali M.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-17",
+                "startTime": "13:00",
+                "endTime": "14:00",
+                "module": "Literature: Theories and Practices 1",
+                "teacher": "Mahammedi I.",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-18",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "University Study Skills 1",
+                "teacher": "Othmani A",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-18",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "University Study Skills 3",
+                "teacher": "Guadabi N.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-18",
+                "startTime": "09:00",
+                "endTime": "10:00",
+                "module": "Methodology of Academic Research 1",
+                "teacher": "Boukhechba H",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-18",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Written Comprehension and Expression 1",
+                "teacher": "Chaalani A.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-18",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Written Comprehension and Expression 3",
+                "teacher": "Othmani A",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-18",
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "module": "Translation: National Language(s) / Language of Study 1",
+                "teacher": "Guen K.",
+                "level": "L3"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-18",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Foreign Language(s) 3",
+                "teacher": "Nourani A",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-18",
+                "startTime": "11:00",
+                "endTime": "12:00",
+                "module": "Reading and Writing Workshop 1",
+                "teacher": "Ziouche K.",
+                "level": "L3"
+              },
+              {
+                "room": "Room 21",
+                "date": "2026-07-18",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "ICT and E-Learning 1",
+                "teacher": "Saidi H.",
+                "level": "L1"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-18",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "Digital Literatures 1",
+                "teacher": "M'sabel A.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-18",
+                "startTime": "12:00",
+                "endTime": "13:00",
+                "module": "Oral Communication Practices 1",
+                "teacher": "Retimi C.",
+                "level": "L3"
+              },
+              {
+                "room": "Room 22",
+                "date": "2026-07-18",
+                "startTime": "13:00",
+                "endTime": "14:00",
+                "module": "Reading and Text Analysis 3",
+                "teacher": "Saddedine Y.",
+                "level": "L2"
+              },
+              {
+                "room": "Room 23",
+                "date": "2026-07-18",
+                "startTime": "13:00",
+                "endTime": "14:00",
+                "module": "Entrepreneurship 1",
+                "teacher": "Laroussi M.",
+                "level": "L3"
+              }
+            ]
           },
           "S2": {
             "roomLevels": {},
