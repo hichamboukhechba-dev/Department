@@ -4648,7 +4648,11 @@
                 {
                   "date": "2026-07-19",
                   "cells": [
-                    null,
+                    {
+                      "module": "Written Comprehension and Expression 1",
+                      "tag": "S1",
+                      "teacher": "Chaalani A."
+                    },
                     {
                       "module": "Oral Comprehension and Expression 1",
                       "tag": "S1",
