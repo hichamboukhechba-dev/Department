@@ -3,15 +3,3051 @@
     {
       "name": "2026/2027",
       "data": {
-        "teachers": [],
+        "teachers": [
+          {
+            "name": "Amraoui O",
+            "nameAr": "عمراوي أسامة",
+            "kind": "Permanent Teachers",
+            "grade": "MAA",
+            "phone": "791576715",
+            "emails": [
+              "a.amraoui@univ-djelfa.dz",
+              "oussamaliterature7@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "name": "Amraoui Z",
+            "nameAr": "عمراوي فاطمة الزهراء",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
+            "phone": "0771 71 17 86",
+            "emails": [
+              "fz.amraoui@univ-djelfa.dz",
+              "zahraamraoui@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MAA",
+            "name": "Barboura O.",
+            "nameAr": "بربورة اسامة",
+            "phone": "",
+            "emails": [
+              "oussama.barboura@univ-djelfa.dz",
+              "alg.samo@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "name": "Barboura S",
+            "nameAr": "بربورة السبخاوي",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
+            "phone": "",
+            "emails": [
+              "s.barboura@univ-djelfa.dz",
+              "barboura.sebkhaoui@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "name": "Benderrah A.",
+            "nameAr": "بن دراح أحلام",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
+            "phone": "0783 99 51 81",
+            "emails": [
+              "Ahlam.benderrah@univ-djelfa.dz",
+              "Ahlamobenderrah@gmail.com"
+            ],
+            "role": "Deputy Head of Department",
+            "roleAr": "نائب رئيس القسم المكلف بالتدريس والتعليم في التدرج"
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCA",
+            "name": "Bouchemal A.",
+            "nameAr": "بوشمال أحمد",
+            "phone": "655646803",
+            "emails": [
+              "h.bouchemal@univ-djelfa.dz",
+              "bochmal.ahmed@gmail.com"
+            ],
+            "role": "chef de spécialité",
+            "roleAr": "رئيس تخصص"
+          },
+          {
+            "name": "Boukhechba H",
+            "nameAr": "بوخشبة هشام",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
+            "phone": "",
+            "emails": [
+              "h.boukhechba@univ-djelfa.dz"
+            ],
+            "role": "Head of Department",
+            "roleAr": "رئيس قسم"
+          },
+          {
+            "name": "Boukhalkhal Y.",
+            "nameAr": "بوخلخال يسمين",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
+            "phone": "799592798",
+            "emails": [
+              "yassmine.boukhalkhal@univ-djelfa.dz",
+              "yassmine.boukhalkhal@univ-djelfa.dz"
+            ],
+            "role": "Deputy Head of Department",
+            "roleAr": "نائب رئيس قسم مكلف بما بعد التدرج والبحث العلمي"
+          },
+          {
+            "name": "Chaalani A.",
+            "nameAr": "شعلاني عبد القادر",
+            "kind": "Permanent Teachers",
+            "grade": "MAA",
+            "phone": "",
+            "emails": [
+              "a.chaalani@univ-djelfa.dz",
+              "ch.abdelkader62@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "name": "Guen K.",
+            "nameAr": "قن خديجة",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
+            "phone": "0661 10 70 18",
+            "emails": [
+              "khadidja.guen@univ-djelfa.dz",
+              "libro_kity@yahoo.fr"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "name": "Khadroun S.",
+            "nameAr": "خضرون سالم",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
+            "phone": "",
+            "emails": [
+              "s.khadroune@univ-djelfa.dz",
+              "salemkhad8@gmail.com"
+            ],
+            "role": "",
+            "roleAr": "رئيس شعبة"
+          },
+          {
+            "kind": "Permanant Teachers",
+            "grade": "MCB",
+            "name": "Mahammedi I.",
+            "nameAr": "محمدي ايمان بلقيس",
+            "phone": "558725804",
+            "emails": [
+              "B.mahammedi@univ-djelfa.dz",
+              "belkisthequeen@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "name": "Nourani A",
+            "nameAr": "نوراني عبد الحميد",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
+            "phone": "",
+            "emails": [
+              "a.nourani@univ-djelfa.dz",
+              "hamidnour83@gmail.com"
+            ],
+            "role": "Head of Academic Program",
+            "roleAr": "رئيس شعبة"
+          },
+          {
+            "name": "Othmani A",
+            "nameAr": "عثماني عبد الحليم",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
+            "phone": "674252379",
+            "emails": [
+              "a.othmani@univ-djelfa.dz",
+              "halimfat32@gmail.com"
+            ],
+            "role": "",
+            "roleAr": "رئيس شعبة"
+          },
+          {
+            "name": "Ouarniki W",
+            "nameAr": "ورنيقي وفاء",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
+            "phone": "699165414",
+            "emails": [
+              "ouafa.ouarniki@univ-djelfa.dz",
+              "ouafa.ouarniki@yahoo.com"
+            ],
+            "role": "Head of Specialization",
+            "roleAr": "رئيس تخصص"
+          },
+          {
+            "name": "Rahmouni A",
+            "nameAr": "رحموني أمال",
+            "kind": "Permanent Teachers",
+            "grade": "MCA",
+            "phone": "0541 95 79 87",
+            "emails": [
+              "amelrahmouni89@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "name": "Charrak O.",
+            "nameAr": "شراك أم كلثوم",
+            "kind": "Permanent Teachers",
+            "grade": "MCB",
+            "phone": "660777460",
+            "emails": [
+              "charak.k95@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Bouaissa T",
+            "nameAr": "",
+            "phone": "696054545",
+            "emails": [
+              "toufik.bouaissa@port.ac.uk"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Bouzidi A",
+            "nameAr": "",
+            "phone": "666646617",
+            "emails": [
+              "Kadidraws@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Gatcha Y",
+            "nameAr": "قطشة يسين",
+            "phone": "660888817",
+            "emails": [
+              "yacinega09@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Kherfan",
+            "nameAr": "خرفان نور الهدى",
+            "phone": "",
+            "emails": [
+              "kherfanenourelhouda@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Otman W",
+            "nameAr": "عثمان وهيبة",
+            "phone": "",
+            "emails": [
+              "Wardamimi197@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Benabderahmane M",
+            "nameAr": "بن عبد الرحمان محمد",
+            "phone": "556617880",
+            "emails": [
+              "hamoucha92@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Arour H.",
+            "nameAr": "",
+            "phone": "",
+            "emails": [
+              "unaflora73@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Hayour",
+            "nameAr": "حيور",
+            "phone": "655867818",
+            "emails": [
+              "imanem280@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Dahia H.",
+            "nameAr": "",
+            "phone": "213 656 14 18 40",
+            "emails": [
+              "hadil.dahia.contact@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Saadeddine B",
+            "nameAr": "سعد الدين يسرا بلقيس",
+            "phone": "795797882",
+            "emails": [
+              "syousserabelkisse@yahoo.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Gueriniai I.",
+            "nameAr": "قرينعي إخلاص",
+            "phone": "659999258",
+            "emails": [
+              "Ikhlasse.gueriniai@univ-djelfa.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Retimi C.",
+            "nameAr": "رتيمي شيراز",
+            "phone": "783791842",
+            "emails": [
+              "Chiraz.retimi@univ-djelfa.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Saidi H.",
+            "nameAr": "سعيدي هاجر",
+            "phone": "796381723",
+            "emails": [
+              "Hadjer.saidi@univ-djelfa.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Chelali M.",
+            "nameAr": "شيلالي ملاك",
+            "phone": "797267570",
+            "emails": [
+              "Chelalimalak124@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Djoudi C.",
+            "nameAr": "جودي شكيب",
+            "phone": "776069919",
+            "emails": [
+              "Chakibdjoudi12@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Zaitri M.",
+            "nameAr": "زعيتري مسعود",
+            "phone": "655683780",
+            "emails": [
+              "messaoudzaitri87@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Ziouche K.",
+            "nameAr": "زيوش خديجة",
+            "phone": "698202002",
+            "emails": [
+              "Dijakhadidja3@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Guadabi N.",
+            "nameAr": "غضابي نرجس",
+            "phone": "557787340",
+            "emails": [
+              "Nardjes1288@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Belli A.",
+            "nameAr": "بلي آية",
+            "phone": "699216166",
+            "emails": [
+              "Ayabelli558@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Laroussi M.",
+            "nameAr": "لعروسي ملك",
+            "phone": "659527774",
+            "emails": [
+              "Malaklaroussi67@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Saddedine Y.",
+            "nameAr": "سعد الدين يسرا بلقيس",
+            "phone": "795797882",
+            "emails": [
+              "syousserabelkisse@yahoo.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Djalab A.",
+            "nameAr": "جعلاب أسماء",
+            "phone": "782851819",
+            "emails": [
+              "Assmadjalabb@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "M'sabel A.",
+            "nameAr": "",
+            "phone": "698609830",
+            "emails": [
+              "rahimadel17@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Mokhtari A.",
+            "nameAr": "مخطاري أميرة",
+            "phone": "657800697",
+            "emails": [
+              "amiralamia.mokhtari@univ-tiaret.dz"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Malla N.",
+            "nameAr": "ملة نسرين",
+            "phone": "774624206",
+            "emails": [
+              "mallanana44@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Abbas C.",
+            "nameAr": "عباس شهرزاد",
+            "phone": "658923317",
+            "emails": [
+              "czed96@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Younsi S.",
+            "nameAr": "يونسي سارة",
+            "phone": "541821679",
+            "emails": [
+              "younsisarah2001@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Bendecho H.",
+            "nameAr": "بن دشو حمزة",
+            "phone": "778440564",
+            "emails": [
+              "bendechou@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Temporaray Teachers",
+            "grade": "",
+            "name": "Hassani M",
+            "nameAr": "",
+            "phone": "",
+            "emails": [
+              "mariaa.hassanii@gmail.com"
+            ],
+            "role": "",
+            "roleAr": ""
+          },
+          {
+            "kind": "Teacher",
+            "grade": "",
+            "name": "Hamidat Ali",
+            "nameAr": "",
+            "phone": "659267846",
+            "emails": [],
+            "role": "",
+            "roleAr": ""
+          }
+        ],
         "delegates": [],
         "examsS1": [],
         "examsS2": [],
-        "timetables": {},
-        "lmd": [],
-        "didactics": [],
-        "litciv": [],
-        "rooms": [],
+        "timetables": {
+          "L1": {
+            "slots": [
+              "08:30-10:00",
+              "10:00-11:30",
+              "12:30-14:00",
+              "14:00-15:30"
+            ],
+            "entries": {
+              "S1": [
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "University Study Skills 1",
+                  "instructor": "Othmani A",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Room 23",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "University Study Skills 1",
+                  "instructor": "Othmani A",
+                  "room": "Room 24",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "Civilisations of the Language of Study 1",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Reading and Text Analysis 1",
+                  "instructor": "Gueriniai I.",
+                  "room": "Room 23",
+                  "group": "GROUP 3 "
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Foreign Language(s) 1",
+                  "instructor": "Nourani A",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Study of Literary Texts  1",
+                  "instructor": "Amraoui O",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "University Study Skills 1",
+                  "instructor": "Othmani A",
+                  "room": "Room 22",
+                  "group": "GROUP 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "University Study Skills 1",
+                  "instructor": "Othmani A",
+                  "room": "Room 21",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "ICT and E-Learning 1",
+                  "instructor": "Saidi H.",
+                  "room": "Room 24",
+                  "group": "GROUP 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Room 23",
+                  "group": "GROUP 3"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 1",
+                  "instructor": "Chaalani A.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Grammar of Language of Study 1",
+                  "instructor": "Barboura S",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 2,
+                  "module": "Oral Comprehension and Expression 1",
+                  "instructor": "Djoudi C.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 3,
+                  "module": "Linguistics and Phonetics 1",
+                  "instructor": "Barboura O.",
+                  "room": "Amphi B",
+                  "group": "ALL GROUPS"
+                }
+              ],
+              "S2": []
+            }
+          },
+          "L2": {
+            "slots": [
+              "08:30-10:00",
+              "10:00-11:30",
+              "12:30-14:00",
+              "14:00-15:30"
+            ],
+            "entries": {
+              "S1": [
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Literatures of the Language of Study 3",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Literatures of the Language of Study 3",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Civilisations of the Language of Study 3",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 26",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Civilisations of the Language of Study 3",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Foreign Language(s) 3",
+                  "instructor": "Nourani A",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Foreign Language(s) 3",
+                  "instructor": "Nourani A",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "Charrak O.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Linguistics and Phonetics 3",
+                  "instructor": "Charrak O.",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "Djalab A.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Grammar of Language of Study 3",
+                  "instructor": "Djalab A.",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Oral Comprehension and Expression 3",
+                  "instructor": "Chelali M.",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Oral Comprehension and Expression 3",
+                  "instructor": "Chelali M.",
+                  "room": "Room 25",
+                  "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Written Comprehension and Expression 3",
+                  "instructor": "Othmani A",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Written Comprehension and Expression 3",
+                  "instructor": "Othmani A",
+                  "room": "Room 25",
+                  "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Digital Literatures 1",
+                  "instructor": "M'sabel A.",
+                  "room": "Room 25",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Digital Literatures 1",
+                  "instructor": "M'sabel A.",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Reading and Text Analysis 3",
+                  "instructor": "Saddedine Y.",
+                  "room": "Room 26",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Reading and Text Analysis 3",
+                  "instructor": "Saadeddine B",
+                  "room": "Room 25",
+                  "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "University Study Skills 3",
+                  "instructor": "Guadabi N.",
+                  "room": "Room 26",
+                  "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "University Study Skills 3",
+                  "instructor": "Guadabi N.",
+                  "room": "Room 25",
+                  "group": "GROUP 1+2"
+                }
+              ],
+              "S2": []
+            }
+          },
+          "L3": {
+            "slots": [
+              "08:30-10:00",
+              "10:00-11:30",
+              "12:30-14:00",
+              "14:00-15:30"
+            ],
+            "entries": {
+              "S1": [
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "ESP",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "ESP",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 0,
+                  "module": "Methodology of Academic Research 1",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Sunday",
+                  "slotIdx": 1,
+                  "module": "Methodology of Academic Research 1",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Introduction to Didactics 1",
+                  "instructor": "Khadroun S.",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Introduction to Didactics 1",
+                  "instructor": "Khadroun S.",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 0,
+                  "module": "Translation: National Language(s) / Language of Study 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 1,
+                  "module": "Translation: National Language(s) / Language of Study 1",
+                  "instructor": "Guen K.",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "Linguistics 1",
+                  "instructor": "Dahia H.",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Reading and Writing Workshop 1",
+                  "instructor": "Ziouche K.",
+                  "room": "Room 11",
+                  "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Linguistics 1",
+                  "instructor": "Dahia H.",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Reading and Writing Workshop 1",
+                  "instructor": "Ziouche K.",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Oral Communication Practices 1",
+                  "instructor": "Retimi C.",
+                  "room": "Room 12",
+                  "group": "GROUP 3+4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Oral Communication Practices 1",
+                  "instructor": "Retimi C.",
+                  "room": "Room 11",
+                  "group": "GROUP 1+2"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 2,
+                  "module": "Civilization, Culture, and Interculturality 1",
+                  "instructor": "Otman W",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Monday",
+                  "slotIdx": 3,
+                  "module": "Civilization, Culture, and Interculturality 1",
+                  "instructor": "Otman W",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Entrepreneurship 1",
+                  "instructor": "Laroussi M.",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Entrepreneurship 1",
+                  "instructor": "Laroussi M.",
+                  "room": "Room 12",
+                  "group": "GROUP 1 + 2"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Literature: Theories and Practices 1",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 12",
+                  "group": "GROUP 3 + 4"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Literature: Theories and Practices 1",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 11",
+                  "group": "GROUP 1 + 2"
+                }
+              ],
+              "S2": []
+            }
+          },
+          "M1 Lit/Civ": {
+            "slots": [
+              "08:30-10:00",
+              "10:00-11:30",
+              "12:30-14:00",
+              "14:00-15:30"
+            ],
+            "entries": {
+              "S1": [
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "British Civilisation",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 13",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "American Literature",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 13",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Literary Theories",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 13",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 1,
+                  "module": "African Studies",
+                  "instructor": "Rahmouni A",
+                  "room": "Room 13",
+                  "group": "Group 1"
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 0,
+                  "module": "British Literature",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 13",
+                  "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Research Skills",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 13",
+                  "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Teaching Literary Texts",
+                  "instructor": "",
+                  "room": "Room 13",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Ethics et deontology",
+                  "instructor": "Abbas C.",
+                  "room": "Amphi B ( Same)",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Logiciels libres et Open sources",
+                  "instructor": "Bendecho H.",
+                  "room": "Room 13",
+                  "group": "All Groups"
+                }
+              ],
+              "S2": []
+            }
+          },
+          "M1 Didactics": {
+            "slots": [
+              "08:30-10:00",
+              "10:00-11:30",
+              "12:30-14:00",
+              "14:00-15:30"
+            ],
+            "entries": {
+              "S1": [
+                {
+                  "day": "Thursday",
+                  "slotIdx": 0,
+                  "module": "Interculturality",
+                  "instructor": "Rahmouni A",
+                  "room": "Amphi B",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "English for Specific Purposes",
+                  "instructor": "Ouarniki W",
+                  "room": "Amphi B",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Research Methodology",
+                  "instructor": "Gatcha Y",
+                  "room": "Amphi B",
+                  "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Didactics",
+                  "instructor": "Khadroun S.",
+                  "room": "Amphi B",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Sociolinguistics",
+                  "instructor": "Charrak O.",
+                  "room": "Amphi B",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Logiciels libres et Open sources",
+                  "instructor": "Bendecho H.",
+                  "room": "Amphi B",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Ethics et deontology",
+                  "instructor": "Abbas C.",
+                  "room": "Amphi B",
+                  "group": ""
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 1,
+                  "module": "Applied Linguistics",
+                  "instructor": "Kherfan",
+                  "room": "Amphi B",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Second language acquisition",
+                  "instructor": "",
+                  "room": "Amphi B",
+                  "group": ""
+                }
+              ],
+              "S2": []
+            }
+          },
+          "M2 Lit/Civ": {
+            "slots": [
+              "08:30-10:00",
+              "10:00-11:30",
+              "12:30-14:00",
+              "14:00-15:30"
+            ],
+            "entries": {
+              "S1": [
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "American Civilisation",
+                  "instructor": "Amraoui Z",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Contemporary American Literature",
+                  "instructor": "Benderrah A.",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "Academic Writing",
+                  "instructor": "Mahammedi I.",
+                  "room": "Room 11",
+                  "group": "GROUP 1"
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 1,
+                  "module": "Cultural Studies",
+                  "instructor": "Boukhalkhal Y.",
+                  "room": "Room 11",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "African Literature",
+                  "instructor": "Bouchemal A.",
+                  "room": "Room 23",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Intelligence artificielle",
+                  "instructor": "Bendecho H.",
+                  "room": "Room 21",
+                  "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Research Skills",
+                  "instructor": "",
+                  "room": "Room 23",
+                  "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Critical Reading",
+                  "instructor": "",
+                  "room": "Room 21",
+                  "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "World Arabic Literature",
+                  "instructor": "",
+                  "room": "Room 11",
+                  "group": ""
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 0,
+                  "module": "Contemporary British Literature",
+                  "instructor": "",
+                  "room": "Room 11",
+                  "group": ""
+                }
+              ],
+              "S2": []
+            }
+          },
+          "M2 Didactics": {
+            "slots": [
+              "08:30-10:00",
+              "10:00-11:30",
+              "12:30-14:00",
+              "14:00-15:30"
+            ],
+            "entries": {
+              "S1": [
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 1,
+                  "module": "Language Teaching Approaches & Methods",
+                  "instructor": "Ouarniki W",
+                  "room": "Room 14",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 1,
+                  "module": "Reflective Practice and Teacher Development",
+                  "instructor": "Khadroun S.",
+                  "room": "Room 14",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 0,
+                  "module": "Writing a dissertation",
+                  "instructor": "Charrak O.",
+                  "room": "Room 14",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 0,
+                  "module": "Curriculum and Syllabus Design",
+                  "instructor": "Boukhechba H",
+                  "room": "Room 14",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 0,
+                  "module": "Communicational Practices",
+                  "instructor": "",
+                  "room": "Room 14",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 2,
+                  "module": "Research Methodology",
+                  "instructor": "Gatcha Y",
+                  "room": "Room 14",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Thursday",
+                  "slotIdx": 1,
+                  "module": "Educational psychology",
+                  "instructor": "",
+                  "room": "Room 14",
+                  "group": "All Groups"
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 3,
+                  "module": "French",
+                  "instructor": "",
+                  "room": "Room 14",
+                  "group": ""
+                },
+                {
+                  "day": "Wednesday",
+                  "slotIdx": 2,
+                  "module": "Sociodidactics",
+                  "instructor": "",
+                  "room": "Room 14",
+                  "group": ""
+                },
+                {
+                  "day": "Tuesday",
+                  "slotIdx": 3,
+                  "module": "Intelligence artificielle",
+                  "instructor": "Bendecho H.",
+                  "room": "",
+                  "group": ""
+                }
+              ],
+              "S2": []
+            }
+          }
+        },
+        "lmd": [
+          {
+            "label": "L1 S1",
+            "courses": [
+              {
+                "unit": "Core Unit UEF 1.1.1",
+                "course": "Written Comprehension and Expression 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.1.2",
+                "course": "Grammar of Language of Study 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.1.3",
+                "course": "Study of Literary Texts  1",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 1.1",
+                "course": "University Study Skills 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 1",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "ICT and E-Learning 1",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 1.1",
+                "course": "Civilisations of the Language of Study 1",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 1.1",
+                "course": "Foreign Language(s) 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "L1 S2",
+            "courses": [
+              {
+                "unit": "Core Unit UEF 1.2.1",
+                "course": "Written Comprehension and Expression 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.2.2",
+                "course": "Grammar of Language of Study 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 1.2.3",
+                "course": "Study of Literary Texts",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 1.2",
+                "course": "University Study Skills 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 2",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "ICT and E-Learning 2",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 1.2",
+                "course": "Civilisations of the Language of Study 2",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 1.2",
+                "course": "Foreign Language(s) 2",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "L2 S1",
+            "courses": [
+              {
+                "unit": "Core Unit UEF 2.1.1",
+                "course": "Written Comprehension and Expression 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.1.2",
+                "course": "Grammar of Language of Study 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.1.3",
+                "course": "Literatures of the Language of Study 3",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 2.1",
+                "course": "University Study Skills 3",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 3",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "Digital Literatures 1",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 2.1",
+                "course": "Civilisations of the Language of Study 3",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 2.1",
+                "course": "Foreign Language(s) 3",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "L2 S2",
+            "courses": [
+              {
+                "unit": "Core Unit UEF 2.2.1",
+                "course": "Written Comprehension and Expression 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Oral Comprehension and Expression 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.2.2",
+                "course": "Grammar of Language of Study 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Linguistics and Phonetics 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Core Unit UEF 2.2.3",
+                "course": "Literatures of the Language of Study 4",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit UEM 2.2",
+                "course": "University Study Skills 4",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "",
+                "course": "Reading and Text Analysis 4",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "",
+                "course": "Digital Literatures 2",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit UED 2.2",
+                "course": "Civilisations of the Language of Study 4",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit UET 2.2",
+                "course": "Foreign Language(s) 4",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "L3 S1",
+            "courses": [
+              {
+                "unit": "Fundamental Unit",
+                "course": "Linguistics 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEF 3.1.1",
+                "course": "Literature: Theories and Practices 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Credits: 12",
+                "course": "Civilization, Culture, and Interculturality 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Coefficients: 6",
+                "course": "Introduction to Didactics 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Fundamental Unit",
+                "course": "ESP",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit",
+                "course": "Methodology of Academic Research 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEM 3.1",
+                "course": "Reading and Writing Workshop 1",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Credits: 9",
+                "course": "Oral Communication Practices 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit",
+                "course": "Translation: National Language(s) / Language of Study 1",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit",
+                "course": "Entrepreneurship 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "L3 S2",
+            "courses": [
+              {
+                "unit": "Fundamental Unit",
+                "course": "Linguistics 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEF 3.1.1",
+                "course": "Literature: Theories and Practices 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Credits: 12",
+                "course": "Civilization, Culture, and Interculturality 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Coefficients: 6",
+                "course": "Introduction to Didactics 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Fundamental Unit",
+                "course": "ESP 2",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h30",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Methodological Unit",
+                "course": "Methodology of Academic Research 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Code: UEM 3.1",
+                "course": "Reading and Writing Workshop 2",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Credits: 9",
+                "course": "Oral Communication Practices 1",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "1h00",
+                "total": "15h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "Exploratory Unit",
+                "course": "Translation: National Language(s) / Language of Study 2",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "Transversal Unit",
+                "course": "Entrepreneurship 2",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "-",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          }
+        ],
+        "didactics": [
+          {
+            "label": "M1 Didactics S1",
+            "courses": [
+              {
+                "unit": "UE fondamentales",
+                "course": "Didactics",
+                "credits": 6,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "67h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Interculturality",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Applied Linguistics",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "English for Specific Purposes",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Research Methodology",
+                "credits": 5,
+                "coef": 3,
+                "lecture": "1h00",
+                "td": "3h00",
+                "total": "37h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Logiciels libres et Open sources",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h",
+                "exam": 0,
+                "ca": 100
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Second language acquisition",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Sociolinguistics",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UE transversales",
+                "course": "Ethics et deontology",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              }
+            ]
+          },
+          {
+            "label": "M1 Didactics S2",
+            "courses": [
+              {
+                "unit": "UE fondamentales",
+                "course": "Didactics",
+                "credits": 6,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "67h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Interculturality",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Applied Linguistics",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "English for Specific Purposes",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Research Methodology",
+                "credits": 5,
+                "coef": 3,
+                "lecture": "1h00",
+                "td": "3h00",
+                "total": "37h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Didactics of Academic Writing and Reading",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Translation",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Sociolinguistics",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UE transversales",
+                "course": "Programmation informatique",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "M2 Didactics S1",
+            "courses": [
+              {
+                "unit": "UE fondamentales",
+                "course": "Educational psychology",
+                "credits": 6,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "67h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Sociodidactics",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Language Teaching Approaches & Methods",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE fondamentales",
+                "course": "Curriculum and Syllabus Design",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Research Methodology",
+                "credits": 3,
+                "coef": 2,
+                "lecture": "2h",
+                "td": "2h",
+                "total": "37h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Writing a dissertation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE méthodologie",
+                "course": "Communicational Practices",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UE découverte",
+                "course": "Reflective Practice and Teacher Development",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UE découverte",
+                "course": "French",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UE transversales",
+                "course": "Intelligence artificielle",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "M2 Didactics S2",
+            "courses": []
+          }
+        ],
+        "litciv": [
+          {
+            "label": "M1 Lit/Civ S1",
+            "courses": [
+              {
+                "unit": "UEF1",
+                "course": "British Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "American Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Literary Theories",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "British Civilisation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "African Studies",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UEM",
+                "course": "Research Skills",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h00",
+                "td": "3h00",
+                "total": "60h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Logiciels libres et Open sources",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UED",
+                "course": "Teaching Literary Texts",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "-",
+                "td": "3h",
+                "total": "45h00",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UET",
+                "course": "Ethics et deontology",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "M1 Lit/Civ S2",
+            "courses": [
+              {
+                "unit": "UEF1",
+                "course": "British Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "American Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Literary Theories",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "British Civilisation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "African Studies",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UEM",
+                "course": "Research Skills",
+                "credits": 5,
+                "coef": 3,
+                "lecture": "1h30",
+                "td": "3h00",
+                "total": "60h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Academic Writing",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UED",
+                "course": "Philosophical Trends",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "3h",
+                "td": "-",
+                "total": "45h00",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UET",
+                "course": "Programmation informatique",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "M2 Lit/Civ S1",
+            "courses": [
+              {
+                "unit": "UEF1",
+                "course": "Contemporary British Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Contemporary American Literature",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF1",
+                "course": "Cultural Studies",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "American Civilisation",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "1h30",
+                "td": "1h30",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEF2",
+                "course": "African Literature",
+                "credits": 2,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UEM",
+                "course": "Critical Reading",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Research Skills",
+                "credits": 4,
+                "coef": 2,
+                "lecture": "-",
+                "td": "3h00",
+                "total": "45h00",
+                "exam": 60,
+                "ca": 40
+              },
+              {
+                "unit": "UEM",
+                "course": "Academic Writing",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              },
+              {
+                "unit": "UED",
+                "course": "World Arabic Literature",
+                "credits": 2,
+                "coef": 2,
+                "lecture": "3h",
+                "td": "-",
+                "total": "45h00",
+                "exam": 100,
+                "ca": 0
+              },
+              {
+                "unit": "UET",
+                "course": "Intelligence artificielle",
+                "credits": 1,
+                "coef": 1,
+                "lecture": "1h30",
+                "td": "-",
+                "total": "22h30",
+                "exam": null,
+                "ca": 100
+              }
+            ]
+          },
+          {
+            "label": "M2 Lit/Civ S2",
+            "courses": []
+          }
+        ],
+        "rooms": [
+          "Room 11",
+          "Room 12",
+          "Room 13",
+          "Room 14",
+          "Room 21",
+          "Room 22",
+          "Room 23",
+          "Room 24",
+          "Room 25",
+          "Room 26",
+          "Amphi B",
+          "Online"
+        ],
+        "studentCounts": [
+          {
+            "level": "L1",
+            "count": 0
+          },
+          {
+            "level": "L2",
+            "count": 0
+          },
+          {
+            "level": "L3",
+            "count": 0
+          },
+          {
+            "level": "M1 Lit/Civ",
+            "count": 0
+          },
+          {
+            "level": "M2 Lit/Civ",
+            "count": 0
+          },
+          {
+            "level": "M1 Didactics",
+            "count": 0
+          },
+          {
+            "level": "M2 Didactics",
+            "count": 0
+          }
+        ],
+        "roomUsage": [],
         "replacementExams": {
           "S1": {
             "roomLevels": {},
@@ -22,31 +3058,117 @@
             "exams": []
           }
         },
-        "studentCounts": [],
-        "roomUsage": [],
         "supervision": {
           "students": []
         },
-        "students": {},
+        "students": {
+          "L1": {
+            "groups": {},
+            "unassigned": []
+          },
+          "L2": {
+            "groups": {},
+            "unassigned": []
+          },
+          "L3": {
+            "groups": {},
+            "unassigned": []
+          },
+          "M1 Didactics": {
+            "groups": {},
+            "unassigned": []
+          },
+          "M1 Lit/Civ": {
+            "groups": {},
+            "unassigned": []
+          },
+          "M2 Didactics": {
+            "groups": {},
+            "unassigned": []
+          },
+          "M2 Lit/Civ": {
+            "groups": {},
+            "unassigned": []
+          }
+        },
         "days": [
           "Sunday",
           "Monday",
           "Tuesday",
           "Wednesday",
-          "Thursday",
-          "Saturday"
+          "Thursday"
         ],
-        "examTimings": {},
+        "examTimings": {
+          "L1||S1": "09:00 – 10:30"
+        },
         "examTimingsV2": true,
         "roomAllocation": {
-          "S1": null,
+          "S1": {
+            "slots": [
+              "08:30 – 10:30"
+            ],
+            "rooms": {}
+          },
           "S2": null
         },
         "invigilation": {
-          "S1": null,
+          "S1": {
+            "days": []
+          },
           "S2": null
         },
-        "extraHours": {}
+        "extraHours": {
+          "header": {
+            "ar": "الجمهورية الجزائرية الديمقراطية الشعبية\nوزارة التعليم العالي والبحث العلمي\nجامعة زيان عاشور - الجلفة\nكلية الآداب واللغات والفنون\nقسم اللغة الانجليزية",
+            "en": "People's Democratic Republic of Algeria\nMinistry of Higher Education and Scientific Research\nZiane Achour University - Djelfa\nFaculty of Letters, Languages and Arts\nDepartment of English",
+            "titles": {
+              "S1": {
+                "permAr": "الحجم الساعي الإضافي للأساتذة الدائمين من سبتمبر إلى ديسمبر",
+                "tempAr": "الحجم الساعي الإضافي للأساتذة المؤقتين من سبتمبر إلى ديسمبر",
+                "permEn": "Extra Teaching Hours for Permanent Teachers — September to December",
+                "tempEn": "Extra Teaching Hours for Temporary Teachers — September to December"
+              },
+              "S2": {
+                "permAr": "الحجم الساعي الإضافي للأساتذة الدائمين من جانفي إلى ماي",
+                "tempAr": "الحجم الساعي الإضافي للأساتذة المؤقتين من جانفي إلى ماي",
+                "permEn": "Extra Teaching Hours for Permanent Teachers — January to May",
+                "tempEn": "Extra Teaching Hours for Temporary Teachers — January to May"
+              }
+            }
+          },
+          "S1": {
+            "hours": {
+              "Barboura O.": [
+                3,
+                4,
+                4,
+                5.5
+              ]
+            },
+            "order": {
+              "perm": [],
+              "temp": []
+            }
+          },
+          "S2": {
+            "hours": {},
+            "order": {
+              "perm": [],
+              "temp": []
+            }
+          }
+        },
+        "paperReview": {
+          "S1": {
+            "levels": {}
+          },
+          "S2": {
+            "levels": {}
+          }
+        },
+        "retakeExams": {
+          "levels": {}
+        }
       }
     }
   ],
