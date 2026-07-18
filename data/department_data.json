@@ -1436,7 +1436,8 @@
           }
         ],
         "rooms": [
-          "Room 1"
+          "Room 1",
+          "Room 2"
         ],
         "replacementExams": {
           "S1": {
