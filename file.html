@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introductions &amp; their questions — Academic Writing in Examination Contexts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E5E9EF; --sheet:#FDFDFB; --ink:#141E30; --ink2:#5A6679;
+  --rule:#D2D9E3; --mark:#B4372C; --mark-soft:#F7E9E7; --focus:#2C5FA8;
+  --serif:"Spectral",Georgia,serif;
+  --cond:"IBM Plex Sans Condensed","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.6}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px}
+
+/* ---------- masthead ---------- */
+header.mast{padding:56px 0 34px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mark);margin:0 0 18px}
+h1{font-family:var(--cond);font-weight:700;font-size:clamp(34px,7vw,62px);line-height:.98;letter-spacing:-.015em;margin:0 0 14px;text-transform:uppercase}
+h1 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em;display:block;font-size:.62em;color:var(--ink2);margin-top:8px}
+.mast p.src{margin:0;max-width:62ch;color:var(--ink2);font-size:16px}
+.mast p.src b{color:var(--ink);font-weight:600}
+
+/* ---------- toolbar ---------- */
+.bar{position:sticky;top:0;z-index:20;background:rgba(229,233,239,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar-in{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 0}
+input[type=search]{flex:1 1 220px;min-width:0;font-family:var(--cond);font-size:15px;padding:9px 12px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:2px}
+input[type=search]::placeholder{color:#98A2B3}
+.chips{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+button{font-family:var(--cond);cursor:pointer;border-radius:2px}
+.chip{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:6px 11px;border:1px solid var(--rule);background:transparent;color:var(--ink2)}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tool{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:8px 12px;border:1px solid var(--ink);background:transparent;color:var(--ink)}
+.tool[aria-pressed=true]{background:var(--mark);border-color:var(--mark);color:#fff}
+.count{font-family:var(--mono);font-size:12px;color:var(--ink2);margin-left:auto;white-space:nowrap}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* ---------- cards ---------- */
+main{padding:26px 0 90px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-left:3px solid var(--mark);margin-bottom:14px}
+.card.hidden{display:none}
+.head{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:start;width:100%;text-align:left;background:none;border:0;padding:18px 18px 18px 16px;font:inherit;color:inherit}
+.num{font-family:var(--mono);font-size:12px;color:var(--mark);padding-top:5px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:7px}
+.tag{font-family:var(--cond);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;background:var(--mark-soft);color:var(--mark)}
+.tag.op{background:#E7EBF2;color:var(--ink2)}
+.qtext{font-family:var(--serif);font-size:17px;line-height:1.5;margin:0}
+.head:hover .qtext{text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+.caret{font-family:var(--mono);font-size:12px;color:var(--ink2);padding-top:4px}
+.card[data-open=true] .caret{color:var(--mark)}
+.ref{font-family:var(--mono);font-size:11px;color:var(--ink2);margin-top:8px;line-height:1.5}
+
+.body{display:none;padding:0 18px 22px 74px;border-top:1px solid var(--rule);margin-left:0}
+.card[data-open=true] .body{display:block}
+.note{font-size:14.5px;font-style:italic;color:var(--ink2);margin:16px 0 18px;padding-left:12px;border-left:1px solid var(--rule)}
+.tabs{display:flex;flex-wrap:wrap;gap:0;margin-bottom:4px;border-bottom:1px solid var(--rule)}
+.tab{font-size:12px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;padding:7px 12px;border:0;background:none;color:var(--ink2);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab[aria-selected=true]{color:var(--mark);border-bottom-color:var(--mark)}
+.sub{font-family:var(--cond);font-size:12.5px;color:var(--ink2);margin:12px 0 0;letter-spacing:.02em}
+.prose{font-size:17.5px;line-height:1.72;margin:10px 0 0;hyphens:auto}
+.prose.split{display:flex;flex-direction:column;gap:9px}
+.s{display:flex;gap:12px}
+.s .n{font-family:var(--mono);font-size:11px;color:var(--mark);padding-top:6px;flex:0 0 22px;text-align:right}
+.s .t{flex:1;border-left:1px solid var(--rule);padding-left:12px}
+.foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+.mini{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;padding:6px 10px;border:1px solid var(--rule);background:transparent;color:var(--ink2)}
+.mini[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.wc{font-family:var(--mono);font-size:11px;color:var(--ink2);margin-left:auto}
+.empty{text-align:center;padding:70px 20px;color:var(--ink2);font-style:italic}
+footer{border-top:1px solid var(--rule);padding:22px 0 46px;font-family:var(--mono);font-size:11px;color:var(--ink2);line-height:1.7}
+
+@media (max-width:640px){
+  header.mast{padding:36px 0 26px}
+  .head{grid-template-columns:30px 1fr 18px;gap:10px;padding:15px 14px}
+  .body{padding:0 14px 20px 14px}
+  .qtext{font-size:16px}
+  .prose{font-size:16.5px}
+  .count{width:100%;margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="mast"><div class="wrap">
+  <p class="eyebrow">Prototype answers · worked introductions</p>
+  <h1>Every introduction<em>and the question it was written for</em></h1>
+  <p class="src">Drawn from <b>Academic Writing in Examination Contexts</b> by Dr. Boukhechba Hicham — a methodological guide for university students and PhD entrance examination candidates.</p>
+</div></header>
+
+<div class="bar"><div class="wrap bar-in">
+  <input type="search" id="q" placeholder="Search a question, a module, a phrase…" aria-label="Search introductions and questions">
+  <button class="tool" id="split" aria-pressed="false" title="Number every sentence in every introduction">Sentence view</button>
+  <button class="tool" id="all" aria-pressed="false">Open all</button>
+  <span class="count" id="count"></span>
+  <div class="chips" id="chips"></div>
+</div></div>
+
+<main><div class="wrap" id="list"></div></main>
+
+<footer><div class="wrap">
+  Sentence view splits an introduction the way the book reads it — first sentence, thesis, then each dimension the prompt demands.<br>
+  Texts reproduced from the source PDF for study use.
+</div></footer>
+
+<script>
+const DATA = [{"id": 1, "module": "Blended learning", "kind": "full", "source": "§2.2 The Dual Message (pp. 37–40) · §6.7 Essay One (p. 160)", "question": "Debate about the role of new technologies fueled the development of blended learning. Discuss the most prominent considerations that respond to this type of learning, notably in an EFL context.", "note": "The book uses this single prompt four times to show a rising scale of ambition: a purely explicit answer, two contextualised attempts, and the final Essay One version built on three categories.", "variants": [{"label": "Surface answer", "sub": "explicit only — the version the book criticises", "text": "Blended learning combines traditional in-person learning with digital and online components. However, when using blended learning in the context of teaching English as a foreign language (EFL), a number of important factors need to be taken into account. These latter include teaching teachers how to utilize technology effectively, promoting student involvement in virtual environments, and guaranteeing fair access to digital resources and content adaptation for online platforms. Furthermore, developing a balanced strategy that optimizes the advantages of blended learning for EFL students requires cultural sensitivity, technological assistance, and curriculum alignment."}, {"label": "Attempt One", "sub": "adds the Algerian context", "text": "The evolving nature of education, fueled by the rapid expansion of digital technologies, has resulted in the emergence of several teaching delivery methods, one of which is blended learning. In Algeria, recent efforts to modernize higher education, coupled with experiences of remote and technology-mediated learning, have made blended learning an increasingly relevant pedagogical approach, particularly in English as a Foreign Language (EFL) instruction. Blended learning combines traditional face-to-face teaching with digital and online components. However, its successful implementation requires careful consideration of several factors, including preparing teachers to integrate technology effectively, promoting student engagement in virtual learning environments, and ensuring equitable access to digital resources and appropriately adapted online content. Furthermore, maximizing the benefits of blended learning for EFL students requires a redesigned curriculum that aligns pedagogical objectives with both classroom and digital learning experiences."}, {"label": "Attempt Two", "sub": "three categories: pedagogical, technological, social", "text": "The emphasis on flexibility, accessibility, enhanced engagement, scalability, and personalized learning, combined with the vast array of technological tools, has given rise to various teaching delivery methods, including blended learning. The latter combines traditional in-person learning with digital and online components. However, the success of blended learning hinges on considerations that can be put into three categories: pedagogical, technological, and social. The pedagogical dimension involves preparing teachers to integrate technology meaningfully, encouraging active student participation, and adapting content to suit diverse learning needs, while the technological dimension centers on ensuring equitable access to digital resources, providing reliable infrastructure, and offering ongoing technical support. On the social side, maintaining a sense of community is vital to avoid learner isolation in online components, as well as maintaining cultural relevance."}, {"label": "Essay One", "sub": "the version carried into the full essay", "text": "The emphasis on flexibility, accessibility, enhanced engagement, scalability, and personalized learning, combined with the vast array of technological tools, has given rise to various teaching delivery methods, including blended learning. The latter combines traditional in-person learning with digital and online components. However, the success of blended learning hinges on considerations that can be put into three categories: pedagogical, technological, and social. The pedagogical dimension involves preparing teachers to integrate technology meaningfully, encouraging active student participation, and adapting content to suit diverse learning needs, while the technological dimension centers on ensuring equitable access to digital resources, providing reliable infrastructure, and offering ongoing technical support and digital literacy training. On the social side, maintaining a sense of community is vital to avoid learner isolation in online components as well as minding cultural relevance."}]}, {"id": 2, "module": "AI in EFL", "kind": "full", "source": "§2.4 Formality (p. 45) · §5.7 Starting with the thesis statement (p. 140)", "question": "How can generative AI tools be integrated into English as a Foreign Language (EFL) pedagogy to enhance communicative competence and critical thinking in non-native speakers?", "note": "Used first to illustrate specialised terminology, expanded noun phrases, nominalisation, passive voice and hedging; then reused to show an introduction that opens straight with the thesis statement.", "variants": [{"label": "Version in §2.4", "sub": "the formality worked example", "text": "AI-powered educational games, adaptive learning platforms, chatbots for student support, automated grading and feedback systems, and intelligent tutoring systems are just examples of how AI can be integrated into education. Such tools have the capabilities to increase student motivation, provide authentic language exposure and language practice, deliver immediate feedback and corrections, and offer support tailored to each student's needs. Furthermore, AI can function beyond being a tool, as it can reshape EFL classrooms by allowing students to practice language use in a dynamic environment and supporting personalized learning experiences tailored to individual needs and proficiency levels. For non-native speakers who must have the skills necessary to communicate effectively and understand messages across various contexts, classes with AI can be a necessity for enhancing communicative competence and critical thinking. Specialized Terminology"}, {"label": "Version in §5.7", "sub": "thesis-first opening", "text": "AI-powered educational games, adaptive learning platforms, chatbots for student support, automated grading and feedback systems, and intelligent tutoring systems are just examples of how AI can be integrated into education. These tools have the capabilities to increase student motivation, provide authentic language exposure, language practice, deliver immediate feedback and corrections, offer support tailored to each student's needs. Furthermore, AI can function beyond being a tool as it can reshape EFL classrooms by allowing students to practice language use in a dynamic environment and supporting personalized learning experiences tailored to individual needs and proficiency levels. Such classes are crucial for non-native speakers who must have the skills necessary to communicate effectively and understand messages across various contexts, enhancing communicative competence and critical thinking."}]}, {"id": 3, "module": "Research methodology", "kind": "full", "source": "§2.6 Density in Academic Writing (p. 66)", "question": "Ethical considerations should come into play at various stages of research, from topic selection to the final representation and dissemination of findings. Write a critical analysis essay describing the importance of ethics in conducting research.", "note": "The example of a dense introduction: one sentence per research stage, so the whole essay map fits in a single paragraph.", "variants": [{"label": "Introduction", "sub": "", "text": "In research, each phase presents unique challenges and risks that require researchers to carefully address ethical considerations. Starting with the topic selection, ethics ensure the choice of a relevant, unbiased, and non-harmful subject. The literature review needs to be conducted with intellectual honesty and integrity. The design of the research has to protect participants while also guaranteeing inclusivity and the validity of the methodology. In the data collection, the researcher has to protect participants' autonomy, confidentiality, and well-being during the course of the entire research. Protecting the integrity of findings by accurately handling data is a fundamental responsibility that researchers must uphold. In reporting results and dissemination, ethics play a vital role in protecting against plagiarism, selective reporting, and misrepresentation of findings, ensuring academic integrity."}]}, {"id": 4, "module": "Didactics", "kind": "full", "source": "§3.2 Didactics (p. 79)", "question": "Learning teaching is a lifelong process to promote best teaching practices. Discuss.", "note": "Written to absorb every row of the past-vs-contemporary didactics table, against the common student habit of reducing the question to teacher training alone.", "variants": [{"label": "Introduction", "sub": "", "text": "Ensuring optimal educational outcomes in today’s world necessitates that teachers adapt to evolving educational objectives and pedagogical approaches. As a result, teachers would be able to implement contemporary didactic principles such as learner-centered instruction, flexible curricula, critical thinking, inclusivity, formative assessment, differentiated teaching methods, integration of technology, global competence, and collaboration. However, sustaining such practices requires teachers to engage in continuous professional development through structured training programs, workshops, and seminars, complemented by classroom-based inquiry, reflective journaling, peer observation, and collaborative dialogue that foster critical self-reflection and ongoing growth."}]}, {"id": 5, "module": "ESP", "kind": "full", "source": "§3.4 English for Specific Purposes (p. 95)", "question": "Needs analysis is [...] a defining if not the defining characteristic of ESP (Holec, 1980). Holec describes needs analysis as the classical procedure by which a close link can be established between learners and curricula... The selection of objectives is based on the particular communicative needs of groups or individual learners. In the light of the quotation above, discuss the importance of needs analysis for designing a learner-centered syllabus that is based on the students' needs and wants.", "note": "Answers from the first line by presenting needs analysis as the mechanism that makes learner-centredness possible, and carries the chain that generates every body paragraph.", "variants": [{"label": "Introduction", "sub": "", "text": "Identifying and evaluating learners’ needs in terms of the language and skills required in their target professional workplace is what sets ESP apart from EGP. The former guarantees that the language taught is directly applicable to learners’ fields, increasing practical competence and employability. Needs analysis ensures that the syllabus is designed around learners’ actual needs, goals, and contexts rather than teacher assumptions, promoting relevance and engagement. It also provides clear, measurable learning objectives based on specific linguistic and communicative competencies required by learners. Needs analysis also provides clear, measurable learning objectives based on specific linguistic and communicative competencies required by learners. In terms of assessment, needs analysis is very important as it facilitates the design of assessment tools that accurately reflect learners’ communicative tasks and professional or academic requirements."}]}, {"id": 6, "module": "Educational technology", "kind": "full", "source": "§5.6 Placement of the Thesis Statement in Exams (pp. 133–134)", "question": "How can the implementation of educational technologies contribute to the design of appropriate teaching materials?", "note": "Two attempts at the same prompt. The second names the shift from static, uniform resources to dynamic ones, which is the relationship the examiner is actually asking about.", "variants": [{"label": "Attempt one", "sub": "opens on teaching materials", "text": "The use of teaching materials has always been a cornerstone in providing a rich teaching and learning experience. With the advent of digital platforms and the widespread use of computers, educators are able to create and design tools that are more dynamic and personalized that would fit learners’ needs. For instance, e-books have introduced greater flexibility and interactivity, supporting differentiated instruction and enhanced student engagement and comprehension, ensuring achieving learning objectives. Regarding classroom activities, interactive tools such as virtual reality, smart boards, and simulation-based technologies have redefined pedagogical practices by fostering active participation and collaborative, experiential learning environments. Furthermore, in the domain of assessment, digital platforms offering automatic feedback have improved the efficiency, immediacy, and accuracy of evaluations, thereby promoting self-regulated learning."}, {"label": "Attempt two", "sub": "opens on the technology–materials relationship", "text": "The integration of educational technology has altered several aspects of education, one of which is the design of teaching materials. Traditionally, the latter were static, simple, and uniform, offering limited adaptability to individual learners' needs. With the advent of digital platforms and the widespread use of computers, educators are now able to design more dynamic, personalized resources that align with diverse learning profiles. For instance, e-books have introduced greater interactivity and adaptability, enhancing student engagement, supporting differentiated pedagogies, and improving comprehension, facilitating the attainment of learning objectives. In terms of classroom activities, technologies such as virtual reality, smart boards, and simulation-based tools have redefined pedagogical practices by fostering active participation and collaborative, experiential learning. Furthermore, in the area of assessment, digital platforms offering automated feedback have enhanced the efficiency, immediacy, and precision of evaluations, thereby promoting self-regulated learning."}]}, {"id": 7, "module": "Research methodology", "kind": "full", "source": "§5.6 Placement of the Thesis Statement in Exams (p. 135)", "question": "The choice of each research data collection tool entails a unique set of considerations, strategically navigating through potential advantages, disadvantages, as well as ethical concerns. Discuss reflecting on your own research.", "note": "The book's clearest case against the one-sentence thesis: sentences three to five each carry a required dimension of the prompt — the tool, its advantages, its disadvantages, its ethics.", "variants": [{"label": "Introduction", "sub": "", "text": "A systematic and structured research is built on a chain of multiple and rational decisions made all along the process, one of which is the choice of the data gathering tool. As a requirement to fulfill the master’s degree in English, my own research was set to investigate the use of AI to enhance writing style. An experiment was opted as a suitable data collection tool since it provides a controlled environment to test all variables. It offers quantitative data, a high precision and accuracy, and hence more objective. However, it can be resource-intensive, have limited applicability, and susceptible to sampling bias. From an ethical standpoint, manipulations in experiments are always a source of concern. All of these entail cautiously weighing every decision to arrive at sound answers to the research questions."}]}, {"id": 8, "module": "Research methodology", "kind": "full", "source": "§5.7 Starting with the thesis statement (pp. 142–143)", "question": "According to your experience, how could you move from a vague idea to a clearly stated and contextualized research problem?", "note": "In both attempts the opening sentence is already the thesis: reflection and preparatory work are the condition for turning a vague idea into a researchable problem.", "variants": [{"label": "Attempt one", "sub": "", "text": "Formulating a clear and contextualized research problem requires reflection on the entire research process. Scoping complemented by preliminary information gathering about the research makes a valuable contribution to almost every operational step. By consulting experts and a supervisor, and examining existing studies, a researcher should be able to render vague ideas into concrete concepts, assess the research’s feasibility scientifically and ethically, and clarify the study’s scope. Moreover, understanding the current state of the literature before starting the research is essential, as it informs methodological decisions, identifies gaps in existing knowledge, and provides a solid foundation for justifying the chosen research approach. Hence, a researcher must be well-informed about all aspects of the research project to frame a strong and coherent research problem effectively."}, {"label": "Attempt two", "sub": "", "text": "Formulating a clear and contextualized research problem requires a deep understanding of the entire research process. Effective scoping and thorough preliminary information gathering contribute significantly to each operational stage of the research. By consulting with experts and a supervisor, and analyzing existing studies, a researcher can transform vague ideas into concrete research concepts, assess the scientific and ethical feasibility of the project, and establish clear boundaries for the study. Moreover, gaining a deep understanding of the current literature is critical, as it shapes methodological choices, uncovers gaps in existing knowledge, and provides a strong rationale for the proposed research approach. Therefore, a well-informed researcher is important for framing a coherent and sound research problem."}]}, {"id": 9, "module": "Language teaching theory", "kind": "full", "source": "§6.8 Essay Two: Language (pp. 179, 183)", "question": "Nagel (1961) observes, “A good language teaching theory will strive to provide a conceptual framework devised for identifying all factors relevant in the teaching of languages and the relationships between them and for giving effective direction to the practice of language teaching, supported by the necessary research and enquiry” (p. 131). Discuss.", "note": "The author judges his own first sentence too descriptive and rewrites it. The four factors named here — linguistic, psychological, cultural, methodological — become the four body paragraphs, plus a fifth on the teacher's role.", "variants": [{"label": "As first written", "sub": "", "text": "The history of second language teaching is marked by a wide range of approaches and methods, each reflecting the prevailing view of language and learning at a given time. While the pursuit of effectiveness has always been the central aim, it is the interplay of linguistic, psychological, cultural, and methodological factors that accounts for such diversity. Accordingly, a sound theory of teaching must address how these elements connect rather than treating them in isolation. Furthermore, teachers, however, are not expected to function as theoreticians; their responsibility is to apply practices informed by research, even when the underlying assumptions remain implicit."}, {"label": "Revised opening", "sub": "stronger first sentence", "text": "Second language teaching has always been defined by the interplay of factors whose changing configurations have given rise to the diverse approaches and methods. While the pursuit of effectiveness has always been the central aim, it is the interplay of linguistic, psychological, cultural, and methodological factors that accounts for such diversity. Accordingly, a sound theory of teaching must address how these elements connect rather than treating them in isolation. Furthermore, teachers, however, are not expected to function as theoreticians; their responsibility is to apply practices informed by research, even when the underlying assumptions remain implicit. The sentence signals to the reader that there are several"}]}, {"id": 10, "module": "Teacher roles", "kind": "full", "source": "§6.9 Essay Three: Teacher's Roles (p. 187)", "question": "According to Scrivener (2004), a teacher's move from a mere explainer, through an involver, and on towards an enabler is a move towards optimal efficiency in teaching. Discuss.", "note": "A deliberate inversion: the answer starts at the enabler, the end of Scrivener's continuum, then traces backwards through involver and explainer.", "variants": [{"label": "Introduction", "sub": "", "text": "The core idea of today’s education is to achieve maximum educational impact with minimal unnecessary effort or resource expenditure by enabling learners to take charge of their own learning. Consequently, the teacher’s role should evolve into an enabler guiding learners toward autonomy, fostering critical thinking, and encouraging self-directed learning and problem-solving. The latter represents a substantial departure from traditional roles in which the teacher acted primarily as a knowledge provider or explainer, functions that have become insufficient in an age where information is readily accessible to all. Even the role of an involver, who facilitates and encourages participation while maintaining control over learning objectives, can appear limited in modern educational contexts that prioritize learner agency and adaptability."}]}, {"id": 11, "module": "Curriculum development", "kind": "full", "source": "§6.10 Essay Four: Curriculum Development (pp. 193–194)", "question": "How can the process of curriculum development accommodate the integration of AI effectively?", "note": "The introduction walks the curriculum cycle in order — needs analysis, aims and objectives, content selection, approach, assessment, training — so each stage becomes a paragraph.", "variants": [{"label": "Introduction", "sub": "", "text": "A curriculum represents the bridge between school and society, reflecting both educational needs and social changes. In the context of globalization and technological advancement, education must equip learners with skills such as communication, adaptability, and critical thinking. Still, integrating AI into curriculum development requires more than simply adding tools; it involves a systematic process of needs analysis, understanding learner profiles and future skill demands. These needs later have to be transformed into aims and objectives. The next step is content selection in which educators facilitate the inclusion of multidisciplinary and up-to-date materials reflecting technological advancements. Such a curriculum must adopt a learner-centered approach in which the teacher’s role should be a facilitator and a mentor. In terms of assessment, the implementation of AI needs to be accompanied by AI-based assessment tools for formative and summative evaluation. Training is also a crucial matter; hence, the curriculum needs to offer AI-enhanced professional development for educators."}]}, {"id": 12, "module": "Research ethics", "kind": "full", "source": "§6.11 Essay Five: Ethics in Research (p. 203)", "question": "Ethics has been well called the religion of science. Based on this quote, how can research values survive in the age of technology?", "note": "Built as four problem–response pairs: each ethical threat named in the first half is answered by a safeguard in the second.", "variants": [{"label": "Introduction", "sub": "", "text": "It is imperative for researchers to distinguish between what is acceptable and what is not, thereby upholding established norms of ethical conduct in the pursuit of knowledge. However, these norms are increasingly challenged in the age of technology. For instance, AI-generated content can compromise originality and honesty in research. Automation and anonymized systems may obscure responsibility for data collection. The reliance on algorithms in data analysis may distort results and interpretation. In terms of privacy, the overuse of big data and AI analytics may lead to privacy violations or unethical use of personal information. Consequently, researchers need to promote transparency through research logs, version tracking, and use of plagiarism and AI-detection tools. Clear authorship protocols and ethical data management policies must be established to reinforce traceability. Researchers must ensure a balanced interpretation and guard against technological determinism. Rigorous informed consent, data anonymization, and compliance with digital ethics standards must be applied."}]}, {"id": 13, "module": "Assessment", "kind": "opening", "source": "§5.1 The First Sentence (pp. 116–119) · Mila University", "question": "To what extent do speaking and writing skills reveal learners' strengths and weaknesses, classroom interactive pedagogy, and the achievement of teaching and learning objectives?", "note": "Both openings come from running the book's four analytical questions over the prompt. The first is more assertive and argumentative; the second more cautious and research-oriented.", "variants": [{"label": "Opening 1", "sub": "assertive", "text": "Productive skills in language learning have long been regarded as key indicators of learners' linguistic development; however, with the growing emphasis on communication and the influence of various affective factors, the extent to which they accurately reflect learners' abilities, instructional effectiveness, and learning outcomes remains open to question."}, {"label": "Opening 2", "sub": "cautious", "text": "The growing emphasis on communicative competence, together with increasing attention to affective factors, has led researchers to reconsider the extent to which productive skills may serve as indicators of learners' linguistic development, instructional effectiveness, and learning outcomes."}]}, {"id": 14, "module": "Educational technology", "kind": "opening", "source": "§5.1 The First Sentence (pp. 122–124)", "question": "How can the implementation of educational technologies contribute to the design of appropriate teaching materials?", "note": "The first opening covers only one of the two key concepts in the question. The second joins them, which is what the examiner is looking for — though it assumes the transformation rather than leaving it open.", "variants": [{"label": "Opening 1", "sub": "materials only", "text": "Teaching materials have always been a cornerstone in education, bridging the gap between the classroom and real-world contexts, structuring learning, and clarifying complex concepts."}, {"label": "Opening 2", "sub": "both concepts joined", "text": "The implementation of technology has transformed the nature of teaching materials, shifting them from static, uniform resources into dynamic and personalized learning tools."}]}, {"id": 15, "module": "Teacher roles", "kind": "opening", "source": "§5.2 The Reusability of First Sentences (pp. 124–125)", "question": "The digital age, with its reliance on technology, has occasioned a paradigm shift in classroom practices. The overall aim of EFL teaching is to enhance socio-cognitive ability to ultimately engender independent learning. Comment!", "note": "Shows an opening built for a different prompt being repurposed: it sets the macro level (technology, societal change) and connects straight to the micro level (teacher roles, learner autonomy).", "variants": [{"label": "Reused opening", "sub": "", "text": "The integration of digital technologies into education reflects a wider societal transformation that both alters classroom practices and also redefines the teacher’s role from transmitter of knowledge to enabler of socio-cognitive growth and learner autonomy."}]}, {"id": 16, "module": "Research ethics", "kind": "opening", "source": "§5.3 Practice: Reusable First Sentences (pp. 125–127)", "question": "Discuss the ethical considerations that must guide the writing of a literature review, particularly in relation to accurately representing prior research and avoiding misappropriation of ideas.", "note": "One sentence, then the same sentence adapted for a neighbouring prompt on how ethical lapses undermine the credibility of scholarly work — the book's demonstration of reusability.", "variants": [{"label": "Opening", "sub": "", "text": "Research is built on the foundation of what others have discovered; it is the culmination of existing knowledge, continuous inquiry, and new insights."}, {"label": "Adapted", "sub": "for the second prompt", "text": "Research is built on the foundation of what others have discovered; it is the culmination of existing knowledge, continuous inquiry, and new insights, making ethical representation of prior studies essential to scholarly credibility."}]}];
+const list = document.getElementById('list');
+const chipsEl = document.getElementById('chips');
+const countEl = document.getElementById('count');
+const qEl = document.getElementById('q');
+const splitBtn = document.getElementById('split');
+const allBtn = document.getElementById('all');
+
+let filter = 'All';
+let globalSplit = false;
+
+const modules = ['All', ...[...new Set(DATA.map(d => d.module))].sort()];
+modules.forEach(m => {
+  const b = document.createElement('button');
+  b.className = 'chip'; b.textContent = m;
+  b.setAttribute('aria-pressed', m === filter);
+  b.onclick = () => { filter = m; [...chipsEl.children].forEach(c => c.setAttribute('aria-pressed', c.textContent === m)); apply(); };
+  chipsEl.appendChild(b);
+});
+
+function sentences(t){
+  return t.match(/[^.!?]+[.!?]+(?=\s|$)|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) || [t];
+}
+function words(t){ return t.trim().split(/\s+/).length; }
+function esc(s){ return s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+function render(){
+  list.innerHTML = '';
+  DATA.forEach(d => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.dataset.open = 'false';
+    card.dataset.id = d.id;
+    card.dataset.hay = (d.question + ' ' + d.module + ' ' + d.source + ' ' + d.note + ' ' + d.variants.map(v => v.label + ' ' + v.text).join(' ')).toLowerCase();
+
+    const tabs = d.variants.length > 1
+      ? `<div class="tabs" role="tablist">${d.variants.map((v,i) =>
+          `<button class="tab" role="tab" aria-selected="${i===0}" data-i="${i}">${esc(v.label)}</button>`).join('')}</div>`
+      : '';
+
+    card.innerHTML = `
+      <button class="head" aria-expanded="false">
+        <span class="num">${String(d.id).padStart(2,'0')}</span>
+        <span>
+          <span class="meta">
+            <span class="tag ${d.kind==='opening'?'op':''}">${d.kind==='opening'?'Opening sentence':'Full introduction'}</span>
+            <span class="tag op">${esc(d.module)}</span>
+            ${d.variants.length>1?`<span class="tag op">${d.variants.length} versions</span>`:''}
+          </span>
+          <p class="qtext">${esc(d.question)}</p>
+          <p class="ref">${esc(d.source)}</p>
+        </span>
+        <span class="caret" aria-hidden="true">+</span>
+      </button>
+      <div class="body">
+        <p class="note">${esc(d.note)}</p>
+        ${tabs}
+        <div class="pane"></div>
+        <div class="foot">
+          <button class="mini js-split" aria-pressed="false">Sentence view</button>
+          <button class="mini js-copy">Copy text</button>
+          <span class="wc"></span>
+        </div>
+      </div>`;
+
+    let vi = 0, localSplit = globalSplit;
+    const pane = card.querySelector('.pane');
+    const wc = card.querySelector('.wc');
+    const sBtn = card.querySelector('.js-split');
+    const cBtn = card.querySelector('.js-copy');
+
+    function paint(){
+      const v = d.variants[vi];
+      const sub = v.sub ? `<p class="sub">${esc(v.sub)}</p>` : '';
+      pane.innerHTML = localSplit
+        ? sub + `<div class="prose split">${sentences(v.text).map((s,i) =>
+            `<span class="s"><span class="n">${i+1}</span><span class="t">${esc(s)}</span></span>`).join('')}</div>`
+        : sub + `<p class="prose">${esc(v.text)}</p>`;
+      wc.textContent = words(v.text) + ' words · ' + sentences(v.text).length + ' sentences';
+      sBtn.setAttribute('aria-pressed', localSplit);
+      cBtn.textContent = 'Copy text';
+    }
+
+    card.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+      vi = +t.dataset.i;
+      card.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x === t));
+      paint();
+    });
+    sBtn.onclick = () => { localSplit = !localSplit; paint(); };
+    cBtn.onclick = async () => {
+      try { await navigator.clipboard.writeText(d.variants[vi].text); cBtn.textContent = 'Copied'; }
+      catch(e){ cBtn.textContent = 'Copy failed'; }
+      setTimeout(() => cBtn.textContent = 'Copy text', 1400);
+    };
+    const head = card.querySelector('.head');
+    head.onclick = () => {
+      const open = card.dataset.open === 'true';
+      card.dataset.open = String(!open);
+      head.setAttribute('aria-expanded', String(!open));
+      card.querySelector('.caret').textContent = open ? '+' : '–';
+    };
+
+    card._paint = paint;
+    card._setSplit = v => { localSplit = v; paint(); };
+    card._open = v => {
+      card.dataset.open = String(v);
+      head.setAttribute('aria-expanded', String(v));
+      card.querySelector('.caret').textContent = v ? '–' : '+';
+    };
+    paint();
+    list.appendChild(card);
+  });
+}
+
+function apply(){
+  const term = qEl.value.trim().toLowerCase();
+  let n = 0;
+  [...list.children].forEach(c => {
+    const d = DATA.find(x => x.id === +c.dataset.id);
+    const ok = (filter === 'All' || d.module === filter) && (!term || c.dataset.hay.includes(term));
+    c.classList.toggle('hidden', !ok);
+    if (ok) n++;
+    if (ok && term && term.length > 2) c._open(true);
+  });
+  countEl.textContent = n + (n === 1 ? ' question' : ' questions');
+  let e = document.getElementById('empty');
+  if (!n && !e){
+    e = document.createElement('p'); e.id = 'empty'; e.className = 'empty';
+    e.textContent = 'Nothing matches that. Try a shorter phrase.';
+    list.appendChild(e);
+  } else if (n && e) e.remove();
+}
+
+qEl.oninput = apply;
+splitBtn.onclick = () => {
+  globalSplit = !globalSplit;
+  splitBtn.setAttribute('aria-pressed', globalSplit);
+  [...list.children].forEach(c => c._setSplit && c._setSplit(globalSplit));
+};
+allBtn.onclick = () => {
+  const open = allBtn.getAttribute('aria-pressed') === 'true';
+  allBtn.setAttribute('aria-pressed', String(!open));
+  allBtn.textContent = open ? 'Open all' : 'Close all';
+  [...list.children].forEach(c => c._open && c._open(!open));
+};
+
+render();
+apply();
+</script>
+</body>
+</html>
